@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { Claim } from './types/claims';
 import { MOCK_CLAIMS } from './data/mockClaims';
 import { Sidebar } from './components/layout/Sidebar';
