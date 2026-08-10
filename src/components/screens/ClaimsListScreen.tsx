@@ -1,252 +1,319 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Sparkles, ChevronRight, ChevronLeft, ArrowUpDown } from 'lucide-react';
-import type { Claim, ClaimStatus, SeverityLevel } from '../../types/claims';
+import {
+  Search,
+  ChevronRight,
+  ChevronLeft,
+  ArrowUpDown,
+  Sparkles,
+  TrendingUp,
+  IndianRupee,
+  Clock,
+  CheckCircle2,
+  FileWarning,
+  X,
+} from 'lucide-react';
+import {
+  REAL_CLAIMS,
+  UNIQUE_BROKERS,
+  UNIQUE_ENTITIES,
+  UNIQUE_ASSET_CATEGORIES,
+  UNIQUE_NATURES,
+  ALL_STATUSES,
+} from '../../data/realClaims';
+import type { RealClaim, RealClaimStatus, RealBroker, RealEntity } from '../../data/realClaims';
 import type { ScreenId } from '../layout/Sidebar';
 
 interface ClaimsListScreenProps {
-  claims: Claim[];
+  claims: unknown[];
   onSelectClaim: (claimId: string) => void;
   setActiveScreen: (screen: ScreenId) => void;
   initialSearchQuery?: string;
 }
 
-export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({ 
-  claims, 
-  onSelectClaim, 
+const STATUS_COLORS: Record<string, string> = {
+  'Settled': 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
+  'Open - Documents Pending': 'bg-amber-500/15 text-amber-400 border-amber-500/30',
+  'Open - For Settlement': 'bg-blue-500/15 text-blue-400 border-blue-500/30',
+  'Open - Consent/Approval Awaited': 'bg-purple-500/15 text-purple-400 border-purple-500/30',
+  'Open - Assessment Pending': 'bg-orange-500/15 text-orange-400 border-orange-500/30',
+  'Open - With Insured': 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30',
+  'Open - With Insurer': 'bg-sky-500/15 text-sky-400 border-sky-500/30',
+  'Open - Other': 'bg-slate-500/15 text-slate-400 border-slate-500/30',
+  'Open - Payment Process': 'bg-teal-500/15 text-teal-400 border-teal-500/30',
+  'Open - Intimated': 'bg-indigo-500/15 text-indigo-400 border-indigo-500/30',
+  'Closed - No Pay': 'bg-red-500/15 text-red-400 border-red-500/30',
+  'Closed - Below Excess': 'bg-red-400/15 text-red-300 border-red-400/30',
+  'Withdrawn': 'bg-slate-700/40 text-slate-500 border-slate-600/30',
+};
+
+const BROKER_COLORS: Record<string, string> = {
+  'Marsh': 'text-blue-400',
+  'Gallagher': 'text-amber-400',
+  'WTW': 'text-purple-400',
+  'Alliance': 'text-emerald-400',
+};
+
+const fmtInr = (v: number | null) => {
+  if (v === null) return '–';
+  if (v >= 100000) return `₹${(v / 100000).toFixed(2)} L`;
+  return `₹${v.toLocaleString('en-IN')}`;
+};
+
+const ITEMS_PER_PAGE = 15;
+
+export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
   setActiveScreen,
-  initialSearchQuery = '' 
+  initialSearchQuery = '',
 }) => {
   const [search, setSearch] = useState(initialSearchQuery);
+  const [brokerFilter, setBrokerFilter] = useState<string>('All');
+  const [entityFilter, setEntityFilter] = useState<string>('All');
   const [statusFilter, setStatusFilter] = useState<string>('All');
-  const [insurerFilter, setInsurerFilter] = useState<string>('All');
-  const [highwayFilter, setHighwayFilter] = useState<string>('All');
-  const [severityFilter, setSeverityFilter] = useState<string>('All');
-  const [sortBy, setSortBy] = useState<'id' | 'reserve' | 'age' | 'status'>('id');
+  const [assetFilter, setAssetFilter] = useState<string>('All');
+  const [natureFilter, setNatureFilter] = useState<string>('All');
+  const [sortBy, setSortBy] = useState<'id' | 'claimAmt' | 'netSettled' | 'tat' | 'status'>('id');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
 
-  // Extract unique filters
-  const insurers = useMemo(() => ['All', ...Array.from(new Set(claims.map(c => c.insurer)))], [claims]);
-  const highways = useMemo(() => ['All', ...Array.from(new Set(claims.map(c => c.highway)))], [claims]);
-  const statuses = ['All', 'Survey Pending', 'Survey Underway', 'Under Review', 'Admitted', 'Settled'];
-  const severities = ['All', 'Low', 'Medium', 'High', 'Critical'];
-
-  const filteredClaims = useMemo(() => {
-    return claims.filter(c => {
-      const matchSearch = search === '' || 
-        c.id.toLowerCase().includes(search.toLowerCase()) ||
-        c.highway.toLowerCase().includes(search.toLowerCase()) ||
-        c.incidentType.toLowerCase().includes(search.toLowerCase()) ||
-        c.code.toLowerCase().includes(search.toLowerCase());
-
+  const filtered = useMemo(() => {
+    return REAL_CLAIMS.filter((c: RealClaim) => {
+      const q = search.toLowerCase();
+      const matchSearch =
+        q === '' ||
+        c.id.toLowerCase().includes(q) ||
+        c.assetCategory.toLowerCase().includes(q) ||
+        c.natureOfLoss.toLowerCase().includes(q) ||
+        c.location?.toLowerCase().includes(q) ||
+        c.surveyor?.toLowerCase().includes(q) ||
+        c.insurer.toLowerCase().includes(q);
+      const matchBroker = brokerFilter === 'All' || c.broker === brokerFilter;
+      const matchEntity = entityFilter === 'All' || c.entity === entityFilter;
       const matchStatus = statusFilter === 'All' || c.status === statusFilter;
-      const matchInsurer = insurerFilter === 'All' || c.insurer === insurerFilter;
-      const matchHighway = highwayFilter === 'All' || c.highway === highwayFilter;
-      const matchSeverity = severityFilter === 'All' || c.severity === severityFilter;
-
-      return matchSearch && matchStatus && matchInsurer && matchHighway && matchSeverity;
+      const matchAsset = assetFilter === 'All' || c.assetCategory === assetFilter;
+      const matchNature = natureFilter === 'All' || c.natureOfLoss === natureFilter;
+      return matchSearch && matchBroker && matchEntity && matchStatus && matchAsset && matchNature;
     }).sort((a, b) => {
-      if (sortBy === 'reserve') return b.reserveAmountLakhs - a.reserveAmountLakhs;
-      if (sortBy === 'age') return a.ageDays - b.ageDays;
+      if (sortBy === 'claimAmt') return (b.claimAmtInr ?? 0) - (a.claimAmtInr ?? 0);
+      if (sortBy === 'netSettled') return (b.netSettledInr ?? 0) - (a.netSettledInr ?? 0);
+      if (sortBy === 'tat') return (b.settlementTATDays ?? 9999) - (a.settlementTATDays ?? 9999);
       if (sortBy === 'status') return a.status.localeCompare(b.status);
       return b.id.localeCompare(a.id);
     });
-  }, [claims, search, statusFilter, insurerFilter, highwayFilter, severityFilter, sortBy]);
+  }, [search, brokerFilter, entityFilter, statusFilter, assetFilter, natureFilter, sortBy]);
 
-  const totalPages = Math.ceil(filteredClaims.length / itemsPerPage) || 1;
-  const paginatedClaims = useMemo(() => {
-    const start = (currentPage - 1) * itemsPerPage;
-    return filteredClaims.slice(start, start + itemsPerPage);
-  }, [filteredClaims, currentPage]);
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE) || 1;
+  const paginated = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filtered.slice(start, start + ITEMS_PER_PAGE);
+  }, [filtered, currentPage]);
+
+  // Summary stats for filtered set
+  const stats = useMemo(() => {
+    const settled = filtered.filter(c => c.status === 'Settled');
+    const totalClaimed = filtered.reduce((s, c) => s + (c.claimAmtInr ?? 0), 0);
+    const totalSettled = settled.reduce((s, c) => s + (c.netSettledInr ?? 0), 0);
+    const avgTAT = settled.length
+      ? Math.round(settled.reduce((s, c) => s + (c.settlementTATDays ?? 0), 0) / settled.length)
+      : 0;
+    return { total: filtered.length, settled: settled.length, totalClaimed, totalSettled, avgTAT };
+  }, [filtered]);
+
+  const hasActiveFilters = brokerFilter !== 'All' || entityFilter !== 'All' || statusFilter !== 'All' || assetFilter !== 'All' || natureFilter !== 'All' || search !== '';
+
+  const clearFilters = () => {
+    setBrokerFilter('All');
+    setEntityFilter('All');
+    setStatusFilter('All');
+    setAssetFilter('All');
+    setNatureFilter('All');
+    setSearch('');
+    setCurrentPage(1);
+  };
 
   return (
-    <div className="p-8 space-y-6 max-w-7xl mx-auto">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-white tracking-tight">Claims Portfolio Registry</h1>
-          <p className="text-sm text-slate-400">Search and filter active infrastructure loss claims</p>
-        </div>
+    <div className="p-6 space-y-5 max-w-screen-2xl mx-auto">
 
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div className="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">
+            MODULE 9 · CLAIMS PORTFOLIO REGISTRY
+          </div>
+          <h1 className="text-2xl font-bold text-white tracking-tight">Claims Portfolio Registry</h1>
+          <p className="text-sm text-slate-400 mt-0.5">
+            581 claims · Alliance / Gallagher / Marsh / WTW · NCR-EPE & SJEPL
+          </p>
+        </div>
         <button
           onClick={() => setActiveScreen('incident-reporting')}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg shadow-md shadow-blue-900/30 flex items-center gap-2 transition-all self-start md:self-auto"
+          className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-xl transition-colors self-start md:self-auto"
         >
           <Sparkles className="w-4 h-4 text-amber-300" />
-          <span>Report Incident</span>
+          Report New Incident
         </button>
       </div>
 
-      {/* Filter Controls Bar */}
-      <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-xl space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
-          {/* Search Input */}
-          <div className="relative md:col-span-2">
+      {/* Live Summary Strip */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {[
+          { icon: CheckCircle2, label: 'Showing', value: stats.total, sub: `${stats.settled} settled`, color: 'text-white', iconColor: 'text-blue-400' },
+          { icon: IndianRupee, label: 'Total Claimed', value: fmtInr(stats.totalClaimed), sub: 'reported amounts', color: 'text-amber-400', iconColor: 'text-amber-400' },
+          { icon: TrendingUp, label: 'Net Settled', value: fmtInr(stats.totalSettled), sub: `${stats.settled} claims paid`, color: 'text-green-400', iconColor: 'text-green-400' },
+          { icon: Clock, label: 'Avg TAT', value: stats.avgTAT ? `${stats.avgTAT}d` : '–', sub: 'settled claims only', color: 'text-purple-400', iconColor: 'text-purple-400' },
+        ].map(({ icon: Icon, label, value, sub, color, iconColor }) => (
+          <div key={label} className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex items-center gap-3">
+            <Icon className={`w-5 h-5 ${iconColor} flex-shrink-0`} />
+            <div>
+              <p className="text-slate-400 text-xs">{label}</p>
+              <p className={`text-lg font-black ${color}`}>{value}</p>
+              <p className="text-slate-600 text-xs">{sub}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Filters */}
+      <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-3">
+        {/* Search + clear */}
+        <div className="flex gap-3">
+          <div className="relative flex-1">
             <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={search}
               onChange={(e) => { setSearch(e.target.value); setCurrentPage(1); }}
-              placeholder="Search Claim ID, Highway, Cause..."
-              className="w-full bg-slate-950/80 border border-slate-800 text-sm text-white placeholder-slate-500 pl-9 pr-3 py-2 rounded-lg focus:outline-none focus:border-blue-500"
+              placeholder="Search by Claim ID, Asset, Nature of Loss, Location, Surveyor…"
+              className="w-full bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-600 pl-9 pr-3 py-2.5 rounded-lg focus:outline-none focus:border-blue-500"
             />
           </div>
-
-          {/* Status Filter */}
-          <div>
-            <select
-              value={statusFilter}
-              onChange={(e) => { setStatusFilter(e.target.value); setCurrentPage(1); }}
-              className="w-full bg-slate-950/80 border border-slate-800 text-xs text-slate-300 px-3 py-2.5 rounded-lg focus:outline-none focus:border-blue-500"
+          {hasActiveFilters && (
+            <button
+              onClick={clearFilters}
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-400 bg-slate-800 rounded-lg hover:bg-slate-700 border border-slate-700"
             >
-              <option value="All">Status: All</option>
-              {statuses.filter(s => s !== 'All').map(s => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
-          </div>
-
-          {/* Insurer Filter */}
-          <div>
-            <select
-              value={insurerFilter}
-              onChange={(e) => { setInsurerFilter(e.target.value); setCurrentPage(1); }}
-              className="w-full bg-slate-950/80 border border-slate-800 text-xs text-slate-300 px-3 py-2.5 rounded-lg focus:outline-none focus:border-blue-500"
-            >
-              <option value="All">Insurer: All</option>
-              {insurers.filter(i => i !== 'All').map(i => (
-                <option key={i} value={i}>{i}</option>
-              ))}
-            </select>
-          </div>
-
-          {/* Highway Filter */}
-          <div>
-            <select
-              value={highwayFilter}
-              onChange={(e) => { setHighwayFilter(e.target.value); setCurrentPage(1); }}
-              className="w-full bg-slate-950/80 border border-slate-800 text-xs text-slate-300 px-3 py-2.5 rounded-lg focus:outline-none focus:border-blue-500"
-            >
-              <option value="All">Highway: All</option>
-              {highways.filter(h => h !== 'All').map(h => (
-                <option key={h} value={h}>{h}</option>
-              ))}
-            </select>
-          </div>
+              <X className="w-3.5 h-3.5" /> Clear Filters
+            </button>
+          )}
         </div>
 
-        {/* Secondary Filter & Sort */}
-        <div className="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800 pt-3">
-          <div className="flex items-center gap-4">
-            <span className="font-semibold text-slate-300">Showing {filteredClaims.length} Claims</span>
-            <div className="flex items-center gap-2">
-              <span>Severity:</span>
-              <div className="flex gap-1">
-                {severities.map(sev => (
-                  <button
-                    key={sev}
-                    onClick={() => { setSeverityFilter(sev); setCurrentPage(1); }}
-                    className={`px-2 py-0.5 rounded text-[11px] font-medium transition-all ${
-                      severityFilter === sev 
-                        ? 'bg-blue-600 text-white' 
-                        : 'bg-slate-950 text-slate-400 hover:bg-slate-800'
-                    }`}
-                  >
-                    {sev}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
+        {/* Dropdowns */}
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+          {[
+            { label: 'Broker', value: brokerFilter, setter: setBrokerFilter, options: ['All', ...UNIQUE_BROKERS] },
+            { label: 'Entity', value: entityFilter, setter: setEntityFilter, options: ['All', ...UNIQUE_ENTITIES] },
+            { label: 'Status', value: statusFilter, setter: setStatusFilter, options: ['All', ...ALL_STATUSES] },
+            { label: 'Asset', value: assetFilter, setter: setAssetFilter, options: ['All', ...UNIQUE_ASSET_CATEGORIES] },
+            { label: 'Nature', value: natureFilter, setter: setNatureFilter, options: ['All', ...UNIQUE_NATURES] },
+          ].map(({ label, value, setter, options }) => (
+            <select
+              key={label}
+              value={value}
+              onChange={(e) => { setter(e.target.value); setCurrentPage(1); }}
+              className="bg-slate-950 border border-slate-800 text-xs text-slate-300 px-2 py-2 rounded-lg focus:outline-none focus:border-blue-500"
+            >
+              <option value="All">{label}: All</option>
+              {options.filter(o => o !== 'All').map(o => (
+                <option key={o} value={o}>{o}</option>
+              ))}
+            </select>
+          ))}
+        </div>
 
+        {/* Sort row */}
+        <div className="flex items-center justify-between text-xs text-slate-500 border-t border-slate-800 pt-2">
+          <span>
+            <span className="text-white font-bold">{stats.total}</span> claims match ·{' '}
+            <span className="text-green-400 font-bold">{stats.settled}</span> settled
+            {hasActiveFilters && <span className="text-amber-400 ml-2">· Filtered</span>}
+          </span>
           <div className="flex items-center gap-2">
-            <ArrowUpDown className="w-3.5 h-3.5 text-slate-500" />
-            <span>Sort By:</span>
+            <ArrowUpDown className="w-3.5 h-3.5" />
+            <span>Sort:</span>
             <select
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as any)}
+              onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
               className="bg-slate-950 border border-slate-800 text-xs text-slate-300 px-2 py-1 rounded"
             >
               <option value="id">Claim ID</option>
-              <option value="reserve">Reserve Value</option>
-              <option value="age">Age (Days)</option>
-              <option value="status">Status</option>
+              <option value="claimAmt">Claim Amount ↓</option>
+              <option value="netSettled">Net Settled ↓</option>
+              <option value="tat">Settlement TAT ↓</option>
+              <option value="status">Status A–Z</option>
             </select>
           </div>
         </div>
       </div>
 
-      {/* Claims Data Grid Table */}
-      <div className="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden shadow-xl">
+      {/* Table */}
+      <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead className="bg-slate-950/80 text-[11px] uppercase tracking-wider text-slate-400 border-b border-slate-800">
               <tr>
-                <th className="px-5 py-3.5">Claim ID</th>
-                <th className="px-5 py-3.5">Highway</th>
-                <th className="px-5 py-3.5">Incident Type</th>
-                <th className="px-5 py-3.5">Initial Reserve</th>
-                <th className="px-5 py-3.5">Insurer</th>
-                <th className="px-5 py-3.5">Status</th>
-                <th className="px-5 py-3.5">Age</th>
-                <th className="px-5 py-3.5 text-right">Action</th>
+                <th className="px-4 py-3">Claim ID</th>
+                <th className="px-4 py-3">Broker / Entity</th>
+                <th className="px-4 py-3">Asset Category</th>
+                <th className="px-4 py-3">Nature of Loss</th>
+                <th className="px-4 py-3">Insurer</th>
+                <th className="px-4 py-3 text-right">Claim Amt</th>
+                <th className="px-4 py-3 text-right">Net Settled</th>
+                <th className="px-4 py-3 text-center">TAT</th>
+                <th className="px-4 py-3">Status</th>
+                <th className="px-4 py-3">Surveyor</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/60">
-              {paginatedClaims.length === 0 ? (
+            <tbody className="divide-y divide-slate-800/50">
+              {paginated.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="px-5 py-12 text-center text-slate-500 text-sm">
-                    No claims match your search criteria. Try adjusting the filters.
+                  <td colSpan={10} className="px-4 py-16 text-center">
+                    <FileWarning className="w-8 h-8 text-slate-600 mx-auto mb-2" />
+                    <p className="text-slate-500 text-sm">No claims match your filters. Try adjusting the search.</p>
                   </td>
                 </tr>
               ) : (
-                paginatedClaims.map((claim) => (
-                  <tr 
+                paginated.map((claim) => (
+                  <tr
                     key={claim.id}
-                    onClick={() => onSelectClaim(claim.id)}
-                    className={`hover:bg-slate-800/60 cursor-pointer transition-colors ${
-                      claim.id === 'CLM-2026-00124' ? 'bg-amber-950/20 border-l-4 border-l-amber-400' : ''
-                    }`}
+                    className="hover:bg-slate-800/40 transition-colors cursor-default"
                   >
-                    <td className="px-5 py-4 font-bold text-white flex items-center gap-2">
-                      {claim.id === 'CLM-2026-00124' && (
-                        <span className="px-1.5 py-0.5 rounded text-[9px] font-black uppercase bg-amber-500/20 text-amber-400 border border-amber-500/40">
-                          Demo Focus
-                        </span>
-                      )}
-                      <span>{claim.id}</span>
-                    </td>
-                    <td className="px-5 py-4 text-xs">
-                      <div className="font-semibold text-slate-200">{claim.code}</div>
-                      <div className="text-[11px] text-slate-400 truncate max-w-[170px]">{claim.highway}</div>
-                    </td>
-                    <td className="px-5 py-4 text-slate-300 text-xs">
-                      <div className="font-medium text-slate-200">{claim.incidentType}</div>
-                      <div className="text-[11px] text-slate-500">Ch {claim.chainage}</div>
-                    </td>
-                    <td className="px-5 py-4 font-bold text-amber-400 text-xs">
-                      {claim.reserveAmountLakhs >= 100
-                        ? `₹${(claim.reserveAmountLakhs / 100).toFixed(2)} Cr`
-                        : `₹${claim.reserveAmountLakhs} Lakhs`}
-                    </td>
-                    <td className="px-5 py-4 text-slate-400 text-xs">{claim.insurer}</td>
-                    <td className="px-5 py-4">
-                      <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold ${
-                        claim.status === 'Survey Pending' ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30' :
-                        claim.status === 'Survey Underway' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
-                        claim.status === 'Admitted' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' :
-                        claim.status === 'Settled' ? 'bg-slate-800 text-slate-400 border border-slate-700' :
-                        'bg-purple-500/20 text-purple-400 border border-purple-500/30'
-                      }`}>
-                        {claim.status}
+                    <td className="px-4 py-3">
+                      <span className={`font-mono font-bold text-xs ${BROKER_COLORS[claim.broker]}`}>
+                        {claim.id}
                       </span>
                     </td>
-                    <td className="px-5 py-4 text-slate-400 text-xs">{claim.ageDays} Days</td>
-                    <td className="px-5 py-4 text-right">
-                      <button className="text-xs text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1">
-                        <span>View Claim</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </button>
+                    <td className="px-4 py-3">
+                      <div className={`text-xs font-bold ${BROKER_COLORS[claim.broker]}`}>{claim.broker}</div>
+                      <div className="text-[11px] text-slate-500">{claim.entity}</div>
+                    </td>
+                    <td className="px-4 py-3">
+                      <div className="text-xs text-slate-200 font-medium">{claim.assetCategory}</div>
+                      <div className="text-[11px] text-slate-500 truncate max-w-[160px]">{claim.location ?? '–'}</div>
+                    </td>
+                    <td className="px-4 py-3 text-xs text-slate-300">{claim.natureOfLoss}</td>
+                    <td className="px-4 py-3 text-xs text-slate-400">{claim.insurer}</td>
+                    <td className="px-4 py-3 text-right">
+                      <span className="text-xs font-bold text-amber-400">{fmtInr(claim.claimAmtInr)}</span>
+                    </td>
+                    <td className="px-4 py-3 text-right">
+                      <span className={`text-xs font-bold ${claim.netSettledInr ? 'text-green-400' : 'text-slate-600'}`}>
+                        {fmtInr(claim.netSettledInr)}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      {claim.settlementTATDays ? (
+                        <span className={`text-xs font-semibold ${claim.settlementTATDays > 200 ? 'text-amber-400' : 'text-slate-300'}`}>
+                          {claim.settlementTATDays}d
+                        </span>
+                      ) : (
+                        <span className="text-slate-600 text-xs">–</span>
+                      )}
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-semibold border ${STATUS_COLORS[claim.status] ?? 'bg-slate-700 text-slate-400 border-slate-600'}`}>
+                        {claim.status.replace('Open - ', '').replace('Closed - ', 'Closed·')}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className="text-[11px] text-slate-400 truncate max-w-[140px] block">{claim.surveyor ?? '–'}</span>
                     </td>
                   </tr>
                 ))
@@ -255,29 +322,84 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
           </table>
         </div>
 
-        {/* Pagination Footer */}
-        <div className="px-5 py-3.5 border-t border-slate-800 bg-slate-950/60 flex items-center justify-between text-xs text-slate-400">
-          <div>
-            Showing Page <span className="font-semibold text-white">{currentPage}</span> of <span className="font-semibold text-white">{totalPages}</span>
-          </div>
-          <div className="flex items-center gap-2">
+        {/* Pagination */}
+        <div className="px-4 py-3 border-t border-slate-800 bg-slate-950/60 flex items-center justify-between text-xs text-slate-400">
+          <span>
+            Page <span className="font-bold text-white">{currentPage}</span> of{' '}
+            <span className="font-bold text-white">{totalPages}</span>
+            {' '}· {ITEMS_PER_PAGE} per page · {stats.total} total
+          </span>
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={() => setCurrentPage(1)}
+              disabled={currentPage === 1}
+              className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300 disabled:opacity-30 hover:bg-slate-800 text-xs"
+            >
+              «
+            </button>
             <button
               onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
               disabled={currentPage === 1}
-              className="p-1.5 rounded bg-slate-900 border border-slate-800 text-slate-300 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-800"
+              className="p-1.5 rounded bg-slate-900 border border-slate-800 text-slate-300 disabled:opacity-30 hover:bg-slate-800"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
+            {/* Page numbers */}
+            {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+              const start = Math.max(1, Math.min(currentPage - 2, totalPages - 4));
+              const page = start + i;
+              return (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`px-2.5 py-1 rounded text-xs border transition-colors ${
+                    page === currentPage
+                      ? 'bg-blue-600 border-blue-600 text-white font-bold'
+                      : 'bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-800'
+                  }`}
+                >
+                  {page}
+                </button>
+              );
+            })}
             <button
               onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
-              className="p-1.5 rounded bg-slate-900 border border-slate-800 text-slate-300 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-800"
+              className="p-1.5 rounded bg-slate-900 border border-slate-800 text-slate-300 disabled:opacity-30 hover:bg-slate-800"
             >
               <ChevronRight className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => setCurrentPage(totalPages)}
+              disabled={currentPage === totalPages}
+              className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300 disabled:opacity-30 hover:bg-slate-800 text-xs"
+            >
+              »
             </button>
           </div>
         </div>
       </div>
+
+      {/* Status Legend */}
+      <div className="flex flex-wrap gap-2">
+        {Object.entries(STATUS_COLORS).slice(0, 8).map(([status, cls]) => (
+          <button
+            key={status}
+            onClick={() => { setStatusFilter(status as RealClaimStatus); setCurrentPage(1); }}
+            className={`px-2 py-0.5 rounded-full text-[11px] font-semibold border transition-all hover:opacity-80 ${cls} ${statusFilter === status ? 'ring-2 ring-white/20' : ''}`}
+          >
+            {status.replace('Open - ', '').replace('Closed - ', 'Closed·')}
+          </button>
+        ))}
+        <button
+          onClick={() => setStatusFilter('All')}
+          className="px-2 py-0.5 rounded-full text-[11px] font-semibold border border-slate-700 text-slate-400 hover:bg-slate-800"
+        >
+          Show All
+        </button>
+      </div>
     </div>
   );
 };
+
+export default ClaimsListScreen;
