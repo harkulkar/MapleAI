@@ -1,304 +1,541 @@
-import React from 'react';
-import { 
-  FileCheck2, 
-  IndianRupee, 
-  Clock, 
-  TrendingUp, 
-  AlertCircle, 
-  PieChart as PieIcon,
+import React, { useState } from 'react';
+import {
+  FileCheck2,
+  IndianRupee,
+  Clock,
+  TrendingUp,
+  AlertCircle,
   ChevronRight,
   Sparkles,
-  ShieldAlert,
   Building2,
   UserCheck,
-  Activity
+  Activity,
+  FileWarning,
+  CheckCircle2,
+  XCircle,
+  BarChart3,
+  Users
 } from 'lucide-react';
-import { 
-  PieChart, 
-  Pie, 
-  Cell, 
-  BarChart, 
-  Bar, 
-  XAxis, 
-  YAxis, 
-  Tooltip, 
-  ResponsiveContainer, 
-  AreaChart, 
-  Area 
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+  Legend
 } from 'recharts';
-import type { Claim } from '../../types/claims';
 import type { ScreenId } from '../layout/Sidebar';
 
 interface DashboardScreenProps {
-  claims: Claim[];
+  claims: unknown[];
   onSelectClaim: (claimId: string) => void;
   setActiveScreen: (screen: ScreenId) => void;
 }
 
-const STATUS_PIE_DATA = [
-  { name: 'Survey Pending', value: 12, color: '#f59e0b' },
-  { name: 'Survey Underway', value: 16, color: '#3b82f6' },
-  { name: 'Under Review', value: 9, color: '#8b5cf6' },
-  { name: 'Admitted', value: 7, color: '#10b981' },
-  { name: 'Settled', value: 3, color: '#64748b' }
+// ─── REAL DATA from Maple Highways Consolidated Claims Dashboard ───────────────
+// Source: 581 claims · 4 brokers (Alliance/Gallagher/Marsh/WTW) · As of Aug 2026
+
+const STATUS_DATA = [
+  { name: 'Settled', value: 346, color: '#10b981' },
+  { name: 'Docs Pending', value: 104, color: '#f59e0b' },
+  { name: 'Open - Other', value: 52, color: '#94a3b8' },
+  { name: 'For Settlement', value: 33, color: '#3b82f6' },
+  { name: 'Consent Awaited', value: 18, color: '#a78bfa' },
+  { name: 'Assessment Pending', value: 10, color: '#fb923c' },
+  { name: 'With Insured/Insurer', value: 10, color: '#60a5fa' },
+  { name: 'Withdrawn/Closed', value: 6, color: '#475569' },
+  { name: 'Intimated/In-Process', value: 2, color: '#34d399' },
 ];
 
-const INSURER_COMPARISON_DATA = [
-  { insurer: 'United India', claims: 14, avgDays: 112, settlementRate: '94%' },
-  { insurer: 'ICICI Lombard', claims: 11, avgDays: 128, settlementRate: '91%' },
-  { insurer: 'New India', claims: 9, avgDays: 135, settlementRate: '88%' },
-  { insurer: 'HDFC ERGO', claims: 7, avgDays: 98, settlementRate: '96%' },
-  { insurer: 'Bajaj Allianz', claims: 6, avgDays: 105, settlementRate: '93%' },
+const BROKER_DATA = [
+  { broker: 'Marsh', entity: 'NCR-EPE', claims: 306, color: '#3b82f6' },
+  { broker: 'Gallagher', entity: 'NCR-EPE', claims: 146, color: '#f59e0b' },
+  { broker: 'WTW', entity: 'SJEPL', claims: 108, color: '#a78bfa' },
+  { broker: 'Alliance', entity: 'SJEPL', claims: 21, color: '#10b981' },
 ];
 
-const SURVEYOR_COMPARISON = [
-  { surveyor: 'M/s Apex Loss Assessors', assigned: 18, avgReportDays: 14, satisfaction: '94%' },
-  { surveyor: 'M/s National Insurance Surveyors', assigned: 12, avgReportDays: 19, satisfaction: '88%' },
-  { surveyor: 'M/s Infrastructure Loss Experts', assigned: 10, avgReportDays: 11, satisfaction: '97%' },
-  { surveyor: 'M/s Technical Survey Committee', assigned: 7, avgReportDays: 22, satisfaction: '82%' },
+const NATURE_DATA = [
+  { name: 'Accidental / Vehicle Hit', value: 318, color: '#ef4444' },
+  { name: 'Other', value: 137, color: '#94a3b8' },
+  { name: 'Theft / Burglary', value: 97, color: '#f59e0b' },
+  { name: 'AOG / Storm', value: 17, color: '#3b82f6' },
+  { name: 'Fire', value: 7, color: '#fb923c' },
+  { name: 'Not Stated', value: 5, color: '#475569' },
 ];
 
-const RESERVE_SETTLEMENT_TREND = [
-  { month: 'Jan', reserve: 142, settled: 48 },
-  { month: 'Feb', reserve: 155, settled: 54 },
-  { month: 'Mar', reserve: 168, settled: 61 },
-  { month: 'Apr', reserve: 174, settled: 66 },
-  { month: 'May', reserve: 180, settled: 70 },
-  { month: 'Jun', reserve: 186.4, settled: 72.8 }
+const ASSET_DATA = [
+  { name: 'MBCB / Crash Barrier', value: 376, pct: '64.7%' },
+  { name: 'Equipment / VMS', value: 89, pct: '15.3%' },
+  { name: 'Street Light', value: 42, pct: '7.2%' },
+  { name: 'Other', value: 28, pct: '4.8%' },
+  { name: 'Solar Plant', value: 18, pct: '3.1%' },
+  { name: 'Fencing', value: 12, pct: '2.1%' },
+  { name: 'Toll Booth', value: 9, pct: '1.5%' },
+  { name: 'Theft Asset', value: 5, pct: '0.9%' },
+  { name: 'Transformer', value: 2, pct: '0.3%' },
 ];
 
-export const DashboardScreen: React.FC<DashboardScreenProps> = ({ claims, onSelectClaim, setActiveScreen }) => {
+const INSURER_DATA = [
+  {
+    insurer: 'ITGI (Marsh)',
+    claims: 306,
+    settled: 270,
+    settlementPct: '88.2%',
+    avgExcess: '₹25,000',
+    avgTAT: '118 days',
+    settlementRatio: '~51%',
+    status: 'Good',
+  },
+  {
+    insurer: 'Oriental Insurance (Gallagher)',
+    claims: 146,
+    settled: 68,
+    settlementPct: '46.6%',
+    avgExcess: '₹10,000',
+    avgTAT: '180 days',
+    settlementRatio: '~71%',
+    status: 'Delayed',
+  },
+  {
+    insurer: 'Alliance (Not Stated)',
+    claims: 21,
+    settled: 0,
+    settlementPct: '0%',
+    avgExcess: '–',
+    avgTAT: '–',
+    settlementRatio: '–',
+    status: 'Open',
+  },
+  {
+    insurer: 'WTW (Insurer TBD)',
+    claims: 108,
+    settled: 8,
+    settlementPct: '7.4%',
+    avgExcess: '–',
+    avgTAT: '–',
+    settlementRatio: '–',
+    status: 'Open',
+  },
+];
+
+const SURVEYOR_DATA = [
+  { surveyor: 'KOHLI Insurance Surveyors', claims: 62, avgTAT: '98 days' },
+  { surveyor: 'Cogs Surveyor', claims: 51, avgTAT: '112 days' },
+  { surveyor: 'Self Survey', claims: 48, avgTAT: '87 days' },
+  { surveyor: 'J.C. Gupta & Co.', claims: 44, avgTAT: '145 days' },
+  { surveyor: 'Protocol Insurance Surveyor', claims: 38, avgTAT: '132 days' },
+  { surveyor: 'Lucille Insurance Surveyors', claims: 36, avgTAT: '158 days' },
+  { surveyor: 'Absolute Surveyors', claims: 34, avgTAT: '140 days' },
+  { surveyor: 'T-Three Surveyor', claims: 30, avgTAT: '120 days' },
+  { surveyor: 'McLarens India', claims: 26, avgTAT: '163 days' },
+  { surveyor: 'Proclaim Surveyors', claims: 24, avgTAT: '178 days' },
+  { surveyor: 'Elite Surveyors', claims: 22, avgTAT: '152 days' },
+  { surveyor: 'Mack Surveyor', claims: 8, avgTAT: '–' },
+];
+
+const MONTHLY_TREND = [
+  { month: 'Nov-25', new: 58, settled: 0 },
+  { month: 'Dec-25', new: 72, settled: 48 },
+  { month: 'Jan-26', new: 44, settled: 61 },
+  { month: 'Feb-26', new: 36, settled: 58 },
+  { month: 'Mar-26', new: 52, settled: 54 },
+  { month: 'Apr-26', new: 38, settled: 42 },
+  { month: 'May-26', new: 61, settled: 38 },
+  { month: 'Jun-26', new: 47, settled: 45 },
+];
+
+// KPI Summary (derived from dataset)
+const KPI = {
+  totalClaims: 581,
+  openClaims: 229,
+  settled: 346,
+  withdrawn: 3,
+  closedNoPay: 2,
+  closedBelowExcess: 1,
+  settlementPct: 59.6,
+  // Financial (computed from Marsh/Gallagher net settled amounts)
+  totalClaimAmtCr: 6.84,          // ₹ Cr — total reported claim amounts
+  totalNetSettledCr: 2.49,        // ₹ Cr — total net payouts confirmed
+  outstandingReserveCr: 4.35,     // ₹ Cr — open portfolio exposure
+  avgSettlementRatio: 51.2,       // % net settled / gross claim for settled claims
+  avgTATDays: 118,                // average settlement TAT (Marsh settled data)
+  avgIntimationLag: 3.2,          // days from loss to intimation
+  // Open breakdown
+  docsPending: 104,
+  forSettlement: 33,
+  consentAwaited: 18,
+  assessmentPending: 10,
+};
+
+const CustomTooltip = ({ active, payload, label }: { active?: boolean; payload?: { name: string; value: number; color: string }[]; label?: string }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-slate-800 border border-slate-700 rounded-lg p-3 shadow-xl text-xs">
+        <p className="text-slate-300 font-semibold mb-1">{label}</p>
+        {payload.map((p) => (
+          <p key={p.name} style={{ color: p.color }} className="font-bold">
+            {p.name}: {p.value}
+          </p>
+        ))}
+      </div>
+    );
+  }
+  return null;
+};
+
+const PieTooltip = ({ active, payload }: { active?: boolean; payload?: { name: string; value: number; payload: { color: string } }[] }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-slate-800 border border-slate-700 rounded-lg p-3 shadow-xl text-xs">
+        <p style={{ color: payload[0].payload.color }} className="font-bold">{payload[0].name}</p>
+        <p className="text-white">{payload[0].value} claims</p>
+        <p className="text-slate-400">{((payload[0].value / KPI.totalClaims) * 100).toFixed(1)}% of total</p>
+      </div>
+    );
+  }
+  return null;
+};
+
+export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScreen }) => {
+  const [activeInsurer, setActiveInsurer] = useState<number | null>(null);
+
   return (
-    <div className="p-8 space-y-8 max-w-7xl mx-auto">
-      {/* Title & Actions */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div className="p-6 space-y-6 max-w-screen-2xl mx-auto">
+
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
         <div>
           <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">
             <Activity className="w-4 h-4" />
-            <span>MODULE 9 • EXECUTIVE CEO DASHBOARD</span>
+            <span>MODULE 9 · EXECUTIVE CEO DASHBOARD</span>
           </div>
           <h1 className="text-2xl font-bold text-white tracking-tight">Claims Portfolio Intelligence</h1>
-          <p className="text-sm text-slate-400">Real-time enterprise analytics across all highway concessions</p>
+          <p className="text-slate-400 text-sm mt-0.5">
+            581 Claims · 4 Brokers · Consolidated as of Aug 2026 · Source: Alliance / Gallagher / Marsh / WTW MIS
+          </p>
         </div>
-        
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => setActiveScreen('incident-reporting')}
-            className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white text-xs font-semibold rounded-lg shadow-md shadow-blue-900/30 flex items-center gap-2 transition-all"
-          >
-            <Sparkles className="w-4 h-4 text-amber-300" />
-            <span>Report New Incident</span>
-          </button>
+        <div className="flex gap-2">
           <button
             onClick={() => setActiveScreen('copilot')}
-            className="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-medium rounded-lg transition-all"
+            className="flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-semibold rounded-xl hover:bg-amber-500/20 transition-colors"
           >
-            Ask CEO AI Assistant
+            <Sparkles className="w-4 h-4" />
+            CEO AI Copilot
           </button>
-        </div>
-      </div>
-
-      {/* KPI Cards Grid (6 Metrics) */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl space-y-2">
-          <div className="flex items-center justify-between text-slate-400">
-            <span className="text-[11px] font-semibold uppercase tracking-wider">Open Claims</span>
-            <FileCheck2 className="w-4 h-4 text-blue-400" />
-          </div>
-          <div className="text-2xl font-extrabold text-white">47</div>
-          <p className="text-[10px] text-emerald-400 font-medium">↑ 3 new this week</p>
-        </div>
-
-        <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl space-y-2">
-          <div className="flex items-center justify-between text-slate-400">
-            <span className="text-[11px] font-semibold uppercase tracking-wider">Total Reserve</span>
-            <IndianRupee className="w-4 h-4 text-amber-400" />
-          </div>
-          <div className="text-2xl font-extrabold text-white">₹186.4 Cr</div>
-          <p className="text-[10px] text-slate-400">Across 6 concessions</p>
-        </div>
-
-        <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl space-y-2">
-          <div className="flex items-center justify-between text-slate-400">
-            <span className="text-[11px] font-semibold uppercase tracking-wider">Pending Action</span>
-            <AlertCircle className="w-4 h-4 text-amber-500 animate-pulse-subtle" />
-          </div>
-          <div className="text-2xl font-extrabold text-amber-400">19</div>
-          <p className="text-[10px] text-amber-300 font-medium">Requires document intake</p>
-        </div>
-
-        <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl space-y-2">
-          <div className="flex items-center justify-between text-slate-400">
-            <span className="text-[11px] font-semibold uppercase tracking-wider">Settled (YTD)</span>
-            <TrendingUp className="w-4 h-4 text-emerald-400" />
-          </div>
-          <div className="text-2xl font-extrabold text-white">₹72.8 Cr</div>
-          <p className="text-[10px] text-emerald-400 font-medium">96% target achievement</p>
-        </div>
-
-        <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl space-y-2">
-          <div className="flex items-center justify-between text-slate-400">
-            <span className="text-[11px] font-semibold uppercase tracking-wider">Avg Settlement</span>
-            <Clock className="w-4 h-4 text-purple-400" />
-          </div>
-          <div className="text-2xl font-extrabold text-white">126 Days</div>
-          <p className="text-[10px] text-emerald-400 font-medium">↓ 18 days vs FY25</p>
-        </div>
-
-        <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl space-y-2">
-          <div className="flex items-center justify-between text-slate-400">
-            <span className="text-[11px] font-semibold uppercase tracking-wider">Claim Ratio</span>
-            <ShieldAlert className="w-4 h-4 text-indigo-400" />
-          </div>
-          <div className="text-2xl font-extrabold text-white">68%</div>
-          <p className="text-[10px] text-slate-400">Within policy benchmark</p>
-        </div>
-      </div>
-
-      {/* Insurance & Surveyor Comparison Tables */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Insurer Benchmarking */}
-        <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-5 space-y-4">
-          <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-            <div className="flex items-center gap-2">
-              <Building2 className="w-4 h-4 text-blue-400" />
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-200">Insurer Performance Comparison</h3>
-            </div>
-            <span className="text-[10px] text-slate-400">Settlement Speed</span>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
-              <thead className="text-[10px] uppercase text-slate-500 border-b border-slate-800">
-                <tr>
-                  <th className="pb-2">Insurer</th>
-                  <th className="pb-2">Active Claims</th>
-                  <th className="pb-2">Avg Settlement Speed</th>
-                  <th className="pb-2 text-right">Admission Rate</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-800/60">
-                {INSURER_COMPARISON_DATA.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-800/40">
-                    <td className="py-2.5 font-bold text-white">{row.insurer}</td>
-                    <td className="py-2.5 text-slate-300">{row.claims}</td>
-                    <td className="py-2.5 text-slate-400">{row.avgDays} Days</td>
-                    <td className="py-2.5 text-emerald-400 font-bold text-right">{row.settlementRate}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* Surveyor Benchmarking */}
-        <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-5 space-y-4">
-          <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-            <div className="flex items-center gap-2">
-              <UserCheck className="w-4 h-4 text-amber-400" />
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-200">Surveyor Performance Matrix</h3>
-            </div>
-            <span className="text-[10px] text-slate-400">Turnaround SLA</span>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
-              <thead className="text-[10px] uppercase text-slate-500 border-b border-slate-800">
-                <tr>
-                  <th className="pb-2">Surveyor Firm</th>
-                  <th className="pb-2">Assigned</th>
-                  <th className="pb-2">Avg Report Time</th>
-                  <th className="pb-2 text-right">Rating</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-800/60">
-                {SURVEYOR_COMPARISON.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-800/40">
-                    <td className="py-2.5 font-bold text-white">{row.surveyor}</td>
-                    <td className="py-2.5 text-slate-300">{row.assigned}</td>
-                    <td className="py-2.5 text-slate-400">{row.avgReportDays} Days</td>
-                    <td className="py-2.5 text-amber-400 font-bold text-right">{row.satisfaction}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      {/* Recent Claims Data Grid */}
-      <div className="bg-slate-900/80 border border-slate-800 rounded-xl overflow-hidden shadow-xl">
-        <div className="p-5 border-b border-slate-800 flex items-center justify-between">
-          <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-200">Recent Claims Portfolio</h2>
-            <p className="text-xs text-slate-400">Showing top active infrastructure loss claims</p>
-          </div>
           <button
             onClick={() => setActiveScreen('claims')}
-            className="text-xs text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1"
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-xl hover:bg-blue-500 transition-colors"
           >
-            <span>View All Claims</span>
-            <ChevronRight className="w-3.5 h-3.5" />
+            All Claims
+            <ChevronRight className="w-4 h-4" />
           </button>
         </div>
+      </div>
 
+      {/* ── KPI Cards Row ── */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+
+        {/* Total Claims */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+          <div className="flex items-start justify-between">
+            <div>
+              <p className="text-slate-400 text-xs font-semibold uppercase tracking-wide">Total Claims</p>
+              <p className="text-4xl font-black text-white mt-1">{KPI.totalClaims}</p>
+              <p className="text-slate-400 text-xs mt-1">SJEPL (129) + NCR-EPE (452)</p>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
+              <FileCheck2 className="w-5 h-5 text-blue-400" />
+            </div>
+          </div>
+          <div className="mt-3 flex gap-4 text-xs">
+            <span className="text-green-400 font-bold">↑ {KPI.settled} Settled</span>
+            <span className="text-amber-400 font-bold">⬤ {KPI.openClaims} Open</span>
+          </div>
+        </div>
+
+        {/* Settlement Rate */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+          <div className="flex items-start justify-between">
+            <div>
+              <p className="text-slate-400 text-xs font-semibold uppercase tracking-wide">Settlement Rate</p>
+              <p className="text-4xl font-black text-green-400 mt-1">{KPI.settlementPct}%</p>
+              <p className="text-slate-400 text-xs mt-1">{KPI.settled} of {KPI.totalClaims} claims closed</p>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
+              <CheckCircle2 className="w-5 h-5 text-green-400" />
+            </div>
+          </div>
+          <div className="mt-3">
+            <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+              <div className="h-full bg-green-400 rounded-full" style={{ width: `${KPI.settlementPct}%` }} />
+            </div>
+          </div>
+        </div>
+
+        {/* Outstanding Reserve */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+          <div className="flex items-start justify-between">
+            <div>
+              <p className="text-slate-400 text-xs font-semibold uppercase tracking-wide">Outstanding Reserve</p>
+              <p className="text-4xl font-black text-amber-400 mt-1">₹{KPI.outstandingReserveCr} Cr</p>
+              <p className="text-slate-400 text-xs mt-1">Open portfolio exposure (est.)</p>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center">
+              <IndianRupee className="w-5 h-5 text-amber-400" />
+            </div>
+          </div>
+          <div className="mt-3 flex gap-4 text-xs">
+            <span className="text-slate-300">Total Claimed: <span className="text-white font-bold">₹{KPI.totalClaimAmtCr} Cr</span></span>
+          </div>
+        </div>
+
+        {/* Net Settled */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+          <div className="flex items-start justify-between">
+            <div>
+              <p className="text-slate-400 text-xs font-semibold uppercase tracking-wide">Net Settled (Paid Out)</p>
+              <p className="text-4xl font-black text-blue-400 mt-1">₹{KPI.totalNetSettledCr} Cr</p>
+              <p className="text-slate-400 text-xs mt-1">Avg settlement ratio: {KPI.avgSettlementRatio}%</p>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
+              <TrendingUp className="w-5 h-5 text-blue-400" />
+            </div>
+          </div>
+          <div className="mt-3 flex gap-4 text-xs">
+            <span className="text-slate-400">Avg TAT: <span className="text-white font-bold">{KPI.avgTATDays} days</span></span>
+            <span className="text-slate-400">Intim. lag: <span className="text-white font-bold">{KPI.avgIntimationLag}d</span></span>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Open Claims Breakdown ── */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {[
+          { label: 'Documents Pending', value: KPI.docsPending, color: 'text-amber-400', bg: 'bg-amber-500/10 border-amber-500/20', icon: FileWarning },
+          { label: 'For Settlement', value: KPI.forSettlement, color: 'text-blue-400', bg: 'bg-blue-500/10 border-blue-500/20', icon: IndianRupee },
+          { label: 'Consent Awaited', value: KPI.consentAwaited, color: 'text-purple-400', bg: 'bg-purple-500/10 border-purple-500/20', icon: Clock },
+          { label: 'Assessment Pending', value: KPI.assessmentPending, color: 'text-orange-400', bg: 'bg-orange-500/10 border-orange-500/20', icon: AlertCircle },
+        ].map(({ label, value, color, bg, icon: Icon }) => (
+          <div key={label} className={`rounded-xl border p-4 flex items-center gap-3 ${bg}`}>
+            <Icon className={`w-5 h-5 ${color} flex-shrink-0`} />
+            <div>
+              <p className={`text-2xl font-black ${color}`}>{value}</p>
+              <p className="text-slate-400 text-xs leading-tight">{label}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Charts Row: Status Distribution + Monthly Trend ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        {/* Status Distribution Pie */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <BarChart3 className="w-4 h-4 text-slate-400" />
+            <h2 className="text-sm font-bold text-white uppercase tracking-wide">Status Distribution (581 Claims)</h2>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <ResponsiveContainer width={200} height={200}>
+              <PieChart>
+                <Pie
+                  data={STATUS_DATA}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={55}
+                  outerRadius={90}
+                  dataKey="value"
+                  paddingAngle={2}
+                >
+                  {STATUS_DATA.map((entry, index) => (
+                    <Cell key={index} fill={entry.color} />
+                  ))}
+                </Pie>
+                <Tooltip content={<PieTooltip />} />
+              </PieChart>
+            </ResponsiveContainer>
+            <div className="flex-1 grid grid-cols-1 gap-1.5 text-xs">
+              {STATUS_DATA.map((s) => (
+                <div key={s.name} className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: s.color }} />
+                    <span className="text-slate-300">{s.name}</span>
+                  </div>
+                  <span className="font-bold text-white tabular-nums">{s.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Monthly New vs Settled Trend */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <TrendingUp className="w-4 h-4 text-slate-400" />
+            <h2 className="text-sm font-bold text-white uppercase tracking-wide">Monthly Claim Volume (Nov 25 – Jun 26)</h2>
+          </div>
+          <ResponsiveContainer width="100%" height={220}>
+            <BarChart data={MONTHLY_TREND} barCategoryGap="30%">
+              <XAxis dataKey="month" tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <Tooltip content={<CustomTooltip />} />
+              <Bar dataKey="new" name="New Claims" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="settled" name="Settled" fill="#10b981" radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+          <div className="flex gap-4 text-xs mt-2">
+            <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm bg-blue-500" />New Claims</span>
+            <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm bg-emerald-500" />Settled</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Nature of Loss + Broker Split ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        {/* Nature of Loss Bar */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <AlertCircle className="w-4 h-4 text-slate-400" />
+            <h2 className="text-sm font-bold text-white uppercase tracking-wide">Nature / Cause of Loss</h2>
+          </div>
+          <div className="space-y-2">
+            {NATURE_DATA.map((n) => (
+              <div key={n.name} className="flex items-center gap-3">
+                <span className="text-slate-300 text-xs w-44 flex-shrink-0 truncate">{n.name}</span>
+                <div className="flex-1 h-5 bg-slate-800 rounded-full overflow-hidden">
+                  <div
+                    className="h-full rounded-full flex items-center justify-end pr-2 text-xs font-bold text-white transition-all"
+                    style={{
+                      width: `${(n.value / KPI.totalClaims) * 100}%`,
+                      backgroundColor: n.color,
+                      minWidth: '2.5rem'
+                    }}
+                  >
+                    {n.value}
+                  </div>
+                </div>
+                <span className="text-slate-400 text-xs w-10 text-right">
+                  {((n.value / KPI.totalClaims) * 100).toFixed(1)}%
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Asset Category + Broker Pie */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <Building2 className="w-4 h-4 text-slate-400" />
+            <h2 className="text-sm font-bold text-white uppercase tracking-wide">Asset Category Breakdown</h2>
+          </div>
+          <div className="space-y-2">
+            {ASSET_DATA.map((a) => (
+              <div key={a.name} className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 flex-1 min-w-0">
+                  <div className="flex-1 h-4 bg-slate-800 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-blue-500/80 rounded-full"
+                      style={{ width: a.pct }}
+                    />
+                  </div>
+                </div>
+                <span className="text-slate-300 text-xs w-36 truncate text-right">{a.name}</span>
+                <span className="text-white font-bold text-xs w-8 text-right">{a.value}</span>
+                <span className="text-slate-500 text-xs w-10 text-right">{a.pct}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Broker Portfolio ── */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <Users className="w-4 h-4 text-slate-400" />
+          <h2 className="text-sm font-bold text-white uppercase tracking-wide">Broker Portfolio Split</h2>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {BROKER_DATA.map((b) => (
+            <div key={b.broker} className="bg-slate-800 rounded-xl p-4 text-center">
+              <p className="text-2xl font-black text-white">{b.claims}</p>
+              <p className="text-sm font-bold mt-1" style={{ color: b.color }}>{b.broker}</p>
+              <p className="text-slate-400 text-xs mt-0.5">{b.entity}</p>
+              <div className="mt-3 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+                <div
+                  className="h-full rounded-full"
+                  style={{
+                    width: `${(b.claims / KPI.totalClaims) * 100}%`,
+                    backgroundColor: b.color
+                  }}
+                />
+              </div>
+              <p className="text-slate-500 text-xs mt-1">{((b.claims / KPI.totalClaims) * 100).toFixed(1)}% of portfolio</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Insurer Performance Table ── */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <Building2 className="w-4 h-4 text-slate-400" />
+          <h2 className="text-sm font-bold text-white uppercase tracking-wide">Insurer Performance Summary</h2>
+        </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
-            <thead className="bg-slate-950/60 text-[11px] uppercase tracking-wider text-slate-400 border-b border-slate-800">
-              <tr>
-                <th className="px-5 py-3.5">Claim ID</th>
-                <th className="px-5 py-3.5">Highway</th>
-                <th className="px-5 py-3.5">Incident Type</th>
-                <th className="px-5 py-3.5">Reserve</th>
-                <th className="px-5 py-3.5">Insurer</th>
-                <th className="px-5 py-3.5">Status</th>
-                <th className="px-5 py-3.5">Age</th>
-                <th className="px-5 py-3.5 text-right">Action</th>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="text-left border-b border-slate-800">
+                <th className="text-xs font-semibold text-slate-400 uppercase tracking-wide pb-3 pr-4">Insurer</th>
+                <th className="text-xs font-semibold text-slate-400 uppercase tracking-wide pb-3 pr-4 text-center">Claims</th>
+                <th className="text-xs font-semibold text-slate-400 uppercase tracking-wide pb-3 pr-4 text-center">Settled</th>
+                <th className="text-xs font-semibold text-slate-400 uppercase tracking-wide pb-3 pr-4 text-center">Settlement %</th>
+                <th className="text-xs font-semibold text-slate-400 uppercase tracking-wide pb-3 pr-4 text-center">Avg Excess</th>
+                <th className="text-xs font-semibold text-slate-400 uppercase tracking-wide pb-3 pr-4 text-center">Avg TAT</th>
+                <th className="text-xs font-semibold text-slate-400 uppercase tracking-wide pb-3 pr-4 text-center">Net/Gross Ratio</th>
+                <th className="text-xs font-semibold text-slate-400 uppercase tracking-wide pb-3 text-center">Status</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/60">
-              {claims.slice(0, 5).map((claim) => (
-                <tr 
-                  key={claim.id} 
-                  onClick={() => onSelectClaim(claim.id)}
-                  className={`hover:bg-slate-800/50 cursor-pointer transition-colors ${
-                    claim.id === 'CLM-2026-00124' ? 'bg-blue-950/30 font-medium' : ''
-                  }`}
+            <tbody>
+              {INSURER_DATA.map((ins, idx) => (
+                <tr
+                  key={ins.insurer}
+                  className={`border-b border-slate-800/50 cursor-pointer transition-colors ${activeInsurer === idx ? 'bg-slate-800/60' : 'hover:bg-slate-800/30'}`}
+                  onClick={() => setActiveInsurer(activeInsurer === idx ? null : idx)}
                 >
-                  <td className="px-5 py-4 font-bold text-white flex items-center gap-2">
-                    {claim.id === 'CLM-2026-00124' && (
-                      <span className="w-2 h-2 rounded-full bg-amber-400" title="Primary Demo Claim" />
-                    )}
-                    <span>{claim.id}</span>
+                  <td className="py-3 pr-4 font-semibold text-white">{ins.insurer}</td>
+                  <td className="py-3 pr-4 text-center text-slate-300">{ins.claims}</td>
+                  <td className="py-3 pr-4 text-center text-green-400 font-bold">{ins.settled}</td>
+                  <td className="py-3 pr-4 text-center">
+                    <div className="flex items-center justify-center gap-2">
+                      <div className="w-16 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+                        <div
+                          className="h-full bg-green-400 rounded-full"
+                          style={{ width: ins.settlementPct }}
+                        />
+                      </div>
+                      <span className="text-slate-300 text-xs">{ins.settlementPct}</span>
+                    </div>
                   </td>
-                  <td className="px-5 py-4 text-slate-300 text-xs">
-                    <span className="font-semibold text-slate-200">{claim.code}</span>
-                    <div className="text-[11px] text-slate-500 truncate max-w-[160px]">{claim.highway}</div>
-                  </td>
-                  <td className="px-5 py-4 text-slate-300 text-xs">{claim.incidentType}</td>
-                  <td className="px-5 py-4 font-semibold text-amber-400 text-xs">
-                    {claim.reserveAmountLakhs >= 100 
-                      ? `₹${(claim.reserveAmountLakhs / 100).toFixed(2)} Cr`
-                      : `₹${claim.reserveAmountLakhs} Lakhs`}
-                  </td>
-                  <td className="px-5 py-4 text-slate-400 text-xs">{claim.insurer}</td>
-                  <td className="px-5 py-4">
-                    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold ${
-                      claim.status === 'Survey Pending' ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30' :
-                      claim.status === 'Survey Underway' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
-                      claim.status === 'Admitted' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' :
-                      claim.status === 'Settled' ? 'bg-slate-800 text-slate-400 border border-slate-700' :
-                      'bg-purple-500/20 text-purple-400 border border-purple-500/30'
-                    }`}>
-                      {claim.status}
+                  <td className="py-3 pr-4 text-center text-slate-300 text-xs">{ins.avgExcess}</td>
+                  <td className="py-3 pr-4 text-center text-xs">
+                    <span className={ins.avgTAT === '–' ? 'text-slate-600' : ins.avgTAT.includes('180') ? 'text-amber-400' : 'text-slate-300'}>
+                      {ins.avgTAT}
                     </span>
                   </td>
-                  <td className="px-5 py-4 text-slate-400 text-xs">{claim.ageDays} Days</td>
-                  <td className="px-5 py-4 text-right">
-                    <button className="text-xs text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1">
-                      <span>Open</span>
-                      <ChevronRight className="w-3 h-3" />
-                    </button>
+                  <td className="py-3 pr-4 text-center text-xs text-slate-300">{ins.settlementRatio}</td>
+                  <td className="py-3 text-center">
+                    <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
+                      ins.status === 'Good' ? 'bg-green-500/15 text-green-400 border border-green-500/30' :
+                      ins.status === 'Delayed' ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30' :
+                      'bg-blue-500/15 text-blue-400 border border-blue-500/30'
+                    }`}>
+                      {ins.status}
+                    </span>
                   </td>
                 </tr>
               ))}
@@ -306,6 +543,49 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ claims, onSele
           </table>
         </div>
       </div>
+
+      {/* ── Surveyor Deployment Table ── */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <UserCheck className="w-4 h-4 text-slate-400" />
+          <h2 className="text-sm font-bold text-white uppercase tracking-wide">Surveyor Deployment & TAT</h2>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+          {SURVEYOR_DATA.map((s) => (
+            <div key={s.surveyor} className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-3">
+              <p className="text-white text-xs font-semibold leading-tight">{s.surveyor}</p>
+              <div className="flex justify-between items-end mt-2">
+                <div>
+                  <p className="text-2xl font-black text-blue-400">{s.claims}</p>
+                  <p className="text-slate-500 text-xs">claims</p>
+                </div>
+                <div className="text-right">
+                  <p className={`text-sm font-bold ${s.avgTAT === '–' ? 'text-slate-600' : parseInt(s.avgTAT) > 150 ? 'text-amber-400' : 'text-green-400'}`}>
+                    {s.avgTAT}
+                  </p>
+                  <p className="text-slate-500 text-xs">avg TAT</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Data Quality Notice ── */}
+      <div className="bg-blue-500/5 border border-blue-500/20 rounded-xl p-4 flex items-start gap-3">
+        <XCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+        <div className="text-xs text-slate-300">
+          <p className="font-bold text-blue-300 mb-0.5">Data Notes</p>
+          <p>
+            Financial KPIs are computed from available Marsh (SFSP) and Gallagher (Package) MIS data.
+            Alliance MIS does not include net settled amounts. WTW claims are predominantly open.
+            Settlement ratios reflect net payable ÷ claim amount for settled cases only.
+            MIS snapshot dates vary: Alliance 07/08/2026 · Gallagher 22/06/2026 · Marsh 31/07/2025 · WTW 09/01/2026.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
+
+export default DashboardScreen;
