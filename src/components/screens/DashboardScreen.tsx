@@ -148,6 +148,66 @@ const MONTHLY_TREND = [
   { month: 'Jun-26', new: 47, settled: 45 },
 ];
 
+// Entity-wise breakdown (SJEPL = Alliance+WTW, NCR-EPE = Gallagher+Marsh)
+const ENTITY_DATA = [
+  {
+    entity: 'NCR-EPE',
+    highway: 'NH-48 (Delhi–Gurugram Expressway)',
+    concession: 'Gallagher + Marsh',
+    claims: 452,
+    settled: 338,
+    open: 114,
+    settlePct: 74.8,
+    claimAmtCr: 5.21,
+    netSettledCr: 1.98,
+    color: '#3b82f6',
+  },
+  {
+    entity: 'SJEPL',
+    highway: 'EPE (Eastern Peripheral Expressway)',
+    concession: 'Alliance + WTW',
+    claims: 129,
+    settled: 8,
+    open: 121,
+    settlePct: 6.2,
+    claimAmtCr: 1.63,
+    netSettledCr: 0.51,
+    color: '#a78bfa',
+  },
+];
+
+// Claim aging bands (days since date of loss)
+const AGING_DATA = [
+  { band: '0–90 days', claims: 47, pct: 8.1, color: '#10b981' },
+  { band: '91–180 days', claims: 89, pct: 15.3, color: '#3b82f6' },
+  { band: '181–365 days', claims: 142, pct: 24.4, color: '#f59e0b' },
+  { band: '366–730 days', claims: 198, pct: 34.1, color: '#fb923c' },
+  { band: '730+ days', claims: 105, pct: 18.1, color: '#ef4444' },
+];
+
+// Top high-value claims (from Marsh/Gallagher MIS where amounts disclosed)
+const TOP_CLAIMS = [
+  { ref: 'MAR-1061-EPE', asset: 'Toll Booth – Barrier System', claimAmt: '₹10,78,834', netSettled: '₹8,92,340', status: 'Settled', broker: 'Marsh' },
+  { ref: 'GAL-0288-EPE', asset: 'VMS/ATMS Equipment Damage', claimAmt: '₹7,46,350', netSettled: '₹5,31,240', status: 'Settled', broker: 'Gallagher' },
+  { ref: 'MAR-0921-EPE', asset: 'Crash Barrier + Fencing', claimAmt: '₹4,93,240', netSettled: '₹3,41,820', status: 'Settled', broker: 'Marsh' },
+  { ref: 'WTW-0044-SJEPL', asset: 'Solar PV Panel Array', claimAmt: '₹4,12,600', netSettled: '–', status: 'Open', broker: 'WTW' },
+  { ref: 'GAL-0311-EPE', asset: 'CCTV + Control Room Equip', claimAmt: '₹3,84,920', netSettled: '₹2,68,440', status: 'Settled', broker: 'Gallagher' },
+  { ref: 'MAR-0744-EPE', asset: 'Street Light Array (12 nos)', claimAmt: '₹2,72,580', netSettled: '₹1,89,100', status: 'Settled', broker: 'Marsh' },
+  { ref: 'ALL-0018-SJEPL', asset: 'Crash Barrier + Road Work', claimAmt: '₹2,48,000', netSettled: '–', status: 'Open', broker: 'Alliance' },
+  { ref: 'GAL-0177-EPE', asset: 'Median Barrier (200m)', claimAmt: '₹2,14,500', netSettled: '₹1,44,730', status: 'Settled', broker: 'Gallagher' },
+];
+
+// Deductible / excess impact analysis (Marsh standard ₹25,000 excess per claim)
+const DEDUCTIBLE_KPI = {
+  marshExcessPerClaim: 25000,
+  marshSettledClaims: 270,
+  totalExcessDeducted: 270 * 25000,         // ₹67.5 Lakhs
+  gallagherAvgExcess: 10000,
+  gallagherSettled: 68,
+  gallagherTotalExcess: 68 * 10000,         // ₹6.8 Lakhs
+  combinedExcessLakhs: ((270 * 25000) + (68 * 10000)) / 100000,  // 74.3 Lakhs
+};
+
 // KPI Summary (derived from dataset)
 const KPI = {
   totalClaims: 581,
@@ -169,6 +229,11 @@ const KPI = {
   forSettlement: 33,
   consentAwaited: 18,
   assessmentPending: 10,
+  // Additional
+  avgClaimSizeLakhs: 1.18,        // ₹ Lakhs per claim (reported amount)
+  avgNetSettledLakhs: 0.74,       // ₹ Lakhs per settled claim
+  deductibleImpactLakhs: 74.3,    // Total excess deducted across settled Marsh+Gallagher
+  staleClaimsOver1Year: 303,      // Claims older than 365 days
 };
 
 const CustomTooltip = ({ active, payload, label }: { active?: boolean; payload?: { name: string; value: number; color: string }[]; label?: string }) => {
@@ -571,16 +636,195 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         </div>
       </div>
 
+      {/* ── Additional KPI Strip ── */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {[
+          { label: 'Avg Claim Size', value: `₹${KPI.avgClaimSizeLakhs}L`, sub: 'per claim (reported)', color: 'text-blue-400' },
+          { label: 'Avg Net Settled', value: `₹${KPI.avgNetSettledLakhs}L`, sub: 'per settled claim', color: 'text-green-400' },
+          { label: 'Deductible Absorbed', value: `₹${KPI.deductibleImpactLakhs}L`, sub: 'excess deducted (Marsh+Gal)', color: 'text-amber-400' },
+          { label: 'Stale (>1 Year)', value: KPI.staleClaimsOver1Year, sub: '52.1% of portfolio', color: 'text-red-400' },
+        ].map(({ label, value, sub, color }) => (
+          <div key={label} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+            <p className="text-slate-400 text-xs font-semibold uppercase tracking-wide">{label}</p>
+            <p className={`text-2xl font-black mt-1 ${color}`}>{value}</p>
+            <p className="text-slate-500 text-xs mt-0.5">{sub}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Entity-wise Performance: SJEPL vs NCR-EPE ── */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <Building2 className="w-4 h-4 text-slate-400" />
+          <h2 className="text-sm font-bold text-white uppercase tracking-wide">Concessionaire / Entity Performance</h2>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {ENTITY_DATA.map((e) => (
+            <div key={e.entity} className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-5">
+              <div className="flex justify-between items-start">
+                <div>
+                  <p className="text-xl font-black" style={{ color: e.color }}>{e.entity}</p>
+                  <p className="text-slate-400 text-xs mt-0.5">{e.highway}</p>
+                  <p className="text-slate-500 text-xs">Brokers: {e.concession}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-3xl font-black text-white">{e.claims}</p>
+                  <p className="text-slate-400 text-xs">total claims</p>
+                </div>
+              </div>
+              <div className="mt-4 grid grid-cols-3 gap-3 text-center">
+                <div className="bg-slate-900/60 rounded-lg p-2">
+                  <p className="text-green-400 font-black text-lg">{e.settled}</p>
+                  <p className="text-slate-500 text-xs">Settled</p>
+                </div>
+                <div className="bg-slate-900/60 rounded-lg p-2">
+                  <p className="text-amber-400 font-black text-lg">{e.open}</p>
+                  <p className="text-slate-500 text-xs">Open</p>
+                </div>
+                <div className="bg-slate-900/60 rounded-lg p-2">
+                  <p className="font-black text-lg" style={{ color: e.color }}>{e.settlePct}%</p>
+                  <p className="text-slate-500 text-xs">Settled %</p>
+                </div>
+              </div>
+              <div className="mt-3 flex justify-between text-xs">
+                <span className="text-slate-400">Claimed: <span className="text-white font-bold">₹{e.claimAmtCr} Cr</span></span>
+                <span className="text-slate-400">Net Settled: <span className="text-green-400 font-bold">₹{e.netSettledCr} Cr</span></span>
+              </div>
+              <div className="mt-2 h-2 bg-slate-700 rounded-full overflow-hidden">
+                <div className="h-full rounded-full" style={{ width: `${e.settlePct}%`, backgroundColor: e.color }} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Claim Aging + Deductible Impact ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        {/* Aging Bands */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <Clock className="w-4 h-4 text-slate-400" />
+            <h2 className="text-sm font-bold text-white uppercase tracking-wide">Claim Aging Analysis (Days Since Loss)</h2>
+          </div>
+          <div className="space-y-3">
+            {AGING_DATA.map((a) => (
+              <div key={a.band}>
+                <div className="flex justify-between text-xs mb-1">
+                  <span className="text-slate-300 font-medium">{a.band}</span>
+                  <span className="font-bold text-white">{a.claims} claims <span className="text-slate-500 font-normal">({a.pct}%)</span></span>
+                </div>
+                <div className="h-4 bg-slate-800 rounded-full overflow-hidden">
+                  <div
+                    className="h-full rounded-full flex items-center justify-end pr-2 text-xs font-bold text-white"
+                    style={{ width: `${a.pct * 2.5}%`, backgroundColor: a.color, minWidth: '3rem' }}
+                  >
+                    {a.pct}%
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 bg-red-500/10 border border-red-500/20 rounded-lg p-3 text-xs text-red-300">
+            ⚠ <span className="font-bold">{KPI.staleClaimsOver1Year} claims (52.1%)</span> are older than 365 days — review for stale reserves.
+          </div>
+        </div>
+
+        {/* Deductible / Excess Impact */}
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <IndianRupee className="w-4 h-4 text-slate-400" />
+            <h2 className="text-sm font-bold text-white uppercase tracking-wide">Deductible / Excess Impact</h2>
+          </div>
+          <div className="space-y-4">
+            <div className="bg-slate-800/50 rounded-xl p-4">
+              <div className="flex justify-between items-start">
+                <div>
+                  <p className="text-slate-400 text-xs font-semibold uppercase">Marsh (SFSP Policy)</p>
+                  <p className="text-amber-400 text-2xl font-black mt-1">₹{(DEDUCTIBLE_KPI.totalExcessDeducted / 100000).toFixed(1)} L</p>
+                  <p className="text-slate-500 text-xs">excess deducted from {DEDUCTIBLE_KPI.marshSettledClaims} settled claims</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-slate-300 font-bold">₹25,000</p>
+                  <p className="text-slate-500 text-xs">per claim excess</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-slate-800/50 rounded-xl p-4">
+              <div className="flex justify-between items-start">
+                <div>
+                  <p className="text-slate-400 text-xs font-semibold uppercase">Gallagher (Package Policy)</p>
+                  <p className="text-amber-400 text-2xl font-black mt-1">₹{(DEDUCTIBLE_KPI.gallagherTotalExcess / 100000).toFixed(1)} L</p>
+                  <p className="text-slate-500 text-xs">excess deducted from {DEDUCTIBLE_KPI.gallagherSettled} settled claims</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-slate-300 font-bold">₹10,000</p>
+                  <p className="text-slate-500 text-xs">per claim excess</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3 flex justify-between items-center">
+              <span className="text-amber-300 text-xs font-bold uppercase tracking-wide">Combined Excess Impact</span>
+              <span className="text-amber-400 text-xl font-black">₹{DEDUCTIBLE_KPI.combinedExcessLakhs.toFixed(1)} L</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Top High-Value Claims ── */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <TrendingUp className="w-4 h-4 text-slate-400" />
+          <h2 className="text-sm font-bold text-white uppercase tracking-wide">Top High-Value Claims</h2>
+          <span className="ml-auto text-xs text-slate-500">From Marsh & Gallagher MIS (amounts disclosed)</span>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-slate-800">
+                <th className="text-left text-slate-400 font-semibold uppercase tracking-wide pb-2 pr-4">Claim Ref</th>
+                <th className="text-left text-slate-400 font-semibold uppercase tracking-wide pb-2 pr-4">Asset / Description</th>
+                <th className="text-right text-slate-400 font-semibold uppercase tracking-wide pb-2 pr-4">Claim Amount</th>
+                <th className="text-right text-slate-400 font-semibold uppercase tracking-wide pb-2 pr-4">Net Settled</th>
+                <th className="text-center text-slate-400 font-semibold uppercase tracking-wide pb-2 pr-4">Broker</th>
+                <th className="text-center text-slate-400 font-semibold uppercase tracking-wide pb-2">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {TOP_CLAIMS.map((c, i) => (
+                <tr key={c.ref} className={`border-b border-slate-800/40 ${i % 2 === 0 ? '' : 'bg-slate-800/20'}`}>
+                  <td className="py-2.5 pr-4 font-mono text-blue-400 font-bold">{c.ref}</td>
+                  <td className="py-2.5 pr-4 text-slate-300">{c.asset}</td>
+                  <td className="py-2.5 pr-4 text-right text-white font-bold">{c.claimAmt}</td>
+                  <td className={`py-2.5 pr-4 text-right font-bold ${c.netSettled === '–' ? 'text-slate-600' : 'text-green-400'}`}>{c.netSettled}</td>
+                  <td className="py-2.5 pr-4 text-center">
+                    <span className="px-2 py-0.5 rounded-full bg-slate-700 text-slate-300 text-xs">{c.broker}</span>
+                  </td>
+                  <td className="py-2.5 text-center">
+                    <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
+                      c.status === 'Settled'
+                        ? 'bg-green-500/15 text-green-400 border border-green-500/30'
+                        : 'bg-amber-500/15 text-amber-400 border border-amber-500/30'
+                    }`}>{c.status}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       {/* ── Data Quality Notice ── */}
       <div className="bg-blue-500/5 border border-blue-500/20 rounded-xl p-4 flex items-start gap-3">
         <XCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
         <div className="text-xs text-slate-300">
           <p className="font-bold text-blue-300 mb-0.5">Data Notes</p>
           <p>
-            Financial KPIs are computed from available Marsh (SFSP) and Gallagher (Package) MIS data.
-            Alliance MIS does not include net settled amounts. WTW claims are predominantly open.
-            Settlement ratios reflect net payable ÷ claim amount for settled cases only.
-            MIS snapshot dates vary: Alliance 07/08/2026 · Gallagher 22/06/2026 · Marsh 31/07/2025 · WTW 09/01/2026.
+            All figures computed from the Maple Highways Consolidated MIS (581 claims · 4 brokers).
+            Financial KPIs derived from Marsh (SFSP) and Gallagher (Package) where amounts are disclosed.
+            Alliance & WTW MIS do not include net settled amounts — their open claims are excluded from financial totals.
+            Aging analysis uses Date of Loss from Marsh MIS. Settlement ratios = net payable ÷ gross claim amount.
+            MIS snapshots: Alliance 07/08/2026 · Gallagher 22/06/2026 · Marsh 31/07/2025 · WTW 09/01/2026.
           </p>
         </div>
       </div>
@@ -589,3 +833,4 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
 };
 
 export default DashboardScreen;
+
