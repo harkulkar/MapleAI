@@ -30,211 +30,284 @@ import {
 } from 'recharts';
 import type { ScreenId } from '../layout/Sidebar';
 
+import type { Claim } from '../../types/claims';
+
 interface DashboardScreenProps {
-  claims: unknown[];
+  claims: Claim[];
   onSelectClaim: (claimId: string) => void;
   setActiveScreen: (screen: ScreenId) => void;
 }
 
-// ─── REAL DATA from Maple Highways Consolidated Claims Dashboard ───────────────
-// Source: 581 claims · 4 brokers (Alliance/Gallagher/Marsh/WTW) · As of Aug 2026
+// â”€â”€â”€ DYNAMIC DATA from REAL_MASTER_CLAIMS passed in as props â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// All charts and KPIs computed from live master data at render time
 
-const STATUS_DATA = [
-  { name: 'Settled', value: 346, color: '#10b981' },
-  { name: 'Docs Pending', value: 104, color: '#f59e0b' },
-  { name: 'Open - Other', value: 52, color: '#94a3b8' },
-  { name: 'For Settlement', value: 33, color: '#3b82f6' },
-  { name: 'Consent Awaited', value: 18, color: '#a78bfa' },
-  { name: 'Assessment Pending', value: 10, color: '#fb923c' },
-  { name: 'With Insured/Insurer', value: 10, color: '#60a5fa' },
-  { name: 'Withdrawn/Closed', value: 6, color: '#475569' },
-  { name: 'Intimated/In-Process', value: 2, color: '#34d399' },
-];
+function computeDashboardData(claims: Claim[]) {
+  const total = claims.length;
+  const settled = claims.filter(c => c.statusCategory === 'Settled');
+  const open = claims.filter(c => c.openFlag === 'Open' || (c.statusCategory && c.statusCategory.startsWith('Open')));
 
-const BROKER_DATA = [
-  { broker: 'Marsh', entity: 'NCR-EPE', claims: 306, color: '#3b82f6' },
-  { broker: 'Gallagher', entity: 'NCR-EPE', claims: 146, color: '#f59e0b' },
-  { broker: 'WTW', entity: 'SJEPL', claims: 108, color: '#a78bfa' },
-  { broker: 'Alliance', entity: 'SJEPL', claims: 21, color: '#10b981' },
-];
+  // Status breakdown
+  const statusCounts: Record<string, number> = {};
+  claims.forEach(c => {
+    const s = c.statusCategory || c.status || 'Unknown';
+    statusCounts[s] = (statusCounts[s] || 0) + 1;
+  });
 
-const NATURE_DATA = [
-  { name: 'Accidental / Vehicle Hit', value: 318, color: '#ef4444' },
-  { name: 'Other', value: 137, color: '#94a3b8' },
-  { name: 'Theft / Burglary', value: 97, color: '#f59e0b' },
-  { name: 'AOG / Storm', value: 17, color: '#3b82f6' },
-  { name: 'Fire', value: 7, color: '#fb923c' },
-  { name: 'Not Stated', value: 5, color: '#475569' },
-];
+  const STATUS_COLORS_MAP: Record<string, string> = {
+    'Settled': '#10b981',
+    'Open - Documents Pending': '#f59e0b',
+    'Open - Other': '#94a3b8',
+    'Open - For Settlement': '#3b82f6',
+    'Open - Consent/Approval Awaited': '#a78bfa',
+    'Open - Assessment Pending': '#fb923c',
+    'Open - With Insured': '#60a5fa',
+    'Open - With Insurer': '#38bdf8',
+    'Open - Payment Process': '#34d399',
+    'Open - Intimated': '#818cf8',
+    'Closed - No Pay': '#f87171',
+    'Closed - Below Excess': '#fca5a5',
+    'Withdrawn': '#475569',
+  };
 
-const ASSET_DATA = [
-  { name: 'MBCB / Crash Barrier', value: 376, pct: '64.7%' },
-  { name: 'Equipment / VMS', value: 89, pct: '15.3%' },
-  { name: 'Street Light', value: 42, pct: '7.2%' },
-  { name: 'Other', value: 28, pct: '4.8%' },
-  { name: 'Solar Plant', value: 18, pct: '3.1%' },
-  { name: 'Fencing', value: 12, pct: '2.1%' },
-  { name: 'Toll Booth', value: 9, pct: '1.5%' },
-  { name: 'Theft Asset', value: 5, pct: '0.9%' },
-  { name: 'Transformer', value: 2, pct: '0.3%' },
-];
+  const STATUS_DATA = Object.entries(statusCounts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([name, value]) => ({ name: name.replace('Open - ', '').replace('Closed - ', 'Closed: '), value, color: STATUS_COLORS_MAP[name] || '#64748b' }));
 
-const INSURER_DATA = [
-  {
-    insurer: 'ITGI (Marsh)',
-    claims: 306,
-    settled: 270,
-    settlementPct: '88.2%',
-    avgExcess: '₹25,000',
-    avgTAT: '118 days',
-    settlementRatio: '~51%',
-    status: 'Good',
-  },
-  {
-    insurer: 'Oriental Insurance (Gallagher)',
-    claims: 146,
-    settled: 68,
-    settlementPct: '46.6%',
-    avgExcess: '₹10,000',
-    avgTAT: '180 days',
-    settlementRatio: '~71%',
-    status: 'Delayed',
-  },
-  {
-    insurer: 'Alliance (Not Stated)',
-    claims: 21,
-    settled: 0,
-    settlementPct: '0%',
-    avgExcess: '–',
-    avgTAT: '–',
-    settlementRatio: '–',
-    status: 'Open',
-  },
-  {
-    insurer: 'WTW (Insurer TBD)',
-    claims: 108,
-    settled: 8,
-    settlementPct: '7.4%',
-    avgExcess: '–',
-    avgTAT: '–',
-    settlementRatio: '–',
-    status: 'Open',
-  },
-];
+  // Broker breakdown
+  const brokerCounts: Record<string, number> = {};
+  const brokerColors: Record<string, string> = { 'Marsh': '#3b82f6', 'Gallagher': '#f59e0b', 'WTW': '#a78bfa', 'Alliance': '#10b981' };
+  const entityMap: Record<string, string> = { 'Marsh': 'PPE', 'Gallagher': 'PPE', 'WTW': 'JPP', 'Alliance': 'JPP' };
+  claims.forEach(c => { if (c.broker) brokerCounts[c.broker] = (brokerCounts[c.broker] || 0) + 1; });
+  const BROKER_DATA = Object.entries(brokerCounts).map(([broker, count]) => ({
+    broker, entity: entityMap[broker] || '', claims: count, color: brokerColors[broker] || '#64748b',
+  }));
 
-const SURVEYOR_DATA = [
-  { surveyor: 'KOHLI Insurance Surveyors', claims: 62, avgTAT: '98 days' },
-  { surveyor: 'Cogs Surveyor', claims: 51, avgTAT: '112 days' },
-  { surveyor: 'Self Survey', claims: 48, avgTAT: '87 days' },
-  { surveyor: 'J.C. Gupta & Co.', claims: 44, avgTAT: '145 days' },
-  { surveyor: 'Protocol Insurance Surveyor', claims: 38, avgTAT: '132 days' },
-  { surveyor: 'Lucille Insurance Surveyors', claims: 36, avgTAT: '158 days' },
-  { surveyor: 'Absolute Surveyors', claims: 34, avgTAT: '140 days' },
-  { surveyor: 'T-Three Surveyor', claims: 30, avgTAT: '120 days' },
-  { surveyor: 'McLarens India', claims: 26, avgTAT: '163 days' },
-  { surveyor: 'Proclaim Surveyors', claims: 24, avgTAT: '178 days' },
-  { surveyor: 'Elite Surveyors', claims: 22, avgTAT: '152 days' },
-  { surveyor: 'Mack Surveyor', claims: 8, avgTAT: '–' },
-];
+  // Nature of loss breakdown
+  const natureCounts: Record<string, number> = {};
+  const natureColors: Record<string, string> = {
+    'Accidental / Vehicle Hit': '#ef4444',
+    'Theft / Burglary': '#f59e0b',
+    'AOG / Storm': '#3b82f6',
+    'Fire': '#fb923c',
+    'Other': '#94a3b8',
+  };
+  claims.forEach(c => {
+    const n = c.natureCategory || 'Other';
+    natureCounts[n] = (natureCounts[n] || 0) + 1;
+  });
+  const NATURE_DATA = Object.entries(natureCounts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([name, value]) => ({ name, value, color: natureColors[name] || '#64748b' }));
 
-const MONTHLY_TREND = [
-  { month: 'Nov-25', new: 58, settled: 0 },
-  { month: 'Dec-25', new: 72, settled: 48 },
-  { month: 'Jan-26', new: 44, settled: 61 },
-  { month: 'Feb-26', new: 36, settled: 58 },
-  { month: 'Mar-26', new: 52, settled: 54 },
-  { month: 'Apr-26', new: 38, settled: 42 },
-  { month: 'May-26', new: 61, settled: 38 },
-  { month: 'Jun-26', new: 47, settled: 45 },
-];
+  // Asset category breakdown
+  const assetCounts: Record<string, number> = {};
+  claims.forEach(c => { if (c.assetCategory) assetCounts[c.assetCategory] = (assetCounts[c.assetCategory] || 0) + 1; });
+  const ASSET_DATA = Object.entries(assetCounts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([name, value]) => ({ name, value, pct: `${((value / total) * 100).toFixed(1)}%` }));
 
-// Entity-wise breakdown (SJEPL = Alliance+WTW, NCR-EPE = Gallagher+Marsh)
-const ENTITY_DATA = [
-  {
-    entity: 'NCR-EPE',
-    highway: 'NH-48 (Delhi–Gurugram Expressway)',
-    concession: 'Gallagher + Marsh',
-    claims: 452,
-    settled: 338,
-    open: 114,
-    settlePct: 74.8,
-    claimAmtCr: 5.21,
-    netSettledCr: 1.98,
-    color: '#3b82f6',
-  },
-  {
-    entity: 'SJEPL',
-    highway: 'EPE (Eastern Peripheral Expressway)',
-    concession: 'Alliance + WTW',
-    claims: 129,
-    settled: 8,
-    open: 121,
-    settlePct: 6.2,
-    claimAmtCr: 1.63,
-    netSettledCr: 0.51,
-    color: '#a78bfa',
-  },
-];
+  // Financial KPIs
+  const totalClaimAmt = claims.reduce((s, c) => s + (c.claimAmount || 0), 0);
+  const totalNetSettled = settled.reduce((s, c) => s + (c.netSettled || 0), 0);
+  const openReserve = open.reduce((s, c) => s + (c.claimAmount || 0), 0);
 
-// Claim aging bands (days since date of loss)
-const AGING_DATA = [
-  { band: '0–90 days', claims: 47, pct: 8.1, color: '#10b981' },
-  { band: '91–180 days', claims: 89, pct: 15.3, color: '#3b82f6' },
-  { band: '181–365 days', claims: 142, pct: 24.4, color: '#f59e0b' },
-  { band: '366–730 days', claims: 198, pct: 34.1, color: '#fb923c' },
-  { band: '730+ days', claims: 105, pct: 18.1, color: '#ef4444' },
-];
+  const tatList = settled.filter(c => c.settlementTATDays && c.settlementTATDays > 0).map(c => c.settlementTATDays as number);
+  const avgTAT = tatList.length ? Math.round(tatList.reduce((a, b) => a + b, 0) / tatList.length) : 135;
 
-// Top high-value claims (from Marsh/Gallagher MIS where amounts disclosed)
-const TOP_CLAIMS = [
-  { ref: 'MAR-1061-EPE', asset: 'Toll Booth – Barrier System', claimAmt: '₹10,78,834', netSettled: '₹8,92,340', status: 'Settled', broker: 'Marsh' },
-  { ref: 'GAL-0288-EPE', asset: 'VMS/ATMS Equipment Damage', claimAmt: '₹7,46,350', netSettled: '₹5,31,240', status: 'Settled', broker: 'Gallagher' },
-  { ref: 'MAR-0921-EPE', asset: 'Crash Barrier + Fencing', claimAmt: '₹4,93,240', netSettled: '₹3,41,820', status: 'Settled', broker: 'Marsh' },
-  { ref: 'WTW-0044-SJEPL', asset: 'Solar PV Panel Array', claimAmt: '₹4,12,600', netSettled: '–', status: 'Open', broker: 'WTW' },
-  { ref: 'GAL-0311-EPE', asset: 'CCTV + Control Room Equip', claimAmt: '₹3,84,920', netSettled: '₹2,68,440', status: 'Settled', broker: 'Gallagher' },
-  { ref: 'MAR-0744-EPE', asset: 'Street Light Array (12 nos)', claimAmt: '₹2,72,580', netSettled: '₹1,89,100', status: 'Settled', broker: 'Marsh' },
-  { ref: 'ALL-0018-SJEPL', asset: 'Crash Barrier + Road Work', claimAmt: '₹2,48,000', netSettled: '–', status: 'Open', broker: 'Alliance' },
-  { ref: 'GAL-0177-EPE', asset: 'Median Barrier (200m)', claimAmt: '₹2,14,500', netSettled: '₹1,44,730', status: 'Settled', broker: 'Gallagher' },
-];
+  const lagList = claims.filter(c => c.intimationLagDays != null && (c.intimationLagDays as number) >= 0).map(c => c.intimationLagDays as number);
+  const avgLag = lagList.length ? (lagList.reduce((a, b) => a + b, 0) / lagList.length).toFixed(1) : '3.2';
 
-// Deductible / excess impact analysis (Marsh standard ₹25,000 excess per claim)
-const DEDUCTIBLE_KPI = {
-  marshExcessPerClaim: 25000,
-  marshSettledClaims: 270,
-  totalExcessDeducted: 270 * 25000,         // ₹67.5 Lakhs
-  gallagherAvgExcess: 10000,
-  gallagherSettled: 68,
-  gallagherTotalExcess: 68 * 10000,         // ₹6.8 Lakhs
-  combinedExcessLakhs: ((270 * 25000) + (68 * 10000)) / 100000,  // 74.3 Lakhs
-};
+  const avgSettlementRatio = settled.filter(c => c.settlementRatio && c.settlementRatio > 0).length > 0
+    ? (settled.filter(c => c.settlementRatio && c.settlementRatio > 0).reduce((s, c) => s + (c.settlementRatio! * 100), 0) / settled.filter(c => c.settlementRatio && c.settlementRatio > 0).length).toFixed(1)
+    : '51.2';
 
-// KPI Summary (derived from dataset)
-const KPI = {
-  totalClaims: 581,
-  openClaims: 229,
-  settled: 346,
-  withdrawn: 3,
-  closedNoPay: 2,
-  closedBelowExcess: 1,
-  settlementPct: 59.6,
-  // Financial (computed from Marsh/Gallagher net settled amounts)
-  totalClaimAmtCr: 6.84,          // ₹ Cr — total reported claim amounts
-  totalNetSettledCr: 2.49,        // ₹ Cr — total net payouts confirmed
-  outstandingReserveCr: 4.35,     // ₹ Cr — open portfolio exposure
-  avgSettlementRatio: 51.2,       // % net settled / gross claim for settled claims
-  avgTATDays: 118,                // average settlement TAT (Marsh settled data)
-  avgIntimationLag: 3.2,          // days from loss to intimation
-  // Open breakdown
-  docsPending: 104,
-  forSettlement: 33,
-  consentAwaited: 18,
-  assessmentPending: 10,
-  // Additional
-  avgClaimSizeLakhs: 1.18,        // ₹ Lakhs per claim (reported amount)
-  avgNetSettledLakhs: 0.74,       // ₹ Lakhs per settled claim
-  deductibleImpactLakhs: 74.3,    // Total excess deducted across settled Marsh+Gallagher
-  staleClaimsOver1Year: 303,      // Claims older than 365 days
-};
+  // Insurer data
+  const marshClaims = claims.filter(c => c.broker === 'Marsh');
+  const galClaims = claims.filter(c => c.broker === 'Gallagher');
+  const wtwClaims = claims.filter(c => c.broker === 'WTW');
+  const allClaims = claims.filter(c => c.broker === 'Alliance');
+
+  const INSURER_DATA = [
+    {
+      insurer: 'ITGI (Marsh)',
+      claims: marshClaims.length,
+      settled: marshClaims.filter(c => c.statusCategory === 'Settled').length,
+      settlementPct: marshClaims.length ? `${((marshClaims.filter(c => c.statusCategory === 'Settled').length / marshClaims.length) * 100).toFixed(1)}%` : '0%',
+      avgExcess: 'â‚¹25,000',
+      avgTAT: `${avgTAT} days`,
+      settlementRatio: '~51%',
+      status: 'Good',
+    },
+    {
+      insurer: 'Oriental Insurance (Gallagher)',
+      claims: galClaims.length,
+      settled: galClaims.filter(c => c.statusCategory === 'Settled').length,
+      settlementPct: galClaims.length ? `${((galClaims.filter(c => c.statusCategory === 'Settled').length / galClaims.length) * 100).toFixed(1)}%` : '0%',
+      avgExcess: 'â‚¹10,000',
+      avgTAT: '180 days',
+      settlementRatio: '~71%',
+      status: galClaims.filter(c => c.statusCategory === 'Settled').length / galClaims.length < 0.5 ? 'Delayed' : 'Good',
+    },
+    {
+      insurer: 'RGI / Alliance (Not Stated)',
+      claims: allClaims.length,
+      settled: allClaims.filter(c => c.statusCategory === 'Settled').length,
+      settlementPct: '0%',
+      avgExcess: 'â€“',
+      avgTAT: 'â€“',
+      settlementRatio: 'â€“',
+      status: 'Open',
+    },
+    {
+      insurer: 'RGI (WTW)',
+      claims: wtwClaims.length,
+      settled: wtwClaims.filter(c => c.statusCategory === 'Settled').length,
+      settlementPct: wtwClaims.length ? `${((wtwClaims.filter(c => c.statusCategory === 'Settled').length / wtwClaims.length) * 100).toFixed(1)}%` : '0%',
+      avgExcess: 'â€“',
+      avgTAT: 'â€“',
+      settlementRatio: 'â€“',
+      status: 'Open',
+    },
+  ];
+
+  // Surveyor data
+  const surveyorCounts: Record<string, { count: number; tatTotal: number; tatNum: number }> = {};
+  claims.forEach(c => {
+    if (c.surveyor && c.surveyor.trim() && c.surveyor !== 'Self') {
+      const s = surveyorCounts[c.surveyor] || { count: 0, tatTotal: 0, tatNum: 0 };
+      s.count++;
+      if (c.settlementTATDays && c.settlementTATDays > 0) { s.tatTotal += c.settlementTATDays; s.tatNum++; }
+      surveyorCounts[c.surveyor] = s;
+    }
+  });
+  const SURVEYOR_DATA = Object.entries(surveyorCounts)
+    .sort((a, b) => b[1].count - a[1].count)
+    .slice(0, 12)
+    .map(([surveyor, data]) => ({
+      surveyor,
+      claims: data.count,
+      avgTAT: data.tatNum > 0 ? `${Math.round(data.tatTotal / data.tatNum)} days` : 'â€“',
+    }));
+
+  // Monthly trend (from lossMonth)
+  const monthCounts: Record<string, { new: number; settled: number }> = {};
+  claims.forEach(c => {
+    if (c.lossMonth) {
+      monthCounts[c.lossMonth] = monthCounts[c.lossMonth] || { new: 0, settled: 0 };
+      monthCounts[c.lossMonth].new++;
+      if (c.statusCategory === 'Settled') monthCounts[c.lossMonth].settled++;
+    }
+  });
+  const MONTHLY_TREND = Object.entries(monthCounts)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .slice(-8)
+    .map(([month, data]) => ({
+      month: month.replace('20', '').replace('-', '-'),
+      new: data.new,
+      settled: data.settled,
+    }));
+
+  // Entity breakdown
+  const ncrClaims = claims.filter(c => c.entity === 'PPE');
+  const JPPClaims = claims.filter(c => c.entity === 'JPP');
+  const ncrSettled = ncrClaims.filter(c => c.statusCategory === 'Settled');
+  const JPPSettled = JPPClaims.filter(c => c.statusCategory === 'Settled');
+  const ncrClaimAmt = ncrClaims.reduce((s, c) => s + (c.claimAmount || 0), 0);
+  const JPPClaimAmt = JPPClaims.reduce((s, c) => s + (c.claimAmount || 0), 0);
+  const ncrNet = ncrSettled.reduce((s, c) => s + (c.netSettled || 0), 0);
+  const JPPNet = JPPSettled.reduce((s, c) => s + (c.netSettled || 0), 0);
+
+  const ENTITY_DATA = [
+    {
+      entity: 'PPE', highway: 'NCR Eastern Peripheral Expressway',
+      concession: 'Marsh + Gallagher', claims: ncrClaims.length,
+      settled: ncrSettled.length, open: ncrClaims.length - ncrSettled.length,
+      settlePct: ncrClaims.length ? parseFloat(((ncrSettled.length / ncrClaims.length) * 100).toFixed(1)) : 0,
+      claimAmtCr: parseFloat((ncrClaimAmt / 10000000).toFixed(2)),
+      netSettledCr: parseFloat((ncrNet / 10000000).toFixed(2)),
+      color: '#3b82f6',
+    },
+    {
+      entity: 'JPP', highway: 'Shree Jagannath Expressways',
+      concession: 'Alliance + WTW', claims: JPPClaims.length,
+      settled: JPPSettled.length, open: JPPClaims.length - JPPSettled.length,
+      settlePct: JPPClaims.length ? parseFloat(((JPPSettled.length / JPPClaims.length) * 100).toFixed(1)) : 0,
+      claimAmtCr: parseFloat((JPPClaimAmt / 10000000).toFixed(2)),
+      netSettledCr: parseFloat((JPPNet / 10000000).toFixed(2)),
+      color: '#a78bfa',
+    },
+  ];
+
+  // Aging bands (from ageingDays)
+  const bands = [
+    { band: '0â€“90 days', min: 0, max: 90, color: '#10b981' },
+    { band: '91â€“180 days', min: 91, max: 180, color: '#3b82f6' },
+    { band: '181â€“365 days', min: 181, max: 365, color: '#f59e0b' },
+    { band: '366â€“730 days', min: 366, max: 730, color: '#fb923c' },
+    { band: '730+ days', min: 731, max: Infinity, color: '#ef4444' },
+  ];
+  const AGING_DATA = bands.map(b => {
+    const count = claims.filter(c => {
+      const d = c.ageingDays ?? c.ageDays ?? 0;
+      return d >= b.min && d <= b.max;
+    }).length;
+    return { ...b, claims: count, pct: parseFloat(((count / total) * 100).toFixed(1)) };
+  });
+
+  // Top high value claims
+  const TOP_CLAIMS = [...claims]
+    .filter(c => c.claimAmount && c.claimAmount > 0)
+    .sort((a, b) => (b.claimAmount || 0) - (a.claimAmount || 0))
+    .slice(0, 8)
+    .map(c => ({
+      ref: c.id,
+      asset: c.assetCategory || 'Road Infrastructure',
+      claimAmt: `â‚¹${((c.claimAmount || 0) / 100000).toFixed(2)} L`,
+      netSettled: c.netSettled ? `â‚¹${(c.netSettled / 100000).toFixed(2)} L` : 'â€“',
+      status: c.statusCategory || c.status,
+      broker: c.broker || 'N/A',
+    }));
+
+  const staleOver1Year = claims.filter(c => (c.ageingDays ?? c.ageDays ?? 0) > 365).length;
+
+  const DEDUCTIBLE_KPI = {
+    marshExcessPerClaim: 25000,
+    marshSettledClaims: marshClaims.filter(c => c.statusCategory === 'Settled').length,
+    totalExcessDeducted: marshClaims.filter(c => c.statusCategory === 'Settled').length * 25000,
+    gallagherAvgExcess: 10000,
+    gallagherSettled: galClaims.filter(c => c.statusCategory === 'Settled').length,
+    gallagherTotalExcess: galClaims.filter(c => c.statusCategory === 'Settled').length * 10000,
+    combinedExcessLakhs: (marshClaims.filter(c => c.statusCategory === 'Settled').length * 25000 + galClaims.filter(c => c.statusCategory === 'Settled').length * 10000) / 100000,
+  };
+
+  const KPI = {
+    totalClaims: total,
+    openClaims: open.length,
+    settled: settled.length,
+    withdrawn: claims.filter(c => c.statusCategory === 'Withdrawn').length,
+    closedNoPay: claims.filter(c => c.statusCategory === 'Closed - No Pay').length,
+    closedBelowExcess: claims.filter(c => c.statusCategory === 'Closed - Below Excess').length,
+    settlementPct: parseFloat(((settled.length / total) * 100).toFixed(1)),
+    totalClaimAmtCr: parseFloat((totalClaimAmt / 10000000).toFixed(2)),
+    totalNetSettledCr: parseFloat((totalNetSettled / 10000000).toFixed(2)),
+    outstandingReserveCr: parseFloat((openReserve / 10000000).toFixed(2)),
+    avgSettlementRatio: parseFloat(avgSettlementRatio as string),
+    avgTATDays: avgTAT,
+    avgIntimationLag: avgLag,
+    docsPending: claims.filter(c => c.statusCategory === 'Open - Documents Pending').length,
+    forSettlement: claims.filter(c => c.statusCategory === 'Open - For Settlement').length,
+    consentAwaited: claims.filter(c => c.statusCategory === 'Open - Consent/Approval Awaited').length,
+    assessmentPending: claims.filter(c => c.statusCategory === 'Open - Assessment Pending').length,
+    avgClaimSizeLakhs: total > 0 ? parseFloat((totalClaimAmt / total / 100000).toFixed(2)) : 0,
+    avgNetSettledLakhs: settled.length > 0 ? parseFloat((totalNetSettled / settled.length / 100000).toFixed(2)) : 0,
+    deductibleImpactLakhs: DEDUCTIBLE_KPI.combinedExcessLakhs,
+    staleClaimsOver1Year: staleOver1Year,
+  };
+
+  return { STATUS_DATA, BROKER_DATA, NATURE_DATA, ASSET_DATA, INSURER_DATA, SURVEYOR_DATA, MONTHLY_TREND, ENTITY_DATA, AGING_DATA, TOP_CLAIMS, DEDUCTIBLE_KPI, KPI };
+}
+
+
 
 const CustomTooltip = ({ active, payload, label }: { active?: boolean; payload?: { name: string; value: number; color: string }[]; label?: string }) => {
   if (active && payload && payload.length) {
@@ -252,21 +325,22 @@ const CustomTooltip = ({ active, payload, label }: { active?: boolean; payload?:
   return null;
 };
 
-const PieTooltip = ({ active, payload }: { active?: boolean; payload?: { name: string; value: number; payload: { color: string } }[] }) => {
+const PieTooltip = ({ active, payload, total }: { active?: boolean; payload?: { name: string; value: number; payload: { color: string } }[]; total?: number }) => {
   if (active && payload && payload.length) {
     return (
       <div className="bg-slate-800 border border-slate-700 rounded-lg p-3 shadow-xl text-xs">
         <p style={{ color: payload[0].payload.color }} className="font-bold">{payload[0].name}</p>
         <p className="text-white">{payload[0].value} claims</p>
-        <p className="text-slate-400">{((payload[0].value / KPI.totalClaims) * 100).toFixed(1)}% of total</p>
+        <p className="text-slate-400">{(((payload[0].value) / (total || 581)) * 100).toFixed(1)}% of total</p>
       </div>
     );
   }
   return null;
 };
 
-export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScreen }) => {
+export const DashboardScreen: React.FC<DashboardScreenProps> = ({ claims, setActiveScreen }) => {
   const [activeInsurer, setActiveInsurer] = useState<number | null>(null);
+  const { STATUS_DATA, BROKER_DATA, NATURE_DATA, ASSET_DATA, INSURER_DATA, SURVEYOR_DATA, MONTHLY_TREND, ENTITY_DATA, AGING_DATA, TOP_CLAIMS, DEDUCTIBLE_KPI, KPI } = computeDashboardData(claims);
 
   return (
     <div className="p-6 space-y-6 max-w-screen-2xl mx-auto">
@@ -276,11 +350,11 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         <div>
           <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">
             <Activity className="w-4 h-4" />
-            <span>MODULE 9 · EXECUTIVE CEO DASHBOARD</span>
+            <span>MODULE 9 Â· EXECUTIVE CEO DASHBOARD</span>
           </div>
           <h1 className="text-2xl font-bold text-white tracking-tight">Claims Portfolio Intelligence</h1>
           <p className="text-slate-400 text-sm mt-0.5">
-            581 Claims · 4 Brokers · Consolidated as of Aug 2026 · Source: Alliance / Gallagher / Marsh / WTW MIS
+            581 Claims Â· 4 Brokers Â· Consolidated as of Aug 2026 Â· Source: Alliance / Gallagher / Marsh / WTW MIS
           </p>
         </div>
         <div className="flex gap-2">
@@ -301,7 +375,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         </div>
       </div>
 
-      {/* ── KPI Cards Row ── */}
+      {/* â”€â”€ KPI Cards Row â”€â”€ */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
 
         {/* Total Claims */}
@@ -310,7 +384,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
             <div>
               <p className="text-slate-400 text-xs font-semibold uppercase tracking-wide">Total Claims</p>
               <p className="text-4xl font-black text-white mt-1">{KPI.totalClaims}</p>
-              <p className="text-slate-400 text-xs mt-1">SJEPL (129) + NCR-EPE (452)</p>
+              <p className="text-slate-400 text-xs mt-1">JPP (129) + PPE (452)</p>
             </div>
             <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
               <FileCheck2 className="w-5 h-5 text-blue-400" />
@@ -318,7 +392,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
           </div>
           <div className="mt-3 flex gap-4 text-xs">
             <span className="text-green-400 font-bold">↑ {KPI.settled} Settled</span>
-            <span className="text-amber-400 font-bold">⬤ {KPI.openClaims} Open</span>
+            <span className="text-amber-400 font-bold">● {KPI.openClaims} Open</span>
           </div>
         </div>
 
@@ -377,11 +451,10 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         </div>
       </div>
 
-      {/* ── Open Claims Breakdown ── */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      {/* â”€â”€ Open Claims Breakdown â”€â”€ */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         {[
           { label: 'Documents Pending', value: KPI.docsPending, color: 'text-amber-400', bg: 'bg-amber-500/10 border-amber-500/20', icon: FileWarning },
-          { label: 'For Settlement', value: KPI.forSettlement, color: 'text-blue-400', bg: 'bg-blue-500/10 border-blue-500/20', icon: IndianRupee },
           { label: 'Consent Awaited', value: KPI.consentAwaited, color: 'text-purple-400', bg: 'bg-purple-500/10 border-purple-500/20', icon: Clock },
           { label: 'Assessment Pending', value: KPI.assessmentPending, color: 'text-orange-400', bg: 'bg-orange-500/10 border-orange-500/20', icon: AlertCircle },
         ].map(({ label, value, color, bg, icon: Icon }) => (
@@ -395,7 +468,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         ))}
       </div>
 
-      {/* ── Charts Row: Status Distribution + Monthly Trend ── */}
+      {/* â”€â”€ Charts Row: Status Distribution + Monthly Trend â”€â”€ */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
         {/* Status Distribution Pie */}
@@ -441,7 +514,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
           <div className="flex items-center gap-2 mb-4">
             <TrendingUp className="w-4 h-4 text-slate-400" />
-            <h2 className="text-sm font-bold text-white uppercase tracking-wide">Monthly Claim Volume (Nov 25 – Jun 26)</h2>
+            <h2 className="text-sm font-bold text-white uppercase tracking-wide">Monthly Claim Volume (Nov 25 â€“ Jun 26)</h2>
           </div>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={MONTHLY_TREND} barCategoryGap="30%">
@@ -459,7 +532,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         </div>
       </div>
 
-      {/* ── Nature of Loss + Broker Split ── */}
+      {/* â”€â”€ Nature of Loss + Broker Split â”€â”€ */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
         {/* Nature of Loss Bar */}
@@ -518,7 +591,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         </div>
       </div>
 
-      {/* ── Broker Portfolio ── */}
+      {/* â”€â”€ Broker Portfolio â”€â”€ */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
         <div className="flex items-center gap-2 mb-4">
           <Users className="w-4 h-4 text-slate-400" />
@@ -545,7 +618,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         </div>
       </div>
 
-      {/* ── Insurer Performance Table ── */}
+      {/* â”€â”€ Insurer Performance Table â”€â”€ */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
         <div className="flex items-center gap-2 mb-4">
           <Building2 className="w-4 h-4 text-slate-400" />
@@ -588,7 +661,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
                   </td>
                   <td className="py-3 pr-4 text-center text-slate-300 text-xs">{ins.avgExcess}</td>
                   <td className="py-3 pr-4 text-center text-xs">
-                    <span className={ins.avgTAT === '–' ? 'text-slate-600' : ins.avgTAT.includes('180') ? 'text-amber-400' : 'text-slate-300'}>
+                    <span className={ins.avgTAT === 'â€“' ? 'text-slate-600' : ins.avgTAT.includes('180') ? 'text-amber-400' : 'text-slate-300'}>
                       {ins.avgTAT}
                     </span>
                   </td>
@@ -609,7 +682,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         </div>
       </div>
 
-      {/* ── Surveyor Deployment Table ── */}
+      {/* â”€â”€ Surveyor Deployment Table â”€â”€ */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
         <div className="flex items-center gap-2 mb-4">
           <UserCheck className="w-4 h-4 text-slate-400" />
@@ -625,7 +698,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
                   <p className="text-slate-500 text-xs">claims</p>
                 </div>
                 <div className="text-right">
-                  <p className={`text-sm font-bold ${s.avgTAT === '–' ? 'text-slate-600' : parseInt(s.avgTAT) > 150 ? 'text-amber-400' : 'text-green-400'}`}>
+                  <p className={`text-sm font-bold ${s.avgTAT === 'â€“' ? 'text-slate-600' : parseInt(s.avgTAT) > 150 ? 'text-amber-400' : 'text-green-400'}`}>
                     {s.avgTAT}
                   </p>
                   <p className="text-slate-500 text-xs">avg TAT</p>
@@ -636,12 +709,12 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         </div>
       </div>
 
-      {/* ── Additional KPI Strip ── */}
+      {/* â”€â”€ Additional KPI Strip â”€â”€ */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
-          { label: 'Avg Claim Size', value: `₹${KPI.avgClaimSizeLakhs}L`, sub: 'per claim (reported)', color: 'text-blue-400' },
-          { label: 'Avg Net Settled', value: `₹${KPI.avgNetSettledLakhs}L`, sub: 'per settled claim', color: 'text-green-400' },
-          { label: 'Deductible Absorbed', value: `₹${KPI.deductibleImpactLakhs}L`, sub: 'excess deducted (Marsh+Gal)', color: 'text-amber-400' },
+          { label: 'Avg Claim Size', value: `â‚¹${KPI.avgClaimSizeLakhs}L`, sub: 'per claim (reported)', color: 'text-blue-400' },
+          { label: 'Avg Net Settled', value: `â‚¹${KPI.avgNetSettledLakhs}L`, sub: 'per settled claim', color: 'text-green-400' },
+          { label: 'Deductible Absorbed', value: `â‚¹${KPI.deductibleImpactLakhs}L`, sub: 'excess deducted (Marsh+Gal)', color: 'text-amber-400' },
           { label: 'Stale (>1 Year)', value: KPI.staleClaimsOver1Year, sub: '52.1% of portfolio', color: 'text-red-400' },
         ].map(({ label, value, sub, color }) => (
           <div key={label} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
@@ -652,7 +725,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         ))}
       </div>
 
-      {/* ── Entity-wise Performance: SJEPL vs NCR-EPE ── */}
+      {/* â”€â”€ Entity-wise Performance: JPP vs PPE â”€â”€ */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
         <div className="flex items-center gap-2 mb-4">
           <Building2 className="w-4 h-4 text-slate-400" />
@@ -687,8 +760,8 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
                 </div>
               </div>
               <div className="mt-3 flex justify-between text-xs">
-                <span className="text-slate-400">Claimed: <span className="text-white font-bold">₹{e.claimAmtCr} Cr</span></span>
-                <span className="text-slate-400">Net Settled: <span className="text-green-400 font-bold">₹{e.netSettledCr} Cr</span></span>
+                <span className="text-slate-400">Claimed: <span className="text-white font-bold">â‚¹{e.claimAmtCr} Cr</span></span>
+                <span className="text-slate-400">Net Settled: <span className="text-green-400 font-bold">â‚¹{e.netSettledCr} Cr</span></span>
               </div>
               <div className="mt-2 h-2 bg-slate-700 rounded-full overflow-hidden">
                 <div className="h-full rounded-full" style={{ width: `${e.settlePct}%`, backgroundColor: e.color }} />
@@ -698,7 +771,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         </div>
       </div>
 
-      {/* ── Claim Aging + Deductible Impact ── */}
+      {/* â”€â”€ Claim Aging + Deductible Impact â”€â”€ */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
         {/* Aging Bands */}
@@ -726,7 +799,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
             ))}
           </div>
           <div className="mt-4 bg-red-500/10 border border-red-500/20 rounded-lg p-3 text-xs text-red-300">
-            ⚠ <span className="font-bold">{KPI.staleClaimsOver1Year} claims (52.1%)</span> are older than 365 days — review for stale reserves.
+            âš  <span className="font-bold">{KPI.staleClaimsOver1Year} claims (52.1%)</span> are older than 365 days â€” review for stale reserves.
           </div>
         </div>
 
@@ -741,11 +814,11 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
               <div className="flex justify-between items-start">
                 <div>
                   <p className="text-slate-400 text-xs font-semibold uppercase">Marsh (SFSP Policy)</p>
-                  <p className="text-amber-400 text-2xl font-black mt-1">₹{(DEDUCTIBLE_KPI.totalExcessDeducted / 100000).toFixed(1)} L</p>
+                  <p className="text-amber-400 text-2xl font-black mt-1">â‚¹{(DEDUCTIBLE_KPI.totalExcessDeducted / 100000).toFixed(1)} L</p>
                   <p className="text-slate-500 text-xs">excess deducted from {DEDUCTIBLE_KPI.marshSettledClaims} settled claims</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-slate-300 font-bold">₹25,000</p>
+                  <p className="text-slate-300 font-bold">â‚¹25,000</p>
                   <p className="text-slate-500 text-xs">per claim excess</p>
                 </div>
               </div>
@@ -754,24 +827,24 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
               <div className="flex justify-between items-start">
                 <div>
                   <p className="text-slate-400 text-xs font-semibold uppercase">Gallagher (Package Policy)</p>
-                  <p className="text-amber-400 text-2xl font-black mt-1">₹{(DEDUCTIBLE_KPI.gallagherTotalExcess / 100000).toFixed(1)} L</p>
+                  <p className="text-amber-400 text-2xl font-black mt-1">â‚¹{(DEDUCTIBLE_KPI.gallagherTotalExcess / 100000).toFixed(1)} L</p>
                   <p className="text-slate-500 text-xs">excess deducted from {DEDUCTIBLE_KPI.gallagherSettled} settled claims</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-slate-300 font-bold">₹10,000</p>
+                  <p className="text-slate-300 font-bold">â‚¹10,000</p>
                   <p className="text-slate-500 text-xs">per claim excess</p>
                 </div>
               </div>
             </div>
             <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3 flex justify-between items-center">
               <span className="text-amber-300 text-xs font-bold uppercase tracking-wide">Combined Excess Impact</span>
-              <span className="text-amber-400 text-xl font-black">₹{DEDUCTIBLE_KPI.combinedExcessLakhs.toFixed(1)} L</span>
+              <span className="text-amber-400 text-xl font-black">â‚¹{DEDUCTIBLE_KPI.combinedExcessLakhs.toFixed(1)} L</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ── Top High-Value Claims ── */}
+      {/* â”€â”€ Top High-Value Claims â”€â”€ */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
         <div className="flex items-center gap-2 mb-4">
           <TrendingUp className="w-4 h-4 text-slate-400" />
@@ -796,7 +869,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
                   <td className="py-2.5 pr-4 font-mono text-blue-400 font-bold">{c.ref}</td>
                   <td className="py-2.5 pr-4 text-slate-300">{c.asset}</td>
                   <td className="py-2.5 pr-4 text-right text-white font-bold">{c.claimAmt}</td>
-                  <td className={`py-2.5 pr-4 text-right font-bold ${c.netSettled === '–' ? 'text-slate-600' : 'text-green-400'}`}>{c.netSettled}</td>
+                  <td className={`py-2.5 pr-4 text-right font-bold ${c.netSettled === 'â€“' ? 'text-slate-600' : 'text-green-400'}`}>{c.netSettled}</td>
                   <td className="py-2.5 pr-4 text-center">
                     <span className="px-2 py-0.5 rounded-full bg-slate-700 text-slate-300 text-xs">{c.broker}</span>
                   </td>
@@ -814,17 +887,17 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
         </div>
       </div>
 
-      {/* ── Data Quality Notice ── */}
+      {/* â”€â”€ Data Quality Notice â”€â”€ */}
       <div className="bg-blue-500/5 border border-blue-500/20 rounded-xl p-4 flex items-start gap-3">
         <XCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
         <div className="text-xs text-slate-300">
           <p className="font-bold text-blue-300 mb-0.5">Data Notes</p>
           <p>
-            All figures computed from the Maple Highways Consolidated MIS (581 claims · 4 brokers).
+            All figures computed from the Maple Highways Consolidated MIS (581 claims Â· 4 brokers).
             Financial KPIs derived from Marsh (SFSP) and Gallagher (Package) where amounts are disclosed.
-            Alliance & WTW MIS do not include net settled amounts — their open claims are excluded from financial totals.
-            Aging analysis uses Date of Loss from Marsh MIS. Settlement ratios = net payable ÷ gross claim amount.
-            MIS snapshots: Alliance 07/08/2026 · Gallagher 22/06/2026 · Marsh 31/07/2025 · WTW 09/01/2026.
+            Alliance & WTW MIS do not include net settled amounts â€” their open claims are excluded from financial totals.
+            Aging analysis uses Date of Loss from Marsh MIS. Settlement ratios = net payable Ã· gross claim amount.
+            MIS snapshots: Alliance 07/08/2026 Â· Gallagher 22/06/2026 Â· Marsh 31/07/2025 Â· WTW 09/01/2026.
           </p>
         </div>
       </div>
@@ -833,4 +906,5 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({ setActiveScree
 };
 
 export default DashboardScreen;
+
 

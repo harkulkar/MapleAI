@@ -1,4 +1,4 @@
-import type { Claim, AIAssessment, CopilotMessage, MLPrediction, KnowledgeDoc } from '../types/claims';
+﻿import type { Claim, AIAssessment, CopilotMessage, MLPrediction, KnowledgeDoc } from '../types/claims';
 
 export interface IncidentInput {
   incidentDate: string;
@@ -34,10 +34,10 @@ export async function runAIIncidentAnalysis(input: IncidentInput): Promise<AIAss
     likelyCause: 'Heavy Rainfall / Flooding',
     likelyPolicy: 'Industrial All Risk (IAR) Policy',
     estimatedSeverity: 'Medium',
-    initialReserve: 22.4, // ₹22.4 Lakhs
+    initialReserve: 22.4, // â‚¹22.4 Lakhs
     aiConfidence: 92,
     admissionProbability: 93,
-    likelyDeductible: 25.0, // ₹25 Lakhs
+    likelyDeductible: 25.0, // â‚¹25 Lakhs
     missingEvidence: [
       'IMD Station Rainfall Confirmation Report',
       'Pre-monsoon Maintenance Register & Desilting Logs',
@@ -95,7 +95,7 @@ Preliminary AI Assessment indicates erosion damage to:
 - Bituminous Pavement Surfacing
 - Central Median Earthworks & Slope
 
-Estimated Reserve: ₹${claim.reserveAmountLakhs} Lakhs
+Estimated Reserve: â‚¹${claim.reserveAmountLakhs} Lakhs
 Likely Event Cause: Heavy Rainfall / Water Inundation
 
 We request you to kindly depute an independent surveyor immediately to conduct joint site inspection. Preliminary photos, field report, and incident details are attached.
@@ -129,7 +129,7 @@ INCIDENT SUMMARY:
 - Date & Time: ${claim.incidentDate}, ${claim.incidentTime}
 - Location: ${claim.highway} (Km ${claim.chainage})
 - Cause: Unseasonal torrential rainfall & water accumulation
-- Preliminary Estimated Loss Reserve: ₹${claim.reserveAmountLakhs} Lakhs
+- Preliminary Estimated Loss Reserve: â‚¹${claim.reserveAmountLakhs} Lakhs
 - Claim Admission Probability: ${claim.aiAssessment?.admissionProbability || 93}%
 
 We request early issuance of claim registration number and formal surveyor deputation details.
@@ -147,135 +147,264 @@ export function processCopilotQuery(query: string, claimsList: Claim[]): Copilot
   const lower = query.toLowerCase().trim();
   const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-  // 1. Show claims pending over 90 days
-  if (lower.includes('90 days') || lower.includes('pending over 90') || lower.includes('delayed claims')) {
-    const delayed = claimsList.filter(c => c.ageDays > 90 && c.status !== 'Settled');
+  // Format currency helper
+  const fmtInr = (amt: number | null | undefined) => {
+    if (amt == null || isNaN(amt)) return 'â‚¹0';
+    if (amt >= 10000000) return `â‚¹${(amt / 10000000).toFixed(2)} Cr`;
+    if (amt >= 100000) return `â‚¹${(amt / 100000).toFixed(2)} L`;
+    return `â‚¹${amt.toLocaleString('en-IN')}`;
+  };
+
+  // 1. Direct Claim ID Lookup (e.g., ALL-812189, GAL-CLAIM-2025-26-04669, WTW-91, MAR-0001, ALL-812191)
+  const idMatch = query.match(/(ALL-[A-Za-z0-9-]+|GAL-[A-Za-z0-9-]+|MAR-[A-Za-z0-9-]+|WTW-[A-Za-z0-9-]+|CLM-[A-Za-z0-9-]+)/i);
+  if (idMatch) {
+    const targetId = idMatch[1].toUpperCase();
+    const foundClaim = claimsList.find(c => c.id.toUpperCase() === targetId || c.id.toUpperCase().includes(targetId));
+    if (foundClaim) {
+      const isSettled = foundClaim.statusCategory === 'Settled' || foundClaim.status === 'Settled';
+      return {
+        id: Date.now().toString(),
+        sender: 'ai',
+        timestamp: now,
+        text: `### Master Data Details for Claim **${foundClaim.id}**
+
+| Property | Value |
+|---|---|
+| **Broker** | ${foundClaim.broker || 'N/A'} |
+| **Entity** | ${foundClaim.entity || 'N/A'} |
+| **Insurer** | ${foundClaim.insurer || 'N/A'} |
+| **Policy Type / No** | ${foundClaim.policyType || foundClaim.policyNo || 'Package / IAR'} (${foundClaim.policyNo || 'N/A'}) |
+| **Status Category** | **${foundClaim.statusCategory || foundClaim.status}** |
+| **Loss Date** | ${foundClaim.dateOfLoss || foundClaim.incidentDate} |
+| **Intimation Date** | ${foundClaim.dateOfIntimation || 'N/A'} (Lag: ${foundClaim.intimationLagDays ?? 0} days) |
+| **Asset Category** | ${foundClaim.assetCategory || 'Road Infrastructure'} |
+| **Nature of Loss** | ${foundClaim.natureCategory || 'Accidental'} |
+| **Loss Location** | ${foundClaim.lossLocation || foundClaim.location || 'Highway stretch'} |
+| **Surveyor** | ${foundClaim.surveyor || 'Unassigned / Self'} |
+| **Claim Amount** | ${fmtInr(foundClaim.claimAmount || (foundClaim.reserveAmountLakhs * 100000))} |
+| **Gross Assessed** | ${fmtInr(foundClaim.grossAssessed)} |
+| **Net Settled / Payable** | ${fmtInr(foundClaim.netSettled || (foundClaim.settlementAmountLakhs ? foundClaim.settlementAmountLakhs * 100000 : null))} |
+| **Settlement Ratio** | ${foundClaim.settlementRatio ? (foundClaim.settlementRatio * 100).toFixed(1) + '%' : 'N/A'} |
+| **Settlement Date / TAT** | ${foundClaim.settlementDate || 'Pending'} (${foundClaim.settlementTATDays ? foundClaim.settlementTATDays + ' days TAT' : 'Open'}) |
+
+${foundClaim.documentsPending ? `> **Pending Documents / Remarks**: ${foundClaim.documentsPending}` : ''}
+${foundClaim.remarks ? `> **Remarks**: ${foundClaim.remarks}` : ''}
+
+*Source*: \`MAPLE HIGHWAYS - Master Data.md\` (Excel Table \`ClaimsMaster\`)`,
+        type: 'text'
+      };
+    }
+  }
+
+  // 2. Broker Filter Queries (Alliance, Gallagher, Marsh, WTW)
+  if (lower.includes('alliance') || lower.includes('gallagher') || lower.includes('marsh') || lower.includes('wtw')) {
+    let brokerName = 'Alliance';
+    if (lower.includes('gallagher')) brokerName = 'Gallagher';
+    else if (lower.includes('marsh')) brokerName = 'Marsh';
+    else if (lower.includes('wtw')) brokerName = 'WTW';
+
+    const bClaims = claimsList.filter(c => c.broker && c.broker.toLowerCase() === brokerName.toLowerCase());
+    const settled = bClaims.filter(c => c.statusCategory === 'Settled');
+    const open = bClaims.filter(c => c.statusCategory !== 'Settled');
+    const totalClaimAmt = bClaims.reduce((sum, c) => sum + (c.claimAmount || 0), 0);
+    const totalSettledAmt = settled.reduce((sum, c) => sum + (c.netSettled || 0), 0);
+
     return {
       id: Date.now().toString(),
       sender: 'ai',
       timestamp: now,
-      text: `I identified **${delayed.length} active claims pending over 90 days** in the portfolio:`,
+      text: `### **${brokerName} Broker Master Summary** (\`MAPLE HIGHWAYS - Master Data.md\`)
+
+- **Total Claims**: ${bClaims.length}
+- **Settled Claims**: ${settled.length} (${((settled.length / (bClaims.length || 1)) * 100).toFixed(1)}%)
+- **Open Claims**: ${open.length}
+- **Total Claim Amount**: ${fmtInr(totalClaimAmt)}
+- **Total Net Settled Amount**: ${fmtInr(totalSettledAmt)}
+
+#### Top Active Claims under ${brokerName}:`,
       type: 'claims_list',
-      data: delayed.map(c => ({
+      data: open.slice(0, 6).map(c => ({
         id: c.id,
-        title: `${c.code} ${c.incidentType}`,
-        reserve: c.reserveAmountLakhs >= 100 ? `₹${(c.reserveAmountLakhs / 100).toFixed(2)} Cr` : `₹${c.reserveAmountLakhs} L`,
-        status: `${c.status} (${c.ageDays} days old)`,
+        title: `${c.assetCategory || c.incidentType} - ${c.natureCategory || ''}`,
+        reserve: fmtInr(c.claimAmount || (c.reserveAmountLakhs * 100000)),
+        status: `${c.statusCategory} (${c.ageingDays || c.ageDays || 0} days)`,
         highway: c.highway
       }))
     };
   }
 
-  // 2. What documents are pending from us?
-  if (lower.includes('pending from us') || lower.includes('what documents are pending') || lower.includes('missing docs from us')) {
-    return {
-      id: Date.now().toString(),
-      sender: 'ai',
-      timestamp: now,
-      text: `MAPLE AI audited all active claims. Here are the **top priority document submissions pending from Maple Highways**:`,
-      type: 'missing_docs',
-      data: {
-        claimId: 'CLM-2026-00124 & CLM-2026-00112',
-        items: [
-          'IMD Certified Rainfall Confirmation (CLM-2026-00124)',
-          'Pre-monsoon Highway Maintenance Register (CLM-2026-00124)',
-          'Hydrological Bathymetry Survey (CLM-2026-00112)',
-          'Contractor Site Measurement Book MB-2026/04 (CLM-2026-00124)'
-        ],
-        keyAction: 'Submitting IMD rainfall records and maintenance registers before survey assessment increases claim admission speed by 35%.'
-      }
-    };
-  }
+  // 3. Entity Filter Queries (JPP vs PPE)
+  if (lower.includes('JPP') || lower.includes('PPE') || lower.includes('ncr epe') || lower.includes('shree jagannath')) {
+    const isJPP = lower.includes('JPP') || lower.includes('shree jagannath');
+    const entityName = isJPP ? 'JPP' : 'PPE';
+    const eClaims = claimsList.filter(c => c.entity && c.entity.toUpperCase() === entityName);
+    const settled = eClaims.filter(c => c.statusCategory === 'Settled');
+    const open = eClaims.filter(c => c.statusCategory !== 'Settled');
 
-  // 3. Claims above 5 Crores
-  if (lower.includes('5 cr') || lower.includes('5 crore') || lower.includes('above 5') || lower.includes('above ₹5')) {
-    const highValue = claimsList.filter(c => c.reserveAmountLakhs >= 500);
     return {
       id: Date.now().toString(),
       sender: 'ai',
       timestamp: now,
-      text: `I found ${highValue.length} high-value claims above ₹5 Crores in your portfolio:`,
+      text: `### **${entityName} Entity Master Analysis**
+
+- **Total Portfolio Claims**: ${eClaims.length}
+- **Settled**: ${settled.length} | **Open**: ${open.length}
+- **Brokers Handling**: ${isJPP ? 'Alliance (21 claims) & WTW (108 claims)' : 'Marsh (306 claims) & Gallagher (146 claims)'}
+
+Here are the highest value open claims for **${entityName}**:`,
       type: 'claims_list',
-      data: highValue.map(c => ({
+      data: open.slice(0, 6).map(c => ({
         id: c.id,
-        title: `${c.code} ${c.incidentType}`,
-        reserve: `₹${(c.reserveAmountLakhs / 100).toFixed(2)} Cr`,
-        status: c.status,
+        title: `${c.assetCategory || 'Road Work'} (${c.natureCategory || 'Accident'})`,
+        reserve: fmtInr(c.claimAmount || (c.reserveAmountLakhs * 100000)),
+        status: c.statusCategory || c.status,
         highway: c.highway
       }))
     };
   }
 
-  // 4. Flood claims above 1 Crore
-  if (lower.includes('flood claims above') || lower.includes('previous flood claims') || lower.includes('1 crore')) {
-    const floodHigh = claimsList.filter(c => 
-      c.reserveAmountLakhs >= 100 &&
-      (c.incidentType.toLowerCase().includes('flood') || 
-       c.incidentType.toLowerCase().includes('rainfall') ||
-       c.weather.toLowerCase().includes('rain'))
+  // 4. Document Pending / Missing Documents Queries
+  if (lower.includes('pending') || lower.includes('missing') || lower.includes('doc') || lower.includes('document')) {
+    const docPendingClaims = claimsList.filter(c => c.documentsPending && c.documentsPending.trim().length > 3 && c.statusCategory !== 'Settled');
+    return {
+      id: Date.now().toString(),
+      sender: 'ai',
+      timestamp: now,
+      text: `### **Master Data Audit: ${docPendingClaims.length} Claims with Outstanding Documents**
+
+MAPLE AI extracted document requirements from the broker MIS records (\`MAPLE HIGHWAYS - Master Data.md\`):
+
+${docPendingClaims.slice(0, 5).map((c, i) => `${i + 1}. **${c.id}** (${c.broker} Â· ${c.entity}):\n   - *Asset*: ${c.assetCategory}\n   - *Pending Documents*: ${c.documentsPending}\n   - *Claim Value*: ${fmtInr(c.claimAmount || (c.reserveAmountLakhs * 100000))}`).join('\n\n')}
+
+> **AI Strategic Action**: Resolving the top 5 document requirements above will unlock â‚¹${(docPendingClaims.slice(0, 5).reduce((s, c) => s + (c.claimAmount || 0), 0) / 100000).toFixed(2)} Lakhs in pending surveyor assessments.`,
+      type: 'text'
+    };
+  }
+
+  // 5. High Value / Amount Threshold Queries
+  if (lower.includes('above') || lower.includes('lakh') || lower.includes('crore') || lower.includes('cr') || lower.includes('high value') || lower.includes('top claims') || lower.includes('largest')) {
+    const sorted = [...claimsList].sort((a, b) => (b.claimAmount || (b.reserveAmountLakhs * 100000)) - (a.claimAmount || (a.reserveAmountLakhs * 100000)));
+    const topClaims = sorted.slice(0, 7);
+
+    return {
+      id: Date.now().toString(),
+      sender: 'ai',
+      timestamp: now,
+      text: `Found **${sorted.length} claims in Master Register**. Here are the **highest value claims** in the portfolio:`,
+      type: 'claims_list',
+      data: topClaims.map(c => ({
+        id: c.id,
+        title: `${c.assetCategory || c.incidentType} (${c.broker} Â· ${c.entity})`,
+        reserve: fmtInr(c.claimAmount || (c.reserveAmountLakhs * 100000)),
+        status: `${c.statusCategory || c.status}`,
+        highway: c.highway
+      }))
+    };
+  }
+
+  // 6. Theft / Asset / Cause Queries
+  if (lower.includes('theft') || lower.includes('burglary') || lower.includes('crash barrier') || lower.includes('mbcb') || lower.includes('street light') || lower.includes('transformer') || lower.includes('vms') || lower.includes('fire') || lower.includes('storm')) {
+    let kw = 'Theft / Burglary';
+    if (lower.includes('crash barrier') || lower.includes('mbcb')) kw = 'MBCB / Crash Barrier';
+    else if (lower.includes('street light')) kw = 'Street Light';
+    else if (lower.includes('transformer')) kw = 'Transformer';
+    else if (lower.includes('vms')) kw = 'Equipment / VMS';
+    else if (lower.includes('fire')) kw = 'Fire';
+    else if (lower.includes('storm')) kw = 'AOG / Storm';
+
+    const matches = claimsList.filter(c => 
+      (c.assetCategory && c.assetCategory.toLowerCase().includes(kw.toLowerCase())) ||
+      (c.natureCategory && c.natureCategory.toLowerCase().includes(kw.toLowerCase())) ||
+      (c.description && c.description.toLowerCase().includes(kw.toLowerCase())) ||
+      (c.lossDescription && c.lossDescription.toLowerCase().includes(kw.toLowerCase()))
     );
+
     return {
       id: Date.now().toString(),
       sender: 'ai',
       timestamp: now,
-      text: `Found **${floodHigh.length} previous flood & monsoon claims above ₹1 Crore**:`,
+      text: `### Master Data Analysis: **${kw}** (${matches.length} Claims)
+
+- **Total Claims Matched**: ${matches.length}
+- **Settled**: ${matches.filter(m => m.statusCategory === 'Settled').length}
+- **Open**: ${matches.filter(m => m.statusCategory !== 'Settled').length}
+
+Here are key claims matching **${kw}**:`,
       type: 'claims_list',
-      data: floodHigh.map(c => ({
+      data: matches.slice(0, 6).map(c => ({
         id: c.id,
-        title: `${c.code} - ${c.incidentType}`,
-        reserve: `₹${(c.reserveAmountLakhs / 100).toFixed(2)} Cr`,
-        status: c.status,
+        title: `${c.broker} Â· ${c.entity} - ${c.lossLocation || c.location || 'Location'}`,
+        reserve: fmtInr(c.claimAmount || (c.reserveAmountLakhs * 100000)),
+        status: c.statusCategory || c.status,
         highway: c.highway
       }))
     };
   }
 
-  // 5. Missing documents for CLM-2026-00124
-  if (lower.includes('clm-2026-00124') && lower.includes('missing')) {
-    const claim = claimsList.find(c => c.id === 'CLM-2026-00124') || claimsList[0];
-    return {
-      id: Date.now().toString(),
-      sender: 'ai',
-      timestamp: now,
-      text: `For claim **${claim.id}** (${claim.highway} Heavy Rainfall Damage), MAPLE AI identified **4 outstanding evidence items**:`,
-      type: 'missing_docs',
-      data: {
-        claimId: claim.id,
-        items: claim.aiAssessment.missingEvidence.slice(0, 4),
-        keyAction: 'The most critical immediate action is to obtain official rainfall confirmation from IMD before the surveyor site assessment.'
+  // 7. Surveyor / Insurer Queries
+  if (lower.includes('surveyor') || lower.includes('kohli') || lower.includes('gupta') || lower.includes('protocol') || lower.includes('lucille') || lower.includes('oriental') || lower.includes('itgi')) {
+    const surveyorsCount: Record<string, number> = {};
+    claimsList.forEach(c => {
+      if (c.surveyor && c.surveyor.trim()) {
+        surveyorsCount[c.surveyor] = (surveyorsCount[c.surveyor] || 0) + 1;
       }
-    };
-  }
+    });
 
-  // 6. Likely deductible
-  if (lower.includes('deductible') || lower.includes('policy excess')) {
+    const topSurveyors = Object.entries(surveyorsCount)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 6);
+
     return {
       id: Date.now().toString(),
       sender: 'ai',
       timestamp: now,
-      text: `Based on Policy terms under Industrial All Risk (IAR-2025/MAPLE-088):\n\n• **Likely Policy Deductible**: ₹25 Lakhs (or 5% of claim value for flood perils).\n• **Initial Claim Reserve**: ₹22.4 Lakhs.\n\n*Strategic AI Advice*: Because initial loss estimate (₹22.4L) is close to the ₹25L deductible, collate sub-surface asphalt damage and slope earthwork costs to ensure full reserve realization above deductible.`
+      text: `### **Surveyor & Insurer Portfolio Breakdown** (\`MAPLE HIGHWAYS - Master Data.md\`)
+
+**Top Independent Surveyors Appointed**:
+${topSurveyors.map(([surv, count]) => `â€¢ **${surv}**: ${count} claims assigned`).join('\n')}
+
+**Key Insurers**:
+â€¢ **ITGI (Marsh)**: 306 claims (88% settled)
+â€¢ **The Oriental Insurance (Gallagher)**: 146 claims (46.6% settled)
+â€¢ **RGI (WTW)**: 108 claims
+â€¢ **Alliance Portfolio**: 21 claims`,
+      type: 'text'
     };
   }
 
-  // 7. Draft email to surveyor
-  if (lower.includes('email') || lower.includes('surveyor') || lower.includes('draft email')) {
-    const claim = claimsList.find(c => c.id === 'CLM-2026-00124') || claimsList[0];
-    const emailDraft = generateSurveyorEmail(claim);
-    return {
-      id: Date.now().toString(),
-      sender: 'ai',
-      timestamp: now,
-      text: `I have drafted an email for deputing the independent surveyor for **${claim.id}**:`,
-      type: 'email_preview',
-      data: emailDraft
-    };
+  // 8. General Natural Language Keyword Search across Master Data
+  const searchWords = lower.split(/\s+/).filter(w => w.length > 2 && !['show', 'what', 'list', 'give', 'from', 'with', 'this', 'that', 'claims', 'claim'].includes(w));
+  if (searchWords.length > 0) {
+    const matchedClaims = claimsList.filter(c => {
+      const textBlock = `${c.id} ${c.broker} ${c.entity} ${c.insurer} ${c.policyType} ${c.policyNo} ${c.lossDescription} ${c.lossLocation} ${c.assetCategory} ${c.natureCategory} ${c.surveyor} ${c.documentsPending} ${c.remarks}`.toLowerCase();
+      return searchWords.some(word => textBlock.includes(word));
+    });
+
+    if (matchedClaims.length > 0) {
+      return {
+        id: Date.now().toString(),
+        sender: 'ai',
+        timestamp: now,
+        text: `Found **${matchedClaims.length} matching claims** in \`MAPLE HIGHWAYS - Master Data.md\` for your query ("${query}"):`,
+        type: 'claims_list',
+        data: matchedClaims.slice(0, 6).map(c => ({
+          id: c.id,
+          title: `${c.assetCategory || 'Road Asset'} (${c.broker} Â· ${c.entity})`,
+          reserve: fmtInr(c.claimAmount || (c.reserveAmountLakhs * 100000)),
+          status: `${c.statusCategory || c.status}`,
+          highway: c.highway
+        }))
+      };
+    }
   }
 
-  // Default fallback answer
+  // Default fallback response trained on master data structure
   return {
     id: Date.now().toString(),
     sender: 'ai',
     timestamp: now,
-    text: `MAPLE AI Copilot analyzed your query ("${query}").\n\nI indexed 47 active claims, 124 benchmark historical claims, and all corporate/legal contracts. Try selecting one of the suggested query chips above.`
+    text: `MAPLE AI Copilot searched \`MAPLE HIGHWAYS - Master Data.md\` (581 claims across 47 columns).\n\nYou can query:\nâ€¢ **Claim IDs** (e.g. \`ALL-812189\`, \`GAL-CLAIM-2025-26-04669\`, \`WTW-91\`, \`MAR-0001\`)\nâ€¢ **Brokers** (Alliance, Gallagher, Marsh, WTW)\nâ€¢ **Entities** (JPP, PPE)\nâ€¢ **Asset Categories** (MBCB, Street Light, Transformer, VMS Panel, Toll Booth)\nâ€¢ **Pending Documents** ("What documents are pending?")\nâ€¢ **Surveyors & Insurers** (J.C. Gupta, KOHLI, Oriental Insurance, ITGI)`
   };
 }
+
+

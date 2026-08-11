@@ -20,7 +20,7 @@ import { AICopilotScreen } from './components/screens/AICopilotScreen';
 export function App() {
   const [activeScreen, setActiveScreen] = useState<ScreenId>('login');
   const [claims, setClaims] = useState<Claim[]>(MOCK_CLAIMS);
-  const [selectedClaimId, setSelectedClaimId] = useState<string>('CLM-2026-00124');
+  const [selectedClaimId, setSelectedClaimId] = useState<string>('ALL-812189');
   const [globalSearchQuery, setGlobalSearchQuery] = useState<string>('');
 
   const selectedClaim = claims.find(c => c.id === selectedClaimId) || claims[0];

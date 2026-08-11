@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { 
-  Bot, 
-  Send, 
-  Sparkles, 
-  User, 
-  FileText, 
-  AlertTriangle, 
-  Mail, 
+﻿import React, { useState, useRef, useEffect } from 'react';
+import {
+  Bot,
+  Send,
+  Sparkles,
+  User,
+  FileText,
+  AlertTriangle,
+  Mail,
   ChevronRight,
   ShieldCheck,
   Building2,
@@ -24,12 +24,12 @@ interface AICopilotScreenProps {
 }
 
 const SUGGESTED_PROMPTS = [
-  'Which claims are above ₹5 Crores?',
-  'Show all claims pending over 90 days.',
-  'What documents are pending from us?',
-  'Show previous flood claims above ₹1 Crore.',
-  'Draft an email to the surveyor.',
-  'What are the potential objections to this claim?'
+  'Tell me about claim ALL-812189',
+  'What documents are pending for Gallagher claims?',
+  'Show all theft claims in JPP entity',
+  'Which claims have the highest loss amount?',
+  'Show summary of Marsh broker claims',
+  'What documents are pending for Alliance?'
 ];
 
 export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSelectClaim, setActiveScreen }) => {
@@ -38,7 +38,7 @@ export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSele
       id: 'welcome',
       sender: 'ai',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      text: 'Hello Anand! I am **MAPLE AI Copilot**. I have indexed all 47 active portfolio claims, 124 benchmark historical survey reports, and corporate/legal contracts for Maple Highways.\n\nAsk me anything or pick a suggested query below:'
+      text: 'Hello I am **MAPLE AI Copilot** trained on **MAPLE HIGHWAYS - Master Data.md** (581 claims across 47 columns).\n\nAsk me about any Claim ID (e.g. `ALL-812189`, `GAL-CLAIM-2025-26-04669`, `WTW-91`, `MAR-0001`), broker, entity, pending documents, or asset damage:'
     }
   ]);
   const [inputText, setInputText] = useState('');
@@ -138,14 +138,12 @@ export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSele
               </div>
             )}
 
-            <div className={`max-w-2xl space-y-2 ${
-              msg.sender === 'user' ? 'items-end' : 'items-start'
-            }`}>
-              <div className={`p-4 rounded-2xl text-xs leading-relaxed shadow-sm ${
-                msg.sender === 'user'
+            <div className={`max-w-2xl space-y-2 ${msg.sender === 'user' ? 'items-end' : 'items-start'
+              }`}>
+              <div className={`p-4 rounded-2xl text-xs leading-relaxed shadow-sm ${msg.sender === 'user'
                   ? 'bg-blue-600 text-white rounded-tr-none font-medium'
                   : 'bg-slate-950 text-slate-200 border border-slate-800 rounded-tl-none space-y-3'
-              }`}>
+                }`}>
                 {/* Text Formatting */}
                 <div className="whitespace-pre-wrap font-sans">
                   {msg.text}
@@ -155,7 +153,7 @@ export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSele
                 {msg.type === 'claims_list' && msg.data && (
                   <div className="space-y-2 border-t border-slate-800 pt-3">
                     {msg.data.map((c: any) => (
-                      <div 
+                      <div
                         key={c.id}
                         onClick={() => { onSelectClaim(c.id); setActiveScreen('claim-details'); }}
                         className="p-3 bg-slate-900 hover:bg-slate-800 rounded-xl border border-slate-800 flex items-center justify-between cursor-pointer transition-all"
@@ -165,7 +163,7 @@ export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSele
                             <span>{c.id}</span>
                             <span className="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-semibold">{c.status}</span>
                           </div>
-                          <div className="text-[11px] text-slate-400">{c.title} • {c.highway}</div>
+                          <div className="text-[11px] text-slate-400">{c.title} â€¢ {c.highway}</div>
                         </div>
                         <div className="text-right">
                           <div className="font-black text-amber-400 text-sm">{c.reserve}</div>
@@ -191,7 +189,7 @@ export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSele
                       ))}
                     </div>
                     <div className="p-3 bg-blue-950/50 border border-blue-500/30 rounded-lg text-blue-200 font-medium">
-                      💡 {msg.data.keyAction}
+                      ðŸ’¡ {msg.data.keyAction}
                     </div>
                   </div>
                 )}
@@ -255,7 +253,7 @@ export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSele
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          placeholder="Ask AI Copilot about claims above ₹5 Cr, pending docs over 90 days, or surveyor emails..."
+          placeholder="Ask AI Copilot about claims above â‚¹5 Cr, pending docs over 90 days, or surveyor emails..."
           className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3.5 pl-4 pr-12 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 shadow-lg"
         />
         <button
@@ -269,3 +267,4 @@ export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSele
     </div>
   );
 };
+

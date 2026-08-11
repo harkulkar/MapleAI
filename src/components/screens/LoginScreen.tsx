@@ -6,11 +6,15 @@ interface LoginScreenProps {
 }
 
 export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin }) => {
-  const [email, setEmail] = useState('manager@maplehighways.in');
-  const [password, setPassword] = useState('••••••••••••');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email.trim() || !password.trim()) {
+      // Optionally show a UI warning here
+      return;
+    }
     onLogin();
   };
 
@@ -84,21 +88,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin }) => {
             </button>
           </form>
 
-          <div className="relative flex items-center justify-center">
-            <div className="border-t border-slate-800 w-full" />
-            <span className="bg-slate-900 px-3 text-xs text-slate-500 font-medium uppercase tracking-wider absolute">
-              OR DEMO ACCESS
-            </span>
-          </div>
 
-          <button
-            onClick={onLogin}
-            type="button"
-            className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-amber-950/40 flex items-center justify-center gap-2"
-          >
-            <Sparkles className="w-4 h-4 text-slate-950" />
-            <span>Launch Client Demo Mode</span>
-          </button>
         </div>
 
         {/* Executive Footnote */}

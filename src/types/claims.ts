@@ -1,4 +1,4 @@
-export type SeverityLevel = 'Low' | 'Medium' | 'High' | 'Critical';
+﻿export type SeverityLevel = 'Low' | 'Medium' | 'High' | 'Critical';
 export type ClaimStatus = 'Draft' | 'Survey Pending' | 'Survey Underway' | 'Under Review' | 'Admitted' | 'Settled' | 'Repudiated';
 
 export interface DocumentItem {
@@ -61,6 +61,52 @@ export interface Claim {
   documents: DocumentItem[];
   timeline: TimelineStep[];
   createdAt: string;
+
+  // Master Data 47 Columns
+  broker?: string;
+  entity?: string;
+  sourceFile?: string;
+  asOnDate?: string;
+  brokerRefNo?: string;
+  insurerClaimNo?: string;
+  policyNo?: string;
+  policyType?: string;
+  policyPeriod?: string;
+  dateOfLoss?: string;
+  dateOfIntimation?: string;
+  intimationLagDays?: number | null;
+  lossFY?: string;
+  lossMonth?: string;
+  lossQuarter?: string;
+  lossDescription?: string;
+  lossLocation?: string;
+  kmRaw?: string;
+  km?: number | null;
+  kmBand?: string;
+  assetCategory?: string;
+  natureCategory?: string;
+  firLodged?: string;
+  firNo?: string;
+  surveyor?: string;
+  statusRaw?: string;
+  statusCategory?: string;
+  openFlag?: string;
+  pendingWith?: string;
+  documentsPending?: string;
+  claimAmount?: number | null;
+  grossAssessed?: number | null;
+  deductions?: number | null;
+  salvage?: number | null;
+  excess?: number | null;
+  riDeduction?: number | null;
+  otherAdditions?: number | null;
+  netSettled?: number | null;
+  settlementRatio?: number | null;
+  settlementDate?: string;
+  settlementTATDays?: number | null;
+  ageingDays?: number | null;
+  utr?: string;
+  remarks?: string;
 }
 
 export interface PortfolioMetrics {
@@ -114,3 +160,4 @@ export interface MLPrediction {
   expectedSurveyQueries: string[];
   idealNegotiationStrategy: string;
 }
+
