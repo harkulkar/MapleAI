@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import type { Claim } from '../../types/claims';
 import {
   Sparkles,
   CheckCircle2,
@@ -18,7 +19,7 @@ import {
 import type { ScreenId } from '../layout/Sidebar';
 
 interface IncidentReportingScreenProps {
-  onClaimCreated?: (newClaim: unknown) => void;
+  onClaimCreated?: (newClaim: Claim) => void;
   setActiveScreen: (screen: ScreenId) => void;
 }
 
@@ -59,7 +60,7 @@ const REQ = <span className="text-red-400 ml-0.5">*</span>;
 const SECTION_CLS = 'bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-lg space-y-5';
 const SECTION_TITLE = 'text-base font-bold text-white border-b border-slate-800 pb-3 mb-5 flex items-center gap-2';
 
-export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = ({ setActiveScreen }) => {
+export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = ({ onClaimCreated, setActiveScreen }) => {
   // ── Claims Intimation
   const [selectedPolicy, setSelectedPolicy] = useState<typeof POLICIES[0] | null>(null);
   const [policySearch, setPolicySearch] = useState('');
@@ -134,12 +135,15 @@ export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = (
       claimSections,
       contact: { onsiteName, onsiteEmail, mobileNumber },
       location: { locationName, zone, pinCode, city, state, country },
-    };
+    } as unknown as Claim; // casting to Claim for compatibility
 
     // ── Save to localStorage (backend simulation)
     const existing = JSON.parse(localStorage.getItem('maple_submitted_claims') || '[]');
     existing.push(payload);
     localStorage.setItem('maple_submitted_claims', JSON.stringify(existing));
+
+    // invoke callback if provided
+    onClaimCreated?.(payload);
 
     setSubmittedId(claimId);
     setSubmitted(true);
