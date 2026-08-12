@@ -163,7 +163,7 @@ export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSele
                             <span>{c.id}</span>
                             <span className="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-semibold">{c.status}</span>
                           </div>
-                          <div className="text-[11px] text-slate-400">{c.title} â€¢ {c.highway}</div>
+                          <div className="text-[11px] text-slate-400">{c.title} • {c.highway}</div>
                         </div>
                         <div className="text-right">
                           <div className="font-black text-amber-400 text-sm">{c.reserve}</div>
@@ -253,7 +253,7 @@ export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSele
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          placeholder="Ask AI Copilot about claims above â‚¹5 Cr, pending docs over 90 days, or surveyor emails..."
+          placeholder="Ask AI Copilot about claims above 5 Cr, pending docs over 90 days, or surveyor emails..."
           className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3.5 pl-4 pr-12 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 shadow-lg"
         />
         <button

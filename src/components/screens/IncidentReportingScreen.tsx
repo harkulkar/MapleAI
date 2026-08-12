@@ -50,7 +50,7 @@ const TYPE_OF_LOSS_OPTIONS = [
 
 const CLAIM_TYPE_OPTIONS = ['Non EB internal claim', 'EB Claim', 'External Claim', 'Liability Claim'];
 
-const CLAIM_SECTIONS_OPTIONS = ['All', 'Section A – Property', 'Section B – Machinery', 'Section C – BI/Revenue', 'Section D – Liability'];
+const CLAIM_SECTIONS_OPTIONS = ['All', 'Section A - Property', 'Section B - Machinery', 'Section C - BI/Revenue', 'Section D - Liability'];
 
 const ZONE_OPTIONS = ['Centralized Zone', 'East', 'North', 'South', 'West'];
 
@@ -276,7 +276,7 @@ export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = (
             {errors.dateOfLoss && <p className="text-red-400 text-xs mt-1">{errors.dateOfLoss}</p>}
           </div>
           <div>
-            <label className={LABEL_CLS}>{REQ} Claimed Amount (₹)</label>
+            <label className={LABEL_CLS}>{REQ} Claimed Amount ()</label>
             <input
               type="number"
               placeholder="e.g. 250000"
@@ -420,7 +420,7 @@ export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = (
             <label className={LABEL_CLS}>{REQ} Risk / Loss Location Name</label>
             <input
               type="text"
-              placeholder="e.g. Toll Plaza – KM 42+600"
+              placeholder="e.g. Toll Plaza - KM 42+600"
               value={locationName}
               onChange={e => { setLocationName(e.target.value); setErrors(v => ({ ...v, locationName: '' })); }}
               className={`${INPUT_CLS} ${errors.locationName ? 'border-red-500' : ''}`}

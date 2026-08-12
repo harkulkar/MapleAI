@@ -54,9 +54,9 @@ const BROKER_COLORS: Record<string, string> = {
 };
 
 const fmtInr = (v: number | null) => {
-  if (v === null) return '–';
-  if (v >= 100000) return `₹${(v / 100000).toFixed(2)} L`;
-  return `₹${v.toLocaleString('en-IN')}`;
+  if (v === null) return '-';
+  if (v >= 100000) return `${(v / 100000).toFixed(2)} L`;
+  return `${v.toLocaleString('en-IN')}`;
 };
 
 const ITEMS_PER_PAGE = 15;
@@ -158,7 +158,7 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
           { icon: CheckCircle2, label: 'Showing', value: stats.total, sub: `${stats.settled} settled`, color: 'text-white', iconColor: 'text-blue-400' },
           { icon: IndianRupee, label: 'Total Claimed', value: fmtInr(stats.totalClaimed), sub: 'reported amounts', color: 'text-amber-400', iconColor: 'text-amber-400' },
           { icon: TrendingUp, label: 'Net Settled', value: fmtInr(stats.totalSettled), sub: `${stats.settled} claims paid`, color: 'text-green-400', iconColor: 'text-green-400' },
-          { icon: Clock, label: 'Avg TAT', value: stats.avgTAT ? `${stats.avgTAT}d` : '–', sub: 'settled claims only', color: 'text-purple-400', iconColor: 'text-purple-400' },
+          { icon: Clock, label: 'Avg TAT', value: stats.avgTAT ? `${stats.avgTAT}d` : '-', sub: 'settled claims only', color: 'text-purple-400', iconColor: 'text-purple-400' },
         ].map(({ icon: Icon, label, value, sub, color, iconColor }) => (
           <div key={label} className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex items-center gap-3">
             <Icon className={`w-5 h-5 ${iconColor} flex-shrink-0`} />
@@ -237,7 +237,7 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
               <option value="claimAmt">Claim Amount ↓</option>
               <option value="netSettled">Net Settled ↓</option>
               <option value="tat">Settlement TAT ↓</option>
-              <option value="status">Status A–Z</option>
+              <option value="status">Status A-Z</option>
             </select>
           </div>
         </div>
@@ -286,7 +286,7 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
                     </td>
                     <td className="px-4 py-3">
                       <div className="text-xs text-slate-200 font-medium">{claim.assetCategory}</div>
-                      <div className="text-[11px] text-slate-500 truncate max-w-[160px]">{claim.location ?? '–'}</div>
+                      <div className="text-[11px] text-slate-500 truncate max-w-[160px]">{claim.location ?? '-'}</div>
                     </td>
                     <td className="px-4 py-3 text-xs text-slate-300">{claim.natureOfLoss}</td>
                     <td className="px-4 py-3 text-xs text-slate-400">{claim.insurer}</td>
@@ -304,7 +304,7 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
                           {claim.settlementTATDays}d
                         </span>
                       ) : (
-                        <span className="text-slate-600 text-xs">–</span>
+                        <span className="text-slate-600 text-xs">-</span>
                       )}
                     </td>
                     <td className="px-4 py-3">
@@ -313,7 +313,7 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
                       </span>
                     </td>
                     <td className="px-4 py-3">
-                      <span className="text-[11px] text-slate-400 truncate max-w-[140px] block">{claim.surveyor ?? '–'}</span>
+                      <span className="text-[11px] text-slate-400 truncate max-w-[140px] block">{claim.surveyor ?? '-'}</span>
                     </td>
                   </tr>
                 ))

@@ -112,7 +112,7 @@ export const ClaimDetailsScreen: React.FC<ClaimDetailsScreenProps> = ({
         </div>
         <div>
           <span className="text-[10px] text-slate-500 font-bold uppercase block">Initial Reserve</span>
-          <span className="font-black text-amber-400">₹{claim.reserveAmountLakhs} Lakhs</span>
+          <span className="font-black text-amber-400">{claim.reserveAmountLakhs} Lakhs</span>
         </div>
         <div>
           <span className="text-[10px] text-slate-500 font-bold uppercase block">Severity</span>
@@ -261,7 +261,7 @@ export const ClaimDetailsScreen: React.FC<ClaimDetailsScreenProps> = ({
                 </div>
                 <div className="flex justify-between py-1 border-b border-slate-800">
                   <span className="text-slate-400">Estimated Deductible</span>
-                  <span className="font-bold text-amber-400">₹{claim.aiAssessment.likelyDeductible} Lakhs</span>
+                  <span className="font-bold text-amber-400">{claim.aiAssessment.likelyDeductible} Lakhs</span>
                 </div>
                 <div className="flex justify-between py-1">
                   <span className="text-slate-400">Claim Admission Probability</span>

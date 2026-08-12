@@ -26,7 +26,7 @@ interface AIClaimAdvisorScreenProps {
 const AI_CHECK_ITEMS = [
   'Industrial All Risk Policy Wording',
   'Monsoon Peril Endorsements (Addendum 04)',
-  'Policy Deductible Schedule (₹25L Threshold)',
+  'Policy Deductible Schedule (25L Threshold)',
   'Exclusions Clause 18 (Pre-existing Wear)',
   'Historical Database of 124 Road Claims',
   'NHAI Concession Agreement (Clause 14.2)',
@@ -157,7 +157,7 @@ export const AIClaimAdvisorScreen: React.FC<AIClaimAdvisorScreenProps> = ({ clai
 
         <div className="bg-slate-900/90 border border-slate-800 p-5 rounded-xl space-y-1 border-l-4 border-l-amber-500">
           <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">LIKELY DEDUCTIBLE</span>
-          <div className="text-3xl font-black text-amber-400">₹25 Lakhs</div>
+          <div className="text-3xl font-black text-amber-400">25 Lakhs</div>
           <span className="text-[11px] text-slate-500">Policy excess threshold</span>
         </div>
 

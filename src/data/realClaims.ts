@@ -1,7 +1,7 @@
 ﻿// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// MAPLE HIGHWAYS â€“ Real Claims Registry
-// Source: Consolidated MIS Â· Alliance / Gallagher / Marsh / WTW
-// 581 claims Â· As of Aug 2026 Â· Parsed from MAPLE HIGHWAYS - Master Data.md
+// MAPLE HIGHWAYS - Real Claims Registry
+// Source: Consolidated MIS · Alliance / Gallagher / Marsh / WTW
+// 581 claims · As of Aug 2026 · Parsed from MAPLE HIGHWAYS - Master Data.md
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 import { REAL_MASTER_CLAIMS } from './masterClaimsData';

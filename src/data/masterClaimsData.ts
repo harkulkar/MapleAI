@@ -1,6 +1,6 @@
 ﻿// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// MAPLE HIGHWAYS â€“ Master Claims Data (Generated from MAPLE HIGHWAYS - Master Data.md)
-// 581 claims Â· 47 columns Â· Alliance / Gallagher / Marsh / WTW
+// MAPLE HIGHWAYS - Master Claims Data (Generated from MAPLE HIGHWAYS - Master Data.md)
+// 581 claims · 47 columns · Alliance / Gallagher / Marsh / WTW
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 import type { Claim } from '../types/claims';
@@ -24,7 +24,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 2.8,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -160,7 +160,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.2,
     "insurer": "Not stated in MIS",
     "status": "Admitted",
@@ -296,7 +296,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.8,
     "insurer": "Not stated in MIS",
     "status": "Repudiated",
@@ -432,7 +432,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "insurer": "Not stated in MIS",
     "status": "Admitted",
@@ -568,7 +568,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -704,7 +704,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "insurer": "Not stated in MIS",
     "status": "Admitted",
@@ -840,7 +840,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.69,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -976,7 +976,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 2.97,
     "insurer": "Not stated in MIS",
     "status": "Admitted",
@@ -1112,7 +1112,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.6,
     "insurer": "Not stated in MIS",
     "status": "Repudiated",
@@ -1248,7 +1248,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.4,
     "insurer": "Not stated in MIS",
     "status": "Repudiated",
@@ -1384,7 +1384,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.28,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -1520,7 +1520,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -1539,9 +1539,9 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "admissionProbability": 88,
       "likelyDeductible": 0.25,
       "missingEvidence": [
-        "1. Claim form duly filled and signed â€“ (Specimen copy attached). 2. Claim bill on your letter head duly signed and stamped. 3. Basis of salvage 4. Concession agreement giving the relevant pages i.e. details of agreement execution, parties involved, scope of principal and O&M, Insurance Obligations, Details of assets of the projects with their values if mentioned & the last pages of signatures of both the parties. 5. Police intimation document. 6. Restoration documents such as bills and payment proofs along with restoration photographs"
+        "1. Claim form duly filled and signed - (Specimen copy attached). 2. Claim bill on your letter head duly signed and stamped. 3. Basis of salvage 4. Concession agreement giving the relevant pages i.e. details of agreement execution, parties involved, scope of principal and O&M, Insurance Obligations, Details of assets of the projects with their values if mentioned & the last pages of signatures of both the parties. 5. Police intimation document. 6. Restoration documents such as bills and payment proofs along with restoration photographs"
       ],
-      "recommendation": "Submit pending documents: 1. Claim form duly filled and signed â€“ (Specimen copy attached). 2. Claim bill on your letter head duly signed and stamped. 3. Basis of salvage 4. Concession agreement giving the relevant pages i.e. details of agreement execution, parties involved, scope of principal and O&M, Insurance Obligations, Details of assets of the projects with their values if mentioned & the last pages of signatures of both the parties. 5. Police intimation document. 6. Restoration documents such as bills and payment proofs along with restoration photographs",
+      "recommendation": "Submit pending documents: 1. Claim form duly filled and signed - (Specimen copy attached). 2. Claim bill on your letter head duly signed and stamped. 3. Basis of salvage 4. Concession agreement giving the relevant pages i.e. details of agreement execution, parties involved, scope of principal and O&M, Insurance Obligations, Details of assets of the projects with their values if mentioned & the last pages of signatures of both the parties. 5. Police intimation document. 6. Restoration documents such as bills and payment proofs along with restoration photographs",
       "potentialObjections": [
         "Insurer requires original repair bills with GRN proof.",
         "Salvage value deduction recommendation from surveyor."
@@ -1586,7 +1586,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-3",
         "title": "Current Status",
-        "description": "Status: Open - Documents Pending. Docs Pending: 1. Claim form duly filled and signed â€“ (Specimen copy attached). 2. Claim bill on your letter head duly signed and stamped. 3. Basis of salvage 4. Concession agreement giving the relevant pages i.e. details of agreement execution, parties involved, scope of principal and O&M, Insurance Obligations, Details of assets of the projects with their values if mentioned & the last pages of signatures of both the parties. 5. Police intimation document. 6. Restoration documents such as bills and payment proofs along with restoration photographs",
+        "description": "Status: Open - Documents Pending. Docs Pending: 1. Claim form duly filled and signed - (Specimen copy attached). 2. Claim bill on your letter head duly signed and stamped. 3. Basis of salvage 4. Concession agreement giving the relevant pages i.e. details of agreement execution, parties involved, scope of principal and O&M, Insurance Obligations, Details of assets of the projects with their values if mentioned & the last pages of signatures of both the parties. 5. Police intimation document. 6. Restoration documents such as bills and payment proofs along with restoration photographs",
         "date": "In Progress",
         "status": "current",
         "actor": "Mack Surveyor"
@@ -1622,7 +1622,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "statusCategory": "Open - Documents Pending",
     "openFlag": "Open",
     "pendingWith": "",
-    "documentsPending": "1. Claim form duly filled and signed â€“ (Specimen copy attached). 2. Claim bill on your letter head duly signed and stamped. 3. Basis of salvage 4. Concession agreement giving the relevant pages i.e. details of agreement execution, parties involved, scope of principal and O&M, Insurance Obligations, Details of assets of the projects with their values if mentioned & the last pages of signatures of both the parties. 5. Police intimation document. 6. Restoration documents such as bills and payment proofs along with restoration photographs",
+    "documentsPending": "1. Claim form duly filled and signed - (Specimen copy attached). 2. Claim bill on your letter head duly signed and stamped. 3. Basis of salvage 4. Concession agreement giving the relevant pages i.e. details of agreement execution, parties involved, scope of principal and O&M, Insurance Obligations, Details of assets of the projects with their values if mentioned & the last pages of signatures of both the parties. 5. Police intimation document. 6. Restoration documents such as bills and payment proofs along with restoration photographs",
     "claimAmount": 102340,
     "grossAssessed": null,
     "deductions": null,
@@ -1656,7 +1656,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -1675,9 +1675,9 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "admissionProbability": 88,
       "likelyDeductible": 0.25,
       "missingEvidence": [
-        "1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)"
+        "1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)"
       ],
-      "recommendation": "Submit pending documents: 1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
+      "recommendation": "Submit pending documents: 1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
       "potentialObjections": [
         "Insurer requires original repair bills with GRN proof.",
         "Salvage value deduction recommendation from surveyor."
@@ -1722,7 +1722,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-3",
         "title": "Current Status",
-        "description": "Status: Open - Documents Pending. Docs Pending: 1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
+        "description": "Status: Open - Documents Pending. Docs Pending: 1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
         "date": "In Progress",
         "status": "current",
         "actor": "T-three"
@@ -1758,7 +1758,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "statusCategory": "Open - Documents Pending",
     "openFlag": "Open",
     "pendingWith": "",
-    "documentsPending": "1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
+    "documentsPending": "1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
     "claimAmount": 102340,
     "grossAssessed": null,
     "deductions": null,
@@ -1792,7 +1792,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.7,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -1811,9 +1811,9 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "admissionProbability": 88,
       "likelyDeductible": 0.25,
       "missingEvidence": [
-        "â€¢ Detailed note on incidence of loss mentioning the date and time of loss, cause of loss, nature and extent of loss and efforts taken to minimize the loss in chronological order.  â€¢ Photographs / Videography taken by you w.r.t. incidence of loss immediately showing the nature and extent of damage. â€¢ Copy of test report confirming the damages to UPS etc. having cause of loss, nature and extent of loss etc.  â€¢ Copy of Fitment Report after repair/replacement. â€¢ Claim Bill in the below mentioned format in respect of the reported loss/damages with cost supporting documents such as repair & reinstatement invoices, payments proof etc. Sr. No Description /Particulars UoM Qty. Rate Rs. Amount Rs. Bill Reference (Mention bill / invoice No.)  â€¢ Copy of Purchase Invoice of the stolen equipment along with installation reports at the affected location.  â€¢ Copy of agreement for operation and maintenance of the subject project.  â€¢ Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks"
+        "• Detailed note on incidence of loss mentioning the date and time of loss, cause of loss, nature and extent of loss and efforts taken to minimize the loss in chronological order.  • Photographs / Videography taken by you w.r.t. incidence of loss immediately showing the nature and extent of damage. • Copy of test report confirming the damages to UPS etc. having cause of loss, nature and extent of loss etc.  • Copy of Fitment Report after repair/replacement. • Claim Bill in the below mentioned format in respect of the reported loss/damages with cost supporting documents such as repair & reinstatement invoices, payments proof etc. Sr. No Description /Particulars UoM Qty. Rate Rs. Amount Rs. Bill Reference (Mention bill / invoice No.)  • Copy of Purchase Invoice of the stolen equipment along with installation reports at the affected location.  • Copy of agreement for operation and maintenance of the subject project.  • Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks"
       ],
-      "recommendation": "Submit pending documents: â€¢ Detailed note on incidence of loss mentioning the date and time of loss, cause of loss, nature and extent of loss and efforts taken to minimize the loss in chronological order.  â€¢ Photographs / Videography taken by you w.r.t. incidence of loss immediately showing the nature and extent of damage. â€¢ Copy of test report confirming the damages to UPS etc. having cause of loss, nature and extent of loss etc.  â€¢ Copy of Fitment Report after repair/replacement. â€¢ Claim Bill in the below mentioned format in respect of the reported loss/damages with cost supporting documents such as repair & reinstatement invoices, payments proof etc. Sr. No Description /Particulars UoM Qty. Rate Rs. Amount Rs. Bill Reference (Mention bill / invoice No.)  â€¢ Copy of Purchase Invoice of the stolen equipment along with installation reports at the affected location.  â€¢ Copy of agreement for operation and maintenance of the subject project.  â€¢ Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks",
+      "recommendation": "Submit pending documents: • Detailed note on incidence of loss mentioning the date and time of loss, cause of loss, nature and extent of loss and efforts taken to minimize the loss in chronological order.  • Photographs / Videography taken by you w.r.t. incidence of loss immediately showing the nature and extent of damage. • Copy of test report confirming the damages to UPS etc. having cause of loss, nature and extent of loss etc.  • Copy of Fitment Report after repair/replacement. • Claim Bill in the below mentioned format in respect of the reported loss/damages with cost supporting documents such as repair & reinstatement invoices, payments proof etc. Sr. No Description /Particulars UoM Qty. Rate Rs. Amount Rs. Bill Reference (Mention bill / invoice No.)  • Copy of Purchase Invoice of the stolen equipment along with installation reports at the affected location.  • Copy of agreement for operation and maintenance of the subject project.  • Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks",
       "potentialObjections": [
         "Insurer requires original repair bills with GRN proof.",
         "Salvage value deduction recommendation from surveyor."
@@ -1831,7 +1831,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       },
       {
         "id": "doc-2",
-        "name": "Pending: â€¢ Detailed note on incidence of los...",
+        "name": "Pending: • Detailed note on incidence of los...",
         "category": "Registers",
         "status": "Missing",
         "requiredForSurvey": true,
@@ -1858,7 +1858,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-3",
         "title": "Current Status",
-        "description": "Status: Open - Documents Pending. Docs Pending: â€¢ Detailed note on incidence of loss mentioning the date and time of loss, cause of loss, nature and extent of loss and efforts taken to minimize the loss in chronological order.  â€¢ Photographs / Videography taken by you w.r.t. incidence of loss immediately showing the nature and extent of damage. â€¢ Copy of test report confirming the damages to UPS etc. having cause of loss, nature and extent of loss etc.  â€¢ Copy of Fitment Report after repair/replacement. â€¢ Claim Bill in the below mentioned format in respect of the reported loss/damages with cost supporting documents such as repair & reinstatement invoices, payments proof etc. Sr. No Description /Particulars UoM Qty. Rate Rs. Amount Rs. Bill Reference (Mention bill / invoice No.)  â€¢ Copy of Purchase Invoice of the stolen equipment along with installation reports at the affected location.  â€¢ Copy of agreement for operation and maintenance of the subject project.  â€¢ Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks",
+        "description": "Status: Open - Documents Pending. Docs Pending: • Detailed note on incidence of loss mentioning the date and time of loss, cause of loss, nature and extent of loss and efforts taken to minimize the loss in chronological order.  • Photographs / Videography taken by you w.r.t. incidence of loss immediately showing the nature and extent of damage. • Copy of test report confirming the damages to UPS etc. having cause of loss, nature and extent of loss etc.  • Copy of Fitment Report after repair/replacement. • Claim Bill in the below mentioned format in respect of the reported loss/damages with cost supporting documents such as repair & reinstatement invoices, payments proof etc. Sr. No Description /Particulars UoM Qty. Rate Rs. Amount Rs. Bill Reference (Mention bill / invoice No.)  • Copy of Purchase Invoice of the stolen equipment along with installation reports at the affected location.  • Copy of agreement for operation and maintenance of the subject project.  • Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks",
         "date": "In Progress",
         "status": "current",
         "actor": "Mack"
@@ -1894,7 +1894,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "statusCategory": "Open - Documents Pending",
     "openFlag": "Open",
     "pendingWith": "",
-    "documentsPending": "â€¢ Detailed note on incidence of loss mentioning the date and time of loss, cause of loss, nature and extent of loss and efforts taken to minimize the loss in chronological order.  â€¢ Photographs / Videography taken by you w.r.t. incidence of loss immediately showing the nature and extent of damage. â€¢ Copy of test report confirming the damages to UPS etc. having cause of loss, nature and extent of loss etc.  â€¢ Copy of Fitment Report after repair/replacement. â€¢ Claim Bill in the below mentioned format in respect of the reported loss/damages with cost supporting documents such as repair & reinstatement invoices, payments proof etc. Sr. No Description /Particulars UoM Qty. Rate Rs. Amount Rs. Bill Reference (Mention bill / invoice No.)  â€¢ Copy of Purchase Invoice of the stolen equipment along with installation reports at the affected location.  â€¢ Copy of agreement for operation and maintenance of the subject project.  â€¢ Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks",
+    "documentsPending": "• Detailed note on incidence of loss mentioning the date and time of loss, cause of loss, nature and extent of loss and efforts taken to minimize the loss in chronological order.  • Photographs / Videography taken by you w.r.t. incidence of loss immediately showing the nature and extent of damage. • Copy of test report confirming the damages to UPS etc. having cause of loss, nature and extent of loss etc.  • Copy of Fitment Report after repair/replacement. • Claim Bill in the below mentioned format in respect of the reported loss/damages with cost supporting documents such as repair & reinstatement invoices, payments proof etc. Sr. No Description /Particulars UoM Qty. Rate Rs. Amount Rs. Bill Reference (Mention bill / invoice No.)  • Copy of Purchase Invoice of the stolen equipment along with installation reports at the affected location.  • Copy of agreement for operation and maintenance of the subject project.  • Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks",
     "claimAmount": 69620,
     "grossAssessed": null,
     "deductions": null,
@@ -1928,7 +1928,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -1947,9 +1947,9 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "admissionProbability": 88,
       "likelyDeductible": 0.25,
       "missingEvidence": [
-        "1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)"
+        "1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)"
       ],
-      "recommendation": "Submit pending documents: 1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
+      "recommendation": "Submit pending documents: 1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
       "potentialObjections": [
         "Insurer requires original repair bills with GRN proof.",
         "Salvage value deduction recommendation from surveyor."
@@ -1994,7 +1994,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-3",
         "title": "Current Status",
-        "description": "Status: Open - Documents Pending. Docs Pending: 1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
+        "description": "Status: Open - Documents Pending. Docs Pending: 1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
         "date": "In Progress",
         "status": "current",
         "actor": "Team"
@@ -2030,7 +2030,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "statusCategory": "Open - Documents Pending",
     "openFlag": "Open",
     "pendingWith": "",
-    "documentsPending": "1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
+    "documentsPending": "1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any)",
     "claimAmount": 102340,
     "grossAssessed": null,
     "deductions": null,
@@ -2064,7 +2064,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 2.05,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -2200,7 +2200,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -2219,9 +2219,9 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "admissionProbability": 88,
       "likelyDeductible": 0.25,
       "missingEvidence": [
-        "1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any) 6. Police intimation letter"
+        "1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any) 6. Police intimation letter"
       ],
-      "recommendation": "Submit pending documents: 1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any) 6. Police intimation letter",
+      "recommendation": "Submit pending documents: 1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any) 6. Police intimation letter",
       "potentialObjections": [
         "Insurer requires original repair bills with GRN proof.",
         "Salvage value deduction recommendation from surveyor."
@@ -2266,7 +2266,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-3",
         "title": "Current Status",
-        "description": "Status: Open - Documents Pending. Docs Pending: 1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any) 6. Police intimation letter",
+        "description": "Status: Open - Documents Pending. Docs Pending: 1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any) 6. Police intimation letter",
         "date": "In Progress",
         "status": "current",
         "actor": "Team"
@@ -2302,7 +2302,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "statusCategory": "Open - Documents Pending",
     "openFlag": "Open",
     "pendingWith": "",
-    "documentsPending": "1. Claim Bill duly signed on the insuredâ€™s letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any) 6. Police intimation letter",
+    "documentsPending": "1. Claim Bill duly signed on the insured's letterhead. 2. Repair Invoices along with the payment proof. 3. KYC Documents- GST Certificate, Certificate of Incorporation, PAN Card, Cancelled cheque. 4. Labelled reinstatement work photos. 5. Salvage offer (if any) 6. Police intimation letter",
     "claimAmount": 102340,
     "grossAssessed": null,
     "deductions": null,
@@ -2336,7 +2336,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 6.14,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -2355,9 +2355,9 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "admissionProbability": 88,
       "likelyDeductible": 0.25,
       "missingEvidence": [
-        "1. Detailed note on incidence of loss mentioning the date and time of loss, cause  of loss, nature and extent of loss and efforts taken to minimize the loss in  chronological order.  2. Copy of Newspaper cuttings for the subject incident.  3. Copy of meteorological report showing the intensity of storm such as wind  speed.  4. Photographs / Videography taken by you w.r.t. incidence of loss immediately  showing the nature and extent of damage.  5. Copy of CCTV footage for the subject incident.  6. Copy of FIR with Police Panchanama and Police Final Report with details of  recovery for the theft and missing parts.  7. Claim Form duly completed, signed and stamped along with copies of GST reg,  certificate, PAN Card of Firm and cancelled cheque.  8. Copy of agreement for operation and maintenance of the subject project.  9. Claim Bill in the below mentioned format in respect of the reported  loss/damages with cost supporting documents such as repair & reinstatement  invoices, payments proof etc. 10. Copy of fixed asset register maintained for the subject project/operations since  inception till date of loss.  11. Copy of recent valuation report.  12. Balance Sheet (complete Annexure & Schedule attached to it) for the last 3 FYâ€™s  including Tax Audit Report & Income Tax Return.   13. Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks."
+        "1. Detailed note on incidence of loss mentioning the date and time of loss, cause  of loss, nature and extent of loss and efforts taken to minimize the loss in  chronological order.  2. Copy of Newspaper cuttings for the subject incident.  3. Copy of meteorological report showing the intensity of storm such as wind  speed.  4. Photographs / Videography taken by you w.r.t. incidence of loss immediately  showing the nature and extent of damage.  5. Copy of CCTV footage for the subject incident.  6. Copy of FIR with Police Panchanama and Police Final Report with details of  recovery for the theft and missing parts.  7. Claim Form duly completed, signed and stamped along with copies of GST reg,  certificate, PAN Card of Firm and cancelled cheque.  8. Copy of agreement for operation and maintenance of the subject project.  9. Claim Bill in the below mentioned format in respect of the reported  loss/damages with cost supporting documents such as repair & reinstatement  invoices, payments proof etc. 10. Copy of fixed asset register maintained for the subject project/operations since  inception till date of loss.  11. Copy of recent valuation report.  12. Balance Sheet (complete Annexure & Schedule attached to it) for the last 3 FY's  including Tax Audit Report & Income Tax Return.   13. Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks."
       ],
-      "recommendation": "Submit pending documents: 1. Detailed note on incidence of loss mentioning the date and time of loss, cause  of loss, nature and extent of loss and efforts taken to minimize the loss in  chronological order.  2. Copy of Newspaper cuttings for the subject incident.  3. Copy of meteorological report showing the intensity of storm such as wind  speed.  4. Photographs / Videography taken by you w.r.t. incidence of loss immediately  showing the nature and extent of damage.  5. Copy of CCTV footage for the subject incident.  6. Copy of FIR with Police Panchanama and Police Final Report with details of  recovery for the theft and missing parts.  7. Claim Form duly completed, signed and stamped along with copies of GST reg,  certificate, PAN Card of Firm and cancelled cheque.  8. Copy of agreement for operation and maintenance of the subject project.  9. Claim Bill in the below mentioned format in respect of the reported  loss/damages with cost supporting documents such as repair & reinstatement  invoices, payments proof etc. 10. Copy of fixed asset register maintained for the subject project/operations since  inception till date of loss.  11. Copy of recent valuation report.  12. Balance Sheet (complete Annexure & Schedule attached to it) for the last 3 FYâ€™s  including Tax Audit Report & Income Tax Return.   13. Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks.",
+      "recommendation": "Submit pending documents: 1. Detailed note on incidence of loss mentioning the date and time of loss, cause  of loss, nature and extent of loss and efforts taken to minimize the loss in  chronological order.  2. Copy of Newspaper cuttings for the subject incident.  3. Copy of meteorological report showing the intensity of storm such as wind  speed.  4. Photographs / Videography taken by you w.r.t. incidence of loss immediately  showing the nature and extent of damage.  5. Copy of CCTV footage for the subject incident.  6. Copy of FIR with Police Panchanama and Police Final Report with details of  recovery for the theft and missing parts.  7. Claim Form duly completed, signed and stamped along with copies of GST reg,  certificate, PAN Card of Firm and cancelled cheque.  8. Copy of agreement for operation and maintenance of the subject project.  9. Claim Bill in the below mentioned format in respect of the reported  loss/damages with cost supporting documents such as repair & reinstatement  invoices, payments proof etc. 10. Copy of fixed asset register maintained for the subject project/operations since  inception till date of loss.  11. Copy of recent valuation report.  12. Balance Sheet (complete Annexure & Schedule attached to it) for the last 3 FY's  including Tax Audit Report & Income Tax Return.   13. Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks.",
       "potentialObjections": [
         "Insurer requires original repair bills with GRN proof.",
         "Salvage value deduction recommendation from surveyor."
@@ -2402,7 +2402,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-3",
         "title": "Current Status",
-        "description": "Status: Open - Documents Pending. Docs Pending: 1. Detailed note on incidence of loss mentioning the date and time of loss, cause  of loss, nature and extent of loss and efforts taken to minimize the loss in  chronological order.  2. Copy of Newspaper cuttings for the subject incident.  3. Copy of meteorological report showing the intensity of storm such as wind  speed.  4. Photographs / Videography taken by you w.r.t. incidence of loss immediately  showing the nature and extent of damage.  5. Copy of CCTV footage for the subject incident.  6. Copy of FIR with Police Panchanama and Police Final Report with details of  recovery for the theft and missing parts.  7. Claim Form duly completed, signed and stamped along with copies of GST reg,  certificate, PAN Card of Firm and cancelled cheque.  8. Copy of agreement for operation and maintenance of the subject project.  9. Claim Bill in the below mentioned format in respect of the reported  loss/damages with cost supporting documents such as repair & reinstatement  invoices, payments proof etc. 10. Copy of fixed asset register maintained for the subject project/operations since  inception till date of loss.  11. Copy of recent valuation report.  12. Balance Sheet (complete Annexure & Schedule attached to it) for the last 3 FYâ€™s  including Tax Audit Report & Income Tax Return.   13. Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks.",
+        "description": "Status: Open - Documents Pending. Docs Pending: 1. Detailed note on incidence of loss mentioning the date and time of loss, cause  of loss, nature and extent of loss and efforts taken to minimize the loss in  chronological order.  2. Copy of Newspaper cuttings for the subject incident.  3. Copy of meteorological report showing the intensity of storm such as wind  speed.  4. Photographs / Videography taken by you w.r.t. incidence of loss immediately  showing the nature and extent of damage.  5. Copy of CCTV footage for the subject incident.  6. Copy of FIR with Police Panchanama and Police Final Report with details of  recovery for the theft and missing parts.  7. Claim Form duly completed, signed and stamped along with copies of GST reg,  certificate, PAN Card of Firm and cancelled cheque.  8. Copy of agreement for operation and maintenance of the subject project.  9. Claim Bill in the below mentioned format in respect of the reported  loss/damages with cost supporting documents such as repair & reinstatement  invoices, payments proof etc. 10. Copy of fixed asset register maintained for the subject project/operations since  inception till date of loss.  11. Copy of recent valuation report.  12. Balance Sheet (complete Annexure & Schedule attached to it) for the last 3 FY's  including Tax Audit Report & Income Tax Return.   13. Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks.",
         "date": "In Progress",
         "status": "current",
         "actor": "Mack Surveyor"
@@ -2438,7 +2438,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "statusCategory": "Open - Documents Pending",
     "openFlag": "Open",
     "pendingWith": "",
-    "documentsPending": "1. Detailed note on incidence of loss mentioning the date and time of loss, cause  of loss, nature and extent of loss and efforts taken to minimize the loss in  chronological order.  2. Copy of Newspaper cuttings for the subject incident.  3. Copy of meteorological report showing the intensity of storm such as wind  speed.  4. Photographs / Videography taken by you w.r.t. incidence of loss immediately  showing the nature and extent of damage.  5. Copy of CCTV footage for the subject incident.  6. Copy of FIR with Police Panchanama and Police Final Report with details of  recovery for the theft and missing parts.  7. Claim Form duly completed, signed and stamped along with copies of GST reg,  certificate, PAN Card of Firm and cancelled cheque.  8. Copy of agreement for operation and maintenance of the subject project.  9. Claim Bill in the below mentioned format in respect of the reported  loss/damages with cost supporting documents such as repair & reinstatement  invoices, payments proof etc. 10. Copy of fixed asset register maintained for the subject project/operations since  inception till date of loss.  11. Copy of recent valuation report.  12. Balance Sheet (complete Annexure & Schedule attached to it) for the last 3 FYâ€™s  including Tax Audit Report & Income Tax Return.   13. Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks.",
+    "documentsPending": "1. Detailed note on incidence of loss mentioning the date and time of loss, cause  of loss, nature and extent of loss and efforts taken to minimize the loss in  chronological order.  2. Copy of Newspaper cuttings for the subject incident.  3. Copy of meteorological report showing the intensity of storm such as wind  speed.  4. Photographs / Videography taken by you w.r.t. incidence of loss immediately  showing the nature and extent of damage.  5. Copy of CCTV footage for the subject incident.  6. Copy of FIR with Police Panchanama and Police Final Report with details of  recovery for the theft and missing parts.  7. Claim Form duly completed, signed and stamped along with copies of GST reg,  certificate, PAN Card of Firm and cancelled cheque.  8. Copy of agreement for operation and maintenance of the subject project.  9. Claim Bill in the below mentioned format in respect of the reported  loss/damages with cost supporting documents such as repair & reinstatement  invoices, payments proof etc. 10. Copy of fixed asset register maintained for the subject project/operations since  inception till date of loss.  11. Copy of recent valuation report.  12. Balance Sheet (complete Annexure & Schedule attached to it) for the last 3 FY's  including Tax Audit Report & Income Tax Return.   13. Minimum 3 Nos. of Salvage Value Quotations in respect of affected stocks.",
     "claimAmount": 614040,
     "grossAssessed": null,
     "deductions": null,
@@ -2472,7 +2472,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.44,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -2608,7 +2608,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 2,
     "insurer": "Not stated in MIS",
     "status": "Survey Underway",
@@ -2627,9 +2627,9 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "admissionProbability": 88,
       "likelyDeductible": 0.25,
       "missingEvidence": [
-        "1. Note on occurrence supported with statement of an eyewitness, giving time, date of the incident, how it came to notice, immediate action taken to control and minimize the loss/damage. Please provide complete chronology of event. 2. Copy of Service engineer report mentioning actual cause of loss, nature and extent of damage and restoration methodology.    3. Copy of Fixed Asset Register & AMC copy.  4. Copy of final claim bill and rate supporting.  5. Evidence of value at Risk â€“ Copy of Quotation for replacement of similar Specification/Model Machine/equipment as covered under the policy. 6. Your proposal for Salvage Value of affected items. You are requested not to dispose any of the damaged parts/items, without prior approval from your insurer/us."
+        "1. Note on occurrence supported with statement of an eyewitness, giving time, date of the incident, how it came to notice, immediate action taken to control and minimize the loss/damage. Please provide complete chronology of event. 2. Copy of Service engineer report mentioning actual cause of loss, nature and extent of damage and restoration methodology.    3. Copy of Fixed Asset Register & AMC copy.  4. Copy of final claim bill and rate supporting.  5. Evidence of value at Risk - Copy of Quotation for replacement of similar Specification/Model Machine/equipment as covered under the policy. 6. Your proposal for Salvage Value of affected items. You are requested not to dispose any of the damaged parts/items, without prior approval from your insurer/us."
       ],
-      "recommendation": "Submit pending documents: 1. Note on occurrence supported with statement of an eyewitness, giving time, date of the incident, how it came to notice, immediate action taken to control and minimize the loss/damage. Please provide complete chronology of event. 2. Copy of Service engineer report mentioning actual cause of loss, nature and extent of damage and restoration methodology.    3. Copy of Fixed Asset Register & AMC copy.  4. Copy of final claim bill and rate supporting.  5. Evidence of value at Risk â€“ Copy of Quotation for replacement of similar Specification/Model Machine/equipment as covered under the policy. 6. Your proposal for Salvage Value of affected items. You are requested not to dispose any of the damaged parts/items, without prior approval from your insurer/us.",
+      "recommendation": "Submit pending documents: 1. Note on occurrence supported with statement of an eyewitness, giving time, date of the incident, how it came to notice, immediate action taken to control and minimize the loss/damage. Please provide complete chronology of event. 2. Copy of Service engineer report mentioning actual cause of loss, nature and extent of damage and restoration methodology.    3. Copy of Fixed Asset Register & AMC copy.  4. Copy of final claim bill and rate supporting.  5. Evidence of value at Risk - Copy of Quotation for replacement of similar Specification/Model Machine/equipment as covered under the policy. 6. Your proposal for Salvage Value of affected items. You are requested not to dispose any of the damaged parts/items, without prior approval from your insurer/us.",
       "potentialObjections": [
         "Insurer requires original repair bills with GRN proof.",
         "Salvage value deduction recommendation from surveyor."
@@ -2674,7 +2674,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-3",
         "title": "Current Status",
-        "description": "Status: Open - Documents Pending. Docs Pending: 1. Note on occurrence supported with statement of an eyewitness, giving time, date of the incident, how it came to notice, immediate action taken to control and minimize the loss/damage. Please provide complete chronology of event. 2. Copy of Service engineer report mentioning actual cause of loss, nature and extent of damage and restoration methodology.    3. Copy of Fixed Asset Register & AMC copy.  4. Copy of final claim bill and rate supporting.  5. Evidence of value at Risk â€“ Copy of Quotation for replacement of similar Specification/Model Machine/equipment as covered under the policy. 6. Your proposal for Salvage Value of affected items. You are requested not to dispose any of the damaged parts/items, without prior approval from your insurer/us.",
+        "description": "Status: Open - Documents Pending. Docs Pending: 1. Note on occurrence supported with statement of an eyewitness, giving time, date of the incident, how it came to notice, immediate action taken to control and minimize the loss/damage. Please provide complete chronology of event. 2. Copy of Service engineer report mentioning actual cause of loss, nature and extent of damage and restoration methodology.    3. Copy of Fixed Asset Register & AMC copy.  4. Copy of final claim bill and rate supporting.  5. Evidence of value at Risk - Copy of Quotation for replacement of similar Specification/Model Machine/equipment as covered under the policy. 6. Your proposal for Salvage Value of affected items. You are requested not to dispose any of the damaged parts/items, without prior approval from your insurer/us.",
         "date": "In Progress",
         "status": "current",
         "actor": "Team surveyor"
@@ -2710,7 +2710,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "statusCategory": "Open - Documents Pending",
     "openFlag": "Open",
     "pendingWith": "",
-    "documentsPending": "1. Note on occurrence supported with statement of an eyewitness, giving time, date of the incident, how it came to notice, immediate action taken to control and minimize the loss/damage. Please provide complete chronology of event. 2. Copy of Service engineer report mentioning actual cause of loss, nature and extent of damage and restoration methodology.    3. Copy of Fixed Asset Register & AMC copy.  4. Copy of final claim bill and rate supporting.  5. Evidence of value at Risk â€“ Copy of Quotation for replacement of similar Specification/Model Machine/equipment as covered under the policy. 6. Your proposal for Salvage Value of affected items. You are requested not to dispose any of the damaged parts/items, without prior approval from your insurer/us.",
+    "documentsPending": "1. Note on occurrence supported with statement of an eyewitness, giving time, date of the incident, how it came to notice, immediate action taken to control and minimize the loss/damage. Please provide complete chronology of event. 2. Copy of Service engineer report mentioning actual cause of loss, nature and extent of damage and restoration methodology.    3. Copy of Fixed Asset Register & AMC copy.  4. Copy of final claim bill and rate supporting.  5. Evidence of value at Risk - Copy of Quotation for replacement of similar Specification/Model Machine/equipment as covered under the policy. 6. Your proposal for Salvage Value of affected items. You are requested not to dispose any of the damaged parts/items, without prior approval from your insurer/us.",
     "claimAmount": 199656,
     "grossAssessed": null,
     "deductions": null,
@@ -2744,7 +2744,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 3.13,
     "insurer": "Not stated in MIS",
     "status": "Survey Pending",
@@ -2880,7 +2880,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1096Â° N, 77.1096Â° E",
+    "gpsCoordinates": "28.1096° N, 77.1096° E",
     "reserveAmountLakhs": 0.9,
     "settlementAmountLakhs": 0.59,
     "insurer": "The Oriental Insurance",
@@ -3019,7 +3019,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.415Â° N, 77.415Â° E",
+    "gpsCoordinates": "28.415° N, 77.415° E",
     "reserveAmountLakhs": 1.26,
     "settlementAmountLakhs": 0.88,
     "insurer": "The Oriental Insurance",
@@ -3158,7 +3158,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.252Â° N, 77.252Â° E",
+    "gpsCoordinates": "28.252° N, 77.252° E",
     "reserveAmountLakhs": 1.34,
     "settlementAmountLakhs": 0.94,
     "insurer": "The Oriental Insurance",
@@ -3297,7 +3297,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.100Â° N, 77.100Â° E",
+    "gpsCoordinates": "28.100° N, 77.100° E",
     "reserveAmountLakhs": 2.25,
     "settlementAmountLakhs": 1.84,
     "insurer": "The Oriental Insurance",
@@ -3436,7 +3436,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.457Â° N, 77.457Â° E",
+    "gpsCoordinates": "28.457° N, 77.457° E",
     "reserveAmountLakhs": 1.5,
     "settlementAmountLakhs": 1.08,
     "insurer": "The Oriental Insurance",
@@ -3575,7 +3575,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.705Â° N, 77.705Â° E",
+    "gpsCoordinates": "28.705° N, 77.705° E",
     "reserveAmountLakhs": 0.82,
     "settlementAmountLakhs": 0.51,
     "insurer": "The Oriental Insurance",
@@ -3714,7 +3714,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.704Â° N, 77.704Â° E",
+    "gpsCoordinates": "28.704° N, 77.704° E",
     "reserveAmountLakhs": 0.9,
     "settlementAmountLakhs": 0.61,
     "insurer": "The Oriental Insurance",
@@ -3853,7 +3853,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1032Â° N, 77.1032Â° E",
+    "gpsCoordinates": "28.1032° N, 77.1032° E",
     "reserveAmountLakhs": 0.95,
     "settlementAmountLakhs": 0.61,
     "insurer": "The Oriental Insurance",
@@ -3992,7 +3992,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.853Â° N, 77.853Â° E",
+    "gpsCoordinates": "28.853° N, 77.853° E",
     "reserveAmountLakhs": 1.47,
     "settlementAmountLakhs": 1.09,
     "insurer": "The Oriental Insurance",
@@ -4131,7 +4131,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.442Â° N, 77.442Â° E",
+    "gpsCoordinates": "28.442° N, 77.442° E",
     "reserveAmountLakhs": 2.14,
     "settlementAmountLakhs": 1.49,
     "insurer": "The Oriental Insurance",
@@ -4270,7 +4270,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.357Â° N, 77.357Â° E",
+    "gpsCoordinates": "28.357° N, 77.357° E",
     "reserveAmountLakhs": 0.71,
     "settlementAmountLakhs": 0.71,
     "insurer": "The Oriental Insurance",
@@ -4409,7 +4409,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.198Â° N, 77.198Â° E",
+    "gpsCoordinates": "28.198° N, 77.198° E",
     "reserveAmountLakhs": 0.64,
     "settlementAmountLakhs": 0.4,
     "insurer": "The Oriental Insurance",
@@ -4548,7 +4548,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.55Â° N, 77.55Â° E",
+    "gpsCoordinates": "28.55° N, 77.55° E",
     "reserveAmountLakhs": 2.24,
     "settlementAmountLakhs": 2.13,
     "insurer": "The Oriental Insurance",
@@ -4687,7 +4687,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1036Â° N, 77.1036Â° E",
+    "gpsCoordinates": "28.1036° N, 77.1036° E",
     "reserveAmountLakhs": 0.79,
     "settlementAmountLakhs": 0.48,
     "insurer": "The Oriental Insurance",
@@ -4826,7 +4826,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.439Â° N, 77.439Â° E",
+    "gpsCoordinates": "28.439° N, 77.439° E",
     "reserveAmountLakhs": 1.38,
     "settlementAmountLakhs": 1.14,
     "insurer": "The Oriental Insurance",
@@ -4965,7 +4965,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.368Â° N, 77.368Â° E",
+    "gpsCoordinates": "28.368° N, 77.368° E",
     "reserveAmountLakhs": 0.8,
     "settlementAmountLakhs": 0.53,
     "insurer": "The Oriental Insurance",
@@ -5104,7 +5104,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1057Â° N, 77.1057Â° E",
+    "gpsCoordinates": "28.1057° N, 77.1057° E",
     "reserveAmountLakhs": 1.34,
     "settlementAmountLakhs": 0.94,
     "insurer": "The Oriental Insurance",
@@ -5243,7 +5243,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1224Â° N, 77.1224Â° E",
+    "gpsCoordinates": "28.1224° N, 77.1224° E",
     "reserveAmountLakhs": 1.22,
     "settlementAmountLakhs": 0.83,
     "insurer": "The Oriental Insurance",
@@ -5382,7 +5382,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.271Â° N, 77.271Â° E",
+    "gpsCoordinates": "28.271° N, 77.271° E",
     "reserveAmountLakhs": 1.65,
     "settlementAmountLakhs": 1.22,
     "insurer": "The Oriental Insurance",
@@ -5521,7 +5521,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1320Â° N, 77.1320Â° E",
+    "gpsCoordinates": "28.1320° N, 77.1320° E",
     "reserveAmountLakhs": 1.31,
     "settlementAmountLakhs": 4.63,
     "insurer": "The Oriental Insurance",
@@ -5660,7 +5660,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.708Â° N, 77.708Â° E",
+    "gpsCoordinates": "28.708° N, 77.708° E",
     "reserveAmountLakhs": 2.58,
     "settlementAmountLakhs": 2.01,
     "insurer": "The Oriental Insurance",
@@ -5799,7 +5799,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.709Â° N, 77.709Â° E",
+    "gpsCoordinates": "28.709° N, 77.709° E",
     "reserveAmountLakhs": 1.36,
     "settlementAmountLakhs": 1.01,
     "insurer": "The Oriental Insurance",
@@ -5938,7 +5938,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1350Â° N, 77.1350Â° E",
+    "gpsCoordinates": "28.1350° N, 77.1350° E",
     "reserveAmountLakhs": 0.54,
     "settlementAmountLakhs": 0.32,
     "insurer": "The Oriental Insurance",
@@ -6077,7 +6077,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1237Â° N, 77.1237Â° E",
+    "gpsCoordinates": "28.1237° N, 77.1237° E",
     "reserveAmountLakhs": 0.63,
     "settlementAmountLakhs": 0.35,
     "insurer": "The Oriental Insurance",
@@ -6216,7 +6216,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.275Â° N, 77.275Â° E",
+    "gpsCoordinates": "28.275° N, 77.275° E",
     "reserveAmountLakhs": 2.11,
     "settlementAmountLakhs": 2.11,
     "insurer": "The Oriental Insurance",
@@ -6355,7 +6355,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.436Â° N, 77.436Â° E",
+    "gpsCoordinates": "28.436° N, 77.436° E",
     "reserveAmountLakhs": 1.46,
     "settlementAmountLakhs": 1.46,
     "insurer": "The Oriental Insurance",
@@ -6494,7 +6494,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1135Â° N, 77.1135Â° E",
+    "gpsCoordinates": "28.1135° N, 77.1135° E",
     "reserveAmountLakhs": 0.53,
     "settlementAmountLakhs": 0.31,
     "insurer": "The Oriental Insurance",
@@ -6633,7 +6633,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1245Â° N, 77.1245Â° E",
+    "gpsCoordinates": "28.1245° N, 77.1245° E",
     "reserveAmountLakhs": 1.08,
     "settlementAmountLakhs": 0.54,
     "insurer": "The Oriental Insurance",
@@ -6772,7 +6772,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1128Â° N, 77.1128Â° E",
+    "gpsCoordinates": "28.1128° N, 77.1128° E",
     "reserveAmountLakhs": 1.31,
     "settlementAmountLakhs": 1.31,
     "insurer": "The Oriental Insurance",
@@ -6911,7 +6911,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.207Â° N, 77.207Â° E",
+    "gpsCoordinates": "28.207° N, 77.207° E",
     "reserveAmountLakhs": 1.41,
     "settlementAmountLakhs": 1.41,
     "insurer": "The Oriental Insurance",
@@ -7050,7 +7050,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.194Â° N, 77.194Â° E",
+    "gpsCoordinates": "28.194° N, 77.194° E",
     "reserveAmountLakhs": 1.93,
     "settlementAmountLakhs": 1.93,
     "insurer": "The Oriental Insurance",
@@ -7189,7 +7189,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.470Â° N, 77.470Â° E",
+    "gpsCoordinates": "28.470° N, 77.470° E",
     "reserveAmountLakhs": 1.41,
     "settlementAmountLakhs": 1.41,
     "insurer": "The Oriental Insurance",
@@ -7328,7 +7328,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.185Â° N, 77.185Â° E",
+    "gpsCoordinates": "28.185° N, 77.185° E",
     "reserveAmountLakhs": 1.41,
     "settlementAmountLakhs": 1.41,
     "insurer": "The Oriental Insurance",
@@ -7467,7 +7467,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.177Â° N, 77.177Â° E",
+    "gpsCoordinates": "28.177° N, 77.177° E",
     "reserveAmountLakhs": 1.41,
     "settlementAmountLakhs": 1.41,
     "insurer": "The Oriental Insurance",
@@ -7606,7 +7606,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.325Â° N, 77.325Â° E",
+    "gpsCoordinates": "28.325° N, 77.325° E",
     "reserveAmountLakhs": 2.75,
     "settlementAmountLakhs": 2.75,
     "insurer": "The Oriental Insurance",
@@ -7745,7 +7745,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.765Â° N, 77.765Â° E",
+    "gpsCoordinates": "28.765° N, 77.765° E",
     "reserveAmountLakhs": 1.8,
     "settlementAmountLakhs": 1.8,
     "insurer": "The Oriental Insurance",
@@ -7884,7 +7884,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.245Â° N, 77.245Â° E",
+    "gpsCoordinates": "28.245° N, 77.245° E",
     "reserveAmountLakhs": 2.24,
     "settlementAmountLakhs": 2.24,
     "insurer": "The Oriental Insurance",
@@ -8023,7 +8023,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.335Â° N, 77.335Â° E",
+    "gpsCoordinates": "28.335° N, 77.335° E",
     "reserveAmountLakhs": 1.69,
     "settlementAmountLakhs": 1.69,
     "insurer": "The Oriental Insurance",
@@ -8162,7 +8162,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.559Â° N, 77.559Â° E",
+    "gpsCoordinates": "28.559° N, 77.559° E",
     "reserveAmountLakhs": 0.9,
     "settlementAmountLakhs": 0.9,
     "insurer": "The Oriental Insurance",
@@ -8301,7 +8301,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.305Â° N, 77.305Â° E",
+    "gpsCoordinates": "28.305° N, 77.305° E",
     "reserveAmountLakhs": 1.06,
     "settlementAmountLakhs": 1.06,
     "insurer": "The Oriental Insurance",
@@ -8440,7 +8440,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1051Â° N, 77.1051Â° E",
+    "gpsCoordinates": "28.1051° N, 77.1051° E",
     "reserveAmountLakhs": 1.31,
     "settlementAmountLakhs": 0.87,
     "insurer": "The Oriental Insurance",
@@ -8579,7 +8579,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.506Â° N, 77.506Â° E",
+    "gpsCoordinates": "28.506° N, 77.506° E",
     "reserveAmountLakhs": 3.55,
     "settlementAmountLakhs": 3.55,
     "insurer": "The Oriental Insurance",
@@ -8718,7 +8718,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1210Â° N, 77.1210Â° E",
+    "gpsCoordinates": "28.1210° N, 77.1210° E",
     "reserveAmountLakhs": 0.92,
     "settlementAmountLakhs": 0.55,
     "insurer": "The Oriental Insurance",
@@ -8857,7 +8857,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.32Â° N, 77.32Â° E",
+    "gpsCoordinates": "28.32° N, 77.32° E",
     "reserveAmountLakhs": 1.55,
     "settlementAmountLakhs": 0.89,
     "insurer": "The Oriental Insurance",
@@ -8996,7 +8996,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.430Â° N, 77.430Â° E",
+    "gpsCoordinates": "28.430° N, 77.430° E",
     "reserveAmountLakhs": 2.17,
     "settlementAmountLakhs": 1.9,
     "insurer": "The Oriental Insurance",
@@ -9135,7 +9135,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.299Â° N, 77.299Â° E",
+    "gpsCoordinates": "28.299° N, 77.299° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.41,
     "insurer": "The Oriental Insurance",
@@ -9274,7 +9274,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.386Â° N, 77.386Â° E",
+    "gpsCoordinates": "28.386° N, 77.386° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.03,
     "insurer": "The Oriental Insurance",
@@ -9413,7 +9413,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.131Â° N, 77.131Â° E",
+    "gpsCoordinates": "28.131° N, 77.131° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.03,
     "insurer": "The Oriental Insurance",
@@ -9552,7 +9552,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1043Â° N, 77.1043Â° E",
+    "gpsCoordinates": "28.1043° N, 77.1043° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 2.06,
     "insurer": "The Oriental Insurance",
@@ -9691,7 +9691,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.670Â° N, 77.670Â° E",
+    "gpsCoordinates": "28.670° N, 77.670° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.41,
     "insurer": "The Oriental Insurance",
@@ -9830,7 +9830,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.785Â° N, 77.785Â° E",
+    "gpsCoordinates": "28.785° N, 77.785° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.9,
     "insurer": "The Oriental Insurance",
@@ -9969,7 +9969,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.697Â° N, 77.697Â° E",
+    "gpsCoordinates": "28.697° N, 77.697° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.9,
     "insurer": "The Oriental Insurance",
@@ -10108,7 +10108,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.756Â° N, 77.756Â° E",
+    "gpsCoordinates": "28.756° N, 77.756° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.9,
     "insurer": "The Oriental Insurance",
@@ -10247,7 +10247,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.633Â° N, 77.633Â° E",
+    "gpsCoordinates": "28.633° N, 77.633° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.9,
     "insurer": "The Oriental Insurance",
@@ -10386,7 +10386,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1019Â° N, 77.1019Â° E",
+    "gpsCoordinates": "28.1019° N, 77.1019° E",
     "reserveAmountLakhs": 0.95,
     "settlementAmountLakhs": 0.64,
     "insurer": "The Oriental Insurance",
@@ -10525,7 +10525,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1205Â° N, 77.1205Â° E",
+    "gpsCoordinates": "28.1205° N, 77.1205° E",
     "reserveAmountLakhs": 0.87,
     "settlementAmountLakhs": 0.52,
     "insurer": "The Oriental Insurance",
@@ -10664,7 +10664,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1096Â° N, 77.1096Â° E",
+    "gpsCoordinates": "28.1096° N, 77.1096° E",
     "reserveAmountLakhs": 1.04,
     "settlementAmountLakhs": 0.77,
     "insurer": "The Oriental Insurance",
@@ -10803,7 +10803,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.214Â° N, 77.214Â° E",
+    "gpsCoordinates": "28.214° N, 77.214° E",
     "reserveAmountLakhs": 1,
     "settlementAmountLakhs": 0.64,
     "insurer": "The Oriental Insurance",
@@ -10942,7 +10942,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.31Â° N, 77.31Â° E",
+    "gpsCoordinates": "28.31° N, 77.31° E",
     "reserveAmountLakhs": 0.92,
     "settlementAmountLakhs": 0.58,
     "insurer": "The Oriental Insurance",
@@ -11081,7 +11081,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1043Â° N, 77.1043Â° E",
+    "gpsCoordinates": "28.1043° N, 77.1043° E",
     "reserveAmountLakhs": 1.25,
     "settlementAmountLakhs": 0.8,
     "insurer": "The Oriental Insurance",
@@ -11220,7 +11220,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.410Â° N, 77.410Â° E",
+    "gpsCoordinates": "28.410° N, 77.410° E",
     "reserveAmountLakhs": 5.48,
     "settlementAmountLakhs": 5.48,
     "insurer": "The Oriental Insurance",
@@ -11359,7 +11359,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.307Â° N, 77.307Â° E",
+    "gpsCoordinates": "28.307° N, 77.307° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 1.02,
     "insurer": "The Oriental Insurance",
@@ -11498,7 +11498,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.735Â° N, 77.735Â° E",
+    "gpsCoordinates": "28.735° N, 77.735° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 1.02,
     "insurer": "The Oriental Insurance",
@@ -11637,7 +11637,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.583Â° N, 77.583Â° E",
+    "gpsCoordinates": "28.583° N, 77.583° E",
     "reserveAmountLakhs": 0.56,
     "settlementAmountLakhs": 0.45,
     "insurer": "The Oriental Insurance",
@@ -11776,7 +11776,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1234Â° N, 77.1234Â° E",
+    "gpsCoordinates": "28.1234° N, 77.1234° E",
     "reserveAmountLakhs": 1.3,
     "settlementAmountLakhs": 1.06,
     "insurer": "The Oriental Insurance",
@@ -11915,7 +11915,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.69Â° N, 77.69Â° E",
+    "gpsCoordinates": "28.69° N, 77.69° E",
     "reserveAmountLakhs": 1.72,
     "settlementAmountLakhs": 1.72,
     "insurer": "The Oriental Insurance",
@@ -12054,7 +12054,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.5,
     "insurer": "The Oriental Insurance",
     "status": "Under Review",
@@ -12190,7 +12190,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1015Â° N, 77.1015Â° E",
+    "gpsCoordinates": "28.1015° N, 77.1015° E",
     "reserveAmountLakhs": 1.49,
     "settlementAmountLakhs": 1.18,
     "insurer": "The Oriental Insurance",
@@ -12329,7 +12329,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.984Â° N, 77.984Â° E",
+    "gpsCoordinates": "28.984° N, 77.984° E",
     "reserveAmountLakhs": 0.54,
     "settlementAmountLakhs": 0.36,
     "insurer": "The Oriental Insurance",
@@ -12468,7 +12468,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.224Â° N, 77.224Â° E",
+    "gpsCoordinates": "28.224° N, 77.224° E",
     "reserveAmountLakhs": 1.13,
     "settlementAmountLakhs": 0.76,
     "insurer": "The Oriental Insurance",
@@ -12607,7 +12607,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.159Â° N, 77.159Â° E",
+    "gpsCoordinates": "28.159° N, 77.159° E",
     "reserveAmountLakhs": 1.6,
     "settlementAmountLakhs": 1.15,
     "insurer": "The Oriental Insurance",
@@ -12746,7 +12746,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.79Â° N, 77.79Â° E",
+    "gpsCoordinates": "28.79° N, 77.79° E",
     "reserveAmountLakhs": 1.23,
     "settlementAmountLakhs": 1.23,
     "insurer": "The Oriental Insurance",
@@ -12885,7 +12885,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1153Â° N, 77.1153Â° E",
+    "gpsCoordinates": "28.1153° N, 77.1153° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.27,
     "insurer": "The Oriental Insurance",
@@ -13024,7 +13024,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.917Â° N, 77.917Â° E",
+    "gpsCoordinates": "28.917° N, 77.917° E",
     "reserveAmountLakhs": 0.79,
     "settlementAmountLakhs": 0.49,
     "insurer": "The Oriental Insurance",
@@ -13163,7 +13163,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.296Â° N, 77.296Â° E",
+    "gpsCoordinates": "28.296° N, 77.296° E",
     "reserveAmountLakhs": 1.48,
     "settlementAmountLakhs": 1.04,
     "insurer": "The Oriental Insurance",
@@ -13302,7 +13302,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.310Â° N, 77.310Â° E",
+    "gpsCoordinates": "28.310° N, 77.310° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 1.02,
     "insurer": "The Oriental Insurance",
@@ -13441,7 +13441,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.40Â° N, 77.40Â° E",
+    "gpsCoordinates": "28.40° N, 77.40° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 1.02,
     "insurer": "The Oriental Insurance",
@@ -13580,7 +13580,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1244Â° N, 77.1244Â° E",
+    "gpsCoordinates": "28.1244° N, 77.1244° E",
     "reserveAmountLakhs": 0.75,
     "settlementAmountLakhs": 0.47,
     "insurer": "The Oriental Insurance",
@@ -13719,7 +13719,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1014Â° N, 77.1014Â° E",
+    "gpsCoordinates": "28.1014° N, 77.1014° E",
     "reserveAmountLakhs": 1.12,
     "settlementAmountLakhs": 0.79,
     "insurer": "The Oriental Insurance",
@@ -13858,7 +13858,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1052Â° N, 77.1052Â° E",
+    "gpsCoordinates": "28.1052° N, 77.1052° E",
     "reserveAmountLakhs": 1.14,
     "settlementAmountLakhs": 0.8,
     "insurer": "The Oriental Insurance",
@@ -13997,7 +13997,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.218Â° N, 77.218Â° E",
+    "gpsCoordinates": "28.218° N, 77.218° E",
     "reserveAmountLakhs": 0.73,
     "settlementAmountLakhs": 0.73,
     "insurer": "The Oriental Insurance",
@@ -14136,7 +14136,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.913Â° N, 77.913Â° E",
+    "gpsCoordinates": "28.913° N, 77.913° E",
     "reserveAmountLakhs": 2.1,
     "settlementAmountLakhs": 2.1,
     "insurer": "The Oriental Insurance",
@@ -14275,7 +14275,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.530Â° N, 77.530Â° E",
+    "gpsCoordinates": "28.530° N, 77.530° E",
     "reserveAmountLakhs": 0.45,
     "settlementAmountLakhs": 0.45,
     "insurer": "The Oriental Insurance",
@@ -14414,7 +14414,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1216Â° N, 77.1216Â° E",
+    "gpsCoordinates": "28.1216° N, 77.1216° E",
     "reserveAmountLakhs": 0.43,
     "settlementAmountLakhs": 0.43,
     "insurer": "The Oriental Insurance",
@@ -14553,7 +14553,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.977Â° N, 77.977Â° E",
+    "gpsCoordinates": "28.977° N, 77.977° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 50.62,
     "insurer": "The Oriental Insurance",
@@ -14692,7 +14692,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.258Â° N, 77.258Â° E",
+    "gpsCoordinates": "28.258° N, 77.258° E",
     "reserveAmountLakhs": 1.62,
     "settlementAmountLakhs": 1.14,
     "insurer": "The Oriental Insurance",
@@ -14831,7 +14831,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1116Â° N, 77.1116Â° E",
+    "gpsCoordinates": "28.1116° N, 77.1116° E",
     "reserveAmountLakhs": 0.45,
     "settlementAmountLakhs": 0.26,
     "insurer": "The Oriental Insurance",
@@ -14970,7 +14970,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.521Â° N, 77.521Â° E",
+    "gpsCoordinates": "28.521° N, 77.521° E",
     "reserveAmountLakhs": 1.06,
     "settlementAmountLakhs": 0.72,
     "insurer": "The Oriental Insurance",
@@ -15109,7 +15109,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.815Â° N, 77.815Â° E",
+    "gpsCoordinates": "28.815° N, 77.815° E",
     "reserveAmountLakhs": 0.89,
     "settlementAmountLakhs": 0.58,
     "insurer": "The Oriental Insurance",
@@ -15248,7 +15248,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1114Â° N, 77.1114Â° E",
+    "gpsCoordinates": "28.1114° N, 77.1114° E",
     "reserveAmountLakhs": 0.46,
     "settlementAmountLakhs": 0.27,
     "insurer": "The Oriental Insurance",
@@ -15387,7 +15387,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1224Â° N, 77.1224Â° E",
+    "gpsCoordinates": "28.1224° N, 77.1224° E",
     "reserveAmountLakhs": 0.63,
     "settlementAmountLakhs": 0.34,
     "insurer": "The Oriental Insurance",
@@ -15526,7 +15526,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.870Â° N, 77.870Â° E",
+    "gpsCoordinates": "28.870° N, 77.870° E",
     "reserveAmountLakhs": 0.3,
     "settlementAmountLakhs": 0.3,
     "insurer": "The Oriental Insurance",
@@ -15665,7 +15665,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.484Â° N, 77.484Â° E",
+    "gpsCoordinates": "28.484° N, 77.484° E",
     "reserveAmountLakhs": 0.41,
     "settlementAmountLakhs": 0.41,
     "insurer": "The Oriental Insurance",
@@ -15804,7 +15804,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1260Â° N, 77.1260Â° E",
+    "gpsCoordinates": "28.1260° N, 77.1260° E",
     "reserveAmountLakhs": 1.19,
     "settlementAmountLakhs": 1.19,
     "insurer": "The Oriental Insurance",
@@ -15943,7 +15943,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.460Â° N, 77.460Â° E",
+    "gpsCoordinates": "28.460° N, 77.460° E",
     "reserveAmountLakhs": 6.15,
     "settlementAmountLakhs": 6.15,
     "insurer": "The Oriental Insurance",
@@ -16082,7 +16082,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1078Â° N, 77.1078Â° E",
+    "gpsCoordinates": "28.1078° N, 77.1078° E",
     "reserveAmountLakhs": 1.45,
     "settlementAmountLakhs": 1.01,
     "insurer": "The Oriental Insurance",
@@ -16221,7 +16221,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1274Â° N, 77.1274Â° E",
+    "gpsCoordinates": "28.1274° N, 77.1274° E",
     "reserveAmountLakhs": 0.95,
     "settlementAmountLakhs": 0.65,
     "insurer": "The Oriental Insurance",
@@ -16360,7 +16360,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.116Â° N, 77.116Â° E",
+    "gpsCoordinates": "28.116° N, 77.116° E",
     "reserveAmountLakhs": 1.54,
     "settlementAmountLakhs": 1.54,
     "insurer": "The Oriental Insurance",
@@ -16499,7 +16499,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1334Â° N, 77.1334Â° E",
+    "gpsCoordinates": "28.1334° N, 77.1334° E",
     "reserveAmountLakhs": 0.68,
     "settlementAmountLakhs": 0.44,
     "insurer": "The Oriental Insurance",
@@ -16638,7 +16638,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.965Â° N, 77.965Â° E",
+    "gpsCoordinates": "28.965° N, 77.965° E",
     "reserveAmountLakhs": 0.43,
     "settlementAmountLakhs": 0.23,
     "insurer": "The Oriental Insurance",
@@ -16777,7 +16777,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1239Â° N, 77.1239Â° E",
+    "gpsCoordinates": "28.1239° N, 77.1239° E",
     "reserveAmountLakhs": 0.79,
     "settlementAmountLakhs": 0.52,
     "insurer": "The Oriental Insurance",
@@ -16916,7 +16916,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1062Â° N, 77.1062Â° E",
+    "gpsCoordinates": "28.1062° N, 77.1062° E",
     "reserveAmountLakhs": 0.61,
     "settlementAmountLakhs": 0.34,
     "insurer": "The Oriental Insurance",
@@ -17055,7 +17055,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.410Â° N, 77.410Â° E",
+    "gpsCoordinates": "28.410° N, 77.410° E",
     "reserveAmountLakhs": 2,
     "settlementAmountLakhs": 2,
     "insurer": "The Oriental Insurance",
@@ -17194,7 +17194,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.483Â° N, 77.483Â° E",
+    "gpsCoordinates": "28.483° N, 77.483° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 1.02,
     "insurer": "The Oriental Insurance",
@@ -17333,7 +17333,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.3224Â° N, 77.3224Â° E",
+    "gpsCoordinates": "28.3224° N, 77.3224° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.4,
     "insurer": "The Oriental Insurance",
@@ -17472,7 +17472,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1286Â° N, 77.1286Â° E",
+    "gpsCoordinates": "28.1286° N, 77.1286° E",
     "reserveAmountLakhs": 0.72,
     "settlementAmountLakhs": 0.42,
     "insurer": "The Oriental Insurance",
@@ -17611,7 +17611,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1272Â° N, 77.1272Â° E",
+    "gpsCoordinates": "28.1272° N, 77.1272° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.86,
     "insurer": "The Oriental Insurance",
@@ -17750,7 +17750,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1104Â° N, 77.1104Â° E",
+    "gpsCoordinates": "28.1104° N, 77.1104° E",
     "reserveAmountLakhs": 0.91,
     "settlementAmountLakhs": 0.91,
     "insurer": "The Oriental Insurance",
@@ -17889,7 +17889,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1250Â° N, 77.1250Â° E",
+    "gpsCoordinates": "28.1250° N, 77.1250° E",
     "reserveAmountLakhs": 0.93,
     "settlementAmountLakhs": 0.57,
     "insurer": "The Oriental Insurance",
@@ -18028,7 +18028,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1147Â° N, 77.1147Â° E",
+    "gpsCoordinates": "28.1147° N, 77.1147° E",
     "reserveAmountLakhs": 1.35,
     "settlementAmountLakhs": 1.35,
     "insurer": "The Oriental Insurance",
@@ -18167,7 +18167,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.952Â° N, 77.952Â° E",
+    "gpsCoordinates": "28.952° N, 77.952° E",
     "reserveAmountLakhs": 0.76,
     "settlementAmountLakhs": 0.48,
     "insurer": "The Oriental Insurance",
@@ -18306,7 +18306,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.3318Â° N, 77.3318Â° E",
+    "gpsCoordinates": "28.3318° N, 77.3318° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.6,
     "insurer": "The Oriental Insurance",
@@ -18445,7 +18445,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.53Â° N, 77.53Â° E",
+    "gpsCoordinates": "28.53° N, 77.53° E",
     "reserveAmountLakhs": 0.72,
     "settlementAmountLakhs": 0.72,
     "insurer": "The Oriental Insurance",
@@ -18584,7 +18584,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.338Â° N, 77.338Â° E",
+    "gpsCoordinates": "28.338° N, 77.338° E",
     "reserveAmountLakhs": 0.88,
     "settlementAmountLakhs": 0.88,
     "insurer": "The Oriental Insurance",
@@ -18723,7 +18723,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1157Â° N, 77.1157Â° E",
+    "gpsCoordinates": "28.1157° N, 77.1157° E",
     "reserveAmountLakhs": 1.41,
     "settlementAmountLakhs": 1.41,
     "insurer": "The Oriental Insurance",
@@ -18862,7 +18862,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1188Â° N, 77.1188Â° E",
+    "gpsCoordinates": "28.1188° N, 77.1188° E",
     "reserveAmountLakhs": 1.41,
     "settlementAmountLakhs": 1.41,
     "insurer": "The Oriental Insurance",
@@ -19001,7 +19001,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1276Â° N, 77.1276Â° E",
+    "gpsCoordinates": "28.1276° N, 77.1276° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.41,
     "insurer": "The Oriental Insurance",
@@ -19140,7 +19140,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1296Â° N, 77.1296Â° E",
+    "gpsCoordinates": "28.1296° N, 77.1296° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.41,
     "insurer": "The Oriental Insurance",
@@ -19279,7 +19279,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.868Â° N, 77.868Â° E",
+    "gpsCoordinates": "28.868° N, 77.868° E",
     "reserveAmountLakhs": 1.03,
     "settlementAmountLakhs": 1.03,
     "insurer": "The Oriental Insurance",
@@ -19412,13 +19412,13 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "incidentTime": "10:00 IST",
     "incidentType": "Equipment / VMS - Theft / Burglary",
     "weather": "Normal / Clear",
-    "description": "Theft TMCS equipmentâ€™s at Km 59+250 RHS",
+    "description": "Theft TMCS equipment's at Km 59+250 RHS",
     "photosUploadedCount": 4,
     "photoUrls": [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.592Â° N, 77.592Â° E",
+    "gpsCoordinates": "28.592° N, 77.592° E",
     "reserveAmountLakhs": 0.48,
     "settlementAmountLakhs": 0.48,
     "insurer": "The Oriental Insurance",
@@ -19471,7 +19471,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-1",
         "title": "Loss Incident Occurred",
-        "description": "Theft TMCS equipmentâ€™s at Km 59+250 RHS",
+        "description": "Theft TMCS equipment's at Km 59+250 RHS",
         "date": "23/05/2026",
         "status": "completed",
         "actor": "PPE"
@@ -19509,7 +19509,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "lossFY": "FY 2026-27",
     "lossMonth": "2026-05",
     "lossQuarter": "Q2-26",
-    "lossDescription": "Theft TMCS equipmentâ€™s at Km 59+250 RHS",
+    "lossDescription": "Theft TMCS equipment's at Km 59+250 RHS",
     "lossLocation": "",
     "kmRaw": "59+250",
     "km": 59.25,
@@ -19557,7 +19557,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.849Â° N, 77.849Â° E",
+    "gpsCoordinates": "28.849° N, 77.849° E",
     "reserveAmountLakhs": 0.35,
     "settlementAmountLakhs": 0.35,
     "insurer": "The Oriental Insurance",
@@ -19696,7 +19696,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.844Â° N, 77.844Â° E",
+    "gpsCoordinates": "28.844° N, 77.844° E",
     "reserveAmountLakhs": 0.48,
     "settlementAmountLakhs": 0.48,
     "insurer": "The Oriental Insurance",
@@ -19835,7 +19835,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.845Â° N, 77.845Â° E",
+    "gpsCoordinates": "28.845° N, 77.845° E",
     "reserveAmountLakhs": 0.66,
     "settlementAmountLakhs": 0.65,
     "insurer": "The Oriental Insurance",
@@ -19974,7 +19974,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.167Â° N, 77.167Â° E",
+    "gpsCoordinates": "28.167° N, 77.167° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.87,
     "insurer": "The Oriental Insurance",
@@ -20113,7 +20113,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1328Â° N, 77.1328Â° E",
+    "gpsCoordinates": "28.1328° N, 77.1328° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.7,
     "insurer": "The Oriental Insurance",
@@ -20252,7 +20252,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.737Â° N, 77.737Â° E",
+    "gpsCoordinates": "28.737° N, 77.737° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.51,
     "insurer": "The Oriental Insurance",
@@ -20391,7 +20391,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.759Â° N, 77.759Â° E",
+    "gpsCoordinates": "28.759° N, 77.759° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.87,
     "insurer": "The Oriental Insurance",
@@ -20530,7 +20530,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.614Â° N, 77.614Â° E",
+    "gpsCoordinates": "28.614° N, 77.614° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.54,
     "insurer": "The Oriental Insurance",
@@ -20669,7 +20669,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.523Â° N, 77.523Â° E",
+    "gpsCoordinates": "28.523° N, 77.523° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.31,
     "insurer": "The Oriental Insurance",
@@ -20808,7 +20808,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.526Â° N, 77.526Â° E",
+    "gpsCoordinates": "28.526° N, 77.526° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.45,
     "insurer": "The Oriental Insurance",
@@ -20947,7 +20947,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.550Â° N, 77.550Â° E",
+    "gpsCoordinates": "28.550° N, 77.550° E",
     "reserveAmountLakhs": 1,
     "settlementAmountLakhs": 1,
     "insurer": "The Oriental Insurance",
@@ -21086,7 +21086,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.580Â° N, 77.580Â° E",
+    "gpsCoordinates": "28.580° N, 77.580° E",
     "reserveAmountLakhs": 1,
     "settlementAmountLakhs": 1,
     "insurer": "The Oriental Insurance",
@@ -21225,7 +21225,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.3995Â° N, 77.3995Â° E",
+    "gpsCoordinates": "28.3995° N, 77.3995° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.7,
     "insurer": "The Oriental Insurance",
@@ -21364,7 +21364,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.460Â° N, 77.460Â° E",
+    "gpsCoordinates": "28.460° N, 77.460° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 23.46,
     "insurer": "The Oriental Insurance",
@@ -21503,7 +21503,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4452Â° N, 77.4452Â° E",
+    "gpsCoordinates": "28.4452° N, 77.4452° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.7,
     "insurer": "The Oriental Insurance",
@@ -21642,7 +21642,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1126Â° N, 77.1126Â° E",
+    "gpsCoordinates": "28.1126° N, 77.1126° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.43,
     "insurer": "The Oriental Insurance",
@@ -21781,7 +21781,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1353Â° N, 77.1353Â° E",
+    "gpsCoordinates": "28.1353° N, 77.1353° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.48,
     "insurer": "The Oriental Insurance",
@@ -21920,7 +21920,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1355Â° N, 77.1355Â° E",
+    "gpsCoordinates": "28.1355° N, 77.1355° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.45,
     "insurer": "The Oriental Insurance",
@@ -22059,7 +22059,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1274Â° N, 77.1274Â° E",
+    "gpsCoordinates": "28.1274° N, 77.1274° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.19,
     "insurer": "The Oriental Insurance",
@@ -22198,7 +22198,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.443Â° N, 77.443Â° E",
+    "gpsCoordinates": "28.443° N, 77.443° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 2.82,
     "insurer": "The Oriental Insurance",
@@ -22337,7 +22337,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4494Â° N, 77.4494Â° E",
+    "gpsCoordinates": "28.4494° N, 77.4494° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.77,
     "insurer": "The Oriental Insurance",
@@ -22476,7 +22476,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4805Â° N, 77.4805Â° E",
+    "gpsCoordinates": "28.4805° N, 77.4805° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.08,
     "insurer": "The Oriental Insurance",
@@ -22615,7 +22615,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.291Â° N, 77.291Â° E",
+    "gpsCoordinates": "28.291° N, 77.291° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.85,
     "insurer": "The Oriental Insurance",
@@ -22754,7 +22754,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.283Â° N, 77.283Â° E",
+    "gpsCoordinates": "28.283° N, 77.283° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 1.44,
     "insurer": "The Oriental Insurance",
@@ -22893,7 +22893,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.869Â° N, 77.869Â° E",
+    "gpsCoordinates": "28.869° N, 77.869° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.92,
     "insurer": "The Oriental Insurance",
@@ -23032,7 +23032,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.746Â° N, 77.746Â° E",
+    "gpsCoordinates": "28.746° N, 77.746° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 2.11,
     "insurer": "The Oriental Insurance",
@@ -23171,7 +23171,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.928Â° N, 77.928Â° E",
+    "gpsCoordinates": "28.928° N, 77.928° E",
     "reserveAmountLakhs": 0.6,
     "settlementAmountLakhs": 0.24,
     "insurer": "ITGI",
@@ -23308,7 +23308,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.307Â° N, 77.307Â° E",
+    "gpsCoordinates": "28.307° N, 77.307° E",
     "reserveAmountLakhs": 0.81,
     "settlementAmountLakhs": 0.39,
     "insurer": "ITGI",
@@ -23445,7 +23445,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.412Â° N, 77.412Â° E",
+    "gpsCoordinates": "28.412° N, 77.412° E",
     "reserveAmountLakhs": 0.64,
     "settlementAmountLakhs": 0.28,
     "insurer": "ITGI",
@@ -23582,7 +23582,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1345Â° N, 77.1345Â° E",
+    "gpsCoordinates": "28.1345° N, 77.1345° E",
     "reserveAmountLakhs": 3.54,
     "settlementAmountLakhs": 0.96,
     "insurer": "ITGI",
@@ -23719,7 +23719,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1217Â° N, 77.1217Â° E",
+    "gpsCoordinates": "28.1217° N, 77.1217° E",
     "reserveAmountLakhs": 0.94,
     "settlementAmountLakhs": 0.52,
     "insurer": "ITGI",
@@ -23856,7 +23856,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.55Â° N, 77.55Â° E",
+    "gpsCoordinates": "28.55° N, 77.55° E",
     "reserveAmountLakhs": 10.79,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -23992,7 +23992,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1080Â° N, 77.1080Â° E",
+    "gpsCoordinates": "28.1080° N, 77.1080° E",
     "reserveAmountLakhs": 0.83,
     "settlementAmountLakhs": 0.42,
     "insurer": "ITGI",
@@ -24129,7 +24129,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1080Â° N, 77.1080Â° E",
+    "gpsCoordinates": "28.1080° N, 77.1080° E",
     "reserveAmountLakhs": 0.7,
     "settlementAmountLakhs": 0.31,
     "insurer": "ITGI",
@@ -24266,7 +24266,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.358Â° N, 77.358Â° E",
+    "gpsCoordinates": "28.358° N, 77.358° E",
     "reserveAmountLakhs": 1.9,
     "settlementAmountLakhs": 1.24,
     "insurer": "ITGI",
@@ -24403,7 +24403,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.382Â° N, 77.382Â° E",
+    "gpsCoordinates": "28.382° N, 77.382° E",
     "reserveAmountLakhs": 2.31,
     "settlementAmountLakhs": 1.52,
     "insurer": "ITGI",
@@ -24540,7 +24540,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.960Â° N, 77.960Â° E",
+    "gpsCoordinates": "28.960° N, 77.960° E",
     "reserveAmountLakhs": 1.22,
     "settlementAmountLakhs": 0.73,
     "insurer": "ITGI",
@@ -24677,7 +24677,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.978Â° N, 77.978Â° E",
+    "gpsCoordinates": "28.978° N, 77.978° E",
     "reserveAmountLakhs": 0.51,
     "settlementAmountLakhs": 0.15,
     "insurer": "ITGI",
@@ -24814,7 +24814,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.184Â° N, 77.184Â° E",
+    "gpsCoordinates": "28.184° N, 77.184° E",
     "reserveAmountLakhs": 2.83,
     "settlementAmountLakhs": 2.15,
     "insurer": "ITGI",
@@ -24951,7 +24951,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.621Â° N, 77.621Â° E",
+    "gpsCoordinates": "28.621° N, 77.621° E",
     "reserveAmountLakhs": 0.51,
     "settlementAmountLakhs": 0.17,
     "insurer": "ITGI",
@@ -25088,7 +25088,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1077Â° N, 77.1077Â° E",
+    "gpsCoordinates": "28.1077° N, 77.1077° E",
     "reserveAmountLakhs": 0.63,
     "settlementAmountLakhs": 0.26,
     "insurer": "ITGI",
@@ -25225,7 +25225,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.713Â° N, 77.713Â° E",
+    "gpsCoordinates": "28.713° N, 77.713° E",
     "reserveAmountLakhs": 1.6,
     "settlementAmountLakhs": 1.05,
     "insurer": "ITGI",
@@ -25362,7 +25362,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1296Â° N, 77.1296Â° E",
+    "gpsCoordinates": "28.1296° N, 77.1296° E",
     "reserveAmountLakhs": 0.89,
     "settlementAmountLakhs": 0.46,
     "insurer": "ITGI",
@@ -25499,7 +25499,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.990Â° N, 77.990Â° E",
+    "gpsCoordinates": "28.990° N, 77.990° E",
     "reserveAmountLakhs": 0.74,
     "settlementAmountLakhs": 0.35,
     "insurer": "ITGI",
@@ -25636,7 +25636,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.235Â° N, 77.235Â° E",
+    "gpsCoordinates": "28.235° N, 77.235° E",
     "reserveAmountLakhs": 0.61,
     "settlementAmountLakhs": 0.24,
     "insurer": "ITGI",
@@ -25773,7 +25773,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.354Â° N, 77.354Â° E",
+    "gpsCoordinates": "28.354° N, 77.354° E",
     "reserveAmountLakhs": 1.15,
     "settlementAmountLakhs": 0.66,
     "insurer": "ITGI",
@@ -25910,7 +25910,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1124Â° N, 77.1124Â° E",
+    "gpsCoordinates": "28.1124° N, 77.1124° E",
     "reserveAmountLakhs": 0.55,
     "settlementAmountLakhs": 0.19,
     "insurer": "ITGI",
@@ -26047,7 +26047,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.462Â° N, 77.462Â° E",
+    "gpsCoordinates": "28.462° N, 77.462° E",
     "reserveAmountLakhs": 0.48,
     "settlementAmountLakhs": 0.13,
     "insurer": "ITGI",
@@ -26184,7 +26184,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.893Â° N, 77.893Â° E",
+    "gpsCoordinates": "28.893° N, 77.893° E",
     "reserveAmountLakhs": 0.98,
     "settlementAmountLakhs": 0.56,
     "insurer": "ITGI",
@@ -26321,7 +26321,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.556Â° N, 77.556Â° E",
+    "gpsCoordinates": "28.556° N, 77.556° E",
     "reserveAmountLakhs": 1.38,
     "settlementAmountLakhs": 0.86,
     "insurer": "ITGI",
@@ -26458,7 +26458,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1258Â° N, 77.1258Â° E",
+    "gpsCoordinates": "28.1258° N, 77.1258° E",
     "reserveAmountLakhs": 0.89,
     "settlementAmountLakhs": 0.47,
     "insurer": "ITGI",
@@ -26595,7 +26595,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.933Â° N, 77.933Â° E",
+    "gpsCoordinates": "28.933° N, 77.933° E",
     "reserveAmountLakhs": 1.56,
     "settlementAmountLakhs": 1.02,
     "insurer": "ITGI",
@@ -26732,7 +26732,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1349Â° N, 77.1349Â° E",
+    "gpsCoordinates": "28.1349° N, 77.1349° E",
     "reserveAmountLakhs": 0.65,
     "settlementAmountLakhs": 0.15,
     "insurer": "ITGI",
@@ -26869,7 +26869,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1201Â° N, 77.1201Â° E",
+    "gpsCoordinates": "28.1201° N, 77.1201° E",
     "reserveAmountLakhs": 0.46,
     "settlementAmountLakhs": 0.13,
     "insurer": "ITGI",
@@ -27006,7 +27006,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1066Â° N, 77.1066Â° E",
+    "gpsCoordinates": "28.1066° N, 77.1066° E",
     "reserveAmountLakhs": 0.59,
     "settlementAmountLakhs": 0.25,
     "insurer": "ITGI",
@@ -27143,7 +27143,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1158Â° N, 77.1158Â° E",
+    "gpsCoordinates": "28.1158° N, 77.1158° E",
     "reserveAmountLakhs": 0.55,
     "settlementAmountLakhs": 0.21,
     "insurer": "ITGI",
@@ -27280,7 +27280,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.307Â° N, 77.307Â° E",
+    "gpsCoordinates": "28.307° N, 77.307° E",
     "reserveAmountLakhs": 0.88,
     "settlementAmountLakhs": 0.5,
     "insurer": "ITGI",
@@ -27417,7 +27417,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.10Â° N, 77.10Â° E",
+    "gpsCoordinates": "28.10° N, 77.10° E",
     "reserveAmountLakhs": 1.84,
     "settlementAmountLakhs": 1.32,
     "insurer": "ITGI",
@@ -27554,7 +27554,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.10Â° N, 77.10Â° E",
+    "gpsCoordinates": "28.10° N, 77.10° E",
     "reserveAmountLakhs": 3.01,
     "settlementAmountLakhs": 1.51,
     "insurer": "ITGI",
@@ -27691,7 +27691,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.540Â° N, 77.540Â° E",
+    "gpsCoordinates": "28.540° N, 77.540° E",
     "reserveAmountLakhs": 2.6,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -27827,7 +27827,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1109Â° N, 77.1109Â° E",
+    "gpsCoordinates": "28.1109° N, 77.1109° E",
     "reserveAmountLakhs": 1.36,
     "settlementAmountLakhs": 0.85,
     "insurer": "ITGI",
@@ -27964,7 +27964,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1082Â° N, 77.1082Â° E",
+    "gpsCoordinates": "28.1082° N, 77.1082° E",
     "reserveAmountLakhs": 0.81,
     "settlementAmountLakhs": 0.41,
     "insurer": "ITGI",
@@ -28101,7 +28101,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1196Â° N, 77.1196Â° E",
+    "gpsCoordinates": "28.1196° N, 77.1196° E",
     "reserveAmountLakhs": 0.81,
     "settlementAmountLakhs": 0.4,
     "insurer": "ITGI",
@@ -28238,7 +28238,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.779Â° N, 77.779Â° E",
+    "gpsCoordinates": "28.779° N, 77.779° E",
     "reserveAmountLakhs": 0.67,
     "settlementAmountLakhs": 0.3,
     "insurer": "ITGI",
@@ -28375,7 +28375,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.663Â° N, 77.663Â° E",
+    "gpsCoordinates": "28.663° N, 77.663° E",
     "reserveAmountLakhs": 0.94,
     "settlementAmountLakhs": 0.5,
     "insurer": "ITGI",
@@ -28512,7 +28512,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.863Â° N, 77.863Â° E",
+    "gpsCoordinates": "28.863° N, 77.863° E",
     "reserveAmountLakhs": 0.43,
     "settlementAmountLakhs": 0.1,
     "insurer": "ITGI",
@@ -28649,7 +28649,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.775Â° N, 77.775Â° E",
+    "gpsCoordinates": "28.775° N, 77.775° E",
     "reserveAmountLakhs": 0.75,
     "settlementAmountLakhs": 0.36,
     "insurer": "ITGI",
@@ -28786,7 +28786,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.778Â° N, 77.778Â° E",
+    "gpsCoordinates": "28.778° N, 77.778° E",
     "reserveAmountLakhs": 0.57,
     "settlementAmountLakhs": 0.21,
     "insurer": "ITGI",
@@ -28923,7 +28923,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.727Â° N, 77.727Â° E",
+    "gpsCoordinates": "28.727° N, 77.727° E",
     "reserveAmountLakhs": 0.92,
     "settlementAmountLakhs": 0.58,
     "insurer": "ITGI",
@@ -29060,7 +29060,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.789Â° N, 77.789Â° E",
+    "gpsCoordinates": "28.789° N, 77.789° E",
     "reserveAmountLakhs": 0.75,
     "settlementAmountLakhs": 0.36,
     "insurer": "ITGI",
@@ -29197,7 +29197,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1115Â° N, 77.1115Â° E",
+    "gpsCoordinates": "28.1115° N, 77.1115° E",
     "reserveAmountLakhs": 0.46,
     "settlementAmountLakhs": 0.14,
     "insurer": "ITGI",
@@ -29334,7 +29334,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1166Â° N, 77.1166Â° E",
+    "gpsCoordinates": "28.1166° N, 77.1166° E",
     "reserveAmountLakhs": 0.55,
     "settlementAmountLakhs": 0.21,
     "insurer": "ITGI",
@@ -29471,7 +29471,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1295Â° N, 77.1295Â° E",
+    "gpsCoordinates": "28.1295° N, 77.1295° E",
     "reserveAmountLakhs": 0.51,
     "settlementAmountLakhs": 0.17,
     "insurer": "ITGI",
@@ -29608,7 +29608,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1030Â° N, 77.1030Â° E",
+    "gpsCoordinates": "28.1030° N, 77.1030° E",
     "reserveAmountLakhs": 0.72,
     "settlementAmountLakhs": 0.34,
     "insurer": "ITGI",
@@ -29745,7 +29745,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.256Â° N, 77.256Â° E",
+    "gpsCoordinates": "28.256° N, 77.256° E",
     "reserveAmountLakhs": 1.15,
     "settlementAmountLakhs": 0.66,
     "insurer": "ITGI",
@@ -29882,7 +29882,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1165Â° N, 77.1165Â° E",
+    "gpsCoordinates": "28.1165° N, 77.1165° E",
     "reserveAmountLakhs": 0.52,
     "settlementAmountLakhs": 0.18,
     "insurer": "ITGI",
@@ -30019,7 +30019,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.917Â° N, 77.917Â° E",
+    "gpsCoordinates": "28.917° N, 77.917° E",
     "reserveAmountLakhs": 1,
     "settlementAmountLakhs": 0.55,
     "insurer": "ITGI",
@@ -30156,7 +30156,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1262Â° N, 77.1262Â° E",
+    "gpsCoordinates": "28.1262° N, 77.1262° E",
     "reserveAmountLakhs": 1.05,
     "settlementAmountLakhs": 0.61,
     "insurer": "ITGI",
@@ -30293,7 +30293,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.387Â° N, 77.387Â° E",
+    "gpsCoordinates": "28.387° N, 77.387° E",
     "reserveAmountLakhs": 1.52,
     "settlementAmountLakhs": 0.95,
     "insurer": "ITGI",
@@ -30430,7 +30430,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.771Â° N, 77.771Â° E",
+    "gpsCoordinates": "28.771° N, 77.771° E",
     "reserveAmountLakhs": 0.85,
     "settlementAmountLakhs": 0.45,
     "insurer": "ITGI",
@@ -30567,7 +30567,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.239Â° N, 77.239Â° E",
+    "gpsCoordinates": "28.239° N, 77.239° E",
     "reserveAmountLakhs": 1.28,
     "settlementAmountLakhs": 0.79,
     "insurer": "ITGI",
@@ -30704,7 +30704,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1017Â° N, 77.1017Â° E",
+    "gpsCoordinates": "28.1017° N, 77.1017° E",
     "reserveAmountLakhs": 0.4,
     "settlementAmountLakhs": 0.08,
     "insurer": "ITGI",
@@ -30841,7 +30841,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1150Â° N, 77.1150Â° E",
+    "gpsCoordinates": "28.1150° N, 77.1150° E",
     "reserveAmountLakhs": 0.73,
     "settlementAmountLakhs": 0.34,
     "insurer": "ITGI",
@@ -30978,7 +30978,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.145Â° N, 77.145Â° E",
+    "gpsCoordinates": "28.145° N, 77.145° E",
     "reserveAmountLakhs": 0.97,
     "settlementAmountLakhs": 0.54,
     "insurer": "ITGI",
@@ -31115,7 +31115,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1359Â° N, 77.1359Â° E",
+    "gpsCoordinates": "28.1359° N, 77.1359° E",
     "reserveAmountLakhs": 0.54,
     "settlementAmountLakhs": 0.19,
     "insurer": "ITGI",
@@ -31252,7 +31252,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1316Â° N, 77.1316Â° E",
+    "gpsCoordinates": "28.1316° N, 77.1316° E",
     "reserveAmountLakhs": 1.28,
     "settlementAmountLakhs": 0.78,
     "insurer": "ITGI",
@@ -31389,7 +31389,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.896Â° N, 77.896Â° E",
+    "gpsCoordinates": "28.896° N, 77.896° E",
     "reserveAmountLakhs": 0.69,
     "settlementAmountLakhs": 0.3,
     "insurer": "ITGI",
@@ -31526,7 +31526,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.514Â° N, 77.514Â° E",
+    "gpsCoordinates": "28.514° N, 77.514° E",
     "reserveAmountLakhs": 0.66,
     "settlementAmountLakhs": 0.3,
     "insurer": "ITGI",
@@ -31663,7 +31663,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.975Â° N, 77.975Â° E",
+    "gpsCoordinates": "28.975° N, 77.975° E",
     "reserveAmountLakhs": 1.19,
     "settlementAmountLakhs": 0.7,
     "insurer": "ITGI",
@@ -31800,7 +31800,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.749Â° N, 77.749Â° E",
+    "gpsCoordinates": "28.749° N, 77.749° E",
     "reserveAmountLakhs": 1.14,
     "settlementAmountLakhs": 0.66,
     "insurer": "ITGI",
@@ -31937,7 +31937,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.148Â° N, 77.148Â° E",
+    "gpsCoordinates": "28.148° N, 77.148° E",
     "reserveAmountLakhs": 0.85,
     "settlementAmountLakhs": 0.43,
     "insurer": "ITGI",
@@ -32074,7 +32074,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.165Â° N, 77.165Â° E",
+    "gpsCoordinates": "28.165° N, 77.165° E",
     "reserveAmountLakhs": 3.09,
     "settlementAmountLakhs": 2.37,
     "insurer": "ITGI",
@@ -32211,7 +32211,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1052Â° N, 77.1052Â° E",
+    "gpsCoordinates": "28.1052° N, 77.1052° E",
     "reserveAmountLakhs": 1.46,
     "settlementAmountLakhs": 0.92,
     "insurer": "ITGI",
@@ -32348,7 +32348,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.207Â° N, 77.207Â° E",
+    "gpsCoordinates": "28.207° N, 77.207° E",
     "reserveAmountLakhs": 0.59,
     "settlementAmountLakhs": 0.22,
     "insurer": "ITGI",
@@ -32485,7 +32485,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1103Â° N, 77.1103Â° E",
+    "gpsCoordinates": "28.1103° N, 77.1103° E",
     "reserveAmountLakhs": 1.09,
     "settlementAmountLakhs": 0.62,
     "insurer": "ITGI",
@@ -32622,7 +32622,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.53Â° N, 77.53Â° E",
+    "gpsCoordinates": "28.53° N, 77.53° E",
     "reserveAmountLakhs": 0.61,
     "settlementAmountLakhs": 0.24,
     "insurer": "ITGI",
@@ -32759,7 +32759,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.291Â° N, 77.291Â° E",
+    "gpsCoordinates": "28.291° N, 77.291° E",
     "reserveAmountLakhs": 2.04,
     "settlementAmountLakhs": 1.35,
     "insurer": "ITGI",
@@ -32896,7 +32896,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1272Â° N, 77.1272Â° E",
+    "gpsCoordinates": "28.1272° N, 77.1272° E",
     "reserveAmountLakhs": 0.88,
     "settlementAmountLakhs": 0.45,
     "insurer": "ITGI",
@@ -33033,7 +33033,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.93,
     "settlementAmountLakhs": 0.53,
     "insurer": "ITGI",
@@ -33170,7 +33170,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1241Â° N, 77.1241Â° E",
+    "gpsCoordinates": "28.1241° N, 77.1241° E",
     "reserveAmountLakhs": 0.75,
     "settlementAmountLakhs": 0.37,
     "insurer": "ITGI",
@@ -33307,7 +33307,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1263Â° N, 77.1263Â° E",
+    "gpsCoordinates": "28.1263° N, 77.1263° E",
     "reserveAmountLakhs": 0.72,
     "settlementAmountLakhs": 0.33,
     "insurer": "ITGI",
@@ -33444,7 +33444,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.48,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -33580,7 +33580,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.39Â° N, 77.39Â° E",
+    "gpsCoordinates": "28.39° N, 77.39° E",
     "reserveAmountLakhs": 1.59,
     "settlementAmountLakhs": 1.53,
     "insurer": "ITGI",
@@ -33717,7 +33717,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.81,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -33853,7 +33853,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.18Â° N, 77.18Â° E",
+    "gpsCoordinates": "28.18° N, 77.18° E",
     "reserveAmountLakhs": 2.29,
     "settlementAmountLakhs": 1.55,
     "insurer": "ITGI",
@@ -33990,7 +33990,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.727Â° N, 77.727Â° E",
+    "gpsCoordinates": "28.727° N, 77.727° E",
     "reserveAmountLakhs": 0.67,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -34126,7 +34126,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.622Â° N, 77.622Â° E",
+    "gpsCoordinates": "28.622° N, 77.622° E",
     "reserveAmountLakhs": 0.84,
     "settlementAmountLakhs": 0.42,
     "insurer": "ITGI",
@@ -34263,7 +34263,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.778Â° N, 77.778Â° E",
+    "gpsCoordinates": "28.778° N, 77.778° E",
     "reserveAmountLakhs": 2.73,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -34282,9 +34282,9 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "admissionProbability": 88,
       "likelyDeductible": 0.25,
       "missingEvidence": [
-        "â€¢ Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. â€¢ Your offer for Salvage, if any."
+        "• Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. • Your offer for Salvage, if any."
       ],
-      "recommendation": "Submit pending documents: â€¢ Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. â€¢ Your offer for Salvage, if any.",
+      "recommendation": "Submit pending documents: • Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. • Your offer for Salvage, if any.",
       "potentialObjections": [
         "Insurer requires original repair bills with GRN proof.",
         "Salvage value deduction recommendation from surveyor."
@@ -34302,7 +34302,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       },
       {
         "id": "doc-2",
-        "name": "Pending: â€¢ Reinstatement Photographs. â€¢ Copy...",
+        "name": "Pending: • Reinstatement Photographs. • Copy...",
         "category": "Registers",
         "status": "Missing",
         "requiredForSurvey": true,
@@ -34329,7 +34329,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-3",
         "title": "Current Status",
-        "description": "Status: Open - Other. Docs Pending: â€¢ Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. â€¢ Your offer for Salvage, if any.",
+        "description": "Status: Open - Other. Docs Pending: • Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. • Your offer for Salvage, if any.",
         "date": "In Progress",
         "status": "current",
         "actor": "Protocol Insurance Surveyor"
@@ -34365,7 +34365,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "statusCategory": "Open - Other",
     "openFlag": "Open",
     "pendingWith": "",
-    "documentsPending": "â€¢ Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. â€¢ Your offer for Salvage, if any.",
+    "documentsPending": "• Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. • Your offer for Salvage, if any.",
     "claimAmount": 272580,
     "grossAssessed": null,
     "deductions": null,
@@ -34399,7 +34399,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.794Â° N, 77.794Â° E",
+    "gpsCoordinates": "28.794° N, 77.794° E",
     "reserveAmountLakhs": 7.46,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -34418,9 +34418,9 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "admissionProbability": 88,
       "likelyDeductible": 0.25,
       "missingEvidence": [
-        "â€¢ Copy of Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor."
+        "• Copy of Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor."
       ],
-      "recommendation": "Submit pending documents: â€¢ Copy of Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor.",
+      "recommendation": "Submit pending documents: • Copy of Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor.",
       "potentialObjections": [
         "Insurer requires original repair bills with GRN proof.",
         "Salvage value deduction recommendation from surveyor."
@@ -34438,7 +34438,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       },
       {
         "id": "doc-2",
-        "name": "Pending: â€¢ Copy of Reinstatement Photographs...",
+        "name": "Pending: • Copy of Reinstatement Photographs...",
         "category": "Registers",
         "status": "Missing",
         "requiredForSurvey": true,
@@ -34465,7 +34465,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-3",
         "title": "Current Status",
-        "description": "Status: Open - Other. Docs Pending: â€¢ Copy of Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor.",
+        "description": "Status: Open - Other. Docs Pending: • Copy of Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor.",
         "date": "In Progress",
         "status": "current",
         "actor": "Protocol Insurance Surveyor"
@@ -34501,7 +34501,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "statusCategory": "Open - Other",
     "openFlag": "Open",
     "pendingWith": "",
-    "documentsPending": "â€¢ Copy of Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor.",
+    "documentsPending": "• Copy of Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor.",
     "claimAmount": 746350,
     "grossAssessed": null,
     "deductions": null,
@@ -34535,7 +34535,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.830Â° N, 77.830Â° E",
+    "gpsCoordinates": "28.830° N, 77.830° E",
     "reserveAmountLakhs": 1.12,
     "settlementAmountLakhs": 1.07,
     "insurer": "ITGI",
@@ -34672,7 +34672,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.362Â° N, 77.362Â° E",
+    "gpsCoordinates": "28.362° N, 77.362° E",
     "reserveAmountLakhs": 1.05,
     "settlementAmountLakhs": 0.59,
     "insurer": "ITGI",
@@ -34809,7 +34809,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1165Â° N, 77.1165Â° E",
+    "gpsCoordinates": "28.1165° N, 77.1165° E",
     "reserveAmountLakhs": 1.91,
     "settlementAmountLakhs": 1.27,
     "insurer": "ITGI",
@@ -34946,7 +34946,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.983Â° N, 77.983Â° E",
+    "gpsCoordinates": "28.983° N, 77.983° E",
     "reserveAmountLakhs": 1.39,
     "settlementAmountLakhs": 0.87,
     "insurer": "ITGI",
@@ -35083,7 +35083,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.42,
     "settlementAmountLakhs": 0.09,
     "insurer": "ITGI",
@@ -35220,7 +35220,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.94,
     "settlementAmountLakhs": 0.53,
     "insurer": "ITGI",
@@ -35357,7 +35357,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.74Â° N, 77.74Â° E",
+    "gpsCoordinates": "28.74° N, 77.74° E",
     "reserveAmountLakhs": 1.45,
     "settlementAmountLakhs": 0.72,
     "insurer": "ITGI",
@@ -35494,7 +35494,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.47,
     "settlementAmountLakhs": 0.14,
     "insurer": "ITGI",
@@ -35631,7 +35631,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.180Â° N, 77.180Â° E",
+    "gpsCoordinates": "28.180° N, 77.180° E",
     "reserveAmountLakhs": 4.93,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -35650,9 +35650,9 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "admissionProbability": 88,
       "likelyDeductible": 0.25,
       "missingEvidence": [
-        "â€¢ Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. â€¢ Your offer for Salvage, if any."
+        "• Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. • Your offer for Salvage, if any."
       ],
-      "recommendation": "Submit pending documents: â€¢ Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. â€¢ Your offer for Salvage, if any.",
+      "recommendation": "Submit pending documents: • Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. • Your offer for Salvage, if any.",
       "potentialObjections": [
         "Insurer requires original repair bills with GRN proof.",
         "Salvage value deduction recommendation from surveyor."
@@ -35670,7 +35670,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       },
       {
         "id": "doc-2",
-        "name": "Pending: â€¢ Reinstatement Photographs. â€¢ Copy...",
+        "name": "Pending: • Reinstatement Photographs. • Copy...",
         "category": "Registers",
         "status": "Missing",
         "requiredForSurvey": true,
@@ -35697,7 +35697,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-3",
         "title": "Current Status",
-        "description": "Status: Open - Other. Docs Pending: â€¢ Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. â€¢ Your offer for Salvage, if any.",
+        "description": "Status: Open - Other. Docs Pending: • Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. • Your offer for Salvage, if any.",
         "date": "In Progress",
         "status": "current",
         "actor": "Protocol Insurance Surveyor"
@@ -35733,7 +35733,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "statusCategory": "Open - Other",
     "openFlag": "Open",
     "pendingWith": "",
-    "documentsPending": "â€¢ Reinstatement Photographs. â€¢ Copy of Purchase Invoice of the damaged/ affected item. â€¢ Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. â€¢ Your offer for Salvage, if any.",
+    "documentsPending": "• Reinstatement Photographs. • Copy of Purchase Invoice of the damaged/ affected item. • Copy of Repair/ Replacement Invoices along with proof of payment made to the respective Repairer/ Vendor. • Your offer for Salvage, if any.",
     "claimAmount": 493240,
     "grossAssessed": null,
     "deductions": null,
@@ -35767,7 +35767,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.874Â° N, 77.874Â° E",
+    "gpsCoordinates": "28.874° N, 77.874° E",
     "reserveAmountLakhs": 0.82,
     "settlementAmountLakhs": 0.41,
     "insurer": "ITGI",
@@ -35904,7 +35904,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.749Â° N, 77.749Â° E",
+    "gpsCoordinates": "28.749° N, 77.749° E",
     "reserveAmountLakhs": 1.46,
     "settlementAmountLakhs": 0.89,
     "insurer": "ITGI",
@@ -36041,7 +36041,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.64Â° N, 77.64Â° E",
+    "gpsCoordinates": "28.64° N, 77.64° E",
     "reserveAmountLakhs": 1.56,
     "settlementAmountLakhs": 1.02,
     "insurer": "ITGI",
@@ -36178,7 +36178,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.740Â° N, 77.740Â° E",
+    "gpsCoordinates": "28.740° N, 77.740° E",
     "reserveAmountLakhs": 0.87,
     "settlementAmountLakhs": 0.43,
     "insurer": "ITGI",
@@ -36315,7 +36315,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.600Â° N, 77.600Â° E",
+    "gpsCoordinates": "28.600° N, 77.600° E",
     "reserveAmountLakhs": 2.24,
     "settlementAmountLakhs": 1.56,
     "insurer": "ITGI",
@@ -36452,7 +36452,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.21,
     "settlementAmountLakhs": 0.78,
     "insurer": "ITGI",
@@ -36589,7 +36589,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.6,
     "settlementAmountLakhs": 0.22,
     "insurer": "ITGI",
@@ -36726,7 +36726,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.799Â° N, 77.799Â° E",
+    "gpsCoordinates": "28.799° N, 77.799° E",
     "reserveAmountLakhs": 0.8,
     "settlementAmountLakhs": 0.38,
     "insurer": "ITGI",
@@ -36863,7 +36863,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.886Â° N, 77.886Â° E",
+    "gpsCoordinates": "28.886° N, 77.886° E",
     "reserveAmountLakhs": 0.95,
     "settlementAmountLakhs": 0.5,
     "insurer": "ITGI",
@@ -37000,7 +37000,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.34,
     "settlementAmountLakhs": 0.02,
     "insurer": "ITGI",
@@ -37137,7 +37137,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.83,
     "settlementAmountLakhs": 0.41,
     "insurer": "ITGI",
@@ -37274,7 +37274,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.15,
     "insurer": "ITGI",
@@ -37411,7 +37411,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.542Â° N, 77.542Â° E",
+    "gpsCoordinates": "28.542° N, 77.542° E",
     "reserveAmountLakhs": 1.58,
     "settlementAmountLakhs": 1.02,
     "insurer": "ITGI",
@@ -37548,7 +37548,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.57,
     "settlementAmountLakhs": 0.2,
     "insurer": "ITGI",
@@ -37685,7 +37685,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.36,
     "settlementAmountLakhs": 0.05,
     "insurer": "ITGI",
@@ -37822,7 +37822,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1,
     "settlementAmountLakhs": 0.58,
     "insurer": "ITGI",
@@ -37959,7 +37959,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.304Â° N, 77.304Â° E",
+    "gpsCoordinates": "28.304° N, 77.304° E",
     "reserveAmountLakhs": 1.47,
     "settlementAmountLakhs": 0.91,
     "insurer": "ITGI",
@@ -38096,7 +38096,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1061Â° N, 77.1061Â° E",
+    "gpsCoordinates": "28.1061° N, 77.1061° E",
     "reserveAmountLakhs": 0.57,
     "settlementAmountLakhs": 0.21,
     "insurer": "ITGI",
@@ -38233,7 +38233,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.977Â° N, 77.977Â° E",
+    "gpsCoordinates": "28.977° N, 77.977° E",
     "reserveAmountLakhs": 0.51,
     "settlementAmountLakhs": 0.16,
     "insurer": "ITGI",
@@ -38370,7 +38370,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1177Â° N, 77.1177Â° E",
+    "gpsCoordinates": "28.1177° N, 77.1177° E",
     "reserveAmountLakhs": 0.51,
     "settlementAmountLakhs": 0.16,
     "insurer": "ITGI",
@@ -38507,7 +38507,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1060Â° N, 77.1060Â° E",
+    "gpsCoordinates": "28.1060° N, 77.1060° E",
     "reserveAmountLakhs": 1.57,
     "settlementAmountLakhs": 1,
     "insurer": "ITGI",
@@ -38644,7 +38644,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1139Â° N, 77.1139Â° E",
+    "gpsCoordinates": "28.1139° N, 77.1139° E",
     "reserveAmountLakhs": 0.43,
     "settlementAmountLakhs": 0.1,
     "insurer": "ITGI",
@@ -38781,7 +38781,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1139Â° N, 77.1139Â° E",
+    "gpsCoordinates": "28.1139° N, 77.1139° E",
     "reserveAmountLakhs": 0.57,
     "settlementAmountLakhs": 0.22,
     "insurer": "ITGI",
@@ -38918,7 +38918,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1151Â° N, 77.1151Â° E",
+    "gpsCoordinates": "28.1151° N, 77.1151° E",
     "reserveAmountLakhs": 0.55,
     "settlementAmountLakhs": 0.21,
     "insurer": "ITGI",
@@ -39055,7 +39055,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.975Â° N, 77.975Â° E",
+    "gpsCoordinates": "28.975° N, 77.975° E",
     "reserveAmountLakhs": 0.96,
     "settlementAmountLakhs": 0.51,
     "insurer": "ITGI",
@@ -39192,7 +39192,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.435Â° N, 77.435Â° E",
+    "gpsCoordinates": "28.435° N, 77.435° E",
     "reserveAmountLakhs": 2.31,
     "settlementAmountLakhs": 1.58,
     "insurer": "ITGI",
@@ -39329,7 +39329,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1170Â° N, 77.1170Â° E",
+    "gpsCoordinates": "28.1170° N, 77.1170° E",
     "reserveAmountLakhs": 0.56,
     "settlementAmountLakhs": 0.22,
     "insurer": "ITGI",
@@ -39466,7 +39466,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1164Â° N, 77.1164Â° E",
+    "gpsCoordinates": "28.1164° N, 77.1164° E",
     "reserveAmountLakhs": 0.45,
     "settlementAmountLakhs": 0.21,
     "insurer": "ITGI",
@@ -39603,7 +39603,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1231Â° N, 77.1231Â° E",
+    "gpsCoordinates": "28.1231° N, 77.1231° E",
     "reserveAmountLakhs": 0.36,
     "settlementAmountLakhs": 0.05,
     "insurer": "ITGI",
@@ -39740,7 +39740,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1174Â° N, 77.1174Â° E",
+    "gpsCoordinates": "28.1174° N, 77.1174° E",
     "reserveAmountLakhs": 0.46,
     "settlementAmountLakhs": 0.13,
     "insurer": "ITGI",
@@ -39877,7 +39877,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.177Â° N, 77.177Â° E",
+    "gpsCoordinates": "28.177° N, 77.177° E",
     "reserveAmountLakhs": 0.87,
     "settlementAmountLakhs": 0.45,
     "insurer": "ITGI",
@@ -40014,7 +40014,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1180Â° N, 77.1180Â° E",
+    "gpsCoordinates": "28.1180° N, 77.1180° E",
     "reserveAmountLakhs": 0.73,
     "settlementAmountLakhs": 0.35,
     "insurer": "ITGI",
@@ -40151,7 +40151,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1176Â° N, 77.1176Â° E",
+    "gpsCoordinates": "28.1176° N, 77.1176° E",
     "reserveAmountLakhs": 1.16,
     "settlementAmountLakhs": 0.7,
     "insurer": "ITGI",
@@ -40288,7 +40288,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.584Â° N, 77.584Â° E",
+    "gpsCoordinates": "28.584° N, 77.584° E",
     "reserveAmountLakhs": 0.98,
     "settlementAmountLakhs": 0.55,
     "insurer": "ITGI",
@@ -40425,7 +40425,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1030Â° N, 77.1030Â° E",
+    "gpsCoordinates": "28.1030° N, 77.1030° E",
     "reserveAmountLakhs": 0.97,
     "settlementAmountLakhs": 0.53,
     "insurer": "ITGI",
@@ -40562,7 +40562,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.422Â° N, 77.422Â° E",
+    "gpsCoordinates": "28.422° N, 77.422° E",
     "reserveAmountLakhs": 1.31,
     "settlementAmountLakhs": 0.79,
     "insurer": "ITGI",
@@ -40699,7 +40699,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.114Â° N, 77.114Â° E",
+    "gpsCoordinates": "28.114° N, 77.114° E",
     "reserveAmountLakhs": 0.83,
     "settlementAmountLakhs": 0.41,
     "insurer": "ITGI",
@@ -40836,7 +40836,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1082Â° N, 77.1082Â° E",
+    "gpsCoordinates": "28.1082° N, 77.1082° E",
     "reserveAmountLakhs": 1.74,
     "settlementAmountLakhs": 1.13,
     "insurer": "ITGI",
@@ -40973,7 +40973,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.223Â° N, 77.223Â° E",
+    "gpsCoordinates": "28.223° N, 77.223° E",
     "reserveAmountLakhs": 1.09,
     "settlementAmountLakhs": 0.62,
     "insurer": "ITGI",
@@ -41110,7 +41110,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1179Â° N, 77.1179Â° E",
+    "gpsCoordinates": "28.1179° N, 77.1179° E",
     "reserveAmountLakhs": 0.83,
     "settlementAmountLakhs": 0.42,
     "insurer": "ITGI",
@@ -41247,7 +41247,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1104Â° N, 77.1104Â° E",
+    "gpsCoordinates": "28.1104° N, 77.1104° E",
     "reserveAmountLakhs": 1.25,
     "settlementAmountLakhs": 0.77,
     "insurer": "ITGI",
@@ -41384,7 +41384,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.922Â° N, 77.922Â° E",
+    "gpsCoordinates": "28.922° N, 77.922° E",
     "reserveAmountLakhs": 0.67,
     "settlementAmountLakhs": 0.29,
     "insurer": "ITGI",
@@ -41521,7 +41521,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.920Â° N, 77.920Â° E",
+    "gpsCoordinates": "28.920° N, 77.920° E",
     "reserveAmountLakhs": 0.64,
     "settlementAmountLakhs": 0.28,
     "insurer": "ITGI",
@@ -41658,7 +41658,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1137Â° N, 77.1137Â° E",
+    "gpsCoordinates": "28.1137° N, 77.1137° E",
     "reserveAmountLakhs": 0.53,
     "settlementAmountLakhs": 0.18,
     "insurer": "ITGI",
@@ -41795,7 +41795,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1066Â° N, 77.1066Â° E",
+    "gpsCoordinates": "28.1066° N, 77.1066° E",
     "reserveAmountLakhs": 0.61,
     "settlementAmountLakhs": 0.24,
     "insurer": "ITGI",
@@ -41932,7 +41932,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.749Â° N, 77.749Â° E",
+    "gpsCoordinates": "28.749° N, 77.749° E",
     "reserveAmountLakhs": 1.36,
     "settlementAmountLakhs": 0.86,
     "insurer": "ITGI",
@@ -42069,7 +42069,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1050Â° N, 77.1050Â° E",
+    "gpsCoordinates": "28.1050° N, 77.1050° E",
     "reserveAmountLakhs": 0.57,
     "settlementAmountLakhs": 0.22,
     "insurer": "ITGI",
@@ -42206,7 +42206,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.242Â° N, 77.242Â° E",
+    "gpsCoordinates": "28.242° N, 77.242° E",
     "reserveAmountLakhs": 0.62,
     "settlementAmountLakhs": 0.24,
     "insurer": "ITGI",
@@ -42343,7 +42343,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1001Â° N, 77.1001Â° E",
+    "gpsCoordinates": "28.1001° N, 77.1001° E",
     "reserveAmountLakhs": 0.53,
     "settlementAmountLakhs": 0.18,
     "insurer": "ITGI",
@@ -42480,7 +42480,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.978Â° N, 77.978Â° E",
+    "gpsCoordinates": "28.978° N, 77.978° E",
     "reserveAmountLakhs": 1.15,
     "settlementAmountLakhs": 0.65,
     "insurer": "ITGI",
@@ -42617,7 +42617,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1350Â° N, 77.1350Â° E",
+    "gpsCoordinates": "28.1350° N, 77.1350° E",
     "reserveAmountLakhs": 1.2,
     "settlementAmountLakhs": 0.7,
     "insurer": "ITGI",
@@ -42754,7 +42754,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1237Â° N, 77.1237Â° E",
+    "gpsCoordinates": "28.1237° N, 77.1237° E",
     "reserveAmountLakhs": 0.99,
     "settlementAmountLakhs": 0.57,
     "insurer": "ITGI",
@@ -42891,7 +42891,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.514Â° N, 77.514Â° E",
+    "gpsCoordinates": "28.514° N, 77.514° E",
     "reserveAmountLakhs": 1,
     "settlementAmountLakhs": 0.54,
     "insurer": "ITGI",
@@ -43028,7 +43028,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.575Â° N, 77.575Â° E",
+    "gpsCoordinates": "28.575° N, 77.575° E",
     "reserveAmountLakhs": 0.83,
     "settlementAmountLakhs": 0.39,
     "insurer": "ITGI",
@@ -43165,7 +43165,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.664Â° N, 77.664Â° E",
+    "gpsCoordinates": "28.664° N, 77.664° E",
     "reserveAmountLakhs": 1.98,
     "settlementAmountLakhs": 1.34,
     "insurer": "ITGI",
@@ -43302,7 +43302,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.691Â° N, 77.691Â° E",
+    "gpsCoordinates": "28.691° N, 77.691° E",
     "reserveAmountLakhs": 0.53,
     "settlementAmountLakhs": 0.18,
     "insurer": "ITGI",
@@ -43439,7 +43439,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1305Â° N, 77.1305Â° E",
+    "gpsCoordinates": "28.1305° N, 77.1305° E",
     "reserveAmountLakhs": 0.5,
     "settlementAmountLakhs": 0.16,
     "insurer": "ITGI",
@@ -43576,7 +43576,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1097Â° N, 77.1097Â° E",
+    "gpsCoordinates": "28.1097° N, 77.1097° E",
     "reserveAmountLakhs": 0.47,
     "settlementAmountLakhs": 0.14,
     "insurer": "ITGI",
@@ -43713,7 +43713,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1188Â° N, 77.1188Â° E",
+    "gpsCoordinates": "28.1188° N, 77.1188° E",
     "reserveAmountLakhs": 0.8,
     "settlementAmountLakhs": 0.39,
     "insurer": "ITGI",
@@ -43850,7 +43850,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.815Â° N, 77.815Â° E",
+    "gpsCoordinates": "28.815° N, 77.815° E",
     "reserveAmountLakhs": 1.03,
     "settlementAmountLakhs": 0.6,
     "insurer": "ITGI",
@@ -43987,7 +43987,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1308Â° N, 77.1308Â° E",
+    "gpsCoordinates": "28.1308° N, 77.1308° E",
     "reserveAmountLakhs": 0.74,
     "settlementAmountLakhs": 0.37,
     "insurer": "ITGI",
@@ -44124,7 +44124,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1258Â° N, 77.1258Â° E",
+    "gpsCoordinates": "28.1258° N, 77.1258° E",
     "reserveAmountLakhs": 0.63,
     "settlementAmountLakhs": 0.27,
     "insurer": "ITGI",
@@ -44261,7 +44261,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1178Â° N, 77.1178Â° E",
+    "gpsCoordinates": "28.1178° N, 77.1178° E",
     "reserveAmountLakhs": 0.91,
     "settlementAmountLakhs": 0.51,
     "insurer": "ITGI",
@@ -44398,7 +44398,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1276Â° N, 77.1276Â° E",
+    "gpsCoordinates": "28.1276° N, 77.1276° E",
     "reserveAmountLakhs": 0.45,
     "settlementAmountLakhs": 0.13,
     "insurer": "ITGI",
@@ -44535,7 +44535,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.993Â° N, 77.993Â° E",
+    "gpsCoordinates": "28.993° N, 77.993° E",
     "reserveAmountLakhs": 0.93,
     "settlementAmountLakhs": 0.5,
     "insurer": "ITGI",
@@ -44672,7 +44672,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1221Â° N, 77.1221Â° E",
+    "gpsCoordinates": "28.1221° N, 77.1221° E",
     "reserveAmountLakhs": 0.74,
     "settlementAmountLakhs": 0.36,
     "insurer": "ITGI",
@@ -44809,7 +44809,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.927Â° N, 77.927Â° E",
+    "gpsCoordinates": "28.927° N, 77.927° E",
     "reserveAmountLakhs": 0.84,
     "settlementAmountLakhs": 0.43,
     "insurer": "ITGI",
@@ -44946,7 +44946,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1176Â° N, 77.1176Â° E",
+    "gpsCoordinates": "28.1176° N, 77.1176° E",
     "reserveAmountLakhs": 0.46,
     "settlementAmountLakhs": 0.13,
     "insurer": "ITGI",
@@ -45083,7 +45083,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.93Â° N, 77.93Â° E",
+    "gpsCoordinates": "28.93° N, 77.93° E",
     "reserveAmountLakhs": 1.5,
     "settlementAmountLakhs": 0.96,
     "insurer": "ITGI",
@@ -45220,7 +45220,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.735Â° N, 77.735Â° E",
+    "gpsCoordinates": "28.735° N, 77.735° E",
     "reserveAmountLakhs": 0.77,
     "settlementAmountLakhs": 0.31,
     "insurer": "ITGI",
@@ -45357,7 +45357,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.602Â° N, 77.602Â° E",
+    "gpsCoordinates": "28.602° N, 77.602° E",
     "reserveAmountLakhs": 0.97,
     "settlementAmountLakhs": 0.54,
     "insurer": "ITGI",
@@ -45494,7 +45494,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.715Â° N, 77.715Â° E",
+    "gpsCoordinates": "28.715° N, 77.715° E",
     "reserveAmountLakhs": 9.73,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -45630,7 +45630,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1259Â° N, 77.1259Â° E",
+    "gpsCoordinates": "28.1259° N, 77.1259° E",
     "reserveAmountLakhs": 0.45,
     "settlementAmountLakhs": 0.12,
     "insurer": "ITGI",
@@ -45767,7 +45767,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1267Â° N, 77.1267Â° E",
+    "gpsCoordinates": "28.1267° N, 77.1267° E",
     "reserveAmountLakhs": 0.68,
     "settlementAmountLakhs": 0.31,
     "insurer": "ITGI",
@@ -45904,7 +45904,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1293Â° N, 77.1293Â° E",
+    "gpsCoordinates": "28.1293° N, 77.1293° E",
     "reserveAmountLakhs": 0.45,
     "settlementAmountLakhs": 0.12,
     "insurer": "ITGI",
@@ -46041,7 +46041,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1320Â° N, 77.1320Â° E",
+    "gpsCoordinates": "28.1320° N, 77.1320° E",
     "reserveAmountLakhs": 0.79,
     "settlementAmountLakhs": 0.41,
     "insurer": "ITGI",
@@ -46178,7 +46178,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.455Â° N, 77.455Â° E",
+    "gpsCoordinates": "28.455° N, 77.455° E",
     "reserveAmountLakhs": 1.86,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -46314,7 +46314,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1006Â° N, 77.1006Â° E",
+    "gpsCoordinates": "28.1006° N, 77.1006° E",
     "reserveAmountLakhs": 1.31,
     "settlementAmountLakhs": 0.79,
     "insurer": "ITGI",
@@ -46451,7 +46451,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.283Â° N, 77.283Â° E",
+    "gpsCoordinates": "28.283° N, 77.283° E",
     "reserveAmountLakhs": 2.43,
     "settlementAmountLakhs": 1.69,
     "insurer": "ITGI",
@@ -46588,7 +46588,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.805Â° N, 77.805Â° E",
+    "gpsCoordinates": "28.805° N, 77.805° E",
     "reserveAmountLakhs": 0.47,
     "settlementAmountLakhs": 0.13,
     "insurer": "ITGI",
@@ -46725,7 +46725,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.492Â° N, 77.492Â° E",
+    "gpsCoordinates": "28.492° N, 77.492° E",
     "reserveAmountLakhs": 1.56,
     "settlementAmountLakhs": 1.01,
     "insurer": "ITGI",
@@ -46862,7 +46862,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1005Â° N, 77.1005Â° E",
+    "gpsCoordinates": "28.1005° N, 77.1005° E",
     "reserveAmountLakhs": 1.08,
     "settlementAmountLakhs": 0.61,
     "insurer": "ITGI",
@@ -46999,7 +46999,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1175Â° N, 77.1175Â° E",
+    "gpsCoordinates": "28.1175° N, 77.1175° E",
     "reserveAmountLakhs": 1.25,
     "settlementAmountLakhs": 0.78,
     "insurer": "ITGI",
@@ -47136,7 +47136,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.780Â° N, 77.780Â° E",
+    "gpsCoordinates": "28.780° N, 77.780° E",
     "reserveAmountLakhs": 0.59,
     "settlementAmountLakhs": 0.22,
     "insurer": "ITGI",
@@ -47273,7 +47273,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1058Â° N, 77.1058Â° E",
+    "gpsCoordinates": "28.1058° N, 77.1058° E",
     "reserveAmountLakhs": 2.1,
     "settlementAmountLakhs": 1.42,
     "insurer": "ITGI",
@@ -47410,7 +47410,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1356Â° N, 77.1356Â° E",
+    "gpsCoordinates": "28.1356° N, 77.1356° E",
     "reserveAmountLakhs": 0.46,
     "settlementAmountLakhs": 0.12,
     "insurer": "ITGI",
@@ -47547,7 +47547,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1239Â° N, 77.1239Â° E",
+    "gpsCoordinates": "28.1239° N, 77.1239° E",
     "reserveAmountLakhs": 3.45,
     "settlementAmountLakhs": 2.44,
     "insurer": "ITGI",
@@ -47684,7 +47684,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.479Â° N, 77.479Â° E",
+    "gpsCoordinates": "28.479° N, 77.479° E",
     "reserveAmountLakhs": 0.67,
     "settlementAmountLakhs": 0.31,
     "insurer": "ITGI",
@@ -47821,7 +47821,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1199Â° N, 77.1199Â° E",
+    "gpsCoordinates": "28.1199° N, 77.1199° E",
     "reserveAmountLakhs": 0.77,
     "settlementAmountLakhs": 0.37,
     "insurer": "ITGI",
@@ -47958,7 +47958,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.927Â° N, 77.927Â° E",
+    "gpsCoordinates": "28.927° N, 77.927° E",
     "reserveAmountLakhs": 1.07,
     "settlementAmountLakhs": 0.59,
     "insurer": "ITGI",
@@ -48095,7 +48095,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1069Â° N, 77.1069Â° E",
+    "gpsCoordinates": "28.1069° N, 77.1069° E",
     "reserveAmountLakhs": 1.1,
     "settlementAmountLakhs": 0.65,
     "insurer": "ITGI",
@@ -48232,7 +48232,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1325Â° N, 77.1325Â° E",
+    "gpsCoordinates": "28.1325° N, 77.1325° E",
     "reserveAmountLakhs": 1.09,
     "settlementAmountLakhs": 0.63,
     "insurer": "ITGI",
@@ -48369,7 +48369,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.99Â° N, 77.99Â° E",
+    "gpsCoordinates": "28.99° N, 77.99° E",
     "reserveAmountLakhs": 0.9,
     "settlementAmountLakhs": 0.43,
     "insurer": "ITGI",
@@ -48506,7 +48506,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.740Â° N, 77.740Â° E",
+    "gpsCoordinates": "28.740° N, 77.740° E",
     "reserveAmountLakhs": 0.8,
     "settlementAmountLakhs": 0.41,
     "insurer": "ITGI",
@@ -48643,7 +48643,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.885Â° N, 77.885Â° E",
+    "gpsCoordinates": "28.885° N, 77.885° E",
     "reserveAmountLakhs": 0.58,
     "settlementAmountLakhs": 0.23,
     "insurer": "ITGI",
@@ -48780,7 +48780,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1270Â° N, 77.1270Â° E",
+    "gpsCoordinates": "28.1270° N, 77.1270° E",
     "reserveAmountLakhs": 0.72,
     "settlementAmountLakhs": 0.35,
     "insurer": "ITGI",
@@ -48917,7 +48917,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1170Â° N, 77.1170Â° E",
+    "gpsCoordinates": "28.1170° N, 77.1170° E",
     "reserveAmountLakhs": 0.72,
     "settlementAmountLakhs": 0.35,
     "insurer": "ITGI",
@@ -49054,7 +49054,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.343Â° N, 77.343Â° E",
+    "gpsCoordinates": "28.343° N, 77.343° E",
     "reserveAmountLakhs": 1.85,
     "settlementAmountLakhs": 1.82,
     "insurer": "ITGI",
@@ -49191,7 +49191,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.642Â° N, 77.642Â° E",
+    "gpsCoordinates": "28.642° N, 77.642° E",
     "reserveAmountLakhs": 1.01,
     "settlementAmountLakhs": 0.56,
     "insurer": "ITGI",
@@ -49328,7 +49328,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1127Â° N, 77.1127Â° E",
+    "gpsCoordinates": "28.1127° N, 77.1127° E",
     "reserveAmountLakhs": 1.21,
     "settlementAmountLakhs": 0.75,
     "insurer": "ITGI",
@@ -49465,7 +49465,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.391Â° N, 77.391Â° E",
+    "gpsCoordinates": "28.391° N, 77.391° E",
     "reserveAmountLakhs": 1.36,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -49601,7 +49601,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1002Â° N, 77.1002Â° E",
+    "gpsCoordinates": "28.1002° N, 77.1002° E",
     "reserveAmountLakhs": 0.75,
     "settlementAmountLakhs": 0.37,
     "insurer": "ITGI",
@@ -49738,7 +49738,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1350Â° N, 77.1350Â° E",
+    "gpsCoordinates": "28.1350° N, 77.1350° E",
     "reserveAmountLakhs": 1.08,
     "settlementAmountLakhs": 0.65,
     "insurer": "ITGI",
@@ -49875,7 +49875,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.816Â° N, 77.816Â° E",
+    "gpsCoordinates": "28.816° N, 77.816° E",
     "reserveAmountLakhs": 0.76,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -50011,7 +50011,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.810Â° N, 77.810Â° E",
+    "gpsCoordinates": "28.810° N, 77.810° E",
     "reserveAmountLakhs": 1.2,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -50147,7 +50147,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.308Â° N, 77.308Â° E",
+    "gpsCoordinates": "28.308° N, 77.308° E",
     "reserveAmountLakhs": 0.74,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -50283,7 +50283,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1035Â° N, 77.1035Â° E",
+    "gpsCoordinates": "28.1035° N, 77.1035° E",
     "reserveAmountLakhs": 0.75,
     "settlementAmountLakhs": 0.37,
     "insurer": "ITGI",
@@ -50420,7 +50420,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.91Â° N, 77.91Â° E",
+    "gpsCoordinates": "28.91° N, 77.91° E",
     "reserveAmountLakhs": 1.12,
     "settlementAmountLakhs": 0.66,
     "insurer": "ITGI",
@@ -50557,7 +50557,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.672Â° N, 77.672Â° E",
+    "gpsCoordinates": "28.672° N, 77.672° E",
     "reserveAmountLakhs": 2.88,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -50693,7 +50693,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.571Â° N, 77.571Â° E",
+    "gpsCoordinates": "28.571° N, 77.571° E",
     "reserveAmountLakhs": 1.5,
     "settlementAmountLakhs": 0.94,
     "insurer": "ITGI",
@@ -50830,7 +50830,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.248Â° N, 77.248Â° E",
+    "gpsCoordinates": "28.248° N, 77.248° E",
     "reserveAmountLakhs": 1.16,
     "settlementAmountLakhs": 0.69,
     "insurer": "ITGI",
@@ -50967,7 +50967,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.422Â° N, 77.422Â° E",
+    "gpsCoordinates": "28.422° N, 77.422° E",
     "reserveAmountLakhs": 0.95,
     "settlementAmountLakhs": 0.41,
     "insurer": "ITGI",
@@ -51104,7 +51104,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1316Â° N, 77.1316Â° E",
+    "gpsCoordinates": "28.1316° N, 77.1316° E",
     "reserveAmountLakhs": 0.47,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -51240,7 +51240,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1176Â° N, 77.1176Â° E",
+    "gpsCoordinates": "28.1176° N, 77.1176° E",
     "reserveAmountLakhs": 0.63,
     "settlementAmountLakhs": 0.26,
     "insurer": "ITGI",
@@ -51377,7 +51377,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.916Â° N, 77.916Â° E",
+    "gpsCoordinates": "28.916° N, 77.916° E",
     "reserveAmountLakhs": 0.46,
     "settlementAmountLakhs": 0.13,
     "insurer": "ITGI",
@@ -51514,7 +51514,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.296Â° N, 77.296Â° E",
+    "gpsCoordinates": "28.296° N, 77.296° E",
     "reserveAmountLakhs": 0.75,
     "settlementAmountLakhs": 0.37,
     "insurer": "ITGI",
@@ -51651,7 +51651,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.526Â° N, 77.526Â° E",
+    "gpsCoordinates": "28.526° N, 77.526° E",
     "reserveAmountLakhs": 1.36,
     "settlementAmountLakhs": 0.83,
     "insurer": "ITGI",
@@ -51788,7 +51788,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.421Â° N, 77.421Â° E",
+    "gpsCoordinates": "28.421° N, 77.421° E",
     "reserveAmountLakhs": 1.44,
     "settlementAmountLakhs": 0.92,
     "insurer": "ITGI",
@@ -51925,7 +51925,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.103Â° N, 77.103Â° E",
+    "gpsCoordinates": "28.103° N, 77.103° E",
     "reserveAmountLakhs": 0.67,
     "settlementAmountLakhs": 0.3,
     "insurer": "ITGI",
@@ -52062,7 +52062,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.307Â° N, 77.307Â° E",
+    "gpsCoordinates": "28.307° N, 77.307° E",
     "reserveAmountLakhs": 2.11,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -52198,7 +52198,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.10Â° N, 77.10Â° E",
+    "gpsCoordinates": "28.10° N, 77.10° E",
     "reserveAmountLakhs": 45.17,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -52334,7 +52334,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1055Â° N, 77.1055Â° E",
+    "gpsCoordinates": "28.1055° N, 77.1055° E",
     "reserveAmountLakhs": 0.46,
     "settlementAmountLakhs": 0.13,
     "insurer": "ITGI",
@@ -52471,7 +52471,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.322Â° N, 77.322Â° E",
+    "gpsCoordinates": "28.322° N, 77.322° E",
     "reserveAmountLakhs": 0.75,
     "settlementAmountLakhs": 0.35,
     "insurer": "ITGI",
@@ -52608,7 +52608,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1032Â° N, 77.1032Â° E",
+    "gpsCoordinates": "28.1032° N, 77.1032° E",
     "reserveAmountLakhs": 0.93,
     "settlementAmountLakhs": 0.52,
     "insurer": "ITGI",
@@ -52745,7 +52745,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1097Â° N, 77.1097Â° E",
+    "gpsCoordinates": "28.1097° N, 77.1097° E",
     "reserveAmountLakhs": 0.74,
     "settlementAmountLakhs": 0.37,
     "insurer": "ITGI",
@@ -52882,7 +52882,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.73Â° N, 77.73Â° E",
+    "gpsCoordinates": "28.73° N, 77.73° E",
     "reserveAmountLakhs": 0.63,
     "settlementAmountLakhs": 0.25,
     "insurer": "ITGI",
@@ -53019,7 +53019,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.456Â° N, 77.456Â° E",
+    "gpsCoordinates": "28.456° N, 77.456° E",
     "reserveAmountLakhs": 1.22,
     "settlementAmountLakhs": 0.74,
     "insurer": "ITGI",
@@ -53156,7 +53156,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.304Â° N, 77.304Â° E",
+    "gpsCoordinates": "28.304° N, 77.304° E",
     "reserveAmountLakhs": 0.91,
     "settlementAmountLakhs": 0.47,
     "insurer": "ITGI",
@@ -53293,7 +53293,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.970Â° N, 77.970Â° E",
+    "gpsCoordinates": "28.970° N, 77.970° E",
     "reserveAmountLakhs": 0.64,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -53429,7 +53429,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1130Â° N, 77.1130Â° E",
+    "gpsCoordinates": "28.1130° N, 77.1130° E",
     "reserveAmountLakhs": 0.56,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -53565,7 +53565,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.815Â° N, 77.815Â° E",
+    "gpsCoordinates": "28.815° N, 77.815° E",
     "reserveAmountLakhs": 0.68,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -53701,7 +53701,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1155Â° N, 77.1155Â° E",
+    "gpsCoordinates": "28.1155° N, 77.1155° E",
     "reserveAmountLakhs": 0.65,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -53837,7 +53837,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.243Â° N, 77.243Â° E",
+    "gpsCoordinates": "28.243° N, 77.243° E",
     "reserveAmountLakhs": 0.88,
     "settlementAmountLakhs": 0.46,
     "insurer": "ITGI",
@@ -53974,7 +53974,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1249Â° N, 77.1249Â° E",
+    "gpsCoordinates": "28.1249° N, 77.1249° E",
     "reserveAmountLakhs": 0.72,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -54110,7 +54110,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.776Â° N, 77.776Â° E",
+    "gpsCoordinates": "28.776° N, 77.776° E",
     "reserveAmountLakhs": 1.79,
     "settlementAmountLakhs": 1.2,
     "insurer": "ITGI",
@@ -54247,7 +54247,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.55Â° N, 77.55Â° E",
+    "gpsCoordinates": "28.55° N, 77.55° E",
     "reserveAmountLakhs": 2.06,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -54383,7 +54383,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.710Â° N, 77.710Â° E",
+    "gpsCoordinates": "28.710° N, 77.710° E",
     "reserveAmountLakhs": 1.46,
     "settlementAmountLakhs": 0.8,
     "insurer": "ITGI",
@@ -54520,7 +54520,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1109Â° N, 77.1109Â° E",
+    "gpsCoordinates": "28.1109° N, 77.1109° E",
     "reserveAmountLakhs": 1.11,
     "settlementAmountLakhs": 0.67,
     "insurer": "ITGI",
@@ -54657,7 +54657,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1309Â° N, 77.1309Â° E",
+    "gpsCoordinates": "28.1309° N, 77.1309° E",
     "reserveAmountLakhs": 0.59,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -54793,7 +54793,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1031Â° N, 77.1031Â° E",
+    "gpsCoordinates": "28.1031° N, 77.1031° E",
     "reserveAmountLakhs": 0.57,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -54929,7 +54929,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1154Â° N, 77.1154Â° E",
+    "gpsCoordinates": "28.1154° N, 77.1154° E",
     "reserveAmountLakhs": 1.66,
     "settlementAmountLakhs": 1.13,
     "insurer": "ITGI",
@@ -55066,7 +55066,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.527Â° N, 77.527Â° E",
+    "gpsCoordinates": "28.527° N, 77.527° E",
     "reserveAmountLakhs": 2.86,
     "settlementAmountLakhs": 2.09,
     "insurer": "ITGI",
@@ -55203,7 +55203,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.547Â° N, 77.547Â° E",
+    "gpsCoordinates": "28.547° N, 77.547° E",
     "reserveAmountLakhs": 0.53,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -55339,7 +55339,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.552Â° N, 77.552Â° E",
+    "gpsCoordinates": "28.552° N, 77.552° E",
     "reserveAmountLakhs": 0.91,
     "settlementAmountLakhs": 0.47,
     "insurer": "ITGI",
@@ -55476,7 +55476,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.617Â° N, 77.617Â° E",
+    "gpsCoordinates": "28.617° N, 77.617° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.46,
     "insurer": "ITGI",
@@ -55613,7 +55613,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.667Â° N, 77.667Â° E",
+    "gpsCoordinates": "28.667° N, 77.667° E",
     "reserveAmountLakhs": 0.57,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -55749,7 +55749,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.703Â° N, 77.703Â° E",
+    "gpsCoordinates": "28.703° N, 77.703° E",
     "reserveAmountLakhs": 1.65,
     "settlementAmountLakhs": 1.1,
     "insurer": "ITGI",
@@ -55886,7 +55886,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.705Â° N, 77.705Â° E",
+    "gpsCoordinates": "28.705° N, 77.705° E",
     "reserveAmountLakhs": 3.92,
     "settlementAmountLakhs": 3.01,
     "insurer": "ITGI",
@@ -56023,7 +56023,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.693Â° N, 77.693Â° E",
+    "gpsCoordinates": "28.693° N, 77.693° E",
     "reserveAmountLakhs": 1.06,
     "settlementAmountLakhs": 0.62,
     "insurer": "ITGI",
@@ -56160,7 +56160,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.668Â° N, 77.668Â° E",
+    "gpsCoordinates": "28.668° N, 77.668° E",
     "reserveAmountLakhs": 3.93,
     "settlementAmountLakhs": 2.6,
     "insurer": "ITGI",
@@ -56297,7 +56297,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.341Â° N, 77.341Â° E",
+    "gpsCoordinates": "28.341° N, 77.341° E",
     "reserveAmountLakhs": 2.39,
     "settlementAmountLakhs": 1.78,
     "insurer": "ITGI",
@@ -56434,7 +56434,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1031Â° N, 77.1031Â° E",
+    "gpsCoordinates": "28.1031° N, 77.1031° E",
     "reserveAmountLakhs": 0.83,
     "settlementAmountLakhs": 0.44,
     "insurer": "ITGI",
@@ -56571,7 +56571,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1056Â° N, 77.1056Â° E",
+    "gpsCoordinates": "28.1056° N, 77.1056° E",
     "reserveAmountLakhs": 1.11,
     "settlementAmountLakhs": 0.67,
     "insurer": "ITGI",
@@ -56708,7 +56708,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1357Â° N, 77.1357Â° E",
+    "gpsCoordinates": "28.1357° N, 77.1357° E",
     "reserveAmountLakhs": 1,
     "settlementAmountLakhs": 0.59,
     "insurer": "ITGI",
@@ -56845,7 +56845,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1078Â° N, 77.1078Â° E",
+    "gpsCoordinates": "28.1078° N, 77.1078° E",
     "reserveAmountLakhs": 0.85,
     "settlementAmountLakhs": 0.45,
     "insurer": "ITGI",
@@ -56982,7 +56982,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.546Â° N, 77.546Â° E",
+    "gpsCoordinates": "28.546° N, 77.546° E",
     "reserveAmountLakhs": 0.85,
     "settlementAmountLakhs": 0.45,
     "insurer": "ITGI",
@@ -57119,7 +57119,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.777Â° N, 77.777Â° E",
+    "gpsCoordinates": "28.777° N, 77.777° E",
     "reserveAmountLakhs": 1.17,
     "settlementAmountLakhs": 0.67,
     "insurer": "ITGI",
@@ -57256,7 +57256,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.752Â° N, 77.752Â° E",
+    "gpsCoordinates": "28.752° N, 77.752° E",
     "reserveAmountLakhs": 1,
     "settlementAmountLakhs": 0.54,
     "insurer": "ITGI",
@@ -57393,7 +57393,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.884Â° N, 77.884Â° E",
+    "gpsCoordinates": "28.884° N, 77.884° E",
     "reserveAmountLakhs": 1.34,
     "settlementAmountLakhs": 0.84,
     "insurer": "ITGI",
@@ -57530,7 +57530,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1186Â° N, 77.1186Â° E",
+    "gpsCoordinates": "28.1186° N, 77.1186° E",
     "reserveAmountLakhs": 0.95,
     "settlementAmountLakhs": 0.58,
     "insurer": "ITGI",
@@ -57667,7 +57667,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.233Â° N, 77.233Â° E",
+    "gpsCoordinates": "28.233° N, 77.233° E",
     "reserveAmountLakhs": 0.83,
     "settlementAmountLakhs": 0.43,
     "insurer": "ITGI",
@@ -57804,7 +57804,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1224Â° N, 77.1224Â° E",
+    "gpsCoordinates": "28.1224° N, 77.1224° E",
     "reserveAmountLakhs": 1.18,
     "settlementAmountLakhs": 0.73,
     "insurer": "ITGI",
@@ -57941,7 +57941,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.657Â° N, 77.657Â° E",
+    "gpsCoordinates": "28.657° N, 77.657° E",
     "reserveAmountLakhs": 2.1,
     "settlementAmountLakhs": 1.42,
     "insurer": "ITGI",
@@ -58078,7 +58078,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.171Â° N, 77.171Â° E",
+    "gpsCoordinates": "28.171° N, 77.171° E",
     "reserveAmountLakhs": 0.99,
     "settlementAmountLakhs": 0.55,
     "insurer": "ITGI",
@@ -58215,7 +58215,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.159Â° N, 77.159Â° E",
+    "gpsCoordinates": "28.159° N, 77.159° E",
     "reserveAmountLakhs": 1.19,
     "settlementAmountLakhs": 0.72,
     "insurer": "ITGI",
@@ -58352,7 +58352,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.171Â° N, 77.171Â° E",
+    "gpsCoordinates": "28.171° N, 77.171° E",
     "reserveAmountLakhs": 0.59,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -58488,7 +58488,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.926Â° N, 77.926Â° E",
+    "gpsCoordinates": "28.926° N, 77.926° E",
     "reserveAmountLakhs": 0.96,
     "settlementAmountLakhs": 0.53,
     "insurer": "ITGI",
@@ -58625,7 +58625,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.555Â° N, 77.555Â° E",
+    "gpsCoordinates": "28.555° N, 77.555° E",
     "reserveAmountLakhs": 1.47,
     "settlementAmountLakhs": 0.92,
     "insurer": "ITGI",
@@ -58762,7 +58762,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.297Â° N, 77.297Â° E",
+    "gpsCoordinates": "28.297° N, 77.297° E",
     "reserveAmountLakhs": 0.63,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -58898,7 +58898,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.281Â° N, 77.281Â° E",
+    "gpsCoordinates": "28.281° N, 77.281° E",
     "reserveAmountLakhs": 1.28,
     "settlementAmountLakhs": 0.79,
     "insurer": "ITGI",
@@ -59035,7 +59035,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.755Â° N, 77.755Â° E",
+    "gpsCoordinates": "28.755° N, 77.755° E",
     "reserveAmountLakhs": 0.64,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -59171,7 +59171,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.727Â° N, 77.727Â° E",
+    "gpsCoordinates": "28.727° N, 77.727° E",
     "reserveAmountLakhs": 1.32,
     "settlementAmountLakhs": 0.73,
     "insurer": "ITGI",
@@ -59308,7 +59308,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.938Â° N, 77.938Â° E",
+    "gpsCoordinates": "28.938° N, 77.938° E",
     "reserveAmountLakhs": 1.94,
     "settlementAmountLakhs": 1.32,
     "insurer": "ITGI",
@@ -59445,7 +59445,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1104Â° N, 77.1104Â° E",
+    "gpsCoordinates": "28.1104° N, 77.1104° E",
     "reserveAmountLakhs": 0.55,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -59581,7 +59581,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1065Â° N, 77.1065Â° E",
+    "gpsCoordinates": "28.1065° N, 77.1065° E",
     "reserveAmountLakhs": 0.78,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -59717,7 +59717,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1009Â° N, 77.1009Â° E",
+    "gpsCoordinates": "28.1009° N, 77.1009° E",
     "reserveAmountLakhs": 0.67,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -59853,7 +59853,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.305Â° N, 77.305Â° E",
+    "gpsCoordinates": "28.305° N, 77.305° E",
     "reserveAmountLakhs": 0.88,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -59989,7 +59989,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.114Â° N, 77.114Â° E",
+    "gpsCoordinates": "28.114° N, 77.114° E",
     "reserveAmountLakhs": 0.69,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -60125,7 +60125,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.980Â° N, 77.980Â° E",
+    "gpsCoordinates": "28.980° N, 77.980° E",
     "reserveAmountLakhs": 1.27,
     "settlementAmountLakhs": 0.77,
     "insurer": "ITGI",
@@ -60262,7 +60262,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1163Â° N, 77.1163Â° E",
+    "gpsCoordinates": "28.1163° N, 77.1163° E",
     "reserveAmountLakhs": 1.44,
     "settlementAmountLakhs": 0.92,
     "insurer": "ITGI",
@@ -60399,7 +60399,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.67,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -60535,7 +60535,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1087Â° N, 77.1087Â° E",
+    "gpsCoordinates": "28.1087° N, 77.1087° E",
     "reserveAmountLakhs": 0.97,
     "settlementAmountLakhs": 0.53,
     "insurer": "ITGI",
@@ -60672,7 +60672,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1270Â° N, 77.1270Â° E",
+    "gpsCoordinates": "28.1270° N, 77.1270° E",
     "reserveAmountLakhs": 0.57,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -60808,7 +60808,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1281Â° N, 77.1281Â° E",
+    "gpsCoordinates": "28.1281° N, 77.1281° E",
     "reserveAmountLakhs": 1.25,
     "settlementAmountLakhs": 0.8,
     "insurer": "ITGI",
@@ -60945,7 +60945,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.909Â° N, 77.909Â° E",
+    "gpsCoordinates": "28.909° N, 77.909° E",
     "reserveAmountLakhs": 2.06,
     "settlementAmountLakhs": 1.38,
     "insurer": "ITGI",
@@ -61082,7 +61082,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1040Â° N, 77.1040Â° E",
+    "gpsCoordinates": "28.1040° N, 77.1040° E",
     "reserveAmountLakhs": 0.63,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -61218,7 +61218,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.211Â° N, 77.211Â° E",
+    "gpsCoordinates": "28.211° N, 77.211° E",
     "reserveAmountLakhs": 1.69,
     "settlementAmountLakhs": 1.11,
     "insurer": "ITGI",
@@ -61355,7 +61355,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.151Â° N, 77.151Â° E",
+    "gpsCoordinates": "28.151° N, 77.151° E",
     "reserveAmountLakhs": 2.16,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -61491,7 +61491,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 213.69,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -61627,7 +61627,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1127Â° N, 77.1127Â° E",
+    "gpsCoordinates": "28.1127° N, 77.1127° E",
     "reserveAmountLakhs": 0.85,
     "settlementAmountLakhs": 0.42,
     "insurer": "ITGI",
@@ -61764,7 +61764,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1053Â° N, 77.1053Â° E",
+    "gpsCoordinates": "28.1053° N, 77.1053° E",
     "reserveAmountLakhs": 1.75,
     "settlementAmountLakhs": 1.14,
     "insurer": "ITGI",
@@ -61901,7 +61901,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1288Â° N, 77.1288Â° E",
+    "gpsCoordinates": "28.1288° N, 77.1288° E",
     "reserveAmountLakhs": 1.54,
     "settlementAmountLakhs": 1.03,
     "insurer": "ITGI",
@@ -62038,7 +62038,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.209Â° N, 77.209Â° E",
+    "gpsCoordinates": "28.209° N, 77.209° E",
     "reserveAmountLakhs": 1.25,
     "settlementAmountLakhs": 0.75,
     "insurer": "ITGI",
@@ -62175,7 +62175,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.799Â° N, 77.799Â° E",
+    "gpsCoordinates": "28.799° N, 77.799° E",
     "reserveAmountLakhs": 1.04,
     "settlementAmountLakhs": 0.59,
     "insurer": "ITGI",
@@ -62312,7 +62312,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.593Â° N, 77.593Â° E",
+    "gpsCoordinates": "28.593° N, 77.593° E",
     "reserveAmountLakhs": 1.06,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -62448,7 +62448,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1087Â° N, 77.1087Â° E",
+    "gpsCoordinates": "28.1087° N, 77.1087° E",
     "reserveAmountLakhs": 35,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -62584,7 +62584,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.436Â° N, 77.436Â° E",
+    "gpsCoordinates": "28.436° N, 77.436° E",
     "reserveAmountLakhs": 1.09,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -62720,7 +62720,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.445Â° N, 77.445Â° E",
+    "gpsCoordinates": "28.445° N, 77.445° E",
     "reserveAmountLakhs": 0.91,
     "settlementAmountLakhs": 0.37,
     "insurer": "ITGI",
@@ -62857,7 +62857,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.627Â° N, 77.627Â° E",
+    "gpsCoordinates": "28.627° N, 77.627° E",
     "reserveAmountLakhs": 0.71,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -62993,7 +62993,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.136Â° N, 77.136Â° E",
+    "gpsCoordinates": "28.136° N, 77.136° E",
     "reserveAmountLakhs": 1.06,
     "settlementAmountLakhs": 0.59,
     "insurer": "ITGI",
@@ -63130,7 +63130,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1055Â° N, 77.1055Â° E",
+    "gpsCoordinates": "28.1055° N, 77.1055° E",
     "reserveAmountLakhs": 0.92,
     "settlementAmountLakhs": 0.5,
     "insurer": "ITGI",
@@ -63267,7 +63267,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.155Â° N, 77.155Â° E",
+    "gpsCoordinates": "28.155° N, 77.155° E",
     "reserveAmountLakhs": 1.42,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -63403,7 +63403,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1042Â° N, 77.1042Â° E",
+    "gpsCoordinates": "28.1042° N, 77.1042° E",
     "reserveAmountLakhs": 0.94,
     "settlementAmountLakhs": 0.5,
     "insurer": "ITGI",
@@ -63540,7 +63540,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1136Â° N, 77.1136Â° E",
+    "gpsCoordinates": "28.1136° N, 77.1136° E",
     "reserveAmountLakhs": 1.01,
     "settlementAmountLakhs": 0.56,
     "insurer": "ITGI",
@@ -63677,7 +63677,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.378Â° N, 77.378Â° E",
+    "gpsCoordinates": "28.378° N, 77.378° E",
     "reserveAmountLakhs": 1.8,
     "settlementAmountLakhs": 1.18,
     "insurer": "ITGI",
@@ -63814,7 +63814,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1350Â° N, 77.1350Â° E",
+    "gpsCoordinates": "28.1350° N, 77.1350° E",
     "reserveAmountLakhs": 1.15,
     "settlementAmountLakhs": 0.66,
     "insurer": "ITGI",
@@ -63951,7 +63951,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.1190Â° N, 77.1190Â° E",
+    "gpsCoordinates": "28.1190° N, 77.1190° E",
     "reserveAmountLakhs": 1.04,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -64087,7 +64087,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.155Â° N, 77.155Â° E",
+    "gpsCoordinates": "28.155° N, 77.155° E",
     "reserveAmountLakhs": 11.38,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -64223,7 +64223,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.234Â° N, 77.234Â° E",
+    "gpsCoordinates": "28.234° N, 77.234° E",
     "reserveAmountLakhs": 1.57,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -64359,7 +64359,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.445Â° N, 77.445Â° E",
+    "gpsCoordinates": "28.445° N, 77.445° E",
     "reserveAmountLakhs": 0.78,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -64495,7 +64495,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.55Â° N, 77.55Â° E",
+    "gpsCoordinates": "28.55° N, 77.55° E",
     "reserveAmountLakhs": 2.24,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -64631,7 +64631,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.254Â° N, 77.254Â° E",
+    "gpsCoordinates": "28.254° N, 77.254° E",
     "reserveAmountLakhs": 1.29,
     "settlementAmountLakhs": 0.78,
     "insurer": "ITGI",
@@ -64768,7 +64768,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.850Â° N, 77.850Â° E",
+    "gpsCoordinates": "28.850° N, 77.850° E",
     "reserveAmountLakhs": 1.22,
     "settlementAmountLakhs": 0.72,
     "insurer": "ITGI",
@@ -64905,7 +64905,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.867Â° N, 77.867Â° E",
+    "gpsCoordinates": "28.867° N, 77.867° E",
     "reserveAmountLakhs": 0.93,
     "insurer": "ITGI",
     "status": "Under Review",
@@ -65041,7 +65041,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.93,
     "insurer": "RGI",
     "status": "Repudiated",
@@ -65177,7 +65177,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.86,
     "settlementAmountLakhs": 0.8,
     "insurer": "RGI",
@@ -65314,7 +65314,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.08,
     "settlementAmountLakhs": 1.11,
     "insurer": "RGI",
@@ -65451,7 +65451,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 3.1,
     "settlementAmountLakhs": 2.02,
     "insurer": "RGI",
@@ -65588,7 +65588,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.81,
     "settlementAmountLakhs": 0.74,
     "insurer": "RGI",
@@ -65725,7 +65725,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.75,
     "settlementAmountLakhs": 0.64,
     "insurer": "RGI",
@@ -65862,7 +65862,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.79,
     "settlementAmountLakhs": 0.51,
     "insurer": "RGI",
@@ -65999,7 +65999,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.44,
     "settlementAmountLakhs": 0.29,
     "insurer": "RGI",
@@ -66136,7 +66136,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.68,
     "settlementAmountLakhs": 2.95,
     "insurer": "RGI",
@@ -66273,7 +66273,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.72,
     "settlementAmountLakhs": 1.26,
     "insurer": "RGI",
@@ -66410,7 +66410,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.37,
     "settlementAmountLakhs": 0.2,
     "insurer": "RGI",
@@ -66547,7 +66547,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.7,
     "settlementAmountLakhs": 0.54,
     "insurer": "RGI",
@@ -66684,7 +66684,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.64,
     "settlementAmountLakhs": 0.36,
     "insurer": "RGI",
@@ -66821,7 +66821,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.37,
     "settlementAmountLakhs": 0.2,
     "insurer": "RGI",
@@ -66958,7 +66958,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.06,
     "settlementAmountLakhs": 0.74,
     "insurer": "RGI",
@@ -67095,7 +67095,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.47,
     "settlementAmountLakhs": 0.27,
     "insurer": "RGI",
@@ -67232,7 +67232,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.71,
     "settlementAmountLakhs": 0.45,
     "insurer": "RGI",
@@ -67369,7 +67369,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.78,
     "settlementAmountLakhs": 0.62,
     "insurer": "RGI",
@@ -67506,7 +67506,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.94,
     "insurer": "RGI",
     "status": "Under Review",
@@ -67642,7 +67642,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.488Â° N, 77.488Â° E",
+    "gpsCoordinates": "28.488° N, 77.488° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.68,
     "insurer": "RGI",
@@ -67781,7 +67781,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.42,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -67918,7 +67918,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.79,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -68055,7 +68055,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.71,
     "settlementAmountLakhs": 0.44,
     "insurer": "RGI",
@@ -68192,7 +68192,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.47,
     "settlementAmountLakhs": 0.98,
     "insurer": "RGI",
@@ -68329,7 +68329,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.96,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -68466,7 +68466,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4170Â° N, 77.4170Â° E",
+    "gpsCoordinates": "28.4170° N, 77.4170° E",
     "reserveAmountLakhs": 1.51,
     "settlementAmountLakhs": 0.54,
     "insurer": "RGI",
@@ -68603,7 +68603,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.73,
     "settlementAmountLakhs": 0.36,
     "insurer": "RGI",
@@ -68740,7 +68740,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.38,
     "settlementAmountLakhs": 0.56,
     "insurer": "RGI",
@@ -68877,7 +68877,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.72,
     "settlementAmountLakhs": 1.19,
     "insurer": "RGI",
@@ -69014,7 +69014,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -69151,7 +69151,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.68,
     "settlementAmountLakhs": 0.36,
     "insurer": "RGI",
@@ -69288,7 +69288,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.32,
     "settlementAmountLakhs": 0.79,
     "insurer": "RGI",
@@ -69425,7 +69425,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 2.18,
     "settlementAmountLakhs": 1.66,
     "insurer": "RGI",
@@ -69562,7 +69562,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.15,
     "settlementAmountLakhs": 0.82,
     "insurer": "RGI",
@@ -69699,7 +69699,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.44,
     "settlementAmountLakhs": 0.9,
     "insurer": "RGI",
@@ -69836,7 +69836,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.35,
     "settlementAmountLakhs": 0.18,
     "insurer": "RGI",
@@ -69973,7 +69973,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.35,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -70110,7 +70110,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 10,
     "settlementAmountLakhs": 6.17,
     "insurer": "RGI",
@@ -70247,7 +70247,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 2.18,
     "settlementAmountLakhs": 1.08,
     "insurer": "RGI",
@@ -70386,7 +70386,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.27,
     "settlementAmountLakhs": 0.89,
     "insurer": "RGI",
@@ -70523,7 +70523,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -70660,7 +70660,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -70797,7 +70797,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 2.07,
     "settlementAmountLakhs": 1.54,
     "insurer": "RGI",
@@ -70934,7 +70934,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.5,
     "settlementAmountLakhs": 0.74,
     "insurer": "RGI",
@@ -71071,7 +71071,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 2.42,
     "settlementAmountLakhs": 1.81,
     "insurer": "RGI",
@@ -71210,7 +71210,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.03,
     "settlementAmountLakhs": 0.7,
     "insurer": "RGI",
@@ -71347,7 +71347,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.6,
     "settlementAmountLakhs": 0.47,
     "insurer": "RGI",
@@ -71486,7 +71486,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.8,
     "settlementAmountLakhs": 0.28,
     "insurer": "RGI",
@@ -71625,7 +71625,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 2.42,
     "settlementAmountLakhs": 1.16,
     "insurer": "RGI",
@@ -71762,7 +71762,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.57,
     "insurer": "RGI",
@@ -71899,7 +71899,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.68,
     "insurer": "RGI",
@@ -72036,7 +72036,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.57,
     "insurer": "RGI",
@@ -72173,7 +72173,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.57,
     "insurer": "RGI",
@@ -72310,7 +72310,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.68,
     "insurer": "RGI",
@@ -72447,7 +72447,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.68,
     "insurer": "RGI",
@@ -72584,7 +72584,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.68,
     "insurer": "RGI",
@@ -72721,7 +72721,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.57,
     "insurer": "RGI",
@@ -72858,7 +72858,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.68,
     "insurer": "RGI",
@@ -72995,7 +72995,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.68,
     "insurer": "RGI",
@@ -73132,7 +73132,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.57,
     "insurer": "RGI",
@@ -73269,7 +73269,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.57,
     "insurer": "RGI",
@@ -73406,7 +73406,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -73543,7 +73543,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -73680,7 +73680,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.217Â° N, 77.217Â° E",
+    "gpsCoordinates": "28.217° N, 77.217° E",
     "reserveAmountLakhs": 9.91,
     "insurer": "RGI",
     "status": "Repudiated",
@@ -73816,7 +73816,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -73953,7 +73953,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.68,
     "insurer": "RGI",
@@ -74090,7 +74090,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.108Â° N, 77.108Â° E",
+    "gpsCoordinates": "28.108° N, 77.108° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -74227,7 +74227,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4144Â° N, 77.4144Â° E",
+    "gpsCoordinates": "28.4144° N, 77.4144° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -74364,7 +74364,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4141Â° N, 77.4141Â° E",
+    "gpsCoordinates": "28.4141° N, 77.4141° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -74501,7 +74501,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.273Â° N, 77.273Â° E",
+    "gpsCoordinates": "28.273° N, 77.273° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -74638,7 +74638,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.387Â° N, 77.387Â° E",
+    "gpsCoordinates": "28.387° N, 77.387° E",
     "reserveAmountLakhs": 1.32,
     "settlementAmountLakhs": 0.92,
     "insurer": "RGI",
@@ -74775,7 +74775,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4167Â° N, 77.4167Â° E",
+    "gpsCoordinates": "28.4167° N, 77.4167° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.68,
     "insurer": "RGI",
@@ -74912,7 +74912,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.124Â° N, 77.124Â° E",
+    "gpsCoordinates": "28.124° N, 77.124° E",
     "reserveAmountLakhs": 2.25,
     "settlementAmountLakhs": 2.25,
     "insurer": "RGI",
@@ -75051,7 +75051,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.341Â° N, 77.341Â° E",
+    "gpsCoordinates": "28.341° N, 77.341° E",
     "reserveAmountLakhs": 1.92,
     "settlementAmountLakhs": 0.92,
     "insurer": "RGI",
@@ -75188,7 +75188,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.338Â° N, 77.338Â° E",
+    "gpsCoordinates": "28.338° N, 77.338° E",
     "reserveAmountLakhs": 1.8,
     "insurer": "RGI",
     "status": "Under Review",
@@ -75324,7 +75324,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.617Â° N, 77.617Â° E",
+    "gpsCoordinates": "28.617° N, 77.617° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -75461,7 +75461,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.290Â° N, 77.290Â° E",
+    "gpsCoordinates": "28.290° N, 77.290° E",
     "reserveAmountLakhs": 1.3,
     "settlementAmountLakhs": 0.89,
     "insurer": "RGI",
@@ -75600,7 +75600,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.136Â° N, 77.136Â° E",
+    "gpsCoordinates": "28.136° N, 77.136° E",
     "reserveAmountLakhs": 1.99,
     "insurer": "RGI",
     "status": "Under Review",
@@ -75736,7 +75736,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.405Â° N, 77.405Â° E",
+    "gpsCoordinates": "28.405° N, 77.405° E",
     "reserveAmountLakhs": 0.25,
     "insurer": "RGI",
     "status": "Repudiated",
@@ -75872,7 +75872,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.69,
     "insurer": "RGI",
     "status": "Under Review",
@@ -76008,7 +76008,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.57,
     "insurer": "RGI",
@@ -76147,7 +76147,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 3.6,
     "insurer": "National",
     "status": "Under Review",
@@ -76283,7 +76283,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.94,
     "insurer": "National",
     "status": "Under Review",
@@ -76419,7 +76419,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 2.87,
     "insurer": "National",
     "status": "Under Review",
@@ -76555,7 +76555,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 1.85,
     "insurer": "National",
     "status": "Under Review",
@@ -76691,7 +76691,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 242.95,
     "insurer": "National",
     "status": "Under Review",
@@ -76827,7 +76827,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 46.47,
     "insurer": "National",
     "status": "Under Review",
@@ -76963,7 +76963,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.308Â° N, 77.308Â° E",
+    "gpsCoordinates": "28.308° N, 77.308° E",
     "reserveAmountLakhs": 2.42,
     "settlementAmountLakhs": 1.16,
     "insurer": "RGI",
@@ -77102,7 +77102,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.338Â° N, 77.338Â° E",
+    "gpsCoordinates": "28.338° N, 77.338° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.68,
     "insurer": "RGI",
@@ -77241,7 +77241,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.62Â° N, 77.62Â° E",
+    "gpsCoordinates": "28.62° N, 77.62° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.69,
     "insurer": "RGI",
@@ -77380,7 +77380,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.23Â° N, 77.23Â° E",
+    "gpsCoordinates": "28.23° N, 77.23° E",
     "reserveAmountLakhs": 1.6,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -77516,7 +77516,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.23Â° N, 77.23Â° E",
+    "gpsCoordinates": "28.23° N, 77.23° E",
     "reserveAmountLakhs": 1.1,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -77652,7 +77652,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.200Â° N, 77.200Â° E",
+    "gpsCoordinates": "28.200° N, 77.200° E",
     "reserveAmountLakhs": 0.75,
     "insurer": "RGI",
     "status": "Under Review",
@@ -77788,7 +77788,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.135Â° N, 77.135Â° E",
+    "gpsCoordinates": "28.135° N, 77.135° E",
     "reserveAmountLakhs": 0.27,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -77924,7 +77924,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.568Â° N, 77.568Â° E",
+    "gpsCoordinates": "28.568° N, 77.568° E",
     "reserveAmountLakhs": 0.75,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -78060,7 +78060,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.603Â° N, 77.603Â° E",
+    "gpsCoordinates": "28.603° N, 77.603° E",
     "reserveAmountLakhs": 0.8,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -78196,7 +78196,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.193Â° N, 77.193Â° E",
+    "gpsCoordinates": "28.193° N, 77.193° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.68,
     "insurer": "RGI",
@@ -78335,7 +78335,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.270Â° N, 77.270Â° E",
+    "gpsCoordinates": "28.270° N, 77.270° E",
     "reserveAmountLakhs": 1.98,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -78471,7 +78471,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4170Â° N, 77.4170Â° E",
+    "gpsCoordinates": "28.4170° N, 77.4170° E",
     "reserveAmountLakhs": 3.92,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -78607,7 +78607,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.36Â° N, 77.36Â° E",
+    "gpsCoordinates": "28.36° N, 77.36° E",
     "reserveAmountLakhs": 0.6,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -78743,7 +78743,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4595Â° N, 77.0266Â° E",
+    "gpsCoordinates": "28.4595° N, 77.0266° E",
     "reserveAmountLakhs": 0.6,
     "insurer": "RGI",
     "status": "Under Review",
@@ -78881,7 +78881,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.45Â° N, 77.45Â° E",
+    "gpsCoordinates": "28.45° N, 77.45° E",
     "reserveAmountLakhs": 0.4,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -79017,7 +79017,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.281Â° N, 77.281Â° E",
+    "gpsCoordinates": "28.281° N, 77.281° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.57,
     "insurer": "RGI",
@@ -79156,7 +79156,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.277Â° N, 77.277Â° E",
+    "gpsCoordinates": "28.277° N, 77.277° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.57,
     "insurer": "RGI",
@@ -79295,7 +79295,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4141Â° N, 77.4141Â° E",
+    "gpsCoordinates": "28.4141° N, 77.4141° E",
     "reserveAmountLakhs": 3.9,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -79431,7 +79431,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.280Â° N, 77.280Â° E",
+    "gpsCoordinates": "28.280° N, 77.280° E",
     "reserveAmountLakhs": 1.02,
     "settlementAmountLakhs": 0.57,
     "insurer": "RGI",
@@ -79570,7 +79570,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.4170Â° N, 77.4170Â° E",
+    "gpsCoordinates": "28.4170° N, 77.4170° E",
     "reserveAmountLakhs": 1.89,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -79706,7 +79706,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&q=80&w=600"
     ],
-    "gpsCoordinates": "28.485Â° N, 77.485Â° E",
+    "gpsCoordinates": "28.485° N, 77.485° E",
     "reserveAmountLakhs": 1.27,
     "insurer": "RGI",
     "status": "Survey Underway",
@@ -79725,9 +79725,9 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       "admissionProbability": 88,
       "likelyDeductible": 0.25,
       "missingEvidence": [
-        "Detailed Incident Note, Claim Bill on Letterhead with Rate Support â€“ Relevant invoices and supporting documents for the claimed amount, Police FIR Copy / Panchnama Report , Previous Installation Invoice of the Affected Asset, Final Repair / Replacement Bills with Payment Proofs"
+        "Detailed Incident Note, Claim Bill on Letterhead with Rate Support - Relevant invoices and supporting documents for the claimed amount, Police FIR Copy / Panchnama Report , Previous Installation Invoice of the Affected Asset, Final Repair / Replacement Bills with Payment Proofs"
       ],
-      "recommendation": "Submit pending documents: Detailed Incident Note, Claim Bill on Letterhead with Rate Support â€“ Relevant invoices and supporting documents for the claimed amount, Police FIR Copy / Panchnama Report , Previous Installation Invoice of the Affected Asset, Final Repair / Replacement Bills with Payment Proofs",
+      "recommendation": "Submit pending documents: Detailed Incident Note, Claim Bill on Letterhead with Rate Support - Relevant invoices and supporting documents for the claimed amount, Police FIR Copy / Panchnama Report , Previous Installation Invoice of the Affected Asset, Final Repair / Replacement Bills with Payment Proofs",
       "potentialObjections": [
         "Insurer requires original repair bills with GRN proof.",
         "Salvage value deduction recommendation from surveyor."
@@ -79772,7 +79772,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
       {
         "id": "t-3",
         "title": "Current Status",
-        "description": "Status: Open - Documents Pending. Docs Pending: Detailed Incident Note, Claim Bill on Letterhead with Rate Support â€“ Relevant invoices and supporting documents for the claimed amount, Police FIR Copy / Panchnama Report , Previous Installation Invoice of the Affected Asset, Final Repair / Replacement Bills with Payment Proofs",
+        "description": "Status: Open - Documents Pending. Docs Pending: Detailed Incident Note, Claim Bill on Letterhead with Rate Support - Relevant invoices and supporting documents for the claimed amount, Police FIR Copy / Panchnama Report , Previous Installation Invoice of the Affected Asset, Final Repair / Replacement Bills with Payment Proofs",
         "date": "In Progress",
         "status": "current",
         "actor": "WTW"
@@ -79808,7 +79808,7 @@ export const REAL_MASTER_CLAIMS: Claim[] = [
     "statusCategory": "Open - Documents Pending",
     "openFlag": "Open",
     "pendingWith": "",
-    "documentsPending": "Detailed Incident Note, Claim Bill on Letterhead with Rate Support â€“ Relevant invoices and supporting documents for the claimed amount, Police FIR Copy / Panchnama Report , Previous Installation Invoice of the Affected Asset, Final Repair / Replacement Bills with Payment Proofs",
+    "documentsPending": "Detailed Incident Note, Claim Bill on Letterhead with Rate Support - Relevant invoices and supporting documents for the claimed amount, Police FIR Copy / Panchnama Report , Previous Installation Invoice of the Affected Asset, Final Repair / Replacement Bills with Payment Proofs",
     "claimAmount": 126685,
     "grossAssessed": null,
     "deductions": null,

@@ -35,7 +35,7 @@ export const SurveyorPortalScreen: React.FC<SurveyorPortalScreenProps> = ({ setA
   const handleAskSurveyorAI = (e: React.FormEvent) => {
     e.preventDefault();
     setQueryResult(
-      'MAPLE AI identified 2 historical claims involving this structure (Sonipat Elevated Bridge / Pier P3):\n\n1. CLM-2026-00112 (NH-44 Bridge Scour, ₹5.72 Cr) - Survey Underway\n2. CLM-2023-00419 (NH-44 Abutment Protection, ₹1.45 Cr) - Settled FY24\n\nAll hydrological bathymetry logs and previous surveyor interim reports are indexed and ready for download below.'
+      'MAPLE AI identified 2 historical claims involving this structure (Sonipat Elevated Bridge / Pier P3):\n\n1. CLM-2026-00112 (NH-44 Bridge Scour, 5.72 Cr) - Survey Underway\n2. CLM-2023-00419 (NH-44 Abutment Protection, 1.45 Cr) - Settled FY24\n\nAll hydrological bathymetry logs and previous surveyor interim reports are indexed and ready for download below.'
     );
   };
 

@@ -1,4 +1,4 @@
-﻿import type { Claim, AIAssessment, CopilotMessage, MLPrediction, KnowledgeDoc } from '../types/claims';
+import type { Claim, AIAssessment, CopilotMessage, MLPrediction, KnowledgeDoc } from '../types/claims';
 
 export interface IncidentInput {
   incidentDate: string;
@@ -34,10 +34,10 @@ export async function runAIIncidentAnalysis(input: IncidentInput): Promise<AIAss
     likelyCause: 'Heavy Rainfall / Flooding',
     likelyPolicy: 'Industrial All Risk (IAR) Policy',
     estimatedSeverity: 'Medium',
-    initialReserve: 22.4, // â‚¹22.4 Lakhs
+    initialReserve: 22.4, // 22.4 Lakhs
     aiConfidence: 92,
     admissionProbability: 93,
-    likelyDeductible: 25.0, // â‚¹25 Lakhs
+    likelyDeductible: 25.0, // 25 Lakhs
     missingEvidence: [
       'IMD Station Rainfall Confirmation Report',
       'Pre-monsoon Maintenance Register & Desilting Logs',
@@ -95,7 +95,7 @@ Preliminary AI Assessment indicates erosion damage to:
 - Bituminous Pavement Surfacing
 - Central Median Earthworks & Slope
 
-Estimated Reserve: â‚¹${claim.reserveAmountLakhs} Lakhs
+Estimated Reserve: ${claim.reserveAmountLakhs} Lakhs
 Likely Event Cause: Heavy Rainfall / Water Inundation
 
 We request you to kindly depute an independent surveyor immediately to conduct joint site inspection. Preliminary photos, field report, and incident details are attached.
@@ -129,7 +129,7 @@ INCIDENT SUMMARY:
 - Date & Time: ${claim.incidentDate}, ${claim.incidentTime}
 - Location: ${claim.highway} (Km ${claim.chainage})
 - Cause: Unseasonal torrential rainfall & water accumulation
-- Preliminary Estimated Loss Reserve: â‚¹${claim.reserveAmountLakhs} Lakhs
+- Preliminary Estimated Loss Reserve: ${claim.reserveAmountLakhs} Lakhs
 - Claim Admission Probability: ${claim.aiAssessment?.admissionProbability || 93}%
 
 We request early issuance of claim registration number and formal surveyor deputation details.
@@ -149,10 +149,10 @@ export function processCopilotQuery(query: string, claimsList: Claim[]): Copilot
 
   // Format currency helper
   const fmtInr = (amt: number | null | undefined) => {
-    if (amt == null || isNaN(amt)) return 'â‚¹0';
-    if (amt >= 10000000) return `â‚¹${(amt / 10000000).toFixed(2)} Cr`;
-    if (amt >= 100000) return `â‚¹${(amt / 100000).toFixed(2)} L`;
-    return `â‚¹${amt.toLocaleString('en-IN')}`;
+    if (amt == null || isNaN(amt)) return '0';
+    if (amt >= 10000000) return `${(amt / 10000000).toFixed(2)} Cr`;
+    if (amt >= 100000) return `${(amt / 100000).toFixed(2)} L`;
+    return `${amt.toLocaleString('en-IN')}`;
   };
 
   // 1. Direct Claim ID Lookup (e.g., ALL-812189, GAL-CLAIM-2025-26-04669, WTW-91, MAR-0001, ALL-812191)
@@ -274,9 +274,9 @@ Here are the highest value open claims for **${entityName}**:`,
 
 MAPLE AI extracted document requirements from the broker MIS records (\`MAPLE HIGHWAYS - Master Data.md\`):
 
-${docPendingClaims.slice(0, 5).map((c, i) => `${i + 1}. **${c.id}** (${c.broker} Â· ${c.entity}):\n   - *Asset*: ${c.assetCategory}\n   - *Pending Documents*: ${c.documentsPending}\n   - *Claim Value*: ${fmtInr(c.claimAmount || (c.reserveAmountLakhs * 100000))}`).join('\n\n')}
+${docPendingClaims.slice(0, 5).map((c, i) => `${i + 1}. **${c.id}** (${c.broker} · ${c.entity}):\n   - *Asset*: ${c.assetCategory}\n   - *Pending Documents*: ${c.documentsPending}\n   - *Claim Value*: ${fmtInr(c.claimAmount || (c.reserveAmountLakhs * 100000))}`).join('\n\n')}
 
-> **AI Strategic Action**: Resolving the top 5 document requirements above will unlock â‚¹${(docPendingClaims.slice(0, 5).reduce((s, c) => s + (c.claimAmount || 0), 0) / 100000).toFixed(2)} Lakhs in pending surveyor assessments.`,
+> **AI Strategic Action**: Resolving the top 5 document requirements above will unlock ${(docPendingClaims.slice(0, 5).reduce((s, c) => s + (c.claimAmount || 0), 0) / 100000).toFixed(2)} Lakhs in pending surveyor assessments.`,
       type: 'text'
     };
   }
@@ -294,7 +294,7 @@ ${docPendingClaims.slice(0, 5).map((c, i) => `${i + 1}. **${c.id}** (${c.broker}
       type: 'claims_list',
       data: topClaims.map(c => ({
         id: c.id,
-        title: `${c.assetCategory || c.incidentType} (${c.broker} Â· ${c.entity})`,
+        title: `${c.assetCategory || c.incidentType} (${c.broker} · ${c.entity})`,
         reserve: fmtInr(c.claimAmount || (c.reserveAmountLakhs * 100000)),
         status: `${c.statusCategory || c.status}`,
         highway: c.highway
@@ -333,7 +333,7 @@ Here are key claims matching **${kw}**:`,
       type: 'claims_list',
       data: matches.slice(0, 6).map(c => ({
         id: c.id,
-        title: `${c.broker} Â· ${c.entity} - ${c.lossLocation || c.location || 'Location'}`,
+        title: `${c.broker} · ${c.entity} - ${c.lossLocation || c.location || 'Location'}`,
         reserve: fmtInr(c.claimAmount || (c.reserveAmountLakhs * 100000)),
         status: c.statusCategory || c.status,
         highway: c.highway
@@ -361,13 +361,13 @@ Here are key claims matching **${kw}**:`,
       text: `### **Surveyor & Insurer Portfolio Breakdown** (\`MAPLE HIGHWAYS - Master Data.md\`)
 
 **Top Independent Surveyors Appointed**:
-${topSurveyors.map(([surv, count]) => `â€¢ **${surv}**: ${count} claims assigned`).join('\n')}
+${topSurveyors.map(([surv, count]) => `• **${surv}**: ${count} claims assigned`).join('\n')}
 
 **Key Insurers**:
-â€¢ **ITGI (Marsh)**: 306 claims (88% settled)
-â€¢ **The Oriental Insurance (Gallagher)**: 146 claims (46.6% settled)
-â€¢ **RGI (WTW)**: 108 claims
-â€¢ **Alliance Portfolio**: 21 claims`,
+• **ITGI (Marsh)**: 306 claims (88% settled)
+• **The Oriental Insurance (Gallagher)**: 146 claims (46.6% settled)
+• **RGI (WTW)**: 108 claims
+• **Alliance Portfolio**: 21 claims`,
       type: 'text'
     };
   }
@@ -389,7 +389,7 @@ ${topSurveyors.map(([surv, count]) => `â€¢ **${surv}**: ${count} claims assi
         type: 'claims_list',
         data: matchedClaims.slice(0, 6).map(c => ({
           id: c.id,
-          title: `${c.assetCategory || 'Road Asset'} (${c.broker} Â· ${c.entity})`,
+          title: `${c.assetCategory || 'Road Asset'} (${c.broker} · ${c.entity})`,
           reserve: fmtInr(c.claimAmount || (c.reserveAmountLakhs * 100000)),
           status: `${c.statusCategory || c.status}`,
           highway: c.highway
@@ -403,7 +403,7 @@ ${topSurveyors.map(([surv, count]) => `â€¢ **${surv}**: ${count} claims assi
     id: Date.now().toString(),
     sender: 'ai',
     timestamp: now,
-    text: `MAPLE AI Copilot searched \`MAPLE HIGHWAYS - Master Data.md\` (581 claims across 47 columns).\n\nYou can query:\nâ€¢ **Claim IDs** (e.g. \`ALL-812189\`, \`GAL-CLAIM-2025-26-04669\`, \`WTW-91\`, \`MAR-0001\`)\nâ€¢ **Brokers** (Alliance, Gallagher, Marsh, WTW)\nâ€¢ **Entities** (JPP, PPE)\nâ€¢ **Asset Categories** (MBCB, Street Light, Transformer, VMS Panel, Toll Booth)\nâ€¢ **Pending Documents** ("What documents are pending?")\nâ€¢ **Surveyors & Insurers** (J.C. Gupta, KOHLI, Oriental Insurance, ITGI)`
+    text: `MAPLE AI Copilot searched \`MAPLE HIGHWAYS - Master Data.md\` (581 claims across 47 columns).\n\nYou can query:\n• **Claim IDs** (e.g. \`ALL-812189\`, \`GAL-CLAIM-2025-26-04669\`, \`WTW-91\`, \`MAR-0001\`)\n• **Brokers** (Alliance, Gallagher, Marsh, WTW)\n• **Entities** (JPP, PPE)\n• **Asset Categories** (MBCB, Street Light, Transformer, VMS Panel, Toll Booth)\n• **Pending Documents** ("What documents are pending?")\n• **Surveyors & Insurers** (J.C. Gupta, KOHLI, Oriental Insurance, ITGI)`
   };
 }
 
