@@ -32,12 +32,10 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin }) => {
           </div>
           <div>
             <h1 className="text-3xl font-extrabold tracking-tight text-white flex items-center justify-center gap-2">
-              <span>MAPLE</span>
-              <span className="text-amber-400 font-black">AI</span>
+              <span>CLAIMS INTELLIGENCE</span>
+
             </h1>
-            <p className="text-xs uppercase tracking-widest text-slate-400 font-bold mt-1">
-              CLAIMS INTELLIGENCE
-            </p>
+
           </div>
           <p className="text-sm text-slate-300 max-w-xs mx-auto font-medium">
             Intelligent claims management for infrastructure.

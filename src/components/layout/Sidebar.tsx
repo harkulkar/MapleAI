@@ -53,10 +53,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeScreen, setActiveScreen 
         </div>
         <div>
           <div className="flex items-center gap-1.5">
-
+            <span className="text-white font-bold text-sm tracking-tight">CLAIMS INTELLIGENCE</span>
             <span className="text-[10px] uppercase tracking-widest px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400 font-bold border border-amber-500/30">AI</span>
           </div>
-          <p className="text-[11px] text-slate-400 font-medium tracking-wide">CLAIMS INTELLIGENCE</p>
         </div>
       </div>
 
@@ -107,7 +106,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeScreen, setActiveScreen 
         <div className="mx-1 p-3 rounded-xl bg-gradient-to-b from-slate-900 to-slate-950 border border-amber-500/20 text-xs space-y-1">
           <div className="flex items-center gap-1.5 text-amber-400 font-bold">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Maple Prototype v2.0</span>
+            <span>Maple Prototype v1.0</span>
           </div>
           <p className="text-slate-400 text-[11px] leading-relaxed">
             All 9 core enterprise modules fully interactive & active.

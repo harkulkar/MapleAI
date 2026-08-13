@@ -225,7 +225,7 @@ function computeDashboardData(claims: Claim[]) {
 
   const ENTITY_DATA = [
     {
-      entity: 'PPE', highway: 'NCR Eastern Peripheral Expressway',
+      entity: 'PPE', highway: 'PPE Expressway',
       concession: 'Marsh + Gallagher', claims: ncrClaims.length,
       settled: ncrSettled.length, open: ncrClaims.length - ncrSettled.length,
       settlePct: ncrClaims.length ? parseFloat(((ncrSettled.length / ncrClaims.length) * 100).toFixed(1)) : 0,
@@ -234,7 +234,7 @@ function computeDashboardData(claims: Claim[]) {
       color: '#3b82f6',
     },
     {
-      entity: 'JPP', highway: 'Shree Jagannath Expressways',
+      entity: 'JPP', highway: 'JPP Expressway',
       concession: 'Alliance + WTW', claims: JPPClaims.length,
       settled: JPPSettled.length, open: JPPClaims.length - JPPSettled.length,
       settlePct: JPPClaims.length ? parseFloat(((JPPSettled.length / JPPClaims.length) * 100).toFixed(1)) : 0,
