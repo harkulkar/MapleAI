@@ -117,7 +117,7 @@ export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = (
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!validate()) return;
 
     const claimId = `CLM-${Date.now().toString().slice(-8)}`;
@@ -137,10 +137,21 @@ export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = (
       location: { locationName, zone, pinCode, city, state, country },
     } as unknown as Claim; // casting to Claim for compatibility
 
-    // ── Save to localStorage (backend simulation)
+    // ── Save to localStorage (backend simulation fallback)
     const existing = JSON.parse(localStorage.getItem('maple_submitted_claims') || '[]');
     existing.push(payload);
     localStorage.setItem('maple_submitted_claims', JSON.stringify(existing));
+
+    // ── Save to actual backend JSON file via Vite API
+    try {
+      await fetch('/api/submit-claim', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch (error) {
+      console.error('Failed to save to backend file:', error);
+    }
 
     // invoke callback if provided
     onClaimCreated?.(payload);

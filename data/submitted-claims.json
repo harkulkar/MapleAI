@@ -1,1 +1,98 @@
-[]
+[
+  {
+    "claimId": "CLM-06341230",
+    "submittedAt": "2026-08-14T11:19:01.230Z",
+    "policy": {
+      "id": "POL-01",
+      "company": "Maple Highways",
+      "type": "Bharat Laghu Udyam Suraksha (BLUS)",
+      "exposure": "New / Open Exposure",
+      "number": "260200112510000332"
+    },
+    "dateOfLoss": "6253-11-23",
+    "claimedAmount": "300000",
+    "causeOfLoss": "Earthquake",
+    "priority": "High",
+    "typeOfLoss": "Business Interruption",
+    "claimType": "External Claim",
+    "lossDescription": "gfdkjdkdfjfdkvcndcvkj",
+    "claimSections": "All",
+    "contact": {
+      "onsiteName": "Nizam",
+      "onsiteEmail": "nizam@gmsil,cm",
+      "mobileNumber": "6578374657"
+    },
+    "location": {
+      "locationName": "adejkccx",
+      "zone": "East",
+      "pinCode": "508496",
+      "city": "mum",
+      "state": "maha",
+      "country": "India"
+    }
+  },
+  {
+    "claimId": "CLM-06446281",
+    "submittedAt": "2026-08-14T11:20:46.281Z",
+    "policy": {
+      "id": "POL-03",
+      "company": "Maple Highways",
+      "type": "Cyber Liability",
+      "exposure": "New / Open Exposure",
+      "number": "260200492510000371"
+    },
+    "dateOfLoss": "2024-12-04",
+    "claimedAmount": "500000",
+    "causeOfLoss": "Earthquake",
+    "priority": "High",
+    "typeOfLoss": "Business Interruption",
+    "claimType": "EB Claim",
+    "lossDescription": "tryyhdn",
+    "claimSections": "All",
+    "contact": {
+      "onsiteName": "Yashika",
+      "onsiteEmail": "uashdij@hfj",
+      "mobileNumber": "856735478"
+    },
+    "location": {
+      "locationName": "adejkccx",
+      "zone": "South",
+      "pinCode": "508496",
+      "city": "mum",
+      "state": "maha",
+      "country": "India"
+    }
+  },
+  {
+    "claimId": "CLM-06731237",
+    "submittedAt": "2026-08-14T11:25:31.237Z",
+    "policy": {
+      "id": "POL-02",
+      "company": "Maple Highways",
+      "type": "Burglary & Theft Insurance",
+      "exposure": "New / Open Exposure",
+      "number": "260200592510000200"
+    },
+    "dateOfLoss": "220245-02-13",
+    "claimedAmount": "300000",
+    "causeOfLoss": "Fire / Explosion",
+    "priority": "High",
+    "typeOfLoss": "Third Party Liability",
+    "claimType": "Non EB internal claim",
+    "lossDescription": "knmslknadkjacav",
+    "claimSections": "All",
+    "contact": {
+      "onsiteName": "Nizam",
+      "onsiteEmail": "nizam@gmsil,cm",
+      "mobileNumber": "6578374657"
+    },
+    "location": {
+      "locationName": "adejkccx",
+      "zone": "",
+      "pinCode": "508496",
+      "city": "mum",
+      "state": "maha",
+      "country": "India"
+    }
+  }
+]
