@@ -1,7 +1,7 @@
 [
   {
-    "claimId": "CLM-06341230",
-    "submittedAt": "2026-08-14T11:19:01.230Z",
+    "claimId": "CLM-48849660",
+    "submittedAt": "2026-08-18T10:27:29.660Z",
     "policy": {
       "id": "POL-01",
       "company": "Maple Highways",
@@ -9,54 +9,22 @@
       "exposure": "New / Open Exposure",
       "number": "260200112510000332"
     },
-    "dateOfLoss": "6253-11-23",
-    "claimedAmount": "300000",
-    "causeOfLoss": "Earthquake",
-    "priority": "High",
-    "typeOfLoss": "Business Interruption",
-    "claimType": "External Claim",
-    "lossDescription": "gfdkjdkdfjfdkvcndcvkj",
-    "claimSections": "All",
-    "contact": {
-      "onsiteName": "Nizam",
-      "onsiteEmail": "nizam@gmsil,cm",
-      "mobileNumber": "6578374657"
-    },
-    "location": {
-      "locationName": "adejkccx",
-      "zone": "East",
-      "pinCode": "508496",
-      "city": "mum",
-      "state": "maha",
-      "country": "India"
-    }
-  },
-  {
-    "claimId": "CLM-06446281",
-    "submittedAt": "2026-08-14T11:20:46.281Z",
-    "policy": {
-      "id": "POL-03",
-      "company": "Maple Highways",
-      "type": "Cyber Liability",
-      "exposure": "New / Open Exposure",
-      "number": "260200492510000371"
-    },
-    "dateOfLoss": "2024-12-04",
+    "dateOfLoss": "2323-12-22",
     "claimedAmount": "500000",
-    "causeOfLoss": "Earthquake",
+    "causeOfLoss": "Mechanical Breakdown",
     "priority": "High",
-    "typeOfLoss": "Business Interruption",
-    "claimType": "EB Claim",
-    "lossDescription": "tryyhdn",
+    "typeOfLoss": "Third Party Liability",
+    "claimType": "Non EB internal claim",
+    "lossDescription": "ewqeqeq",
     "claimSections": "All",
     "contact": {
       "onsiteName": "Yashika",
       "onsiteEmail": "uashdij@hfj",
-      "mobileNumber": "856735478"
+      "mobileNumber": "6578374657"
     },
     "location": {
       "locationName": "adejkccx",
-      "zone": "South",
+      "zone": "North",
       "pinCode": "508496",
       "city": "mum",
       "state": "maha",
@@ -64,31 +32,127 @@
     }
   },
   {
-    "claimId": "CLM-06731237",
-    "submittedAt": "2026-08-14T11:25:31.237Z",
+    "claimId": "CLM-48867973",
+    "submittedAt": "2026-08-18T10:27:47.973Z",
     "policy": {
-      "id": "POL-02",
+      "id": "POL-01",
       "company": "Maple Highways",
-      "type": "Burglary & Theft Insurance",
+      "type": "Bharat Laghu Udyam Suraksha (BLUS)",
       "exposure": "New / Open Exposure",
-      "number": "260200592510000200"
+      "number": "260200112510000332"
     },
-    "dateOfLoss": "220245-02-13",
-    "claimedAmount": "300000",
-    "causeOfLoss": "Fire / Explosion",
+    "dateOfLoss": "2323-12-22",
+    "claimedAmount": "500000",
+    "causeOfLoss": "Mechanical Breakdown",
     "priority": "High",
     "typeOfLoss": "Third Party Liability",
     "claimType": "Non EB internal claim",
-    "lossDescription": "knmslknadkjacav",
-    "claimSections": "All",
+    "lossDescription": "all ckmsk snjsnfkfn jnwkjnwjf",
+    "claimSections": "Section B - Machinery",
     "contact": {
-      "onsiteName": "Nizam",
-      "onsiteEmail": "nizam@gmsil,cm",
+      "onsiteName": "Yashika",
+      "onsiteEmail": "uashdij@hfj",
+      "mobileNumber": "6578374657"
+    },
+    "location": {
+      "locationName": "adejkccx",
+      "zone": "North",
+      "pinCode": "508496",
+      "city": "mum",
+      "state": "maha",
+      "country": "India"
+    }
+  },
+  {
+    "claimId": "CLM-48868708",
+    "submittedAt": "2026-08-18T10:27:48.708Z",
+    "policy": {
+      "id": "POL-01",
+      "company": "Maple Highways",
+      "type": "Bharat Laghu Udyam Suraksha (BLUS)",
+      "exposure": "New / Open Exposure",
+      "number": "260200112510000332"
+    },
+    "dateOfLoss": "2323-12-22",
+    "claimedAmount": "500000",
+    "causeOfLoss": "Mechanical Breakdown",
+    "priority": "High",
+    "typeOfLoss": "Third Party Liability",
+    "claimType": "Non EB internal claim",
+    "lossDescription": "all ckmsk snjsnfkfn jnwkjnwjf",
+    "claimSections": "Section B - Machinery",
+    "contact": {
+      "onsiteName": "Yashika",
+      "onsiteEmail": "uashdij@hfj",
+      "mobileNumber": "6578374657"
+    },
+    "location": {
+      "locationName": "adejkccx",
+      "zone": "North",
+      "pinCode": "508496",
+      "city": "mum",
+      "state": "maha",
+      "country": "India"
+    }
+  },
+  {
+    "claimId": "CLM-49192549",
+    "submittedAt": "2026-08-18T10:33:12.549Z",
+    "policy": {
+      "id": "POL-01",
+      "company": "Maple Highways",
+      "type": "Bharat Laghu Udyam Suraksha (BLUS)",
+      "exposure": "New / Open Exposure",
+      "number": "260200112510000332"
+    },
+    "dateOfLoss": "2011-11-11",
+    "claimedAmount": "500000",
+    "causeOfLoss": "AOG / Storm / Cyclone",
+    "priority": "High",
+    "typeOfLoss": "Business Interruption",
+    "claimType": "Non EB internal claim",
+    "lossDescription": "adadqdqdq",
+    "claimSections": "Section B - Machinery",
+    "contact": {
+      "onsiteName": "Yashika",
+      "onsiteEmail": "uashdij@hfj",
       "mobileNumber": "6578374657"
     },
     "location": {
       "locationName": "adejkccx",
       "zone": "",
+      "pinCode": "508496",
+      "city": "mum",
+      "state": "maha",
+      "country": "India"
+    }
+  },
+  {
+    "claimId": "CLM-53138124",
+    "submittedAt": "2026-08-18T11:38:58.124Z",
+    "policy": {
+      "id": "POL-01",
+      "company": "Maple Highways",
+      "type": "Bharat Laghu Udyam Suraksha (BLUS)",
+      "exposure": "New / Open Exposure",
+      "number": "260200112510000332"
+    },
+    "dateOfLoss": "2323-12-11",
+    "claimedAmount": "500000",
+    "causeOfLoss": "AOG / Storm / Cyclone",
+    "priority": "High",
+    "typeOfLoss": "Theft / Burglary",
+    "claimType": "Non EB internal claim",
+    "lossDescription": "aaaaasdfghj",
+    "claimSections": "All",
+    "contact": {
+      "onsiteName": "Yashika",
+      "onsiteEmail": "uashdij@hfj",
+      "mobileNumber": "6578374657"
+    },
+    "location": {
+      "locationName": "adejkccx",
+      "zone": "Centralized Zone",
       "pinCode": "508496",
       "city": "mum",
       "state": "maha",

@@ -71,7 +71,6 @@ export const Header: React.FC<HeaderProps> = ({ setActiveScreen, onSearchQuery }
             </div>
             <div className="text-left hidden md:block">
               <div className="text-xs font-semibold text-white">Claims Manager</div>
-              <div className="text-[10px] text-emerald-400 font-medium">Online Demo</div>
             </div>
           </div>
         </div>

@@ -5,9 +5,7 @@ import {
   AlertTriangle,
   MessageSquare,
   Database,
-  UserCheck,
   BellRing,
-  ClipboardCheck,
   ShieldCheck,
   Sparkles,
   ChevronRight
@@ -21,8 +19,6 @@ export type ScreenId =
   | 'claim-details'
   | 'ai-advisor'
   | 'knowledge-repo'
-  | 'surveyor-portal'
-  | 'document-checklist'
   | 'reminder-engine'
   | 'ml-predictive'
   | 'copilot';
@@ -38,8 +34,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeScreen, setActiveScreen 
     { id: 'claims', label: 'Claims Portfolio', icon: FileText, badge: '47' },
     { id: 'incident-reporting', label: 'Incident Intake', icon: AlertTriangle, hero: true },
     { id: 'knowledge-repo', label: 'Knowledge Bank', icon: Database, highlight: true },
-    { id: 'surveyor-portal', label: 'Surveyor Portal', icon: UserCheck },
-    { id: 'document-checklist', label: 'Doc Checklist', icon: ClipboardCheck },
     { id: 'reminder-engine', label: 'AI Reminders', icon: BellRing, badge: '4 Alert' },
     { id: 'copilot', label: 'AI Copilot Chat', icon: MessageSquare, hero: true },
   ];
@@ -63,7 +57,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeScreen, setActiveScreen 
       <div className="flex-1 py-4 px-3 space-y-4 overflow-y-auto">
         <div>
           <div className="px-3 mb-2 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
-            9 Core Enterprise Modules
+            6 Core Enterprise Modules
           </div>
           <nav className="space-y-1">
             {coreModules.map((item) => {
@@ -109,7 +103,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeScreen, setActiveScreen 
             <span>Maple Prototype v1.0</span>
           </div>
           <p className="text-slate-400 text-[11px] leading-relaxed">
-            All 9 core enterprise modules fully interactive & active.
+            Core modules fully interactive and active.
           </p>
         </div>
       </div>

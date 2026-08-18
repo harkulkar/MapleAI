@@ -44,6 +44,7 @@ export interface RealClaim {
   settlementTATDays: number | null;
   location: string | null;
   remarks: string | null;
+  documentsPending: string | null;
 }
 
 export const REAL_CLAIMS: RealClaim[] = REAL_MASTER_CLAIMS.map(c => ({
@@ -65,7 +66,8 @@ export const REAL_CLAIMS: RealClaim[] = REAL_MASTER_CLAIMS.map(c => ({
   intimationLagDays: c.intimationLagDays ?? null,
   settlementTATDays: c.settlementTATDays ?? null,
   location: c.lossLocation || c.location || null,
-  remarks: c.remarks || c.documentsPending || null,
+  remarks: c.remarks || null,
+  documentsPending: c.documentsPending || c.aiAssessment?.missingEvidence?.join('\n') || null,
 }));
 
 export const UNIQUE_BROKERS: RealBroker[] = ['Marsh', 'Gallagher', 'WTW', 'Alliance'];

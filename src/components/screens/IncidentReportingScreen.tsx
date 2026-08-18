@@ -91,6 +91,8 @@ export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = (
   // ── Submission
   const [submitted, setSubmitted] = useState(false);
   const [submittedId, setSubmittedId] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const filteredPolicies = useMemo(() =>
@@ -120,6 +122,9 @@ export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = (
   const handleSubmit = async () => {
     if (!validate()) return;
 
+    setSubmitting(true);
+    setSubmitError('');
+
     const claimId = `CLM-${Date.now().toString().slice(-8)}`;
     const payload = {
       claimId,
@@ -137,27 +142,31 @@ export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = (
       location: { locationName, zone, pinCode, city, state, country },
     } as unknown as Claim; // casting to Claim for compatibility
 
-    // ── Save to localStorage (backend simulation fallback)
-    const existing = JSON.parse(localStorage.getItem('maple_submitted_claims') || '[]');
-    existing.push(payload);
-    localStorage.setItem('maple_submitted_claims', JSON.stringify(existing));
-
-    // ── Save to actual backend JSON file via Vite API
     try {
-      await fetch('/api/submit-claim', {
+      const response = await fetch('/api/submit-claim', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        setSubmitError(data.error || 'Failed to save claim to database. Please try again.');
+        return;
+      }
+
+      const existing = JSON.parse(localStorage.getItem('maple_submitted_claims') || '[]');
+      existing.push(payload);
+      localStorage.setItem('maple_submitted_claims', JSON.stringify(existing));
+
+      onClaimCreated?.(payload);
+      setSubmittedId(claimId);
+      setSubmitted(true);
     } catch (error) {
-      console.error('Failed to save to backend file:', error);
+      console.error('Failed to save claim:', error);
+      setSubmitError('Could not reach the server. Please try again.');
+    } finally {
+      setSubmitting(false);
     }
-
-    // invoke callback if provided
-    onClaimCreated?.(payload);
-
-    setSubmittedId(claimId);
-    setSubmitted(true);
   };
 
   // ── Success screen
@@ -205,7 +214,135 @@ export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = (
         <p className="text-sm text-slate-400 mt-1">Register a new insurance claim — all <span className="text-red-400">*</span> fields are required.</p>
       </div>
 
-      {/* ── SECTION 1: Claims Intimation Details ──────────────────────────── */}
+      {/* ── SECTION 1: Risk/Loss Location Details ────────────────────────────── */}
+      <div className={SECTION_CLS}>
+        <h2 className={SECTION_TITLE}>
+          <MapPin className="w-5 h-5 text-emerald-400" />
+          Risk / Loss Location Details
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className={LABEL_CLS}>{REQ} Risk / Loss Location Name</label>
+            <input
+              type="text"
+              placeholder="e.g. Toll Plaza - KM 42+600"
+              value={locationName}
+              onChange={e => { setLocationName(e.target.value); setErrors(v => ({ ...v, locationName: '' })); }}
+              className={`${INPUT_CLS} ${errors.locationName ? 'border-red-500' : ''}`}
+            />
+            {errors.locationName && <p className="text-red-400 text-xs mt-1">{errors.locationName}</p>}
+          </div>
+          <div>
+            <label className={LABEL_CLS}>Zone</label>
+            <select value={zone} onChange={e => setZone(e.target.value)} className={INPUT_CLS}>
+              <option value="">Select an Option</option>
+              {ZONE_OPTIONS.map(o => <option key={o} value={o}>{o}</option>)}
+            </select>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className={LABEL_CLS}>{REQ} Risk / Loss Location Pin Code</label>
+            <input
+              type="text"
+              placeholder="e.g. 110001"
+              maxLength={6}
+              value={pinCode}
+              onChange={e => { setPinCode(e.target.value); setErrors(v => ({ ...v, pinCode: '' })); }}
+              className={`${INPUT_CLS} ${errors.pinCode ? 'border-red-500' : ''}`}
+            />
+            {errors.pinCode && <p className="text-red-400 text-xs mt-1">{errors.pinCode}</p>}
+          </div>
+          <div>
+            <label className={LABEL_CLS}>City</label>
+            <input
+              type="text"
+              placeholder="City"
+              value={city}
+              onChange={e => setCity(e.target.value)}
+              className={INPUT_CLS}
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className={LABEL_CLS}>State</label>
+            <input
+              type="text"
+              placeholder="State"
+              value={state}
+              onChange={e => setState(e.target.value)}
+              className={INPUT_CLS}
+            />
+          </div>
+          <div>
+            <label className={LABEL_CLS}>Country</label>
+            <input
+              type="text"
+              placeholder="Country"
+              value={country}
+              onChange={e => setCountry(e.target.value)}
+              className={INPUT_CLS}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ── SECTION 2: Contact Information ───────────────────────────────────── */}
+      <div className={SECTION_CLS}>
+        <h2 className={SECTION_TITLE}>
+          <User className="w-5 h-5 text-purple-400" />
+          Contact Information (Claim / On Site Coordinator)
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className={LABEL_CLS}>{REQ} Onsite Person Name</label>
+            <input
+              type="text"
+              placeholder="Full name"
+              value={onsiteName}
+              onChange={e => { setOnsiteName(e.target.value); setErrors(v => ({ ...v, onsiteName: '' })); }}
+              className={`${INPUT_CLS} ${errors.onsiteName ? 'border-red-500' : ''}`}
+            />
+            {errors.onsiteName && <p className="text-red-400 text-xs mt-1">{errors.onsiteName}</p>}
+          </div>
+          <div>
+            <label className={LABEL_CLS}>{REQ} Onsite Person Email</label>
+            <div className="relative">
+              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+              <input
+                type="email"
+                placeholder="email@mapelhighways.com"
+                value={onsiteEmail}
+                onChange={e => { setOnsiteEmail(e.target.value); setErrors(v => ({ ...v, onsiteEmail: '' })); }}
+                className={`${INPUT_CLS} pl-9 ${errors.onsiteEmail ? 'border-red-500' : ''}`}
+              />
+            </div>
+            {errors.onsiteEmail && <p className="text-red-400 text-xs mt-1">{errors.onsiteEmail}</p>}
+          </div>
+        </div>
+
+        <div className="md:max-w-sm">
+          <label className={LABEL_CLS}>{REQ} Mobile Number</label>
+          <div className="relative">
+            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+            <input
+              type="tel"
+              placeholder="+91 98765 43210"
+              value={mobileNumber}
+              onChange={e => { setMobileNumber(e.target.value); setErrors(v => ({ ...v, mobileNumber: '' })); }}
+              className={`${INPUT_CLS} pl-9 ${errors.mobileNumber ? 'border-red-500' : ''}`}
+            />
+          </div>
+          {errors.mobileNumber && <p className="text-red-400 text-xs mt-1">{errors.mobileNumber}</p>}
+        </div>
+      </div>
+
+      {/* ── SECTION 3: Claims Intimation Details ──────────────────────────── */}
       <div className={SECTION_CLS}>
         <h2 className={SECTION_TITLE}>
           <ShieldCheck className="w-5 h-5 text-blue-400" />
@@ -368,134 +505,6 @@ export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = (
         </div>
       </div>
 
-      {/* ── SECTION 2: Contact Information ───────────────────────────────────── */}
-      <div className={SECTION_CLS}>
-        <h2 className={SECTION_TITLE}>
-          <User className="w-5 h-5 text-purple-400" />
-          Contact Information (Claim / On Site Coordinator)
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className={LABEL_CLS}>{REQ} Onsite Person Name</label>
-            <input
-              type="text"
-              placeholder="Full name"
-              value={onsiteName}
-              onChange={e => { setOnsiteName(e.target.value); setErrors(v => ({ ...v, onsiteName: '' })); }}
-              className={`${INPUT_CLS} ${errors.onsiteName ? 'border-red-500' : ''}`}
-            />
-            {errors.onsiteName && <p className="text-red-400 text-xs mt-1">{errors.onsiteName}</p>}
-          </div>
-          <div>
-            <label className={LABEL_CLS}>{REQ} Onsite Person Email</label>
-            <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
-              <input
-                type="email"
-                placeholder="email@mapelhighways.com"
-                value={onsiteEmail}
-                onChange={e => { setOnsiteEmail(e.target.value); setErrors(v => ({ ...v, onsiteEmail: '' })); }}
-                className={`${INPUT_CLS} pl-9 ${errors.onsiteEmail ? 'border-red-500' : ''}`}
-              />
-            </div>
-            {errors.onsiteEmail && <p className="text-red-400 text-xs mt-1">{errors.onsiteEmail}</p>}
-          </div>
-        </div>
-
-        <div className="md:max-w-sm">
-          <label className={LABEL_CLS}>{REQ} Mobile Number</label>
-          <div className="relative">
-            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
-            <input
-              type="tel"
-              placeholder="+91 98765 43210"
-              value={mobileNumber}
-              onChange={e => { setMobileNumber(e.target.value); setErrors(v => ({ ...v, mobileNumber: '' })); }}
-              className={`${INPUT_CLS} pl-9 ${errors.mobileNumber ? 'border-red-500' : ''}`}
-            />
-          </div>
-          {errors.mobileNumber && <p className="text-red-400 text-xs mt-1">{errors.mobileNumber}</p>}
-        </div>
-      </div>
-
-      {/* ── SECTION 3: Risk/Loss Location Details ────────────────────────────── */}
-      <div className={SECTION_CLS}>
-        <h2 className={SECTION_TITLE}>
-          <MapPin className="w-5 h-5 text-emerald-400" />
-          Risk / Loss Location Details
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className={LABEL_CLS}>{REQ} Risk / Loss Location Name</label>
-            <input
-              type="text"
-              placeholder="e.g. Toll Plaza - KM 42+600"
-              value={locationName}
-              onChange={e => { setLocationName(e.target.value); setErrors(v => ({ ...v, locationName: '' })); }}
-              className={`${INPUT_CLS} ${errors.locationName ? 'border-red-500' : ''}`}
-            />
-            {errors.locationName && <p className="text-red-400 text-xs mt-1">{errors.locationName}</p>}
-          </div>
-          <div>
-            <label className={LABEL_CLS}>Zone</label>
-            <select value={zone} onChange={e => setZone(e.target.value)} className={INPUT_CLS}>
-              <option value="">Select an Option</option>
-              {ZONE_OPTIONS.map(o => <option key={o} value={o}>{o}</option>)}
-            </select>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className={LABEL_CLS}>{REQ} Risk / Loss Location Pin Code</label>
-            <input
-              type="text"
-              placeholder="e.g. 110001"
-              maxLength={6}
-              value={pinCode}
-              onChange={e => { setPinCode(e.target.value); setErrors(v => ({ ...v, pinCode: '' })); }}
-              className={`${INPUT_CLS} ${errors.pinCode ? 'border-red-500' : ''}`}
-            />
-            {errors.pinCode && <p className="text-red-400 text-xs mt-1">{errors.pinCode}</p>}
-          </div>
-          <div>
-            <label className={LABEL_CLS}>City</label>
-            <input
-              type="text"
-              placeholder="City"
-              value={city}
-              onChange={e => setCity(e.target.value)}
-              className={INPUT_CLS}
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className={LABEL_CLS}>State</label>
-            <input
-              type="text"
-              placeholder="State"
-              value={state}
-              onChange={e => setState(e.target.value)}
-              className={INPUT_CLS}
-            />
-          </div>
-          <div>
-            <label className={LABEL_CLS}>Country</label>
-            <input
-              type="text"
-              placeholder="Country"
-              value={country}
-              onChange={e => setCountry(e.target.value)}
-              className={INPUT_CLS}
-            />
-          </div>
-        </div>
-      </div>
-
       {/* ── Validation Error Banner ───────────────────────────────────────────── */}
       {Object.keys(errors).filter(k => errors[k]).length > 0 && (
         <div className="flex items-start gap-3 bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-xs text-red-300">
@@ -504,15 +513,23 @@ export const IncidentReportingScreen: React.FC<IncidentReportingScreenProps> = (
         </div>
       )}
 
+      {submitError && (
+        <div className="flex items-start gap-3 bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-xs text-red-300">
+          <AlertTriangle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+          <span>{submitError}</span>
+        </div>
+      )}
+
       {/* ── Submit Button ─────────────────────────────────────────────────────── */}
       <div className="flex justify-center pb-8">
         <button
           type="button"
           onClick={handleSubmit}
-          className="px-10 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-extrabold text-sm shadow-xl shadow-blue-900/30 flex items-center gap-3 transition-all active:scale-95"
+          disabled={submitting}
+          className="px-10 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 disabled:opacity-60 disabled:cursor-not-allowed text-white font-extrabold text-sm shadow-xl shadow-blue-900/30 flex items-center gap-3 transition-all active:scale-95"
         >
           <FilePlus className="w-5 h-5" />
-          Submit Claim
+          {submitting ? 'Saving Claim...' : 'Submit Claim'}
         </button>
       </div>
     </div>

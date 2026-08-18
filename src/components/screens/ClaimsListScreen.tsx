@@ -1,8 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import {
   Search,
   ChevronRight,
   ChevronLeft,
+  ChevronDown,
   ArrowUpDown,
   Sparkles,
   TrendingUp,
@@ -10,6 +11,7 @@ import {
   Clock,
   CheckCircle2,
   FileWarning,
+  FileText,
   X,
 } from 'lucide-react';
 import {
@@ -61,6 +63,73 @@ const fmtInr = (v: number | null) => {
 
 const ITEMS_PER_PAGE = 15;
 
+const DEFAULT_PENDING_DOCS: Record<string, string[]> = {
+  'Theft / Burglary': [
+    'Police FIR / intimation',
+    'CCTV footage of the incident',
+    'Purchase invoice of stolen / damaged equipment',
+    'Claim form duly signed and stamped',
+    'Claim bill with repair / replacement invoices',
+    'Salvage quotations (minimum 3, if applicable)',
+  ],
+  'Fire': [
+    'Fire brigade inspection report',
+    'Incident photographs / videography',
+    'Fixed Asset Register extract',
+    'Claim form duly signed and stamped',
+    'Repair invoices with payment proof',
+    'Salvage offer (if any)',
+  ],
+  'Accidental / Vehicle Hit': [
+    'Police FIR / intimation',
+    'Incident photographs as on date of loss',
+    'Repair quotation and invoices with payment proof',
+    'Claim form and claim bill',
+    'Reinstatement work photos',
+  ],
+  'AOG / Storm': [
+    'Meteorological / IMD report',
+    'Incident photographs / videography',
+    'Claim form duly signed and stamped',
+    'Repair invoices with payment proof',
+    'O&M concession agreement copy',
+  ],
+};
+
+function parsePendingDocuments(raw: string | null | undefined): string[] {
+  if (!raw) return [];
+  const text = raw.replace(/\s+/g, ' ').trim();
+  if (!text) return [];
+
+  if (/\d+\.\s/.test(text)) {
+    return text
+      .split(/\s*(?:\d+\.\s+)/)
+      .map((item) => item.trim().replace(/[.;]+$/, ''))
+      .filter((item) => item.length > 2);
+  }
+
+  if (text.includes('•')) {
+    return text
+      .split('•')
+      .map((item) => item.trim().replace(/[.;]+$/, ''))
+      .filter((item) => item.length > 2);
+  }
+
+  return [text];
+}
+
+function getPendingDocuments(claim: RealClaim): string[] {
+  const parsed = parsePendingDocuments(claim.documentsPending);
+  if (parsed.length > 0) return parsed;
+  return DEFAULT_PENDING_DOCS[claim.natureOfLoss] ?? [
+    'Claim form duly filled and signed',
+    'Claim bill on insured letterhead',
+    'Repair / reinstatement invoices with payment proof',
+    'Incident photographs',
+    'KYC documents (PAN, GST, cancelled cheque)',
+  ];
+}
+
 export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
   setActiveScreen,
   initialSearchQuery = '',
@@ -73,6 +142,9 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
   const [natureFilter, setNatureFilter] = useState<string>('All');
   const [sortBy, setSortBy] = useState<'id' | 'claimAmt' | 'netSettled' | 'tat' | 'status'>('id');
   const [currentPage, setCurrentPage] = useState(1);
+  const [openDocsClaimId, setOpenDocsClaimId] = useState<string | null>(null);
+  const [dropdownPos, setDropdownPos] = useState<{ top: number; left: number } | null>(null);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const filtered = useMemo(() => {
     return REAL_CLAIMS.filter((c: RealClaim) => {
@@ -118,6 +190,33 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
   }, [filtered]);
 
   const hasActiveFilters = brokerFilter !== 'All' || entityFilter !== 'All' || statusFilter !== 'All' || assetFilter !== 'All' || natureFilter !== 'All' || search !== '';
+
+  useEffect(() => {
+    setOpenDocsClaimId(null);
+    setDropdownPos(null);
+  }, [currentPage, search, brokerFilter, entityFilter, statusFilter, assetFilter, natureFilter, sortBy]);
+
+  useEffect(() => {
+    if (!openDocsClaimId) return;
+
+    const close = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpenDocsClaimId(null);
+        setDropdownPos(null);
+      }
+    };
+    const closeOnScroll = () => {
+      setOpenDocsClaimId(null);
+      setDropdownPos(null);
+    };
+
+    document.addEventListener('click', close);
+    window.addEventListener('scroll', closeOnScroll, true);
+    return () => {
+      document.removeEventListener('click', close);
+      window.removeEventListener('scroll', closeOnScroll, true);
+    };
+  }, [openDocsClaimId]);
 
   const clearFilters = () => {
     setBrokerFilter('All');
@@ -308,9 +407,32 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
                       )}
                     </td>
                     <td className="px-4 py-3">
-                      <span className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-semibold border ${STATUS_COLORS[claim.status] ?? 'bg-slate-700 text-slate-400 border-slate-600'}`}>
-                        {claim.status.replace('Open - ', '').replace('Closed - ', 'Closed·')}
-                      </span>
+                      {claim.status === 'Open - Documents Pending' ? (
+                        <button
+                          type="button"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            if (openDocsClaimId === claim.id) {
+                              setOpenDocsClaimId(null);
+                              setDropdownPos(null);
+                              return;
+                            }
+                            const rect = event.currentTarget.getBoundingClientRect();
+                            const width = 340;
+                            const left = Math.min(rect.left, window.innerWidth - width - 16);
+                            setDropdownPos({ top: rect.bottom + 8, left: Math.max(12, left) });
+                            setOpenDocsClaimId(claim.id);
+                          }}
+                          className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold border cursor-pointer hover:ring-2 hover:ring-amber-400/40 transition-all ${STATUS_COLORS[claim.status]}`}
+                        >
+                          {claim.status.replace('Open - ', '')}
+                          <ChevronDown className={`w-3 h-3 transition-transform ${openDocsClaimId === claim.id ? 'rotate-180' : ''}`} />
+                        </button>
+                      ) : (
+                        <span className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-semibold border ${STATUS_COLORS[claim.status] ?? 'bg-slate-700 text-slate-400 border-slate-600'}`}>
+                          {claim.status.replace('Open - ', '').replace('Closed - ', 'Closed·')}
+                        </span>
+                      )}
                     </td>
                     <td className="px-4 py-3">
                       <span className="text-[11px] text-slate-400 truncate max-w-[140px] block">{claim.surveyor ?? '-'}</span>
@@ -398,6 +520,43 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
           Show All
         </button>
       </div>
+
+      {openDocsClaimId && dropdownPos && (() => {
+        const openClaim = paginated.find((c) => c.id === openDocsClaimId);
+        if (!openClaim) return null;
+        const docs = getPendingDocuments(openClaim);
+        return (
+          <div
+            ref={dropdownRef}
+            style={{ top: dropdownPos.top, left: dropdownPos.left }}
+            className="fixed z-50 w-[340px] max-h-80 overflow-y-auto rounded-xl border border-amber-500/30 bg-slate-900 shadow-2xl shadow-black/50"
+          >
+            <div className="sticky top-0 flex items-start justify-between gap-3 border-b border-slate-800 bg-slate-900 px-3 py-2.5">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-wider text-amber-400">Pending documents</p>
+                <p className="text-xs font-semibold text-white">{openClaim.id}</p>
+                <p className="text-[11px] text-slate-500">{docs.length} item{docs.length === 1 ? '' : 's'} outstanding</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => { setOpenDocsClaimId(null); setDropdownPos(null); }}
+                className="rounded-md p-1 text-slate-400 hover:bg-slate-800 hover:text-white"
+                aria-label="Close pending documents"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
+            <ul className="divide-y divide-slate-800/70 p-1">
+              {docs.map((doc, index) => (
+                <li key={`${openClaim.id}-doc-${index}`} className="flex items-start gap-2 px-2.5 py-2">
+                  <FileText className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-400" />
+                  <span className="text-[11px] leading-relaxed text-slate-200">{doc}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })()}
     </div>
   );
 };

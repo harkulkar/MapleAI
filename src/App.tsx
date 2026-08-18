@@ -11,8 +11,6 @@ import { IncidentReportingScreen } from './components/screens/IncidentReportingS
 import { ClaimDetailsScreen } from './components/screens/ClaimDetailsScreen';
 import { AIClaimAdvisorScreen } from './components/screens/AIClaimAdvisorScreen';
 import { KnowledgeRepositoryScreen } from './components/screens/KnowledgeRepositoryScreen';
-import { SurveyorPortalScreen } from './components/screens/SurveyorPortalScreen';
-import { DocumentChecklistScreen } from './components/screens/DocumentChecklistScreen';
 import { ReminderEngineScreen } from './components/screens/ReminderEngineScreen';
 import { MLPredictiveScreen } from './components/screens/MLPredictiveScreen';
 import { AICopilotScreen } from './components/screens/AICopilotScreen';
@@ -99,18 +97,6 @@ export function App() {
 
           {activeScreen === 'knowledge-repo' && (
             <KnowledgeRepositoryScreen 
-              setActiveScreen={setActiveScreen}
-            />
-          )}
-
-          {activeScreen === 'surveyor-portal' && (
-            <SurveyorPortalScreen 
-              setActiveScreen={setActiveScreen}
-            />
-          )}
-
-          {activeScreen === 'document-checklist' && (
-            <DocumentChecklistScreen 
               setActiveScreen={setActiveScreen}
             />
           )}
