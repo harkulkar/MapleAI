@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { Search, Bell, Sparkles, Building2, UserCheck } from 'lucide-react';
 import type { ScreenId } from './Sidebar';
+import type { UserRole } from '../../types/portal';
 
 interface HeaderProps {
   setActiveScreen: (screen: ScreenId) => void;
   onSearchQuery?: (query: string) => void;
+  role: UserRole;
 }
 
-export const Header: React.FC<HeaderProps> = ({ setActiveScreen, onSearchQuery }) => {
+export const Header: React.FC<HeaderProps> = ({ setActiveScreen, onSearchQuery, role }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const isSurveyor = role === 'surveyor';
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,23 +37,26 @@ export const Header: React.FC<HeaderProps> = ({ setActiveScreen, onSearchQuery }
 
       {/* Right Header Actions */}
       <div className="flex items-center gap-4">
-        {/* Quick Launch Hero Buttons */}
-        <button
-          onClick={() => setActiveScreen('incident-reporting')}
-          className="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold flex items-center gap-2 shadow-sm transition-all"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-          <span>Report Incident</span>
-        </button>
+        {!isSurveyor && (
+          <>
+            <button
+              onClick={() => setActiveScreen('incident-reporting')}
+              className="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold flex items-center gap-2 shadow-sm transition-all"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+              <span>Report Incident</span>
+            </button>
 
-        <button
-          onClick={() => setActiveScreen('copilot')}
-          className="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700/80 flex items-center gap-2 transition-all"
-        >
-          <span>Ask AI Copilot</span>
-        </button>
+            <button
+              onClick={() => setActiveScreen('copilot')}
+              className="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-medium border border-slate-700/80 flex items-center gap-2 transition-all"
+            >
+              <span>Ask AI Copilot</span>
+            </button>
 
-        <div className="h-5 w-[1px] bg-slate-800 mx-1" />
+            <div className="h-5 w-[1px] bg-slate-800 mx-1" />
+          </>
+        )}
 
         {/* Notifications */}
         <button className="relative p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-900 transition-colors">
@@ -70,7 +76,9 @@ export const Header: React.FC<HeaderProps> = ({ setActiveScreen, onSearchQuery }
               <UserCheck className="w-4 h-4" />
             </div>
             <div className="text-left hidden md:block">
-              <div className="text-xs font-semibold text-white">Claims Manager</div>
+              <div className="text-xs font-semibold text-white">
+                {isSurveyor ? 'Surveyor' : 'Claims Manager'}
+              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { Claim } from './types/claims';
+import type { UserRole } from './types/portal';
 import { MOCK_CLAIMS } from './data/mockClaims';
 import { Sidebar } from './components/layout/Sidebar';
 import type { ScreenId } from './components/layout/Sidebar';
@@ -15,17 +16,34 @@ import { ReminderEngineScreen } from './components/screens/ReminderEngineScreen'
 import { MLPredictiveScreen } from './components/screens/MLPredictiveScreen';
 import { AICopilotScreen } from './components/screens/AICopilotScreen';
 
+const SURVEYOR_SCREENS: ScreenId[] = ['claims', 'claim-details', 'knowledge-repo'];
+
+function isScreenAllowed(role: UserRole, screen: ScreenId) {
+  if (screen === 'login') return true;
+  if (role === 'surveyor') return SURVEYOR_SCREENS.includes(screen);
+  return true;
+}
+
 export function App() {
   const [activeScreen, setActiveScreen] = useState<ScreenId>('login');
+  const [role, setRole] = useState<UserRole>('claims-manager');
   const [claims, setClaims] = useState<Claim[]>(MOCK_CLAIMS);
   const [selectedClaimId, setSelectedClaimId] = useState<string>('ALL-812189');
   const [globalSearchQuery, setGlobalSearchQuery] = useState<string>('');
 
   const selectedClaim = claims.find(c => c.id === selectedClaimId) || claims[0];
 
+  const goToScreen = (screen: ScreenId) => {
+    if (screen === 'login' || isScreenAllowed(role, screen)) {
+      setActiveScreen(screen);
+      return;
+    }
+    setActiveScreen('claims');
+  };
+
   const handleSelectClaim = (id: string) => {
     setSelectedClaimId(id);
-    setActiveScreen('claim-details');
+    goToScreen('claim-details');
   };
 
   const handleClaimCreated = (newClaim: Claim) => {
@@ -40,19 +58,27 @@ export function App() {
   };
 
   if (activeScreen === 'login') {
-    return <LoginScreen onLogin={() => setActiveScreen('dashboard')} />;
+    return (
+      <LoginScreen
+        onLogin={(nextRole) => {
+          setRole(nextRole);
+          setActiveScreen(nextRole === 'surveyor' ? 'claims' : 'dashboard');
+        }}
+      />
+    );
   }
 
   return (
     <div className="flex h-screen bg-slate-950 text-slate-100 font-sans antialiased overflow-hidden">
       {/* Sidebar */}
-      <Sidebar activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
+      <Sidebar activeScreen={activeScreen} setActiveScreen={goToScreen} role={role} />
 
       {/* Main Content Workspace */}
       <div className="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto">
         <Header 
-          setActiveScreen={setActiveScreen} 
+          setActiveScreen={goToScreen}
           onSearchQuery={(query) => setGlobalSearchQuery(query)}
+          role={role}
         />
 
         <main className="flex-1 pb-12">
@@ -60,7 +86,7 @@ export function App() {
             <DashboardScreen 
               claims={claims} 
               onSelectClaim={handleSelectClaim} 
-              setActiveScreen={setActiveScreen} 
+              setActiveScreen={goToScreen} 
             />
           )}
 
@@ -68,48 +94,51 @@ export function App() {
             <ClaimsListScreen 
               claims={claims} 
               onSelectClaim={handleSelectClaim} 
-              setActiveScreen={setActiveScreen}
+              setActiveScreen={goToScreen}
               initialSearchQuery={globalSearchQuery}
+              role={role}
             />
           )}
 
           {activeScreen === 'incident-reporting' && (
             <IncidentReportingScreen 
               onClaimCreated={handleClaimCreated}
-              setActiveScreen={setActiveScreen}
+              setActiveScreen={goToScreen}
             />
           )}
 
           {activeScreen === 'claim-details' && (
             <ClaimDetailsScreen 
               claim={selectedClaim} 
-              onBack={() => setActiveScreen('claims')} 
-              setActiveScreen={setActiveScreen}
+              onBack={() => goToScreen('claims')} 
+              setActiveScreen={goToScreen}
+              role={role}
             />
           )}
 
           {activeScreen === 'ai-advisor' && (
             <AIClaimAdvisorScreen 
               claim={selectedClaim} 
-              setActiveScreen={setActiveScreen}
+              setActiveScreen={goToScreen}
             />
           )}
 
           {activeScreen === 'knowledge-repo' && (
             <KnowledgeRepositoryScreen 
-              setActiveScreen={setActiveScreen}
+              setActiveScreen={goToScreen}
+              role={role}
             />
           )}
 
           {activeScreen === 'reminder-engine' && (
             <ReminderEngineScreen 
-              setActiveScreen={setActiveScreen}
+              setActiveScreen={goToScreen}
             />
           )}
 
           {activeScreen === 'ml-predictive' && (
             <MLPredictiveScreen 
-              setActiveScreen={setActiveScreen}
+              setActiveScreen={goToScreen}
             />
           )}
 
@@ -117,7 +146,7 @@ export function App() {
             <AICopilotScreen 
               claims={claims}
               onSelectClaim={handleSelectClaim}
-              setActiveScreen={setActiveScreen}
+              setActiveScreen={goToScreen}
             />
           )}
         </main>

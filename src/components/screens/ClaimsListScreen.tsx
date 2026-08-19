@@ -13,6 +13,7 @@ import {
   FileWarning,
   FileText,
   X,
+  Upload,
 } from 'lucide-react';
 import {
   REAL_CLAIMS,
@@ -24,12 +25,14 @@ import {
 } from '../../data/realClaims';
 import type { RealClaim, RealClaimStatus, RealBroker, RealEntity } from '../../data/realClaims';
 import type { ScreenId } from '../layout/Sidebar';
+import type { UserRole } from '../../types/portal';
 
 interface ClaimsListScreenProps {
   claims: unknown[];
   onSelectClaim: (claimId: string) => void;
   setActiveScreen: (screen: ScreenId) => void;
   initialSearchQuery?: string;
+  role?: UserRole;
 }
 
 const STATUS_COLORS: Record<string, string> = {
@@ -118,6 +121,18 @@ function parsePendingDocuments(raw: string | null | undefined): string[] {
   return [text];
 }
 
+type ClaimUpload = {
+  id: string;
+  name: string;
+  size: number;
+};
+
+function formatFileSize(bytes: number) {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
 function getPendingDocuments(claim: RealClaim): string[] {
   const parsed = parsePendingDocuments(claim.documentsPending);
   if (parsed.length > 0) return parsed;
@@ -133,6 +148,7 @@ function getPendingDocuments(claim: RealClaim): string[] {
 export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
   setActiveScreen,
   initialSearchQuery = '',
+  role = 'claims-manager',
 }) => {
   const [search, setSearch] = useState(initialSearchQuery);
   const [brokerFilter, setBrokerFilter] = useState<string>('All');
@@ -145,6 +161,12 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
   const [openDocsClaimId, setOpenDocsClaimId] = useState<string | null>(null);
   const [dropdownPos, setDropdownPos] = useState<{ top: number; left: number } | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const [uploadsByClaim, setUploadsByClaim] = useState<Record<string, ClaimUpload[]>>({});
+  const [openUploadClaimId, setOpenUploadClaimId] = useState<string | null>(null);
+  const [uploadPos, setUploadPos] = useState<{ top: number; left: number } | null>(null);
+  const uploadPanelRef = useRef<HTMLDivElement | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const uploadTargetClaimId = useRef<string | null>(null);
 
   const filtered = useMemo(() => {
     return REAL_CLAIMS.filter((c: RealClaim) => {
@@ -194,20 +216,27 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
   useEffect(() => {
     setOpenDocsClaimId(null);
     setDropdownPos(null);
+    setOpenUploadClaimId(null);
+    setUploadPos(null);
   }, [currentPage, search, brokerFilter, entityFilter, statusFilter, assetFilter, natureFilter, sortBy]);
 
   useEffect(() => {
-    if (!openDocsClaimId) return;
+    if (!openDocsClaimId && !openUploadClaimId) return;
 
     const close = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setOpenDocsClaimId(null);
-        setDropdownPos(null);
-      }
+      const target = event.target as Node;
+      if (dropdownRef.current && dropdownRef.current.contains(target)) return;
+      if (uploadPanelRef.current && uploadPanelRef.current.contains(target)) return;
+      setOpenDocsClaimId(null);
+      setDropdownPos(null);
+      setOpenUploadClaimId(null);
+      setUploadPos(null);
     };
     const closeOnScroll = () => {
       setOpenDocsClaimId(null);
       setDropdownPos(null);
+      setOpenUploadClaimId(null);
+      setUploadPos(null);
     };
 
     document.addEventListener('click', close);
@@ -216,7 +245,7 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
       document.removeEventListener('click', close);
       window.removeEventListener('scroll', closeOnScroll, true);
     };
-  }, [openDocsClaimId]);
+  }, [openDocsClaimId, openUploadClaimId]);
 
   const clearFilters = () => {
     setBrokerFilter('All');
@@ -226,6 +255,53 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
     setNatureFilter('All');
     setSearch('');
     setCurrentPage(1);
+  };
+
+  const openUploadPanel = (claimId: string, event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    setOpenDocsClaimId(null);
+    setDropdownPos(null);
+    if (openUploadClaimId === claimId) {
+      setOpenUploadClaimId(null);
+      setUploadPos(null);
+      return;
+    }
+    const rect = event.currentTarget.getBoundingClientRect();
+    const width = 340;
+    const left = Math.min(rect.left, window.innerWidth - width - 16);
+    setUploadPos({ top: rect.bottom + 8, left: Math.max(12, left) });
+    setOpenUploadClaimId(claimId);
+  };
+
+  const handleFilesSelected = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const claimId = uploadTargetClaimId.current;
+    const files = event.target.files;
+    if (!claimId || !files?.length) return;
+
+    const nextFiles: ClaimUpload[] = Array.from(files).map((file) => ({
+      id: `${claimId}-${file.name}-${file.size}-${file.lastModified}`,
+      name: file.name,
+      size: file.size,
+    }));
+
+    setUploadsByClaim((prev) => {
+      const existing = prev[claimId] ?? [];
+      const merged = [...existing];
+      for (const file of nextFiles) {
+        if (!merged.some((item) => item.name === file.name && item.size === file.size)) {
+          merged.push(file);
+        }
+      }
+      return { ...prev, [claimId]: merged };
+    });
+    event.target.value = '';
+  };
+
+  const removeUploadedFile = (claimId: string, fileId: string) => {
+    setUploadsByClaim((prev) => ({
+      ...prev,
+      [claimId]: (prev[claimId] ?? []).filter((file) => file.id !== fileId),
+    }));
   };
 
   return (
@@ -242,13 +318,15 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
             581 claims · Alliance / Gallagher / Marsh / WTW · NCR-EPE & SJEPL
           </p>
         </div>
-        <button
-          onClick={() => setActiveScreen('incident-reporting')}
-          className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-xl transition-colors self-start md:self-auto"
-        >
-          <Sparkles className="w-4 h-4 text-amber-300" />
-          Report New Incident
-        </button>
+        {role !== 'surveyor' && (
+          <button
+            onClick={() => setActiveScreen('incident-reporting')}
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-xl transition-colors self-start md:self-auto"
+          >
+            <Sparkles className="w-4 h-4 text-amber-300" />
+            Report New Incident
+          </button>
+        )}
       </div>
 
       {/* Live Summary Strip */}
@@ -357,13 +435,14 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
                 <th className="px-4 py-3 text-right">Net Settled</th>
                 <th className="px-4 py-3 text-center">TAT</th>
                 <th className="px-4 py-3">Status</th>
+                <th className="px-4 py-3">Upload Document</th>
                 <th className="px-4 py-3">Surveyor</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800/50">
               {paginated.length === 0 ? (
                 <tr>
-                  <td colSpan={10} className="px-4 py-16 text-center">
+                  <td colSpan={11} className="px-4 py-16 text-center">
                     <FileWarning className="w-8 h-8 text-slate-600 mx-auto mb-2" />
                     <p className="text-slate-500 text-sm">No claims match your filters. Try adjusting the search.</p>
                   </td>
@@ -433,6 +512,25 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
                           {claim.status.replace('Open - ', '').replace('Closed - ', 'Closed·')}
                         </span>
                       )}
+                    </td>
+                    <td className="px-4 py-3">
+                      {(() => {
+                        const count = uploadsByClaim[claim.id]?.length ?? 0;
+                        return (
+                          <button
+                            type="button"
+                            onClick={(event) => openUploadPanel(claim.id, event)}
+                            className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-lg text-[11px] font-semibold border transition-all ${
+                              count > 0
+                                ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300 hover:border-emerald-400/50'
+                                : 'border-slate-700 bg-slate-950 text-slate-300 hover:border-blue-500/50 hover:text-white'
+                            }`}
+                          >
+                            <Upload className={`w-3.5 h-3.5 ${count > 0 ? 'text-emerald-400' : 'text-blue-400'}`} />
+                            {count > 0 ? `${count} file${count === 1 ? '' : 's'}` : 'Upload'}
+                          </button>
+                        );
+                      })()}
                     </td>
                     <td className="px-4 py-3">
                       <span className="text-[11px] text-slate-400 truncate max-w-[140px] block">{claim.surveyor ?? '-'}</span>
@@ -557,6 +655,82 @@ export const ClaimsListScreen: React.FC<ClaimsListScreenProps> = ({
           </div>
         );
       })()}
+
+      {openUploadClaimId && uploadPos && (() => {
+        const openClaim = paginated.find((c) => c.id === openUploadClaimId);
+        if (!openClaim) return null;
+        const files = uploadsByClaim[openClaim.id] ?? [];
+        return (
+          <div
+            ref={uploadPanelRef}
+            style={{ top: uploadPos.top, left: uploadPos.left }}
+            className="fixed z-50 w-[340px] max-h-80 overflow-y-auto rounded-xl border border-blue-500/30 bg-slate-900 shadow-2xl shadow-black/50"
+          >
+            <div className="sticky top-0 flex items-start justify-between gap-3 border-b border-slate-800 bg-slate-900 px-3 py-2.5">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-wider text-blue-400">Upload document</p>
+                <p className="text-xs font-semibold text-white">{openClaim.id}</p>
+                <p className="text-[11px] text-slate-500">
+                  {files.length} file{files.length === 1 ? '' : 's'} attached
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => { setOpenUploadClaimId(null); setUploadPos(null); }}
+                className="rounded-md p-1 text-slate-400 hover:bg-slate-800 hover:text-white"
+                aria-label="Close upload documents"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
+            <div className="p-3 space-y-3">
+              <button
+                type="button"
+                onClick={() => {
+                  uploadTargetClaimId.current = openClaim.id;
+                  fileInputRef.current?.click();
+                }}
+                className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold"
+              >
+                <Upload className="w-3.5 h-3.5" />
+                Choose files
+              </button>
+              {files.length === 0 ? (
+                <p className="text-[11px] text-slate-500 text-center py-2">No documents uploaded yet.</p>
+              ) : (
+                <ul className="divide-y divide-slate-800/70 rounded-lg border border-slate-800 overflow-hidden">
+                  {files.map((file) => (
+                    <li key={file.id} className="flex items-start gap-2 px-2.5 py-2 bg-slate-950/60">
+                      <FileText className="mt-0.5 h-3.5 w-3.5 shrink-0 text-blue-400" />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[11px] leading-relaxed text-slate-200 truncate">{file.name}</p>
+                        <p className="text-[10px] text-slate-500">{formatFileSize(file.size)}</p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => removeUploadedFile(openClaim.id, file.id)}
+                        className="rounded p-0.5 text-slate-500 hover:text-red-300 hover:bg-slate-800"
+                        aria-label={`Remove ${file.name}`}
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        );
+      })()}
+
+      <input
+        ref={fileInputRef}
+        type="file"
+        multiple
+        className="hidden"
+        accept=".pdf,.png,.jpg,.jpeg,.webp,.doc,.docx,.xls,.xlsx,.csv"
+        onChange={handleFilesSelected}
+      />
     </div>
   );
 };

@@ -21,9 +21,11 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import type { ScreenId } from '../layout/Sidebar';
+import type { UserRole } from '../../types/portal';
 
 interface KnowledgeRepositoryScreenProps {
   setActiveScreen: (screen: ScreenId) => void;
+  role?: UserRole;
 }
 
 type BlobFile = {
@@ -124,12 +126,13 @@ async function downloadKnowledgeFile(doc: { pathname: string; url: string; title
   URL.revokeObjectURL(href);
 }
 
-export const KnowledgeRepositoryScreen: React.FC<KnowledgeRepositoryScreenProps> = ({ setActiveScreen }) => {
+export const KnowledgeRepositoryScreen: React.FC<KnowledgeRepositoryScreenProps> = ({ setActiveScreen, role = 'claims-manager' }) => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [previewDoc, setPreviewDoc] = useState<KnowledgeDoc | null>(null);
   const [docs, setDocs] = useState<KnowledgeDoc[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
   const [downloadError, setDownloadError] = useState('');
 
   useEffect(() => {
@@ -218,13 +221,15 @@ export const KnowledgeRepositoryScreen: React.FC<KnowledgeRepositoryScreenProps>
           <p className="text-sm text-slate-400">Documents loaded from your Vercel Blob store.</p>
         </div>
 
-        <button
-          onClick={() => setActiveScreen('copilot')}
-          className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white text-xs font-bold rounded-lg shadow-md shadow-blue-900/30 flex items-center gap-2 transition-all"
-        >
-          <Sparkles className="w-4 h-4 text-amber-300" />
-          <span>Query Repository via AI Copilot</span>
-        </button>
+        {role !== 'surveyor' && (
+          <button
+            onClick={() => setActiveScreen('copilot')}
+            className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white text-xs font-bold rounded-lg shadow-md shadow-blue-900/30 flex items-center gap-2 transition-all"
+          >
+            <Sparkles className="w-4 h-4 text-amber-300" />
+            <span>Query Repository via AI Copilot</span>
+          </button>
+        )}
       </div>
 
       <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-xl space-y-3">

@@ -18,17 +18,20 @@ import {
 } from 'lucide-react';
 import type { Claim } from '../../types/claims';
 import type { ScreenId } from '../layout/Sidebar';
+import type { UserRole } from '../../types/portal';
 
 interface ClaimDetailsScreenProps {
   claim: Claim;
   onBack: () => void;
   setActiveScreen: (screen: ScreenId) => void;
+  role?: UserRole;
 }
 
 export const ClaimDetailsScreen: React.FC<ClaimDetailsScreenProps> = ({ 
   claim, 
   onBack, 
-  setActiveScreen 
+  setActiveScreen,
+  role = 'claims-manager',
 }) => {
   const [activeTab, setActiveTab] = useState<'overview' | 'ai-assessment' | 'documents' | 'timeline'>('overview');
   const [showUploadModal, setShowUploadModal] = useState(false);
@@ -70,22 +73,24 @@ export const ClaimDetailsScreen: React.FC<ClaimDetailsScreenProps> = ({
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => setActiveScreen('ai-advisor')}
-            className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white text-xs font-bold rounded-lg shadow-md shadow-blue-900/30 flex items-center gap-2 transition-all"
-          >
-            <Bot className="w-4 h-4 text-amber-300" />
-            <span>Open AI Claim Advisor</span>
-          </button>
+        {role !== 'surveyor' && (
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setActiveScreen('ai-advisor')}
+              className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white text-xs font-bold rounded-lg shadow-md shadow-blue-900/30 flex items-center gap-2 transition-all"
+            >
+              <Bot className="w-4 h-4 text-amber-300" />
+              <span>Open AI Claim Advisor</span>
+            </button>
 
-          <button
-            onClick={() => setActiveScreen('copilot')}
-            className="px-3.5 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-medium rounded-lg transition-all"
-          >
-            Ask Copilot
-          </button>
-        </div>
+            <button
+              onClick={() => setActiveScreen('copilot')}
+              className="px-3.5 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-medium rounded-lg transition-all"
+            >
+              Ask Copilot
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Highlights Metrics Grid */}
@@ -210,12 +215,14 @@ export const ClaimDetailsScreen: React.FC<ClaimDetailsScreenProps> = ({
               <p className="text-xs text-slate-300 leading-relaxed font-medium bg-slate-950 p-3 rounded-lg border border-slate-800">
                 "{claim.aiAssessment.recommendation}"
               </p>
-              <button
-                onClick={() => setActiveScreen('ai-advisor')}
-                className="w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-lg transition-colors flex items-center justify-center gap-1.5"
-              >
-                <span>Launch AI Claim Advisor</span>
-              </button>
+              {role !== 'surveyor' && (
+                <button
+                  onClick={() => setActiveScreen('ai-advisor')}
+                  className="w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-lg transition-colors flex items-center justify-center gap-1.5"
+                >
+                  <span>Launch AI Claim Advisor</span>
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -286,12 +293,14 @@ export const ClaimDetailsScreen: React.FC<ClaimDetailsScreenProps> = ({
                 <Upload className="w-3.5 h-3.5" />
                 <span>Upload Document</span>
               </button>
-              <button
-                onClick={() => setActiveScreen('ai-advisor')}
-                className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 text-xs font-semibold rounded-lg"
-              >
-                Request Document
-              </button>
+              {role !== 'surveyor' && (
+                <button
+                  onClick={() => setActiveScreen('ai-advisor')}
+                  className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 text-xs font-semibold rounded-lg"
+                >
+                  Request Document
+                </button>
+              )}
             </div>
           </div>
 
