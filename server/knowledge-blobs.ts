@@ -8,14 +8,20 @@ export type KnowledgeBlobFile = {
   uploadedAt: string
 }
 
-export async function listKnowledgeBlobs(token: string, storeId?: string): Promise<KnowledgeBlobFile[]> {
+function blobAuth(token?: string, storeId?: string) {
+  const options: { token?: string; storeId?: string } = {}
+  if (token) options.token = token
+  if (storeId) options.storeId = storeId
+  return options
+}
+
+export async function listKnowledgeBlobs(token?: string, storeId?: string): Promise<KnowledgeBlobFile[]> {
   const files: KnowledgeBlobFile[] = []
   let cursor: string | undefined
 
   do {
     const result = await list({
-      token,
-      storeId,
+      ...blobAuth(token, storeId),
       cursor,
       limit: 1000,
     })
@@ -47,11 +53,10 @@ export function isAllowedBlobRef(ref: string): boolean {
   return true
 }
 
-export async function fetchKnowledgeBlob(ref: string, token: string, storeId?: string) {
+export async function fetchKnowledgeBlob(ref: string, token?: string, storeId?: string) {
   const result = await get(ref, {
     access: 'private',
-    token,
-    storeId,
+    ...blobAuth(token, storeId),
   })
   if (!result || result.statusCode !== 200 || !result.stream) {
     return null
