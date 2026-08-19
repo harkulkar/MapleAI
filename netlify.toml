@@ -7,6 +7,24 @@
   directory = "netlify/functions"
 
 [[redirects]]
+  from = "/api/knowledge-file"
+  to = "/.netlify/functions/knowledge-file"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/knowledge-docs"
+  to = "/.netlify/functions/knowledge-docs"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/submit-claim"
+  to = "/.netlify/functions/submit-claim"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200

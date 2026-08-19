@@ -88,10 +88,40 @@ function isPdf(pathname: string) {
   return /\.pdf$/i.test(pathname);
 }
 
-function fileApiUrl(pathname: string, download = false) {
-  const params = new URLSearchParams({ pathname });
+function encodeBlobParam(value: string) {
+  const bytes = new TextEncoder().encode(value);
+  let bin = '';
+  bytes.forEach((byte) => { bin += String.fromCharCode(byte); });
+  return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+function fileApiUrl(doc: { pathname: string; url: string }, download = false) {
+  const params = new URLSearchParams({
+    p: encodeBlobParam(doc.pathname),
+  });
   if (download) params.set('download', '1');
   return `/api/knowledge-file?${params.toString()}`;
+}
+
+async function downloadKnowledgeFile(doc: { pathname: string; url: string; title: string }) {
+  const response = await fetch('/api/knowledge-file', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ pathname: doc.pathname, url: doc.url, download: true }),
+  });
+  if (!response.ok) {
+    const data = await response.json().catch(() => ({ error: 'Download failed' }));
+    throw new Error(data.error || 'Download failed');
+  }
+  const blob = await response.blob();
+  const href = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = href;
+  link.download = doc.title;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(href);
 }
 
 export const KnowledgeRepositoryScreen: React.FC<KnowledgeRepositoryScreenProps> = ({ setActiveScreen }) => {
@@ -100,7 +130,7 @@ export const KnowledgeRepositoryScreen: React.FC<KnowledgeRepositoryScreenProps>
   const [previewDoc, setPreviewDoc] = useState<KnowledgeDoc | null>(null);
   const [docs, setDocs] = useState<KnowledgeDoc[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [downloadError, setDownloadError] = useState('');
 
   useEffect(() => {
     let cancelled = false;
@@ -261,6 +291,9 @@ export const KnowledgeRepositoryScreen: React.FC<KnowledgeRepositoryScreenProps>
             <span>Live from Vercel Blob</span>
           </span>
         </div>
+        {downloadError && (
+          <div className="px-5 py-2 text-xs text-red-300 bg-red-500/10 border-b border-red-500/20">{downloadError}</div>
+        )}
 
         <div className="overflow-x-auto">
           {loading ? (
@@ -311,13 +344,21 @@ export const KnowledgeRepositoryScreen: React.FC<KnowledgeRepositoryScreenProps>
                         >
                           <Eye className="w-3.5 h-3.5" />
                         </button>
-                        <a
-                          href={fileApiUrl(doc.pathname, true)}
+                        <button
+                          type="button"
+                          onClick={async () => {
+                            try {
+                              setDownloadError('');
+                              await downloadKnowledgeFile(doc);
+                            } catch (err) {
+                              setDownloadError(err instanceof Error ? err.message : 'Download failed');
+                            }
+                          }}
                           className="p-1.5 rounded bg-slate-950 hover:bg-slate-800 text-blue-400 border border-slate-800"
                           title="Download Document"
                         >
                           <Download className="w-3.5 h-3.5" />
-                        </a>
+                        </button>
                       </div>
                     </td>
                   </tr>
@@ -338,7 +379,7 @@ export const KnowledgeRepositoryScreen: React.FC<KnowledgeRepositoryScreenProps>
               </div>
               <div className="flex items-center gap-2">
                 <a
-                  href={fileApiUrl(previewDoc.pathname, true)}
+                  href={fileApiUrl(previewDoc, true)}
                   className="text-xs text-blue-300 hover:text-white px-2 py-1 bg-slate-800 rounded inline-flex items-center gap-1"
                 >
                   <ExternalLink className="w-3 h-3" />
@@ -355,19 +396,20 @@ export const KnowledgeRepositoryScreen: React.FC<KnowledgeRepositoryScreenProps>
             <div className="text-[11px] text-slate-500">{previewDoc.sub} · {previewDoc.size} · {previewDoc.date}</div>
             <div className="flex-1 min-h-[360px] bg-slate-950 rounded-lg border border-slate-800 overflow-hidden">
               {isImage(previewDoc.pathname) ? (
-                <img src={fileApiUrl(previewDoc.pathname)} alt={previewDoc.title} className="w-full h-full object-contain" />
+                <img src={fileApiUrl(previewDoc)} alt={previewDoc.title} className="w-full h-full object-contain" />
               ) : isPdf(previewDoc.pathname) ? (
-                <iframe title={previewDoc.title} src={fileApiUrl(previewDoc.pathname)} className="w-full h-[60vh] bg-white" />
+                <iframe title={previewDoc.title} src={fileApiUrl(previewDoc)} className="w-full h-[60vh] bg-white" />
               ) : (
                 <div className="h-full flex flex-col items-center justify-center gap-3 text-slate-400 text-sm p-8 text-center">
                   <FileText className="w-8 h-8 text-slate-600" />
                   <p>Preview is not available for this file type.</p>
-                  <a
-                    href={fileApiUrl(previewDoc.pathname, true)}
+                  <button
+                    type="button"
+                    onClick={() => { void downloadKnowledgeFile(previewDoc); }}
                     className="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-semibold"
                   >
                     Download file
-                  </a>
+                  </button>
                 </div>
               )}
             </div>

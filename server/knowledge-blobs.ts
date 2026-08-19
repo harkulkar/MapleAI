@@ -1,6 +1,4 @@
 import { get, list } from '@vercel/blob'
-import { Readable } from 'node:stream'
-import type { ReadableStream as NodeWebReadableStream } from 'node:stream/web'
 
 export type KnowledgeBlobFile = {
   pathname: string
@@ -59,14 +57,22 @@ export async function fetchKnowledgeBlob(ref: string, token: string, storeId?: s
     return null
   }
   const filename = decodeURIComponent((result.blob.pathname.split('/').pop() || 'download').replace(/\+/g, ' '))
+  const bytes = new Uint8Array(await new Response(result.stream).arrayBuffer())
   return {
-    stream: result.stream,
+    bytes,
     contentType: result.blob.contentType || 'application/octet-stream',
-    size: result.blob.size,
+    size: result.blob.size || bytes.byteLength,
     filename,
   }
 }
 
-export function nodeStreamFromWeb(stream: ReadableStream<Uint8Array>) {
-  return Readable.fromWeb(stream as NodeWebReadableStream)
+export function decodeBlobParam(value: string | null | undefined) {
+  if (!value) return ''
+  try {
+    const padded = value.replace(/-/g, '+').replace(/_/g, '/')
+    const pad = padded.length % 4 === 0 ? '' : '='.repeat(4 - (padded.length % 4))
+    return Buffer.from(padded + pad, 'base64').toString('utf8')
+  } catch {
+    return ''
+  }
 }

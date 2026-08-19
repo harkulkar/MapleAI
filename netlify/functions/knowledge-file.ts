@@ -1,27 +1,47 @@
-import { fetchKnowledgeBlob, isAllowedBlobRef } from '../../server/knowledge-blobs';
+import { fetchKnowledgeBlob, isAllowedBlobRef, decodeBlobParam } from '../../server/knowledge-blobs';
+
+type NetlifyEvent = {
+  httpMethod: string;
+  queryStringParameters?: Record<string, string> | null;
+  body?: string | null;
+  isBase64Encoded?: boolean;
+};
 
 function json(status: number, body: unknown) {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-    },
-  });
+  return {
+    statusCode: status,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  };
 }
 
-export default async (req: Request) => {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, {
-      status: 204,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, OPTIONS',
-      },
-    });
+function parseRequest(event: NetlifyEvent) {
+  let pathname = '';
+  let fileUrl = '';
+  let download = false;
+
+  if (event.httpMethod === 'POST' && event.body) {
+    const raw = event.isBase64Encoded ? Buffer.from(event.body, 'base64').toString('utf8') : event.body;
+    const data = JSON.parse(raw) as { pathname?: string; url?: string; download?: boolean };
+    pathname = data.pathname || '';
+    fileUrl = data.url || '';
+    download = Boolean(data.download);
+  } else {
+    const query = event.queryStringParameters || {};
+    pathname = decodeBlobParam(query.p) || query.pathname || '';
+    fileUrl = query.url || '';
+    download = query.download === '1';
   }
 
-  if (req.method !== 'GET') {
+  return { ref: fileUrl || pathname, download };
+}
+
+export const handler = async (event: NetlifyEvent) => {
+  if (event.httpMethod === 'OPTIONS') {
+    return { statusCode: 204, headers: { 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS' }, body: '' };
+  }
+
+  if (event.httpMethod !== 'GET' && event.httpMethod !== 'POST') {
     return json(405, { error: 'Method not allowed' });
   }
 
@@ -30,9 +50,13 @@ export default async (req: Request) => {
     return json(503, { error: 'BLOB_READ_WRITE_TOKEN is not set' });
   }
 
-  const url = new URL(req.url);
-  const ref = url.searchParams.get('pathname') || url.searchParams.get('url') || '';
-  const download = url.searchParams.get('download') === '1';
+  let ref = '';
+  let download = false;
+  try {
+    ({ ref, download } = parseRequest(event));
+  } catch {
+    return json(400, { error: 'Invalid request body' });
+  }
 
   if (!isAllowedBlobRef(ref)) {
     return json(400, { error: 'Invalid file reference' });
@@ -44,25 +68,19 @@ export default async (req: Request) => {
       return json(404, { error: 'File not found' });
     }
 
-    const disposition = download
-      ? `attachment; filename="${file.filename.replace(/"/g, '')}"`
-      : `inline; filename="${file.filename.replace(/"/g, '')}"`;
-
-    return new Response(file.stream, {
-      status: 200,
+    const safeName = file.filename.replace(/"/g, '');
+    return {
+      statusCode: 200,
+      isBase64Encoded: true,
       headers: {
         'Content-Type': file.contentType,
-        'Content-Length': String(file.size),
-        'Content-Disposition': disposition,
-        'Access-Control-Allow-Origin': '*',
+        'Content-Disposition': `${download ? 'attachment' : 'inline'}; filename="${safeName}"`,
+        'Cache-Control': 'private, max-age=60',
       },
-    });
+      body: Buffer.from(file.bytes).toString('base64'),
+    };
   } catch (error) {
     console.error('Vercel Blob download error:', error);
     return json(500, { error: 'Failed to download file' });
   }
-};
-
-export const config = {
-  path: '/api/knowledge-file',
 };

@@ -8,7 +8,7 @@ import dns from 'node:dns'
 import { Resolver } from 'node:dns/promises'
 import type { IncomingMessage, ServerResponse } from 'http'
 import { MongoClient } from 'mongodb'
-import { listKnowledgeBlobs, fetchKnowledgeBlob, isAllowedBlobRef, nodeStreamFromWeb } from './server/knowledge-blobs.ts'
+import { listKnowledgeBlobs, fetchKnowledgeBlob, isAllowedBlobRef, decodeBlobParam } from './server/knowledge-blobs.ts'
 
 dns.setDefaultResultOrder('ipv4first')
 
@@ -93,7 +93,7 @@ const mapleApiPlugin = (mongoUri: string, blobToken: string, blobStoreId?: strin
         return
       }
 
-      if (pathname === '/api/knowledge-file' && req.method === 'GET') {
+      if (pathname === '/api/knowledge-file' && (req.method === 'GET' || req.method === 'POST')) {
         void (async () => {
           try {
             if (!blobToken) {
@@ -102,9 +102,25 @@ const mapleApiPlugin = (mongoUri: string, blobToken: string, blobStoreId?: strin
               res.end(JSON.stringify({ error: 'BLOB_READ_WRITE_TOKEN is not set' }))
               return
             }
-            const query = new URL(req.url ?? '', 'http://localhost').searchParams
-            const ref = query.get('pathname') || query.get('url') || ''
-            const download = query.get('download') === '1'
+
+            let ref = ''
+            let download = false
+            if (req.method === 'POST') {
+              const raw = await new Promise<string>((resolve, reject) => {
+                let body = ''
+                req.on('data', (chunk: Buffer) => { body += chunk.toString() })
+                req.on('end', () => resolve(body))
+                req.on('error', reject)
+              })
+              const data = JSON.parse(raw || '{}') as { pathname?: string; url?: string; download?: boolean }
+              ref = data.url || data.pathname || ''
+              download = Boolean(data.download)
+            } else {
+              const query = new URL(req.url ?? '', 'http://localhost').searchParams
+              ref = decodeBlobParam(query.get('p')) || query.get('url') || query.get('pathname') || ''
+              download = query.get('download') === '1'
+            }
+
             if (!isAllowedBlobRef(ref)) {
               res.statusCode = 400
               res.setHeader('Content-Type', 'application/json')
@@ -121,12 +137,12 @@ const mapleApiPlugin = (mongoUri: string, blobToken: string, blobStoreId?: strin
             const safeName = file.filename.replace(/"/g, '')
             res.statusCode = 200
             res.setHeader('Content-Type', file.contentType)
-            res.setHeader('Content-Length', String(file.size))
+            res.setHeader('Content-Length', String(file.bytes.byteLength))
             res.setHeader(
               'Content-Disposition',
               `${download ? 'attachment' : 'inline'}; filename="${safeName}"`
             )
-            nodeStreamFromWeb(file.stream).pipe(res)
+            res.end(Buffer.from(file.bytes))
           } catch (err) {
             console.error('[Vercel Blob] Failed to download file:', err)
             if (!res.headersSent) {
