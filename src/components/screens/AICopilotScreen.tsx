@@ -3,13 +3,8 @@ import {
   Bot,
   Send,
   Sparkles,
-  User,
-  FileText,
   AlertTriangle,
-  Mail,
   ChevronRight,
-  ShieldCheck,
-  Building2,
   Copy,
   Check
 } from 'lucide-react';
@@ -32,13 +27,159 @@ const SUGGESTED_PROMPTS = [
   'What documents are pending for Alliance?'
 ];
 
+const STATUS_PILL: Record<string, string> = {
+  'Settled': 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
+  'Open - Documents Pending': 'bg-amber-500/15 text-amber-400 border-amber-500/30',
+  'Open - For Settlement': 'bg-blue-500/15 text-blue-400 border-blue-500/30',
+  'Open - With Insurer': 'bg-sky-500/15 text-sky-400 border-sky-500/30',
+  'Open - Assessment Pending': 'bg-orange-500/15 text-orange-400 border-orange-500/30',
+};
+
+function statusPillClass(status: string) {
+  return STATUS_PILL[status] ?? 'bg-slate-700/40 text-slate-300 border-slate-600/40';
+}
+
+function parsePendingList(raw: string): string[] {
+  const text = raw.replace(/\s+/g, ' ').trim();
+  if (!text) return [];
+  if (/\d+\.\s/.test(text)) {
+    return text.split(/\s*(?:\d+\.\s+)/).map((item) => item.trim().replace(/[.;]+$/, '')).filter((item) => item.length > 2);
+  }
+  if (text.includes('•')) {
+    return text.split('•').map((item) => item.trim()).filter((item) => item.length > 2);
+  }
+  return [text];
+}
+
+function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
+  const nodes: React.ReactNode[] = [];
+  const regex = /(\*\*[^*]+\*\*|`[^`]+`)/g;
+  let last = 0;
+  let match: RegExpExecArray | null;
+  let i = 0;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > last) nodes.push(text.slice(last, match.index));
+    const token = match[0];
+    if (token.startsWith('**')) {
+      nodes.push(<strong key={`${keyPrefix}-b-${i++}`} className="font-semibold text-white">{token.slice(2, -2)}</strong>);
+    } else {
+      nodes.push(<code key={`${keyPrefix}-c-${i++}`} className="rounded bg-slate-800 px-1 py-0.5 font-mono text-[11px] text-amber-300">{token.slice(1, -1)}</code>);
+    }
+    last = match.index + token.length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes;
+}
+
+function CopilotRichText({ text }: { text: string }) {
+  const lines = text.replace(/\r/g, '').split('\n');
+  const blocks: React.ReactNode[] = [];
+  let i = 0;
+  let key = 0;
+
+  while (i < lines.length) {
+    const line = lines[i];
+    if (!line.trim()) {
+      i += 1;
+      continue;
+    }
+
+    if (line.trim().startsWith('|')) {
+      const tableLines: string[] = [];
+      while (i < lines.length && lines[i].trim().startsWith('|')) {
+        tableLines.push(lines[i]);
+        i += 1;
+      }
+      const rows = tableLines
+        .map((row) => row.split('|').slice(1, -1).map((cell) => cell.trim()))
+        .filter((row) => row.length > 0 && !row.every((cell) => /^[-:]+$/.test(cell)));
+      if (rows.length > 0) {
+        const [header, ...body] = rows;
+        blocks.push(
+          <div key={`t-${key++}`} className="overflow-hidden rounded-xl border border-slate-800">
+            <table className="w-full text-left">
+              <thead className="bg-slate-900">
+                <tr>
+                  {header.map((cell, idx) => (
+                    <th key={idx} className="px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">{cell.replace(/\*\*/g, '')}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800">
+                {body.map((row, rIdx) => (
+                  <tr key={rIdx} className="bg-slate-950/60">
+                    {row.map((cell, cIdx) => (
+                      <td key={cIdx} className="px-3 py-2 text-xs text-slate-200">{renderInline(cell, `td-${rIdx}-${cIdx}`)}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+      continue;
+    }
+
+    const heading = line.match(/^(#{1,3})\s+(.*)$/);
+    if (heading) {
+      blocks.push(
+        <p key={`h-${key++}`} className="text-sm font-bold text-white">
+          {renderInline(heading[2], `h-${key}`)}
+        </p>
+      );
+      i += 1;
+      continue;
+    }
+
+    if (line.trim().startsWith('>')) {
+      const quote = line.replace(/^>\s?/, '');
+      blocks.push(
+        <div key={`q-${key++}`} className="rounded-lg border border-amber-500/20 bg-amber-500/10 px-3 py-2 text-xs text-amber-100">
+          {renderInline(quote, `q-${key}`)}
+        </div>
+      );
+      i += 1;
+      continue;
+    }
+
+    if (/^\s*[-•]\s+/.test(line) || /^\s*\d+\.\s+/.test(line)) {
+      const items: string[] = [];
+      while (i < lines.length && (/^\s*[-•]\s+/.test(lines[i]) || /^\s*\d+\.\s+/.test(lines[i]))) {
+        items.push(lines[i].replace(/^\s*[-•]\s+/, '').replace(/^\s*\d+\.\s+/, ''));
+        i += 1;
+      }
+      blocks.push(
+        <ul key={`l-${key++}`} className="space-y-1.5">
+          {items.map((item, idx) => (
+            <li key={idx} className="flex gap-2 text-xs text-slate-200">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
+              <span>{renderInline(item, `li-${idx}`)}</span>
+            </li>
+          ))}
+        </ul>
+      );
+      continue;
+    }
+
+    blocks.push(
+      <p key={`p-${key++}`} className="text-xs leading-relaxed text-slate-300">
+        {renderInline(line.replace(/^\*|\*$/g, ''), `p-${key}`)}
+      </p>
+    );
+    i += 1;
+  }
+
+  return <div className="space-y-2.5">{blocks}</div>;
+}
+
 export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSelectClaim, setActiveScreen }) => {
   const [messages, setMessages] = useState<CopilotMessage[]>([
     {
       id: 'welcome',
       sender: 'ai',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      text: 'Hello I am **MAPLE AI Copilot** trained on **MAPLE HIGHWAYS - Master Data.md** (581 claims across 47 columns).\n\nAsk me about any Claim ID (e.g. `ALL-812189`, `GAL-CLAIM-2025-26-04669`, `WTW-91`, `MAR-0001`), broker, entity, pending documents, or asset damage:'
+      text: 'Hello — I am MAPLE AI Copilot, trained on the Maple Highways master register (581 claims, 47 columns).\n\nAsk about a claim ID (ALL-812189, GAL-CLAIM-2025-26-04669, WTW-91, MAR-0001), broker, entity, pending documents, or asset damage.'
     }
   ]);
   const [inputText, setInputText] = useState('');
@@ -138,18 +279,56 @@ export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSele
               </div>
             )}
 
-            <div className={`max-w-2xl space-y-2 ${msg.sender === 'user' ? 'items-end' : 'items-start'
+            <div className={`max-w-3xl space-y-2 ${msg.sender === 'user' ? 'items-end' : 'items-start'
               }`}>
               <div className={`p-4 rounded-2xl text-xs leading-relaxed shadow-sm ${msg.sender === 'user'
                   ? 'bg-blue-600 text-white rounded-tr-none font-medium'
                   : 'bg-slate-950 text-slate-200 border border-slate-800 rounded-tl-none space-y-3'
                 }`}>
-                {/* Text Formatting */}
-                <div className="whitespace-pre-wrap font-sans">
-                  {msg.text}
-                </div>
+                {msg.sender === 'user' ? (
+                  <div>{msg.text}</div>
+                ) : msg.type !== 'claim_detail' ? (
+                  <CopilotRichText text={msg.text} />
+                ) : null}
 
-                {/* Render Claims List Data */}
+                {msg.type === 'claim_detail' && msg.data && (
+                  <div className="overflow-hidden rounded-xl border border-slate-800">
+                    <div className="flex items-start justify-between gap-3 border-b border-slate-800 bg-slate-900 px-4 py-3">
+                      <div>
+                        <p className="font-mono text-sm font-bold text-white">{msg.data.claimId}</p>
+                        <p className="mt-0.5 text-[11px] text-slate-400">{msg.data.subtitle}</p>
+                      </div>
+                      <span className={`shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-semibold ${statusPillClass(msg.data.status)}`}>
+                        {String(msg.data.status).replace('Open - ', '')}
+                      </span>
+                    </div>
+                    <dl className="divide-y divide-slate-800/80">
+                      {msg.data.rows.map((row: { label: string; value: string; emphasize?: boolean }) => (
+                        <div key={row.label} className="grid grid-cols-[120px_1fr] gap-3 px-4 py-2">
+                          <dt className="text-[11px] font-medium text-slate-500">{row.label}</dt>
+                          <dd className={`text-xs ${row.emphasize ? 'font-bold text-amber-400' : 'text-slate-200'}`}>{row.value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                    {msg.data.pendingNote && (
+                      <div className="border-t border-slate-800 bg-amber-500/5 px-4 py-3">
+                        <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-amber-400">Pending documents</p>
+                        <ul className="space-y-1.5">
+                          {parsePendingList(msg.data.pendingNote).map((doc: string, idx: number) => (
+                            <li key={idx} className="flex items-start gap-2 text-[11px] text-amber-100">
+                              <AlertTriangle className="mt-0.5 h-3 w-3 shrink-0 text-amber-400" />
+                              <span>{doc}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {msg.data.remarks && msg.data.remarks !== msg.data.pendingNote && (
+                      <p className="border-t border-slate-800 px-4 py-2.5 text-[11px] text-slate-400">{msg.data.remarks}</p>
+                    )}
+                  </div>
+                )}
+
                 {msg.type === 'claims_list' && msg.data && (
                   <div className="space-y-2 border-t border-slate-800 pt-3">
                     {msg.data.map((c: any) => (
@@ -188,8 +367,8 @@ export const AICopilotScreen: React.FC<AICopilotScreenProps> = ({ claims, onSele
                         </div>
                       ))}
                     </div>
-                    <div className="p-3 bg-blue-950/50 border border-blue-500/30 rounded-lg text-blue-200 font-medium">
-                      ðŸ’¡ {msg.data.keyAction}
+                    <div className="rounded-lg border border-blue-500/30 bg-blue-950/50 p-3 text-sm font-medium text-blue-200">
+                      {msg.data.keyAction}
                     </div>
                   </div>
                 )}

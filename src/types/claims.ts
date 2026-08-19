@@ -123,7 +123,7 @@ export interface CopilotMessage {
   sender: 'user' | 'ai';
   timestamp: string;
   text: string;
-  type?: 'text' | 'claims_list' | 'missing_docs' | 'email_preview' | 'knowledge_list';
+  type?: 'text' | 'claims_list' | 'missing_docs' | 'email_preview' | 'knowledge_list' | 'claim_detail';
   data?: any;
 }
 

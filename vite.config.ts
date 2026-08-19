@@ -8,6 +8,7 @@ import dns from 'node:dns'
 import { Resolver } from 'node:dns/promises'
 import type { IncomingMessage, ServerResponse } from 'http'
 import { MongoClient } from 'mongodb'
+import { listKnowledgeBlobs, fetchKnowledgeBlob, isAllowedBlobRef, nodeStreamFromWeb } from './server/knowledge-blobs.ts'
 
 dns.setDefaultResultOrder('ipv4first')
 
@@ -64,10 +65,82 @@ async function getMongoClient(uri: string): Promise<MongoClient> {
   return client
 }
 
-const claimApiPlugin = (mongoUri: string): Plugin => ({
-  name: 'claim-api-plugin',
+const mapleApiPlugin = (mongoUri: string, blobToken: string, blobStoreId?: string): Plugin => ({
+  name: 'maple-api-plugin',
   configureServer(server) {
     server.middlewares.use((req: IncomingMessage, res: ServerResponse, next: () => void) => {
+      const pathname = req.url?.split('?')[0] ?? ''
+
+      if (pathname === '/api/knowledge-docs' && req.method === 'GET') {
+        void (async () => {
+          try {
+            if (!blobToken) {
+              res.statusCode = 503
+              res.setHeader('Content-Type', 'application/json')
+              res.end(JSON.stringify({ error: 'BLOB_READ_WRITE_TOKEN is not set', files: [] }))
+              return
+            }
+            const files = await listKnowledgeBlobs(blobToken, blobStoreId)
+            res.setHeader('Content-Type', 'application/json')
+            res.end(JSON.stringify({ files }))
+          } catch (err) {
+            console.error('[Vercel Blob] Failed to list documents:', err)
+            res.statusCode = 500
+            res.setHeader('Content-Type', 'application/json')
+            res.end(JSON.stringify({ error: 'Failed to load documents from Vercel Blob', files: [] }))
+          }
+        })()
+        return
+      }
+
+      if (pathname === '/api/knowledge-file' && req.method === 'GET') {
+        void (async () => {
+          try {
+            if (!blobToken) {
+              res.statusCode = 503
+              res.setHeader('Content-Type', 'application/json')
+              res.end(JSON.stringify({ error: 'BLOB_READ_WRITE_TOKEN is not set' }))
+              return
+            }
+            const query = new URL(req.url ?? '', 'http://localhost').searchParams
+            const ref = query.get('pathname') || query.get('url') || ''
+            const download = query.get('download') === '1'
+            if (!isAllowedBlobRef(ref)) {
+              res.statusCode = 400
+              res.setHeader('Content-Type', 'application/json')
+              res.end(JSON.stringify({ error: 'Invalid file reference' }))
+              return
+            }
+            const file = await fetchKnowledgeBlob(ref, blobToken, blobStoreId)
+            if (!file) {
+              res.statusCode = 404
+              res.setHeader('Content-Type', 'application/json')
+              res.end(JSON.stringify({ error: 'File not found' }))
+              return
+            }
+            const safeName = file.filename.replace(/"/g, '')
+            res.statusCode = 200
+            res.setHeader('Content-Type', file.contentType)
+            res.setHeader('Content-Length', String(file.size))
+            res.setHeader(
+              'Content-Disposition',
+              `${download ? 'attachment' : 'inline'}; filename="${safeName}"`
+            )
+            nodeStreamFromWeb(file.stream).pipe(res)
+          } catch (err) {
+            console.error('[Vercel Blob] Failed to download file:', err)
+            if (!res.headersSent) {
+              res.statusCode = 500
+              res.setHeader('Content-Type', 'application/json')
+              res.end(JSON.stringify({ error: 'Failed to download file' }))
+            } else {
+              res.destroy()
+            }
+          }
+        })()
+        return
+      }
+
       if (req.url === '/api/submit-claim' && req.method === 'POST') {
         let body = ''
         req.on('data', (chunk: Buffer) => {
@@ -125,12 +198,14 @@ const claimApiPlugin = (mongoUri: string): Plugin => ({
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const mongoUri = env.MONGODB_URI
+  const blobToken = env.BLOB_READ_WRITE_TOKEN
+  const blobStoreId = env.BLOB_STORE_ID
 
   return {
     plugins: [
       react(),
       tailwindcss(),
-      claimApiPlugin(mongoUri),
+      mapleApiPlugin(mongoUri, blobToken, blobStoreId),
     ],
     server: {
       watch: {

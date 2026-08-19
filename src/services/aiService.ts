@@ -161,37 +161,37 @@ export function processCopilotQuery(query: string, claimsList: Claim[]): Copilot
     const targetId = idMatch[1].toUpperCase();
     const foundClaim = claimsList.find(c => c.id.toUpperCase() === targetId || c.id.toUpperCase().includes(targetId));
     if (foundClaim) {
-      const isSettled = foundClaim.statusCategory === 'Settled' || foundClaim.status === 'Settled';
+      const status = foundClaim.statusCategory || foundClaim.status;
+      const amount = fmtInr(foundClaim.claimAmount || (foundClaim.reserveAmountLakhs * 100000));
+      const netSettled = fmtInr(foundClaim.netSettled || (foundClaim.settlementAmountLakhs ? foundClaim.settlementAmountLakhs * 100000 : null));
+      const lag = foundClaim.intimationLagDays ?? 0;
       return {
         id: Date.now().toString(),
         sender: 'ai',
         timestamp: now,
-        text: `### Master Data Details for Claim **${foundClaim.id}**
-
-| Property | Value |
-|---|---|
-| **Broker** | ${foundClaim.broker || 'N/A'} |
-| **Entity** | ${foundClaim.entity || 'N/A'} |
-| **Insurer** | ${foundClaim.insurer || 'N/A'} |
-| **Policy Type / No** | ${foundClaim.policyType || foundClaim.policyNo || 'Package / IAR'} (${foundClaim.policyNo || 'N/A'}) |
-| **Status Category** | **${foundClaim.statusCategory || foundClaim.status}** |
-| **Loss Date** | ${foundClaim.dateOfLoss || foundClaim.incidentDate} |
-| **Intimation Date** | ${foundClaim.dateOfIntimation || 'N/A'} (Lag: ${foundClaim.intimationLagDays ?? 0} days) |
-| **Asset Category** | ${foundClaim.assetCategory || 'Road Infrastructure'} |
-| **Nature of Loss** | ${foundClaim.natureCategory || 'Accidental'} |
-| **Loss Location** | ${foundClaim.lossLocation || foundClaim.location || 'Highway stretch'} |
-| **Surveyor** | ${foundClaim.surveyor || 'Unassigned / Self'} |
-| **Claim Amount** | ${fmtInr(foundClaim.claimAmount || (foundClaim.reserveAmountLakhs * 100000))} |
-| **Gross Assessed** | ${fmtInr(foundClaim.grossAssessed)} |
-| **Net Settled / Payable** | ${fmtInr(foundClaim.netSettled || (foundClaim.settlementAmountLakhs ? foundClaim.settlementAmountLakhs * 100000 : null))} |
-| **Settlement Ratio** | ${foundClaim.settlementRatio ? (foundClaim.settlementRatio * 100).toFixed(1) + '%' : 'N/A'} |
-| **Settlement Date / TAT** | ${foundClaim.settlementDate || 'Pending'} (${foundClaim.settlementTATDays ? foundClaim.settlementTATDays + ' days TAT' : 'Open'}) |
-
-${foundClaim.documentsPending ? `> **Pending Documents / Remarks**: ${foundClaim.documentsPending}` : ''}
-${foundClaim.remarks ? `> **Remarks**: ${foundClaim.remarks}` : ''}
-
-*Source*: \`MAPLE HIGHWAYS - Master Data.md\` (Excel Table \`ClaimsMaster\`)`,
-        type: 'text'
+        text: `Claim ${foundClaim.id} from the Maple Highways master register.`,
+        type: 'claim_detail',
+        data: {
+          claimId: foundClaim.id,
+          status,
+          subtitle: `${foundClaim.assetCategory || 'Road asset'} · ${foundClaim.natureCategory || foundClaim.incidentType || 'Loss'}`,
+          rows: [
+            { label: 'Broker', value: foundClaim.broker || 'N/A' },
+            { label: 'Entity', value: foundClaim.entity || 'N/A' },
+            { label: 'Insurer', value: foundClaim.insurer || 'N/A' },
+            { label: 'Policy', value: `${foundClaim.policyType || foundClaim.policyNo || 'Package / IAR'}${foundClaim.policyNo ? ` · ${foundClaim.policyNo}` : ''}` },
+            { label: 'Loss date', value: foundClaim.dateOfLoss || foundClaim.incidentDate || 'N/A' },
+            { label: 'Intimation', value: `${foundClaim.dateOfIntimation || 'N/A'}${lag ? ` · ${lag} day lag` : ''}` },
+            { label: 'Location', value: foundClaim.lossLocation || foundClaim.location || 'Highway stretch' },
+            { label: 'Surveyor', value: foundClaim.surveyor || 'Unassigned' },
+            { label: 'Claim amount', value: amount, emphasize: true },
+            { label: 'Gross assessed', value: fmtInr(foundClaim.grossAssessed) },
+            { label: 'Net settled', value: netSettled },
+            { label: 'Settlement', value: foundClaim.settlementRatio ? `${(foundClaim.settlementRatio * 100).toFixed(1)}% · ${foundClaim.settlementDate || 'Pending'}` : (foundClaim.settlementDate || 'Open') },
+          ],
+          pendingNote: foundClaim.documentsPending || '',
+          remarks: foundClaim.remarks || '',
+        },
       };
     }
   }
