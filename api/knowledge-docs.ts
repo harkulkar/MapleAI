@@ -30,6 +30,7 @@ export default async function handler(req: VercelReq, res: VercelRes) {
     res.status(200).json({ files });
   } catch (error) {
     console.error('Vercel Blob list error:', error);
-    res.status(500).json({ error: 'Failed to load documents from Vercel Blob', files: [] });
+    const message = error instanceof Error ? error.message : 'Failed to load documents from Vercel Blob';
+    res.status(500).json({ error: message, files: [] });
   }
 }

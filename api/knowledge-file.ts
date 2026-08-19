@@ -73,6 +73,7 @@ export default async function handler(req: VercelReq, res: VercelRes) {
     res.status(200).send(Buffer.from(file.bytes));
   } catch (error) {
     console.error('Vercel Blob download error:', error);
-    res.status(500).json({ error: 'Failed to download file' });
+    const message = error instanceof Error ? error.message : 'Failed to download file';
+    res.status(500).json({ error: message });
   }
 }

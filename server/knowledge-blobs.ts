@@ -8,20 +8,44 @@ export type KnowledgeBlobFile = {
   uploadedAt: string
 }
 
+function cleanEnv(value?: string) {
+  const trimmed = value?.trim()
+  if (!trimmed) return undefined
+  return trimmed.replace(/^["']|["']$/g, '')
+}
+
 function blobAuth(token?: string, storeId?: string) {
   const options: { token?: string; storeId?: string } = {}
-  if (token) options.token = token
-  if (storeId) options.storeId = storeId
+  const cleanedToken = cleanEnv(token)
+  const cleanedStoreId = cleanEnv(storeId)
+  const oidc = cleanEnv(process.env.VERCEL_OIDC_TOKEN)
+
+  // On Vercel, OIDC is preferred. A stale BLOB_READ_WRITE_TOKEN from a failed
+  // dashboard "token update" would override OIDC and cause production 403s.
+  if (!oidc && cleanedToken) options.token = cleanedToken
+  if (cleanedStoreId) options.storeId = cleanedStoreId
   return options
 }
 
 export async function listKnowledgeBlobs(token?: string, storeId?: string): Promise<KnowledgeBlobFile[]> {
+  try {
+    return await listAllBlobs(blobAuth(token, storeId))
+  } catch (error) {
+    const cleanedToken = cleanEnv(token)
+    if (cleanedToken && process.env.VERCEL_OIDC_TOKEN) {
+      return await listAllBlobs({ token: cleanedToken, storeId: cleanEnv(storeId) })
+    }
+    throw error
+  }
+}
+
+async function listAllBlobs(auth: { token?: string; storeId?: string }): Promise<KnowledgeBlobFile[]> {
   const files: KnowledgeBlobFile[] = []
   let cursor: string | undefined
 
   do {
     const result = await list({
-      ...blobAuth(token, storeId),
+      ...auth,
       cursor,
       limit: 1000,
     })
