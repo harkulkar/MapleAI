@@ -1,4 +1,5 @@
-import { fetchKnowledgeBlob, isAllowedBlobRef, decodeBlobParam } from '../server/knowledge-blobs';
+/// <reference types="node" />
+import { fetchKnowledgeBlob, isAllowedBlobRef, decodeBlobParam } from '../server/knowledge-blobs.js';
 
 type VercelReq = {
   method?: string;

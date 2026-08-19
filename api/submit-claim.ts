@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import { MongoClient } from 'mongodb';
 
 type VercelReq = {

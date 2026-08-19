@@ -1,4 +1,5 @@
-import { listKnowledgeBlobs } from '../server/knowledge-blobs';
+/// <reference types="node" />
+import { listKnowledgeBlobs } from '../server/knowledge-blobs.js';
 
 type VercelReq = {
   method?: string;
